@@ -1,0 +1,8 @@
+https://www.betano.cz/ 200 scrapy shell -s USER_AGENT="Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0"
+https://www.tipsport.cz/
+https://www.ifortuna.cz/ 200
+https://www.chance.cz/
+https://sport.synottip.cz/cz/nejsazenejsi 200
+https://www.sazka.cz/kurzove-sazky/ 200
+https://www.merkurxtip.cz/ 200
+https://bet-x.cz/cs/sports-betting?hours=7200 200

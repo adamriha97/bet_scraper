@@ -1,1 +1,4 @@
 scrapy==2.11.2
+ipython==8.26.0
+scrapy-playwright==0.0.38
+scrapy-splash==0.9.0

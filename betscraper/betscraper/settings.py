@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = "betscraper.spiders"
 #USER_AGENT = "betscraper (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -25,7 +25,7 @@ ROBOTSTXT_OBEY = True
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -91,3 +91,38 @@ ROBOTSTXT_OBEY = True
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+### ------------------------------------------------------------------------------- ###
+
+# user-agent
+USER_AGENT="Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0"
+
+# Playwright
+#DOWNLOAD_HANDLERS = {
+#        "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+#        "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+#    }
+#PLAYWRIGHT_LAUNCH_OPTIONS = {
+#        "headless": True,
+#    } 
+
+# Splash
+# set the Splash local server endpoint
+SPLASH_URL = "http://localhost:8050"
+
+# enable the Splash downloader middleware and 
+# give it a higher priority than HttpCompressionMiddleware
+DOWNLOADER_MIDDLEWARES = {
+    "scrapy_splash.SplashCookiesMiddleware": 723,
+    "scrapy_splash.SplashMiddleware": 725,
+    "scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware": 810,
+}
+
+# enable the Splash deduplication argument filter to
+# make Scrapy Splash saves spice disk on cached requests
+SPIDER_MIDDLEWARES = {
+    "scrapy_splash.SplashDeduplicateArgsMiddleware": 100,
+}
+
+# set the Splash deduplication class
+DUPEFILTER_CLASS = "scrapy_splash.SplashAwareDupeFilter"
