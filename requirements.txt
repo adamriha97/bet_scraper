@@ -2,3 +2,6 @@ scrapy==2.11.2
 ipython==8.26.0
 scrapy-playwright==0.0.38
 scrapy-splash==0.9.0
+selenium==4.22.0
+scrapy-selenium==0.0.7
+webdriver-manager==4.0.1
