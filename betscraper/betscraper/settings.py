@@ -98,13 +98,15 @@ FEED_EXPORT_ENCODING = "utf-8"
 USER_AGENT="Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0"
 
 # Playwright
-#DOWNLOAD_HANDLERS = {
-#        "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
-#        "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
-#    }
-#PLAYWRIGHT_LAUNCH_OPTIONS = {
-#        "headless": True,
-#    } 
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
+PLAYWRIGHT_LAUNCH_OPTIONS = {
+    "headless": False,
+    "timeout": 160 * 1000,  # 60 seconds
+}
+PLAYWRIGHT_DEFAULT_NAVIGATION_TIMEOUT = 160 * 1000  # 60 seconds
 
 # Splash
 # set the Splash local server endpoint

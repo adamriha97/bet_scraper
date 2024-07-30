@@ -1,2 +1,7 @@
 python -m playwright install chromium
 python -m playwright install-deps chromium
+
+scrapy-playwright==0.0.40
+
+playwright install
+playwright install-deps
