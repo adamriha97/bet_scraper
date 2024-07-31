@@ -333,3 +333,5 @@ ASALocalRun/
 
 # Added by me
 .conda
+
+betscraper/data_betano.json
