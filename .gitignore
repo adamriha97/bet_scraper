@@ -332,6 +332,7 @@ ASALocalRun/
 *.DS_Store
 
 # Added by me
+.env
 .conda
 
 betscraper/data_betano.json

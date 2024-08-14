@@ -50,9 +50,13 @@ DOWNLOAD_DELAY = 3
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-# DOWNLOADER_MIDDLEWARES = {
+DOWNLOADER_MIDDLEWARES = {
 #    "betscraper.middlewares.BetscraperDownloaderMiddleware": 543,
-# }
+    #'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
+    #'betscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware': 300,
+    #'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550, 
+    #'scrapy.downloadermiddlewares.retry.RetryMiddleware': None, 
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -95,18 +99,23 @@ FEED_EXPORT_ENCODING = "utf-8"
 ### ------------------------------------------------------------------------------- ###
 
 # user-agent
-USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0"
+# USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0"
 
 # Playwright
-DOWNLOAD_HANDLERS = {
-    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
-    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
-}
-PLAYWRIGHT_LAUNCH_OPTIONS = {
-    "headless": True,
-    "timeout": 160 * 1000,  # 60 seconds
-}
-PLAYWRIGHT_DEFAULT_NAVIGATION_TIMEOUT = 160 * 1000  # 60 seconds
+# DOWNLOAD_HANDLERS = {
+#     "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+#     "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+# }
+# PLAYWRIGHT_LAUNCH_OPTIONS = {
+#     "headless": False, # True False
+#     "timeout": 600 * 1000,  # 60 seconds
+#     "args": [
+#         #"--window-size='200,400'"
+#         #"--start-maximized"
+#         '--device="iPhone 13"'
+#     ],
+# }
+# PLAYWRIGHT_DEFAULT_NAVIGATION_TIMEOUT = 600 * 1000  # 60 seconds
 
 # Splash
 # set the Splash local server endpoint
@@ -128,3 +137,22 @@ PLAYWRIGHT_DEFAULT_NAVIGATION_TIMEOUT = 160 * 1000  # 60 seconds
 
 # set the Splash deduplication class
 # DUPEFILTER_CLASS = "scrapy_splash.SplashAwareDupeFilter"
+
+
+
+# Set other settings
+
+import os
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except:
+    pass
+
+SCRAPEOPS_API_KEY = os.environ["SCRAPEOPS_API_KEY"]
+SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT = 'https://headers.scrapeops.io/v1/user-agents'
+SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
+SCRAPEOPS_FAKE_BROWSER_HEADER_ENDPOINT = 'https://headers.scrapeops.io/v1/browser-headers'
+SCRAPEOPS_FAKE_BROWSER_HEADER_ENABLED = True
+SCRAPEOPS_NUM_RESULTS = 5
