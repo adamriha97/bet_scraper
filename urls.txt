@@ -6,3 +6,15 @@ https://sport.synottip.cz/cz/nejsazenejsi 200
 https://www.sazka.cz/kurzove-sazky/ 200
 https://www.merkurxtip.cz/ 200
 https://bet-x.cz/cs/sports-betting?hours=7200 200
+
+
+
+https://medium.com/better-practices/reverse-engineering-an-api-403fae885303
+
+example calls:
+https://www.betano.cz/danae-webapi/api/live/overview/242290000539352?isInit=false&includeVirtuals=true
+https://www.betano.cz/danae-webapi/api/live/overview/latest?includeVirtuals=true
+https://www.betano.cz/danae-webapi/api/live/events/53620821/?isInit=false&version=58
+https://www.betano.cz/danae-webapi/api/live/events/53620821/latest
+
+https://www.betano.cz/api/sport/fotbal/nadchazejici-zapasy-dnes/?sort=Leagues&req=la,s,stnf,c,mb
