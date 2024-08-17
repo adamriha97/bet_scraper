@@ -50,13 +50,13 @@ DOWNLOAD_DELAY = 3
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
+#DOWNLOADER_MIDDLEWARES = {
 #    "betscraper.middlewares.BetscraperDownloaderMiddleware": 543,
     #'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
     #'betscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware': 300,
     #'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550, 
     #'scrapy.downloadermiddlewares.retry.RetryMiddleware': None, 
-}
+#}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html

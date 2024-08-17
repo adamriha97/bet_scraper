@@ -336,3 +336,4 @@ ASALocalRun/
 .conda
 
 betscraper/data_betano.json
+betscraper/data_fortuna.json

@@ -11,10 +11,31 @@ https://bet-x.cz/cs/sports-betting?hours=7200 200
 
 https://medium.com/better-practices/reverse-engineering-an-api-403fae885303
 
+
+BETANO:
+
+sitemap:
+https://www.betano.cz/robots.txt/
+https://www.betano.cz/api/structurerequirements/configuration/
+https://www.betano.cz/api/
+https://www.betano.cz/sitemap_events.xml/
+https://www.betano.cz/sitemap_categories.xml/
+https://www.betano.cz/sitemap_leagues.xml/
+
 example calls:
 https://www.betano.cz/danae-webapi/api/live/overview/242290000539352?isInit=false&includeVirtuals=true
 https://www.betano.cz/danae-webapi/api/live/overview/latest?includeVirtuals=true
 https://www.betano.cz/danae-webapi/api/live/events/53620821/?isInit=false&version=58
 https://www.betano.cz/danae-webapi/api/live/events/53620821/latest
-
 https://www.betano.cz/api/sport/fotbal/nadchazejici-zapasy-dnes/?sort=Leagues&req=la,s,stnf,c,mb
+
+
+FORTUNA:
+
+sitemap:
+https://www.ifortuna.cz/robots.txt
+https://www.ifortuna.cz/sitemap.xml/
+
+example calls:
+https://www.ifortuna.cz/bets/ajax/loadmoresport/fotbal?timeTo=&rateFrom=&rateTo=&date=&pageSize=100&page=0
+https://www.ifortuna.cz/bets/ajax/loadmoresport/fotbal?timeTo=&rateFrom=&rateTo=&date=&pageSize=100&page=1
