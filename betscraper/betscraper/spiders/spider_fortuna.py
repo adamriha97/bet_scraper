@@ -9,6 +9,8 @@ class SpiderFortunaSpider(scrapy.Spider):
 
     custom_settings = {
         'FEEDS': {'data_fortuna.json': {'format': 'json', 'overwrite': True}},
+        'CONCURRENT_REQUESTS': 64, # default 16
+        'CONCURRENT_REQUESTS_PER_DOMAIN': 64, # default 8
         'DOWNLOADER_MIDDLEWARES': {
             'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
             'betscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware': 300,
@@ -24,42 +26,46 @@ class SpiderFortunaSpider(scrapy.Spider):
         for sport in sports:
             if sport not in not_interested:
                 url = 'https://www.ifortuna.cz/bets/ajax/loadmoresport/' + sport + '?timeTo=&rateFrom=&rateTo=&date=&pageSize=100&page=0'
-        #url = 'https://www.ifortuna.cz/bets/ajax/loadmoresport/fotbal?timeTo=&rateFrom=&rateTo=&date=&pageSize=100&page=0'
+        # url = 'https://www.ifortuna.cz/bets/ajax/loadmoresport/fotbal?timeTo=&rateFrom=&rateTo=&date=&pageSize=100&page=0'
                 yield response.follow(url, callback = self.parse_sport)
     
     def parse_sport(self, response):
         continue_parse = False
         sport = response.url.split('/')[-1].split('?')[0]
         for table in response.css('table.events-table'):
-            for event in table.css('tbody tr'):
-                try:
-                    event_url = event.css('a.event-link ::attr(href)').get()
-                    event_startTime = datetime.datetime.fromtimestamp(int(event.css('td.col-date ::attr(data-value)').get())/1000)
-                    participants = event.css('div.title-container div.event-name span ::text').get().replace('\n', '').split(' - ')
-                    participant_1 = participants[0]
-                    participant_2 = participants[1]
-                    bet_1 = bet_0 = bet_2 = -1
-                    bets = event.css('span.odds-value ::text').getall()
-                    if len(bets) == 2:
-                        bet_1 = bets[0]
-                        bet_2 = bets[1]
-                    elif len(bets) == 3:
-                        bet_1 = bets[0]
-                        bet_0 = bets[1]
-                        bet_2 = bets[2]
-                    yield {
-                        'sport': sport,
-                        'event_url': event_url,
-                        'event_startTime': event_startTime,
-                        'participant_1': participant_1,
-                        'participant_2': participant_2,
-                        'bet_1': bet_1,
-                        'bet_0': bet_0,
-                        'bet_2': bet_2
-                    }
-                    continue_parse = True
-                except:
-                    pass
+            if table.css('thead th.col-title span.market-sub-name ::text').get().replace('\n', '').startswith(("Výsledek zápasu", "Vítěz zápasu")):
+                for event in table.css('tbody tr'):
+                    try:
+                        event_url = event.css('a.event-link ::attr(href)').get()
+                        event_startTime = datetime.datetime.fromtimestamp(int(event.css('td.col-date ::attr(data-value)').get())/1000)
+                        participants = event.css('div.title-container div.event-name span ::text').get().replace('\n', '').split(' - ')
+                        participant_1 = participants[0]
+                        participant_2 = participants[1]
+                        bet_1 = bet_0 = bet_2 = -1
+                        bets = event.css('span.odds-value ::text').getall()
+                        if len(bets) == 2:
+                            bet_1 = bets[0]
+                            bet_2 = bets[1]
+                        elif len(bets) in [3, 6, 9]: # 6 -> možnosti 10, 02, 12 # 9 -> chyba na webu (hádám)
+                            bet_1 = bets[0]
+                            bet_0 = bets[1]
+                            bet_2 = bets[2]
+                        yield {
+                            'page_number': response.url.split('=')[-1],
+                            'sport': sport,
+                            'event_url': event_url,
+                            'event_startTime': event_startTime,
+                            'participant_1': participant_1,
+                            'participant_2': participant_2,
+                            'bet_1': bet_1,
+                            'bet_0': bet_0,
+                            'bet_2': bet_2
+                        }
+                        continue_parse = True
+                    except:
+                        pass
+            else:
+                continue_parse = True
         if continue_parse:
             parts_url = response.url.split('=')
             parts_url[-1] = str(int(parts_url[-1]) + 1)
