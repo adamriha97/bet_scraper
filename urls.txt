@@ -1,6 +1,6 @@
-https://www.betano.cz/ 200 scrapy shell -s USER_AGENT="Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0"
+done https://www.betano.cz/ 200 scrapy shell -s USER_AGENT="Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0"
+done https://www.ifortuna.cz/ 200
 https://www.tipsport.cz/
-https://www.ifortuna.cz/ 200
 https://www.chance.cz/
 https://sport.synottip.cz/cz/nejsazenejsi 200
 https://www.sazka.cz/kurzove-sazky/ 200
@@ -39,3 +39,18 @@ https://www.ifortuna.cz/sitemap.xml/
 example calls:
 https://www.ifortuna.cz/bets/ajax/loadmoresport/fotbal?timeTo=&rateFrom=&rateTo=&date=&pageSize=100&page=0
 https://www.ifortuna.cz/bets/ajax/loadmoresport/fotbal?timeTo=&rateFrom=&rateTo=&date=&pageSize=100&page=1
+
+
+TIPSPORT:
+
+sitemap:
+https://www.tipsport.cz/robots.txt
+https://www.tipsport.cz/sitemap.xml
+https://www.tipsport.cz/kurzy.xml
+
+example calls:
+https://www.tipsport.cz/rest/offer/v1/matches/top
+https://www.tipsport.cz/kurzy/fotbal-16?limit=125
+https://www.tipsport.cz/kurzy/fotbal-16?limit=1000
+https://www.tipsport.cz/rest/offer/v6/sports
+https://www.tipsport.cz/rest/offer/v2/offer?limit=9999 POST
