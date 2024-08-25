@@ -1,16 +1,6 @@
 import scrapy
-from scrapy_playwright.page import PageMethod
-import xml.etree.ElementTree as ET
+import json
 
-
-def should_abort_request(req):
-    if req.resource_type in ["image", "media", "font", "webp"]:
-        return True
-    if '.svg' in req.url:
-        return True
-    if 'google' in req.url:
-        return True
-    return False
 
 class SpiderTipsportSpider(scrapy.Spider):
     name = "spider_tipsport"
@@ -40,7 +30,7 @@ class SpiderTipsportSpider(scrapy.Spider):
             "timeout": 600 * 1000,  # 60 seconds
         },
         'PLAYWRIGHT_DEFAULT_NAVIGATION_TIMEOUT': 600 * 1000,  # 60 seconds
-        'PLAYWRIGHT_ABORT_REQUEST': should_abort_request,
+        # 'PLAYWRIGHT_ABORT_REQUEST': should_abort_request,
         # 'PLAYWRIGHT_MAX_PAGES_PER_CONTEXT': 1,
         # 'PLAYWRIGHT_CONTEXTS': {
         #     "cz_context": {
@@ -56,7 +46,7 @@ class SpiderTipsportSpider(scrapy.Spider):
         }
     
     def start_requests(self):
-        last_urls = ['https://www.tipsport.cz/kurzy.xml'] # https://www.tipsport.cz/kurzy/fotbal-16?limit=9999 https://www.tipsport.cz/kurzy.xml
+        last_urls = ['https://www.tipsport.cz/kurzy.xml'] # https://www.tipsport.cz/kurzy/fotbal-16?limit=175 https://www.tipsport.cz/kurzy.xml
         for url in last_urls:
             yield scrapy.Request(url, meta=dict(
 			    	playwright = True,
@@ -68,29 +58,47 @@ class SpiderTipsportSpider(scrapy.Spider):
                     #     PageMethod("wait_for_load_state", "load"),
                     #     PageMethod("evaluate", "window.scrollBy(0, document.body.scrollHeight)"),
                     #     PageMethod("wait_for_selector", "h1"),
-                    #     PageMethod("wait_for_selector", "div.Matchstyled__Name-sc-5rxr4z-6"),
+                    #     PageMethod("wait_for_selector", ".markets"),
                     # ],
                     # errback=self.errback,
 			    ), callback = self.parse)
 
     def parse(self, response):
-        root = ET.fromstring(response.text.split('<div id=\"webkit-xml-viewer-source-xml\">')[1].split('</div>')[0])
-        namespaces = {'ns': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
-        urls = [url.find('ns:loc', namespaces).text for url in root.findall('ns:url', namespaces)]
-        not_interested = ['cyklistika', 'motorsport', 'spolecenske-sazky']
-        for url in urls:
-            if len(url.split('/')) == 5 and url.split('/')[-1].rsplit('-', 1)[0] not in not_interested:
-                yield {
-                    'len': len(url.split('/')),
-                    'url': url,
-                    'sport': url.split('/')[-1].rsplit('-', 1)[0],
-                }
+        # yield {
+        #     'url': response.url,
+        #     #'text': response.text,
+        # }
+        url = 'https://www.tipsport.cz/rest/offer/v2/offer?limit=500'
+        body = '{results:false,highlightAnyTime:false,limit:500,type:SUPERSPORT,id:16,fulltexts:^[^],matchIds:^[^],matchViewFilters:^[^]}'
+        body_2 = '{results:false,highlightAnyTime:false,limit:500,type:SUPERSPORT,id:16,fulltexts:[],matchIds:[],matchViewFilters:[]}'
+        body_json = {
+            "results": False,
+            "highlightAnyTime": False,
+            "limit": 500,
+            "type": "SUPERSPORT",
+            "id": 2,
+            "fulltexts": [],
+            "matchIds": [],
+            "matchViewFilters": []
+        }
+        print('\n XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \n')
+        print(response.headers.getlist('Set-Cookie'))
+        print('\n XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \n')
+        print(response.request.headers)
+        print('\n XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX \n')
+        yield {
+            'cookie_resp': str(response.headers.getlist('Set-Cookie')),
+            'cookie_req': str(response.request.headers),
+        }
+        yield response.follow(url, method = 'POST', body = '{}', callback = self.parse_sport, meta=dict(
+			    	playwright = True,
+			    	playwright_include_page = True,
+			    )) # response.follow
+        # url = 'https://www.tipsport.cz/'
+        # yield response.follow(url, callback = self.parse_sport)
     
     def parse_sport(self, response):
-        teams = response.css('div.Matchstyled__Name-sc-5rxr4z-6 span ::text').getall()
-        for team in teams:
-            yield {
-                # 'url': response.url,
-                # 'text': response.text,
-                'teams': team,
-            }
+        yield {
+            'url': response.url,
+            'text': response.text,
+        }
