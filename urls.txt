@@ -1,11 +1,11 @@
-done https://www.betano.cz/ 200 scrapy shell -s USER_AGENT="Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0"
-done https://www.ifortuna.cz/ 200
-done? https://www.tipsport.cz/
-done? https://www.chance.cz/
-https://sport.synottip.cz/cz/nejsazenejsi 200
-https://www.sazka.cz/kurzove-sazky/ 200
-https://www.merkurxtip.cz/ 200
-https://bet-x.cz/cs/sports-betting?hours=7200 200
+done -> https://www.betano.cz/
+done -> https://www.ifortuna.cz/
+working - could be better with POST request -> https://www.tipsport.cz/
+working - could be better with POST request -> https://www.chance.cz/
+https://sport.synottip.cz/cz/nejsazenejsi
+https://www.sazka.cz/kurzove-sazky/
+https://www.merkurxtip.cz/
+https://bet-x.cz/cs/sports-betting?hours=7200
 
 
 
@@ -29,6 +29,9 @@ https://www.betano.cz/danae-webapi/api/live/events/53620821/?isInit=false&versio
 https://www.betano.cz/danae-webapi/api/live/events/53620821/latest
 https://www.betano.cz/api/sport/fotbal/nadchazejici-zapasy-dnes/?sort=Leagues&req=la,s,stnf,c,mb
 
+helper:
+scrapy shell -s USER_AGENT="Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0"
+
 
 FORTUNA:
 
@@ -41,7 +44,7 @@ https://www.ifortuna.cz/bets/ajax/loadmoresport/fotbal?timeTo=&rateFrom=&rateTo=
 https://www.ifortuna.cz/bets/ajax/loadmoresport/fotbal?timeTo=&rateFrom=&rateTo=&date=&pageSize=100&page=1
 
 
-TIPSPORT:
+TIPSPORT (+ CHANCE):
 
 sitemap:
 https://www.tipsport.cz/robots.txt
@@ -70,3 +73,5 @@ SAZKA:
 api:
 https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/time-band-event-list?maxMarkets=10&marketSortsIncluded=--%2CCS%2CDC%2CDN%2CHH%2CHL%2CMH%2CMR%2CWH&marketGroupTypesIncluded=CUSTOM_GROUP%2CMONEYLINE%2CROLLING_SPREAD%2CROLLING_TOTAL%2CSTATIC_SPREAD%2CSTATIC_TOTAL&allowedEventSorts=MTCH&includeChildMarkets=true&prioritisePrimaryMarkets=true&includeCommentary=true&includeMedia=true&drilldownTagIds=11&maxTotalItems=60&maxEventsPerCompetition=7&maxCompetitionsPerSportPerBand=3&maxEventsForNextToGo=5&startTimeOffsetForNextToGo=600&dates=2024-08-29T22%3A00%3A00Z%2C2024-08-30T22%3A00%3A00Z%2C2024-08-31T22%3A00%3A00Z
 https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/event-list?startTimeFrom=2024-08-27T22%3A00%3A00Z&startTimeTo=2024-08-28T21%3A59%3A59Z&started=false&maxMarkets=10&orderMarketsBy=displayOrder&marketSortsIncluded=--%2CCS%2CDC%2CDN%2CHH%2CHL%2CMH%2CMR%2CWH&marketGroupTypesIncluded=CUSTOM_GROUP%2CMONEYLINE%2CROLLING_SPREAD%2CROLLING_TOTAL%2CSTATIC_SPREAD%2CSTATIC_TOTAL&eventSortsIncluded=MTCH&includeChildMarkets=true&prioritisePrimaryMarkets=true&includeCommentary=true&includeMedia=true&drilldownTagIds=989
+optimized, but without markets: https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/time-band-event-list?maxMarkets=10&marketSortsIncluded=--%2CCS%2CDC%2CDN%2CHH%2CHL%2CMH%2CMR%2CWH&marketGroupTypesIncluded=CUSTOM_GROUP%2CMONEYLINE%2CROLLING_SPREAD%2CROLLING_TOTAL%2CSTATIC_SPREAD%2CSTATIC_TOTAL&allowedEventSorts=MTCH&prioritisePrimaryMarkets=true&drilldownTagIds=2&maxTotalItems=10000&maxEventsPerCompetition=30&maxCompetitionsPerSportPerBand=1000
+list of sports and competitions: https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/drilldown-tree?drilldownNodeIds=2&eventState=OPEN_EVENT
