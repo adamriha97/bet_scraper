@@ -6,6 +6,10 @@ https://sport.synottip.cz/cz/nejsazenejsi
 done -> https://www.sazka.cz/kurzove-sazky/ (6 mins)
 working - not all matches, only from last_minute api call, but seems enough -> https://www.merkurxtip.cz/ (seconds)
 done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
+https://www.iforbet.cz/prematch/landing
+https://www.kingsbet.cz/sport#/overview
+
+https://www.trefik.cz/default.aspx
 
 
 
