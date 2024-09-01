@@ -4,8 +4,8 @@ working - could be better with POST request -> https://www.tipsport.cz/
 working - could be better with POST request -> https://www.chance.cz/
 https://sport.synottip.cz/cz/nejsazenejsi
 done -> https://www.sazka.cz/kurzove-sazky/ (6 mins)
-https://www.merkurxtip.cz/
-https://bet-x.cz/cs/sports-betting?hours=7200
+working - not all matches, only from last_minute api call, but seems enough -> https://www.merkurxtip.cz/ (seconds)
+done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
 
 
 
@@ -99,3 +99,22 @@ https://sb.merkurxtip.cz/restapi/offer/cs/sport/T/mob (T pro tenis - podle id ze
 https://sb.merkurxtip.cz/restapi/offer/cs/top/desk
 # last minute - ale je tam toho hodne a v jednom callu, takze pouzijeme toto (nejprve)
 https://sb.merkurxtip.cz/restapi/offer/cs/last_minute/mob
+
+
+BETX:
+
+sitemap:
+https://bet-x.cz/robots.txt
+https://bet-x.cz/sitemap.xml
+
+api:
+# seznam sportu
+https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/sports?OddsFilter=0
+# last minute
+https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/lastminute?limit=9999
+# live
+https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/sportsmenu/live
+https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/matches/live?SportIds=388
+# matches
+https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/sports/offer?Offset=0&Limit=50&DateFrom=2024-09-01T15:22:01.088Z&SportIds=389&DateTo=2032-11-17T23:00:00.088Z
+https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/sports/offer?Limit=9999
