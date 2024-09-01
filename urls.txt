@@ -3,7 +3,7 @@ done -> https://www.ifortuna.cz/
 working - could be better with POST request -> https://www.tipsport.cz/
 working - could be better with POST request -> https://www.chance.cz/
 https://sport.synottip.cz/cz/nejsazenejsi
-https://www.sazka.cz/kurzove-sazky/
+done -> https://www.sazka.cz/kurzove-sazky/ (6 mins)
 https://www.merkurxtip.cz/
 https://bet-x.cz/cs/sports-betting?hours=7200
 
