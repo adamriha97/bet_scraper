@@ -75,3 +75,27 @@ https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/time-band-event
 https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/event-list?startTimeFrom=2024-08-27T22%3A00%3A00Z&startTimeTo=2024-08-28T21%3A59%3A59Z&started=false&maxMarkets=10&orderMarketsBy=displayOrder&marketSortsIncluded=--%2CCS%2CDC%2CDN%2CHH%2CHL%2CMH%2CMR%2CWH&marketGroupTypesIncluded=CUSTOM_GROUP%2CMONEYLINE%2CROLLING_SPREAD%2CROLLING_TOTAL%2CSTATIC_SPREAD%2CSTATIC_TOTAL&eventSortsIncluded=MTCH&includeChildMarkets=true&prioritisePrimaryMarkets=true&includeCommentary=true&includeMedia=true&drilldownTagIds=989
 optimized, but without markets: https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/time-band-event-list?maxMarkets=10&marketSortsIncluded=--%2CCS%2CDC%2CDN%2CHH%2CHL%2CMH%2CMR%2CWH&marketGroupTypesIncluded=CUSTOM_GROUP%2CMONEYLINE%2CROLLING_SPREAD%2CROLLING_TOTAL%2CSTATIC_SPREAD%2CSTATIC_TOTAL&allowedEventSorts=MTCH&prioritisePrimaryMarkets=true&drilldownTagIds=2&maxTotalItems=10000&maxEventsPerCompetition=30&maxCompetitionsPerSportPerBand=1000
 list of sports and competitions: https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/drilldown-tree?drilldownNodeIds=2&eventState=OPEN_EVENT
+
+sitemap:
+https://www.sazka.cz/robots.txt
+https://www.sazka.cz/sitemap.xml
+
+
+MERKUR:
+
+sitemap:
+https://www.merkurxtip.cz/robots.txt
+https://www.merkurxtip.cz/sitemap.xml
+
+api:
+https://www.merkurxtip.cz/api/games (not sports)
+# seznam sportu spolu s id:
+https://sb.merkurxtip.cz/restapi/offer/cs/categories/s (asi aktualni)
+https://sb.merkurxtip.cz/restapi/translate/cs/sports (asi vse)
+# zde vidim pravdepodobne vsechny zapasy daneho sportu
+https://sb.merkurxtip.cz/restapi/offer/cs/sport/S/mob (S pro fotbal - podle id ze seznamu)
+https://sb.merkurxtip.cz/restapi/offer/cs/sport/T/mob (T pro tenis - podle id ze seznamu)
+# top 10
+https://sb.merkurxtip.cz/restapi/offer/cs/top/desk
+# last minute - ale je tam toho hodne a v jednom callu, takze pouzijeme toto (nejprve)
+https://sb.merkurxtip.cz/restapi/offer/cs/last_minute/mob
