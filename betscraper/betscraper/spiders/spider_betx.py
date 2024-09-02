@@ -22,7 +22,7 @@ class SpiderBetxSpider(scrapy.Spider):
 
     def parse(self, response):
         response_json = json.loads(response.text)
-        not_interested = ['BETX Superšance', 'Superchance']
+        not_interested = ['BETX Superšance', 'Superchance', 'Cycling']
         for section in response_json['Response']:
             sport = section['Name']
             if sport not in not_interested:
@@ -48,18 +48,19 @@ class SpiderBetxSpider(scrapy.Spider):
                                         bet_02 = bet["Odd"]
                                     elif bet["Name"] == '12':
                                         bet_12 = bet["Odd"]
-                                yield {
-                                    'sport': sport,
-                                    'event_url': event_url,
-                                    'event_startTime': event_startTime,
-                                    'participant_1': participant_1,
-                                    'participant_2': participant_2,
-                                    'bet_1': bet_1,
-                                    'bet_0': bet_0,
-                                    'bet_2': bet_2,
-                                    'bet_10': bet_10,
-                                    'bet_02': bet_02,
-                                    'bet_12': bet_12,
-                                }
+                                if not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == -1):
+                                    yield {
+                                        'sport': sport,
+                                        'event_url': event_url,
+                                        'event_startTime': event_startTime,
+                                        'participant_1': participant_1,
+                                        'participant_2': participant_2,
+                                        'bet_1': bet_1,
+                                        'bet_0': bet_0,
+                                        'bet_2': bet_2,
+                                        'bet_10': bet_10,
+                                        'bet_02': bet_02,
+                                        'bet_12': bet_12,
+                                    }
                             except:
                                 pass
