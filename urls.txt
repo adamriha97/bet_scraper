@@ -1,13 +1,13 @@
-done -> https://www.betano.cz/
-done -> https://www.ifortuna.cz/
-working - could be better with POST request -> https://www.tipsport.cz/
-working - could be better with POST request -> https://www.chance.cz/
-https://sport.synottip.cz/cz/nejsazenejsi
-done -> https://www.sazka.cz/kurzove-sazky/ (6 mins)
-working - not all matches, only from last_minute api call, but seems enough -> https://www.merkurxtip.cz/ (seconds)
-done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
-https://www.iforbet.cz/prematch/landing
-https://www.kingsbet.cz/sport#/overview
+BETANO: done -> https://www.betano.cz/
+FORTUNA: done -> https://www.ifortuna.cz/
+TIPSPORT: working - could be better with POST request -> https://www.tipsport.cz/
+CHANCE: working - could be better with POST request -> https://www.chance.cz/ (same data as tipsport)
+SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
+SAZKA: done -> https://www.sazka.cz/kurzove-sazky/ (6 mins)
+MERKUR: working - not all matches, only from last_minute api call, but seems enough -> https://www.merkurxtip.cz/ (seconds)
+BETX: done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
+FORBET: done -> https://www.iforbet.cz/prematch/landing (seconds)
+KINGSBET: https://www.kingsbet.cz/sport#/overview
 
 https://www.trefik.cz/default.aspx
 
@@ -122,3 +122,22 @@ https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/matches/live?Spo
 # matches
 https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/sports/offer?Offset=0&Limit=50&DateFrom=2024-09-01T15:22:01.088Z&SportIds=389&DateTo=2032-11-17T23:00:00.088Z
 https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/sports/offer?Limit=9999
+
+
+FORBET:
+
+sitemap:
+https://www.iforbet.cz/robots.txt
+
+api:
+# all prematch
+curl "https://www.iforbet.cz/api/web/v1/offer/full_offer?ts=1725799300832" --compressed -X POST -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0" -H "Accept: application/json, text/plain, */*" -H "Accept-Language: cs,sk;q=0.8,en-US;q=0.5,en;q=0.3" -H "Accept-Encoding: gzip, deflate, br, zstd" -H "Referer: https://www.iforbet.cz/" -H "Content-Type: application/json" -H "Origin: https://www.iforbet.cz" -H "Alt-Used: www.iforbet.cz" -H "Connection: keep-alive" -H "Cookie: session=853198f7231c4990ba477d7a1795bb00; cf_clearance=oWOzpCdhkWeXd2YhMHgq9cRF39xLzvcVGvXSrd0dyCk-1725799073-1.2.1.1-OV7cbyj3tyPTbW62ym0H0Jy.Pv.DHIgDoAFbrUu8lLCPxnrmzkKCLGB_YV0a7BLki.psI8YR3YMGjiixP_esbJxrbBq.vF1RvGgwcnQjf2MoGX.VPO_Mp.4M0dkmbiO3JjY991ov2OKHd9gZOriGdNbtN3t6tQq_c7ejhXP_VbaZZeEjaJhqaTSEdG._6y7BQsV3U7wFb4iTwn_1FUCr0.OlvT2En6Ww4unj2YiYrAFCBrEZiNG1SfP8FdI2yDA3J6Gbbp1aWcDDGJZPcu.4OfKza6JZY8HIPkVbme7gwdJbNf7Kr_Csc.jYfJ.9aSpmRsrFNlFS9oIodLXAp1MGns5bzFO_biRaewvWKlzGrME" -H "Sec-Fetch-Dest: empty" -H "Sec-Fetch-Mode: cors" -H "Sec-Fetch-Site: same-origin" -H "TE: trailers" --data-raw "{""offerMode"":""prematch"",""lang"":""cs""}"
+# all live
+curl "https://www.iforbet.cz/api/web/v1/offer/full_offer?ts=1725799300834" --compressed -X POST -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0" -H "Accept: application/json, text/plain, */*" -H "Accept-Language: cs,sk;q=0.8,en-US;q=0.5,en;q=0.3" -H "Accept-Encoding: gzip, deflate, br, zstd" -H "Referer: https://www.iforbet.cz/" -H "Content-Type: application/json" -H "Origin: https://www.iforbet.cz" -H "Alt-Used: www.iforbet.cz" -H "Connection: keep-alive" -H "Cookie: session=853198f7231c4990ba477d7a1795bb00; cf_clearance=oWOzpCdhkWeXd2YhMHgq9cRF39xLzvcVGvXSrd0dyCk-1725799073-1.2.1.1-OV7cbyj3tyPTbW62ym0H0Jy.Pv.DHIgDoAFbrUu8lLCPxnrmzkKCLGB_YV0a7BLki.psI8YR3YMGjiixP_esbJxrbBq.vF1RvGgwcnQjf2MoGX.VPO_Mp.4M0dkmbiO3JjY991ov2OKHd9gZOriGdNbtN3t6tQq_c7ejhXP_VbaZZeEjaJhqaTSEdG._6y7BQsV3U7wFb4iTwn_1FUCr0.OlvT2En6Ww4unj2YiYrAFCBrEZiNG1SfP8FdI2yDA3J6Gbbp1aWcDDGJZPcu.4OfKza6JZY8HIPkVbme7gwdJbNf7Kr_Csc.jYfJ.9aSpmRsrFNlFS9oIodLXAp1MGns5bzFO_biRaewvWKlzGrME" -H "Sec-Fetch-Dest: empty" -H "Sec-Fetch-Mode: cors" -H "Sec-Fetch-Site: same-origin" -H "TE: trailers" --data-raw "{""offerMode"":""live"",""lang"":""cs""}"
+# live calendar
+curl "https://www.iforbet.cz/api/web/v1/offer/live_calendar" --compressed -X POST -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0" -H "Accept: application/json, text/plain, */*" -H "Accept-Language: cs,sk;q=0.8,en-US;q=0.5,en;q=0.3" -H "Accept-Encoding: gzip, deflate, br, zstd" -H "Referer: https://www.iforbet.cz/" -H "Content-Type: application/json" -H "Origin: https://www.iforbet.cz" -H "Alt-Used: www.iforbet.cz" -H "Connection: keep-alive" -H "Cookie: session=853198f7231c4990ba477d7a1795bb00; cf_clearance=oWOzpCdhkWeXd2YhMHgq9cRF39xLzvcVGvXSrd0dyCk-1725799073-1.2.1.1-OV7cbyj3tyPTbW62ym0H0Jy.Pv.DHIgDoAFbrUu8lLCPxnrmzkKCLGB_YV0a7BLki.psI8YR3YMGjiixP_esbJxrbBq.vF1RvGgwcnQjf2MoGX.VPO_Mp.4M0dkmbiO3JjY991ov2OKHd9gZOriGdNbtN3t6tQq_c7ejhXP_VbaZZeEjaJhqaTSEdG._6y7BQsV3U7wFb4iTwn_1FUCr0.OlvT2En6Ww4unj2YiYrAFCBrEZiNG1SfP8FdI2yDA3J6Gbbp1aWcDDGJZPcu.4OfKza6JZY8HIPkVbme7gwdJbNf7Kr_Csc.jYfJ.9aSpmRsrFNlFS9oIodLXAp1MGns5bzFO_biRaewvWKlzGrME" -H "Sec-Fetch-Dest: empty" -H "Sec-Fetch-Mode: cors" -H "Sec-Fetch-Site: same-origin" -H "TE: trailers" --data-raw "{""lang"":""cs""}"
+# event detail
+curl "https://www.iforbet.cz/api/web/v1/offer/event_detail" --compressed -X POST -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0" -H "Accept: application/json, text/plain, */*" -H "Accept-Language: cs,sk;q=0.8,en-US;q=0.5,en;q=0.3" -H "Accept-Encoding: gzip, deflate, br, zstd" -H "Referer: https://www.iforbet.cz/" -H "Content-Type: application/json" -H "Origin: https://www.iforbet.cz" -H "Alt-Used: www.iforbet.cz" -H "Connection: keep-alive" -H "Cookie: session=853198f7231c4990ba477d7a1795bb00; cf_clearance=oWOzpCdhkWeXd2YhMHgq9cRF39xLzvcVGvXSrd0dyCk-1725799073-1.2.1.1-OV7cbyj3tyPTbW62ym0H0Jy.Pv.DHIgDoAFbrUu8lLCPxnrmzkKCLGB_YV0a7BLki.psI8YR3YMGjiixP_esbJxrbBq.vF1RvGgwcnQjf2MoGX.VPO_Mp.4M0dkmbiO3JjY991ov2OKHd9gZOriGdNbtN3t6tQq_c7ejhXP_VbaZZeEjaJhqaTSEdG._6y7BQsV3U7wFb4iTwn_1FUCr0.OlvT2En6Ww4unj2YiYrAFCBrEZiNG1SfP8FdI2yDA3J6Gbbp1aWcDDGJZPcu.4OfKza6JZY8HIPkVbme7gwdJbNf7Kr_Csc.jYfJ.9aSpmRsrFNlFS9oIodLXAp1MGns5bzFO_biRaewvWKlzGrME" -H "Sec-Fetch-Dest: empty" -H "Sec-Fetch-Mode: cors" -H "Sec-Fetch-Site: same-origin" -H "Priority: u=0" --data-raw "{""offerMode"":""prematch"",""lang"":""cs"",""id_event"":""MA47659431""}"
+
+
+KINGSBET:
