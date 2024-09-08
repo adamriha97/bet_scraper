@@ -12,3 +12,4 @@ scrapy-selenium==0.0.7
 webdriver-manager==4.0.1
 
 unicode==2.9
+curl_cffi==0.7.1

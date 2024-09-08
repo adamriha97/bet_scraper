@@ -61,6 +61,9 @@ https://www.tipsport.cz/kurzy/fotbal-16?limit=125
 https://www.tipsport.cz/kurzy/fotbal-16?limit=1000
 https://www.tipsport.cz/rest/offer/v6/sports
 https://www.tipsport.cz/rest/offer/v2/offer?limit=9999 POST
+# funguje s impersonate
+https://pypi.org/project/curl-cffi/
+https://curl-cffi.readthedocs.io/en/latest/advanced.html#scrapy-integrations
 
 
 SYNOTTIP:
