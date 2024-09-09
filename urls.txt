@@ -7,9 +7,10 @@ SAZKA: working - might be faster with async approach -> https://www.sazka.cz/kur
 MERKUR: working - not all matches, only from last_minute api call, but seems enough -> https://www.merkurxtip.cz/ (seconds)
 BETX: done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
 FORBET: done -> https://www.iforbet.cz/prematch/landing (seconds)
-KINGSBET: https://www.kingsbet.cz/sport#/overview
+KINGSBET: working - might be faster with async approach -> https://www.kingsbet.cz/sport#/overview (1 min 30 sec)
 
-https://www.trefik.cz/default.aspx
+! https://www.trefik.cz/default.aspx
+! add bet_11 and bet_22 to all spiders
 
 
 
@@ -154,3 +155,5 @@ api:
 https://sb2frontend-altenar2.biahosted.com/api/widget/GetSportMenu?culture=cs-CZ&timezoneOffset=-120&integration=kingsbet&deviceType=1&numFormat=en-GB&countryCode=CZ&period=0
 # events and markets for specific category (can choose more categories)
 https://sb2frontend-altenar2.biahosted.com/api/widget/GetEvents?culture=cs-CZ&timezoneOffset=-120&integration=kingsbet&deviceType=1&numFormat=en-GB&countryCode=CZ&eventCount=0&sportId=0&catIds=590
+# events and markets for more categories - budu pouzivat jen categorie od jednoho sportu, jelikoz pri pouziti categorie z ruznych sportu v jednom callu, tak nedostanu vsechny markety
+https://sb2frontend-altenar2.biahosted.com/api/widget/GetEvents?culture=cs-CZ&timezoneOffset=-120&integration=kingsbet&deviceType=1&numFormat=en-GB&countryCode=CZ&eventCount=0&sportId=0&catIds=1132%2C1178%2C1133%2C1134%2C590%2C497%2C592
