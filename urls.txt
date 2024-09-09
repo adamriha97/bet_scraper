@@ -3,7 +3,7 @@ FORTUNA: done -> https://www.ifortuna.cz/
 TIPSPORT: working - could be better with POST request -> https://www.tipsport.cz/
 CHANCE: working - could be better with POST request -> https://www.chance.cz/ (same data as tipsport)
 SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
-SAZKA: done -> https://www.sazka.cz/kurzove-sazky/ (6 mins)
+SAZKA: working - might be faster with async approach -> https://www.sazka.cz/kurzove-sazky/ (6 mins)
 MERKUR: working - not all matches, only from last_minute api call, but seems enough -> https://www.merkurxtip.cz/ (seconds)
 BETX: done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
 FORBET: done -> https://www.iforbet.cz/prematch/landing (seconds)
@@ -144,3 +144,13 @@ curl "https://www.iforbet.cz/api/web/v1/offer/event_detail" --compressed -X POST
 
 
 KINGSBET:
+
+sitemap:
+https://www.kingsbet.cz/robots.txt
+https://www.kingsbet.cz/sitemap.xml
+
+api:
+# all sports, categories and champs
+https://sb2frontend-altenar2.biahosted.com/api/widget/GetSportMenu?culture=cs-CZ&timezoneOffset=-120&integration=kingsbet&deviceType=1&numFormat=en-GB&countryCode=CZ&period=0
+# events and markets for specific category (can choose more categories)
+https://sb2frontend-altenar2.biahosted.com/api/widget/GetEvents?culture=cs-CZ&timezoneOffset=-120&integration=kingsbet&deviceType=1&numFormat=en-GB&countryCode=CZ&eventCount=0&sportId=0&catIds=590
