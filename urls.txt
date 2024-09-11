@@ -1,20 +1,20 @@
-BETANO: done -> https://www.betano.cz/
-FORTUNA: done -> https://www.ifortuna.cz/
-TIPSPORT: working - could be better with POST request -> https://www.tipsport.cz/
-CHANCE: working - could be better with POST request -> https://www.chance.cz/ (same data as tipsport)
-SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
-SAZKA: working - might be faster with async approach -> https://www.sazka.cz/kurzove-sazky/ (6 mins)
-MERKUR: working - not all matches, only from last_minute api call, but seems enough -> https://www.merkurxtip.cz/ (seconds)
-BETX: done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
-FORBET: done -> https://www.iforbet.cz/prematch/landing (seconds)
-KINGSBET: working - might be faster with async approach -> https://www.kingsbet.cz/sport#/overview (1 min 30 sec)
+(BE) BETANO: done -> https://www.betano.cz/
+(FO) FORTUNA: done -> https://www.ifortuna.cz/
+(TS) TIPSPORT: working - could be better with POST request -> https://www.tipsport.cz/
+(CH) CHANCE: working - could be better with POST request -> https://www.chance.cz/ (same data as tipsport)
+(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
+(SA) SAZKA: done -> https://www.sazka.cz/kurzove-sazky/ (seconds)
+(ME) MERKUR: done -> https://www.merkurxtip.cz/ (seconds)
+(BX) BETX: done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
+(FB) FORBET: done -> https://www.iforbet.cz/prematch/landing (seconds)
+(KB) KINGSBET: done -> https://www.kingsbet.cz/sport#/overview (seconds)
 
 ! https://www.trefik.cz/default.aspx
 ! add bet_11 and bet_22 to all spiders
 
 
 
-Tutorials:
+Tutorials and help:
 # reverse engineering
 https://medium.com/better-practices/reverse-engineering-an-api-403fae885303
 # proxies
@@ -110,7 +110,7 @@ https://sb.merkurxtip.cz/restapi/offer/cs/sport/S/mob (S pro fotbal - podle id z
 https://sb.merkurxtip.cz/restapi/offer/cs/sport/T/mob (T pro tenis - podle id ze seznamu)
 # top 10
 https://sb.merkurxtip.cz/restapi/offer/cs/top/desk
-# last minute - ale je tam toho hodne a v jednom callu, takze pouzijeme toto (nejprve)
+# puvodne pouzit last_minute, ale nove upraveno na jednotlive cally po sportech - mozna se neberou vsechny sporty kvuli ruznym id u jednotlivych betu - chtelo by to betmap [old: last minute - ale je tam toho hodne a v jednom callu, takze pouzijeme toto (nejprve)]
 https://sb.merkurxtip.cz/restapi/offer/cs/last_minute/mob
 
 

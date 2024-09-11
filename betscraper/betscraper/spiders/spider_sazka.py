@@ -11,8 +11,9 @@ class SpiderSazkaSpider(scrapy.Spider):
 
     custom_settings = {
         'FEEDS': {'data_sazka.json': {'format': 'json', 'overwrite': True}},
-        'CONCURRENT_REQUESTS': 128, # default 16
-        'CONCURRENT_REQUESTS_PER_DOMAIN': 128, # default 8
+        'CONCURRENT_REQUESTS': 64, # default 16
+        'CONCURRENT_REQUESTS_PER_DOMAIN': 64, # default 8
+        'DOWNLOAD_DELAY': 0,
         'DOWNLOADER_MIDDLEWARES': {
             'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
             'betscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware': 300,

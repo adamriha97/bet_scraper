@@ -6,14 +6,11 @@ from datetime import datetime
 
 class SpiderMerkurSpider(scrapy.Spider):
     name = "spider_merkur"
-    allowed_domains = ["www.merkurxtip.cz", 'sb.merkurxtip.cz']
-    start_urls = ["https://sb.merkurxtip.cz/restapi/translate/cs/sports"] # https://www.merkurxtip.cz/sazeni
+    allowed_domains = ["www.merkurxtip.cz"]
+    start_urls = ["https://sb.merkurxtip.cz/restapi/offer/cs/last_minute/mob"] # https://www.merkurxtip.cz/sazeni https://sb.merkurxtip.cz/restapi/translate/cs/sports
 
     custom_settings = {
         'FEEDS': {'data_merkur.json': {'format': 'json', 'overwrite': True}},
-        'CONCURRENT_REQUESTS': 32, # default 16
-        'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
-        'DOWNLOAD_DELAY': 0,
         'DOWNLOADER_MIDDLEWARES': {
             'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
             'betscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware': 300,
@@ -24,17 +21,17 @@ class SpiderMerkurSpider(scrapy.Spider):
 
     def parse(self, response):
         response_json = json.loads(response.text)
-        sport_dict = {item['sportTypeCode']: str(item['name']).strip() for item in response_json}
-        for key, value in sport_dict.items():
-            yield response.follow(f'https://sb.merkurxtip.cz/restapi/offer/cs/sport/{key}/mob', callback = self.parse_sport, cb_kwargs=dict(sport_name=value))
-
-    def parse_sport(self, response, sport_name):
-        response_json = json.loads(response.text)
+        # sport_dict = {item['sportTypeCode']: item['name'] for item in response_json}
+        # for key, value in sport_dict.items():
+        #     yield {
+        #         'key': key,
+        #         'value': value,
+        #     }
         for match in response_json['esMatches']:
             if match['away'] != 'vítěz':
-                sport = sport_name
+                sport = match['sportToken'].split('#')[-1].strip()
                 try:
-                    sportToken = unidecode(sport_name.lower().replace(' ', '-').replace('.', ''))
+                    sportToken = unidecode(match["sportToken"].split("#")[-1].strip().lower().replace(' ', '-').replace('.', ''))
                     leagueName = unidecode(match["leagueName"].lower().replace(" ", "-"))
                     leagueToken = match['leagueToken'].split("#")[-2].strip()
                     home = unidecode(match["home"].lower().replace(" ", "-"))
@@ -62,18 +59,6 @@ class SpiderMerkurSpider(scrapy.Spider):
                     keepMatch = True
                 except:
                     pass
-                # to solve problem with basketball
-                if bet_1 == bet_0 == bet_2 == -1:
-                    try:
-                        bet_1 = match["betMap"]["50291"]["NULL"]["ov"]
-                        keepMatch = True
-                    except:
-                        pass
-                    try:
-                        bet_2 = match["betMap"]["50293"]["NULL"]["ov"]
-                        keepMatch = True
-                    except:
-                        pass
                 if keepMatch:
                     yield {
                         'sport': sport,
