@@ -1,4 +1,4 @@
-(BE) BETANO: done -> https://www.betano.cz/
+(BE) BETANO: done -> https://www.betano.cz/ (seconds) (bet_11 and bet_22 implemented)
 (FO) FORTUNA: done -> https://www.ifortuna.cz/
 (TS) TIPSPORT: done -> https://www.tipsport.cz/ (seconds) (bet_11 and bet_22 implemented)
 (CH) CHANCE: done -> https://www.chance.cz/ (same data as tipsport) (seconds) (bet_11 and bet_22 implemented)
