@@ -1,13 +1,13 @@
 (BE) BETANO: done -> https://www.betano.cz/
 (FO) FORTUNA: done -> https://www.ifortuna.cz/
-(TS) TIPSPORT: working - could be better with POST request -> https://www.tipsport.cz/
-(CH) CHANCE: working - could be better with POST request -> https://www.chance.cz/ (same data as tipsport)
+(TS) TIPSPORT: done -> https://www.tipsport.cz/ (seconds) (bet_11 and bet_22 implemented)
+(CH) CHANCE: done -> https://www.chance.cz/ (same data as tipsport) (seconds) (bet_11 and bet_22 implemented)
 (ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
 (SA) SAZKA: done -> https://www.sazka.cz/kurzove-sazky/ (seconds)
 (ME) MERKUR: done -> https://www.merkurxtip.cz/ (seconds)
 (BX) BETX: done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
 (FB) FORBET: done -> https://www.iforbet.cz/prematch/landing (seconds)
-(KB) KINGSBET: done -> https://www.kingsbet.cz/sport#/overview (seconds)
+(KB) KINGSBET: done -> https://www.kingsbet.cz/sport#/overview (seconds) (bet_11 and bet_22 implemented)
 
 ! https://www.trefik.cz/default.aspx
 ! add bet_11 and bet_22 to all spiders
