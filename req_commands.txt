@@ -14,3 +14,6 @@ webdriver-manager==4.0.1
 unicode==2.9
 
 scrapy-impersonate==1.4.1
+
+pymongo==4.8.0
+msgpack==1.1.0

@@ -9,10 +9,19 @@
 (FB) FORBET: done -> https://www.iforbet.cz/prematch/landing (seconds)
 (KB) KINGSBET: done -> https://www.kingsbet.cz/sport#/overview (seconds) (bet_11 and bet_22 implemented)
 
-! https://www.trefik.cz/default.aspx
 ! add bet_11 and bet_22 to all spiders
 
 
+
+Web pages:
+https://www.trefik.cz/default.aspx
+https://www.kurzovesazeni.com/
+https://www.oddsportal.com/
+https://www.rebelbetting.com/
+https://www.reddit.com/r/arbitragebetting/
+https://www.betmonitor.com/
+https://sportbreak.cz/
+https://sportbeet.cz/
 
 Tutorials and help:
 # reverse engineering
@@ -20,6 +29,10 @@ https://medium.com/better-practices/reverse-engineering-an-api-403fae885303
 # proxies
 https://www.youtube.com/watch?v=qHahcxoGfpc
 https://github.com/rejoiceinhope/scrapy-proxy-pool
+# value beting
+https://www.kurzovesazeni.com/jednoduchy-navod-vsadit-vyhodou-value-bet/
+https://www.oddsportal.com/value-bets/
+https://www.trefik.cz/valuebets.aspx
 
 
 BETANO:
