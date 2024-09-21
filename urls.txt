@@ -2,7 +2,7 @@
 (FO) FORTUNA: done -> https://www.ifortuna.cz/ (seconds) (bet_11 and bet_22 implemented)
 (TS) TIPSPORT: done -> https://www.tipsport.cz/ (seconds) (bet_11 and bet_22 implemented)
 (CH) CHANCE: done -> https://www.chance.cz/ (same data as tipsport) (seconds) (bet_11 and bet_22 implemented)
-(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
+(ST) SYNOTTIP: done -> https://sport.synottip.cz/cz/nejsazenejsi (seconds) (bet_11 and bet_22 implemented)
 (SA) SAZKA: done -> https://www.sazka.cz/kurzove-sazky/ (seconds)
 (ME) MERKUR: done -> https://www.merkurxtip.cz/ (seconds)
 (BX) BETX: done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
