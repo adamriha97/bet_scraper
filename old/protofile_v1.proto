@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+message Root {
+    Message1 field_1 = 1;
+}
+
+message Message1 {
+    Message11 field_1 = 1;
+}
+
+message Message11 {
+    Message111 field_1 = 1;
+    int32 field_3 = 3;
+    Message112 field_4 = 4;
+}
+
+message Message111 {
+    string field_1 = 1;
+    string field_2 = 2;
+}
+
+message Message112 {
+    Message1121 field_1 = 1;
+    Message1122 field_2 = 2;
+}
+
+message Message1121 {
+    string field_1 = 1;
+    string field_2 = 2;
+    string field_3 = 3;
+}
+
+message Message1122 {
+    Message11221 field_1 = 1;
+}
+
+message Message11221 {
+    string field_1 = 1;
+    string field_2 = 2;
+    string field_3 = 3;
+    repeated Bet field_5 = 5;
+}
+
+message Bet {
+    int64 field_1 = 1;
+    string field_2 = 2;
+    BetTime field_4 = 4;
+    string field_5 = 5;
+    BetDetails field_6 = 6;
+    string field_7 = 7;
+    int32 field_10 = 10;
+    int32 field_12 = 12;
+}
+
+message BetTime {
+    int64 field_1 = 1;
+}
+
+message BetDetails {
+    int32 field_1 = 1;
+    string field_2 = 2;
+    BetDetailsNestedPred field_3 = 3;
+}
+
+message BetDetailsNestedPred {
+    string field_1 = 1;
+    string field_2 = 2;
+    BetDetailsNested field_6 = 6;
+    int32 field_11 = 11;
+    int32 field_12 = 12;
+}
+
+message BetDetailsNested {
+    int64 field_1 = 1;
+    string field_2 = 2;
+    int32 field_3 = 3;
+    repeated BetOutcome field_4 = 4;
+}
+
+message BetOutcome {
+    string field_1 = 1;
+    string field_2 = 2;
+    float field_3 = 3;
+}
+
+message Message2 {
+    uint64 field_1 = 1;
+    string field_2 = 2;
+    int32 field_3 = 3;
+}
