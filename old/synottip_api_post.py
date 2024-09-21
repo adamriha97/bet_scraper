@@ -2,10 +2,12 @@ import requests
 import json
 import base64
 import protofile_v1_pb2
+# import protofile_categories_pb2
 from google.protobuf.json_format import MessageToJson
 
 
 url = "https://sport.synottip.cz/WebServices/Api/SportsBettingService.svc/GetWebStandardEvents"
+# url = "https://sport.synottip.cz/WebServices/Api/SportsBettingService.svc/GetWebStandardCategories"
 
 payload = json.dumps({
   "LanguageID": 12,
@@ -13,6 +15,10 @@ payload = json.dumps({
   "CategoryID": "19",
   "Top": 1
 })
+# payload = json.dumps({
+#     "LanguageID": 12,
+#     "Token": "47556bba7e2ecae0a31c38d6e017bcbb",
+# })
 headers = {
   'Accept': 'application/json, text/plain, */*',
   'Content-Type': 'application/json',
@@ -47,4 +53,4 @@ message_json_utf = json.loads(message_json)
 message_json_final = json.dumps(message_json_utf, ensure_ascii=False, indent=2)
 
 # Output the decoded protobuf message
-print(message_json_final)
+print(message_json_utf)

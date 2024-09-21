@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message Root {
+    categories data = 1;
+}
+
+message categories {
+    repeated category categories = 1;
+}
+
+message category {
+    category_data category = 1;
+}
+
+message category_data {
+    string id = 1;
+    string name = 2;
+}
