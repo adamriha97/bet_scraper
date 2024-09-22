@@ -1,15 +1,15 @@
-(BE) BETANO: done -> https://www.betano.cz/ (seconds) (bet_11 and bet_22 implemented)
-(FO) FORTUNA: done -> https://www.ifortuna.cz/ (seconds) (bet_11 and bet_22 implemented)
-(TS) TIPSPORT: done -> https://www.tipsport.cz/ (seconds) (bet_11 and bet_22 implemented)
-(CH) CHANCE: done -> https://www.chance.cz/ (same data as tipsport) (seconds) (bet_11 and bet_22 implemented)
-(ST) SYNOTTIP: done -> https://sport.synottip.cz/cz/nejsazenejsi (seconds) (bet_11 and bet_22 implemented)
-(SA) SAZKA: done -> https://www.sazka.cz/kurzove-sazky/ (seconds) (bet_11 and bet_22 implemented)
-(ME) MERKUR: done -> https://www.merkurxtip.cz/ (seconds) (bet_11 and bet_22 implemented)
-(BX) BETX: done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds) (bet_11 and bet_22 implemented)
-(FB) FORBET: done -> https://www.iforbet.cz/prematch/landing (seconds) (bet_11 and bet_22 implemented)
-(KB) KINGSBET: done -> https://www.kingsbet.cz/sport#/overview (seconds) (bet_11 and bet_22 implemented)
+(BE) BETANO: https://www.betano.cz/
+(FO) FORTUNA: https://www.ifortuna.cz/
+(TS) TIPSPORT: https://www.tipsport.cz/
+(CH) CHANCE: https://www.chance.cz/ (same data as tipsport)
+(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
+(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/
+(ME) MERKUR: https://www.merkurxtip.cz/
+(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200
+(FB) FORBET: https://www.iforbet.cz/prematch/landing
+(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview
 
-! add bet_11 and bet_22 to all spiders
+!ST: u jednoho sportu je error kvuli jine strukture JSON po decodovani - jde najit po odmazani "try/except" a zpomaleni na "DOWNLOAD_DELAY = 3"
 
 
 
