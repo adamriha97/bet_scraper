@@ -9,6 +9,8 @@
 (FB) FORBET: https://www.iforbet.cz/prematch/landing
 (KB) KINGSBET: https://www.kingsbet.cz/sport#/overview
 
+(LS) LIVESPORT: https://www.livesport.cz/ (https://www.livescore.in/cz/, https://www.livescore.cz/, https://www.flashscore.com/)
+
 !ST: u jednoho sportu je error kvuli jine strukture JSON po decodovani - jde najit po odmazani "try/except" a zpomaleni na "DOWNLOAD_DELAY = 3"
 
 
@@ -22,6 +24,14 @@ https://www.reddit.com/r/arbitragebetting/
 https://www.betmonitor.com/
 https://sportbreak.cz/
 https://sportbeet.cz/
+
+Sports APIs:
+https://www.thesportsdb.com/
+https://www.balldontlie.io/#introduction
+https://github.com/n0shake/Public-APIs?tab=readme-ov-file#sport
+https://github.com/public-apis/public-apis?tab=readme-ov-file#sports--fitness
+https://api-sports.io/
+https://rapidapi.com/collection/sports-data-api
 
 Tutorials and help:
 # reverse engineering
