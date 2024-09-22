@@ -79,6 +79,7 @@ class SpiderSynottipSpider(scrapy.Spider):
                             bet_0 = odd['oddNumber']
                         elif odd['oddName'] == '2':
                             bet_2 = odd['oddNumber']
+                    # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
                     if (bet_0 == -1) and (not (bet_1 == bet_2 == -1)):
                         bet_11 = bet_1
                         bet_1 = -1

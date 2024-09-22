@@ -47,7 +47,7 @@ class SpiderForbetSpider(scrapy.Spider):
                     for odd in market['odds'].values():
                         # odds_dict[odd['outcomeId']] = odd['odds'] # maybe useless
                         odds_list.append(odd['odds'])
-                    bet_1 = bet_0 = bet_2 = bet_10 = bet_02 = bet_12 = -1
+                    bet_1 = bet_0 = bet_2 = bet_10 = bet_02 = bet_12 = bet_11 = bet_22 = -1
                     if len(odds_list) == 2:
                         bet_1 = odds_list[0]
                         bet_2 = odds_list[1]
@@ -62,6 +62,12 @@ class SpiderForbetSpider(scrapy.Spider):
                         bet_1 = odds_list[0]
                         bet_0 = odds_list[1]
                         bet_2 = odds_list[2]
+                    # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
+                    if (bet_0 == -1) and (not (bet_1 == bet_2 == -1)):
+                        bet_11 = bet_1
+                        bet_1 = -1
+                        bet_22 = bet_2
+                        bet_2 = -1
                     yield {
                         'sport': sport,
                         'event_url': event_url,
@@ -74,4 +80,6 @@ class SpiderForbetSpider(scrapy.Spider):
                         'bet_10': bet_10,
                         'bet_02': bet_02,
                         'bet_12': bet_12,
+                        'bet_11': bet_11,
+                        'bet_22': bet_22,
                     }

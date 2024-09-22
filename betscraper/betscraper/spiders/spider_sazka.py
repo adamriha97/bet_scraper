@@ -50,7 +50,7 @@ class SpiderSazkaSpider(scrapy.Spider):
                     event_startTime = datetime.fromisoformat(event['startTime'].replace("Z", "+00:00")).replace(tzinfo=ZoneInfo('UTC')).astimezone(ZoneInfo('Europe/Prague'))
                     participant_1 = event['teams'][0]['name']
                     participant_2 = event['teams'][1]['name']
-                    bet_1 = bet_0 = bet_2 = -1
+                    bet_1 = bet_0 = bet_2 = bet_10 = bet_02 = bet_12 = bet_11 = bet_22 = -1
                     for bet in event['markets'][0]['outcomes']:
                         if bet["name"] == participant_1:
                             bet_1 = bet['prices'][0]['decimal']
@@ -58,6 +58,12 @@ class SpiderSazkaSpider(scrapy.Spider):
                             bet_2 = bet['prices'][0]['decimal']
                         elif bet["name"] == 'Draw':
                             bet_0 = bet['prices'][0]['decimal']
+                    # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
+                    if (bet_0 == -1) and (not (bet_1 == bet_2 == -1)):
+                        bet_11 = bet_1
+                        bet_1 = -1
+                        bet_22 = bet_2
+                        bet_2 = -1
                     yield {
                         'sport': sport,
                         'event_url': event_url,
@@ -67,6 +73,11 @@ class SpiderSazkaSpider(scrapy.Spider):
                         'bet_1': bet_1,
                         'bet_0': bet_0,
                         'bet_2': bet_2,
+                        'bet_10': bet_10,
+                        'bet_02': bet_02,
+                        'bet_12': bet_12,
+                        'bet_11': bet_11,
+                        'bet_22': bet_22,
                     }
                 except:
                     continue

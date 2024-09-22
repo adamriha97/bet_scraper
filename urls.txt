@@ -3,10 +3,10 @@
 (TS) TIPSPORT: done -> https://www.tipsport.cz/ (seconds) (bet_11 and bet_22 implemented)
 (CH) CHANCE: done -> https://www.chance.cz/ (same data as tipsport) (seconds) (bet_11 and bet_22 implemented)
 (ST) SYNOTTIP: done -> https://sport.synottip.cz/cz/nejsazenejsi (seconds) (bet_11 and bet_22 implemented)
-(SA) SAZKA: done -> https://www.sazka.cz/kurzove-sazky/ (seconds)
-(ME) MERKUR: done -> https://www.merkurxtip.cz/ (seconds)
-(BX) BETX: done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds)
-(FB) FORBET: done -> https://www.iforbet.cz/prematch/landing (seconds)
+(SA) SAZKA: done -> https://www.sazka.cz/kurzove-sazky/ (seconds) (bet_11 and bet_22 implemented)
+(ME) MERKUR: done -> https://www.merkurxtip.cz/ (seconds) (bet_11 and bet_22 implemented)
+(BX) BETX: done -> https://bet-x.cz/cs/sports-betting?hours=7200 (seconds) (bet_11 and bet_22 implemented)
+(FB) FORBET: done -> https://www.iforbet.cz/prematch/landing (seconds) (bet_11 and bet_22 implemented)
 (KB) KINGSBET: done -> https://www.kingsbet.cz/sport#/overview (seconds) (bet_11 and bet_22 implemented)
 
 ! add bet_11 and bet_22 to all spiders
