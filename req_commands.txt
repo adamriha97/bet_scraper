@@ -19,6 +19,5 @@ pymongo==4.8.0
 msgpack==1.1.0
 protobuf==5.28.2
 
-pytz==2024.2
 google==3.0.0
 pip install --upgrade google-api-python-client
