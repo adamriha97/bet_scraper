@@ -10,7 +10,7 @@ class SpiderTipsportSpider(scrapy.Spider):
     # start_urls = ["https://www.tipsport.cz/kurzy.xml"] # https://www.tipsport.cz/
 
     custom_settings = {
-        'FEEDS': {'data_tipsport.json': {'format': 'json', 'overwrite': True}},
+        'FEEDS': {'data/data_tipsport.json': {'format': 'json', 'overwrite': True}},
         'USER_AGENT': "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
         'DOWNLOAD_HANDLERS': {
             "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",

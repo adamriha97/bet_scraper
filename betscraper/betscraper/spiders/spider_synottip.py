@@ -13,7 +13,7 @@ class SpiderSynottipSpider(scrapy.Spider):
     # start_urls = ["https://sport.synottip.cz/"]
 
     custom_settings = {
-        'FEEDS': {'data_synottip.json': {'format': 'json', 'overwrite': True}},
+        'FEEDS': {'data/data_synottip.json': {'format': 'json', 'overwrite': True}},
         'USER_AGENT': "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
         'CONCURRENT_REQUESTS': 32, # default 16
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8

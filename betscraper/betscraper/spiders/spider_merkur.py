@@ -10,7 +10,7 @@ class SpiderMerkurSpider(scrapy.Spider):
     start_urls = ["https://sb.merkurxtip.cz/restapi/translate/cs/sports"] # https://www.merkurxtip.cz/sazeni
 
     custom_settings = {
-        'FEEDS': {'data_merkur.json': {'format': 'json', 'overwrite': True}},
+        'FEEDS': {'data/data_merkur.json': {'format': 'json', 'overwrite': True}},
         'CONCURRENT_REQUESTS': 32, # default 16
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
         'DOWNLOAD_DELAY': 0,

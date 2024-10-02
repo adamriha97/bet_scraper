@@ -10,7 +10,7 @@ class SpiderForbetSpider(scrapy.Spider):
     # start_urls = ["https://www.iforbet.cz"]
 
     custom_settings = {
-        'FEEDS': {'data_forbet.json': {'format': 'json', 'overwrite': True}},
+        'FEEDS': {'data/data_forbet.json': {'format': 'json', 'overwrite': True}},
         }
     
     def start_requests(self):

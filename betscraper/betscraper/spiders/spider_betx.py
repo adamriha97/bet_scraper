@@ -11,7 +11,7 @@ class SpiderBetxSpider(scrapy.Spider):
     start_urls = ["https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/sports/offer?Limit=9999"] # https://bet-x.cz/cs/sports-betting
 
     custom_settings = {
-        'FEEDS': {'data_betx.json': {'format': 'json', 'overwrite': True}},
+        'FEEDS': {'data/data_betx.json': {'format': 'json', 'overwrite': True}},
         'DOWNLOADER_MIDDLEWARES': {
             'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
             'betscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware': 300,
