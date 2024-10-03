@@ -8,6 +8,10 @@ class SpiderFortunaSpider(scrapy.Spider):
     start_urls = ["https://www.ifortuna.cz/"]
 
     custom_settings = {
+        'ROBOTSTXT_OBEY': False,
+        'REQUEST_FINGERPRINTER_IMPLEMENTATION': "2.7",
+        'TWISTED_REACTOR': "twisted.internet.asyncioreactor.AsyncioSelectorReactor",
+        'FEED_EXPORT_ENCODING': "utf-8",
         'FEEDS': {'data/data_fortuna.json': {'format': 'json', 'overwrite': True}},
         'USER_AGENT': "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
         'CONCURRENT_REQUESTS': 64, # default 16

@@ -10,6 +10,10 @@ class SpiderMerkurSpider(scrapy.Spider):
     start_urls = ["https://sb.merkurxtip.cz/restapi/translate/cs/sports"] # https://www.merkurxtip.cz/sazeni
 
     custom_settings = {
+        'ROBOTSTXT_OBEY': False,
+        'REQUEST_FINGERPRINTER_IMPLEMENTATION': "2.7",
+        'TWISTED_REACTOR': "twisted.internet.asyncioreactor.AsyncioSelectorReactor",
+        'FEED_EXPORT_ENCODING': "utf-8",
         'FEEDS': {'data/data_merkur.json': {'format': 'json', 'overwrite': True}},
         'CONCURRENT_REQUESTS': 32, # default 16
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
