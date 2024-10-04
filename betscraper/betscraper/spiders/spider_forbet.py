@@ -10,10 +10,6 @@ class SpiderForbetSpider(scrapy.Spider):
     # start_urls = ["https://www.iforbet.cz"]
 
     custom_settings = {
-        'ROBOTSTXT_OBEY': False,
-        'REQUEST_FINGERPRINTER_IMPLEMENTATION': "2.7",
-        'TWISTED_REACTOR': "twisted.internet.asyncioreactor.AsyncioSelectorReactor",
-        'FEED_EXPORT_ENCODING': "utf-8",
         'FEEDS': {'data/data_forbet.json': {'format': 'json', 'overwrite': True}},
         }
     

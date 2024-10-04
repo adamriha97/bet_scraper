@@ -10,14 +10,9 @@ class SpiderSazkaSpider(scrapy.Spider):
     start_urls = ["https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/drilldown-tree?drilldownNodeIds=2&eventState=OPEN_EVENT"] # https://www.sazka.cz/kurzove-sazky/
 
     custom_settings = {
-        'ROBOTSTXT_OBEY': False,
-        'REQUEST_FINGERPRINTER_IMPLEMENTATION': "2.7",
-        'TWISTED_REACTOR': "twisted.internet.asyncioreactor.AsyncioSelectorReactor",
-        'FEED_EXPORT_ENCODING': "utf-8",
         'FEEDS': {'data/data_sazka.json': {'format': 'json', 'overwrite': True}},
         'CONCURRENT_REQUESTS': 64, # default 16
         'CONCURRENT_REQUESTS_PER_DOMAIN': 64, # default 8
-        'DOWNLOAD_DELAY': 0,
         'DOWNLOADER_MIDDLEWARES': {
             'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
             'betscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware': 300,

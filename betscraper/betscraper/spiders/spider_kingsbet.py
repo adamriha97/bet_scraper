@@ -10,15 +10,10 @@ class SpiderKingsbetSpider(scrapy.Spider):
     start_urls = ["https://sb2frontend-altenar2.biahosted.com/api/widget/GetSportMenu?culture=cs-CZ&timezoneOffset=-120&integration=kingsbet&deviceType=1&numFormat=en-GB&countryCode=CZ&period=0"] # https://www.kingsbet.cz/
 
     custom_settings = {
-        'ROBOTSTXT_OBEY': False,
-        'REQUEST_FINGERPRINTER_IMPLEMENTATION': "2.7",
-        'TWISTED_REACTOR': "twisted.internet.asyncioreactor.AsyncioSelectorReactor",
-        'FEED_EXPORT_ENCODING': "utf-8",
         'FEEDS': {'data/data_kingsbet.json': {'format': 'json', 'overwrite': True}},
         'USER_AGENT': "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
         'CONCURRENT_REQUESTS': 32, # default 16
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
-        'DOWNLOAD_DELAY': 0,
         }
 
     def parse(self, response):

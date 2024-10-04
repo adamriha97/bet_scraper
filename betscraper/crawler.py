@@ -1,9 +1,10 @@
 from scrapy.crawler import CrawlerProcess
-from scrapy.utils.project import get_project_settings
+from scrapy.settings import Settings
 from betscraper.spiders import spider_betano, spider_betx, spider_forbet, spider_fortuna, spider_kingsbet, spider_merkur, spider_sazka, spider_synottip, spider_tipsport
 
 
-settings = get_project_settings()
+settings = Settings()
+settings.setmodule('betscraper.settings', priority='project')
 process = CrawlerProcess(settings)
 
 process.crawl(spider_betano.SpiderBetanoSpider)
