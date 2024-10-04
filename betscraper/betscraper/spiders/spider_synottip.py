@@ -1,8 +1,7 @@
 import scrapy
 import json
 import base64
-import protofile_categories_pb2
-import protofile_sport_pb2
+from protofiles.synottip import protofile_categories_pb2, protofile_sport_pb2
 from google.protobuf.json_format import MessageToJson
 import datetime
 
