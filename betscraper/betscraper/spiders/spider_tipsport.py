@@ -26,6 +26,9 @@ class SpiderTipsportSpider(scrapy.Spider):
         'DOWNLOADER_MIDDLEWARES': {
             "scrapy.downloadermiddlewares.cookies.CookiesMiddleware": 543,
         },
+        'ITEM_PIPELINES': {
+            "betscraper.pipelines.UnifySportNamesPipeline": 400,
+        },
         }
     
     def start_requests(self):

@@ -20,6 +20,9 @@ class SpiderBetxSpider(scrapy.Spider):
             'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550, 
             'scrapy.downloadermiddlewares.retry.RetryMiddleware': None, 
         },
+        'ITEM_PIPELINES': {
+            "betscraper.pipelines.UnifySportNamesPipeline": 400,
+        },
         }
 
     def parse(self, response):

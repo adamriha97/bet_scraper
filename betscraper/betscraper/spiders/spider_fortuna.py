@@ -14,6 +14,9 @@ class SpiderFortunaSpider(scrapy.Spider):
         'USER_AGENT': "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
         'CONCURRENT_REQUESTS': 64, # default 16
         'CONCURRENT_REQUESTS_PER_DOMAIN': 64, # default 8
+        'ITEM_PIPELINES': {
+            "betscraper.pipelines.UnifySportNamesPipeline": 400,
+        },
         }
 
     def parse(self, response):

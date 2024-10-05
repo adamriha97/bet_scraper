@@ -17,6 +17,7 @@ process.crawl(spider_merkur.SpiderMerkurSpider)
 process.crawl(spider_sazka.SpiderSazkaSpider)
 process.crawl(spider_synottip.SpiderSynottipSpider)
 process.crawl(spider_tipsport.SpiderTipsportSpider)
+
 # process.crawl(spider_livescore.SpiderLivescoreSpider)
 
 process.start()

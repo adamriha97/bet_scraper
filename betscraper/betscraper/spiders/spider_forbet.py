@@ -13,6 +13,9 @@ class SpiderForbetSpider(scrapy.Spider):
 
     custom_settings = {
         'FEEDS': {'data/data_forbet.json': {'format': 'json', 'overwrite': True}},
+        'ITEM_PIPELINES': {
+            "betscraper.pipelines.UnifySportNamesPipeline": 400,
+        },
         }
     
     def start_requests(self):
