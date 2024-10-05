@@ -3,7 +3,7 @@ import pandas as pd
 
 
 # Load the JSON data (assuming the file is saved locally as 'data.json')
-with open('data/data_merkur.json', 'r') as file:
+with open('data/data_livescore.json', 'r') as file:
     data = json.load(file)
 
 # Convert the JSON data into a pandas DataFrame
