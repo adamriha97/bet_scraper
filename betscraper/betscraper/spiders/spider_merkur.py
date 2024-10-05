@@ -3,6 +3,8 @@ import json
 from unidecode import unidecode
 from datetime import datetime
 
+from betscraper.items import BasicSportEventItem
+
 
 class SpiderMerkurSpider(scrapy.Spider):
     name = "spider_merkur"
@@ -80,18 +82,21 @@ class SpiderMerkurSpider(scrapy.Spider):
                     bet_22 = bet_2
                     bet_2 = -1
                 if keepMatch:
-                    yield {
-                        'sport': sport,
-                        'event_url': event_url,
-                        'event_startTime': event_startTime,
-                        'participant_1': participant_1,
-                        'participant_2': participant_2,
-                        'bet_1': bet_1,
-                        'bet_0': bet_0,
-                        'bet_2': bet_2,
-                        'bet_10': bet_10,
-                        'bet_02': bet_02,
-                        'bet_12': bet_12,
-                        'bet_11': bet_11,
-                        'bet_22': bet_22,
-                    }
+                    basic_sport_event_item = BasicSportEventItem()
+                    basic_sport_event_item['bookmaker_id'] = 'ME'
+                    basic_sport_event_item['bookmaker_name'] = 'merkur'
+                    basic_sport_event_item['sport_name'] = sport
+                    basic_sport_event_item['sport_name_original'] = sport
+                    basic_sport_event_item['event_url'] = event_url
+                    basic_sport_event_item['event_startTime'] = event_startTime
+                    basic_sport_event_item['participant_home'] = participant_1
+                    basic_sport_event_item['participant_away'] = participant_2
+                    basic_sport_event_item['bet_1'] = bet_1
+                    basic_sport_event_item['bet_0'] = bet_0
+                    basic_sport_event_item['bet_2'] = bet_2
+                    basic_sport_event_item['bet_10'] = bet_10
+                    basic_sport_event_item['bet_02'] = bet_02
+                    basic_sport_event_item['bet_12'] = bet_12
+                    basic_sport_event_item['bet_11'] = bet_11
+                    basic_sport_event_item['bet_22'] = bet_22
+                    yield basic_sport_event_item
