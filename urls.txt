@@ -1,7 +1,6 @@
 (BE) BETANO: https://www.betano.cz/
 (FO) FORTUNA: https://www.ifortuna.cz/
 (TS) TIPSPORT: https://www.tipsport.cz/
-(CH) CHANCE: https://www.chance.cz/ (same data as tipsport)
 (ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
 (SA) SAZKA: https://www.sazka.cz/kurzove-sazky/
 (ME) MERKUR: https://www.merkurxtip.cz/
@@ -9,10 +8,16 @@
 (FB) FORBET: https://www.iforbet.cz/prematch/landing
 (KB) KINGSBET: https://www.kingsbet.cz/sport#/overview
 
-(LS) LIVESCORE: https://www.livescore.cz/ (https://m.livesport.cz/, https://www.livesport.cz/, https://www.livescore.in/cz/, https://www.flashscore.com/)
+(CH) CHANCE: https://www.chance.cz/ (same data as tipsport)
+
+(LSEN) LIVESCORE: https://www.livescore.cz/ (https://m.livesport.cz/, https://www.livesport.cz/, https://www.livescore.in/cz/, https://www.flashscore.com/)
 
 !ST: u jednoho sportu je error kvuli jine strukture JSON po decodovani - jde najit po odmazani "try/except" a zpomaleni na "DOWNLOAD_DELAY = 3"
 !KB: pravdepodobne jsou nove event_url adresy, takze treba predelat spider
+!SA: u sazka spideru dochazi k duplikovani eventu, dalo by se asi vyresit nejakou pipelinou
+! bylo by dobre k eventum pridat i informaci o statu, pokud je
+! bylo by dobre k eventum pridat informaci, jestli to to muzsky, zensky nebo mix event, pokud je
+! pokusit se sjednotit jazyky u participantu pres jednotlive spidery
 
 
 

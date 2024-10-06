@@ -21,3 +21,6 @@ protobuf==5.28.2
 
 google==3.0.0
 pip install --upgrade google-api-python-client
+
+pip install ipykernel
+conda install -p /mnt/c/Users/adamr/VSCodeProjects/BetScraper/bet_scraper/.conda ipykernel --update-deps --force-reinstall
