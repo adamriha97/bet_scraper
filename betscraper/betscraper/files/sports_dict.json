@@ -72,6 +72,7 @@
         "padel": [],
         "netball": [],
         "badminton": [],
+        "squash": [],
         "special": []
     },
     "betx": {
@@ -142,6 +143,7 @@
         "padel": [],
         "netball": [],
         "badminton": [],
+        "squash": [],
         "special": [
             "BetX chance"
         ]
@@ -208,6 +210,7 @@
         "padel": [],
         "netball": [],
         "badminton": [],
+        "squash": [],
         "special": []
     },
     "fortuna": {
@@ -281,6 +284,7 @@
         "padel": [],
         "netball": [],
         "badminton": [],
+        "squash": [],
         "special": [
             "duel"
         ]
@@ -366,9 +370,8 @@
         ],
         "netball": [],
         "badminton": [],
-        "special": [
-            ""
-        ]
+        "squash": [],
+        "special": []
     },
     "merkur": {
         "fotbal": [
@@ -436,6 +439,7 @@
         "padel": [],
         "netball": [],
         "badminton": [],
+        "squash": [],
         "special": []
     },
     "sazka": {
@@ -507,6 +511,7 @@
         "padel": [],
         "netball": [],
         "badminton": [],
+        "squash": [],
         "special": []
     },
     "synottip": {
@@ -573,6 +578,9 @@
         "padel": [],
         "netball": [],
         "badminton": [],
+        "squash": [
+            "Squash"
+        ],
         "special": []
     },
     "tipsport": {
@@ -645,6 +653,7 @@
         ],
         "netball": [],
         "badminton": [],
+        "squash": [],
         "special": []
     },
     "livescore": {
@@ -730,6 +739,7 @@
         "badminton": [
             "Badminton"
         ],
+        "squash": [],
         "special": [
             ""
         ]
@@ -814,6 +824,9 @@
             ""
         ],
         "badminton": [
+            ""
+        ],
+        "squash": [
             ""
         ],
         "special": [
