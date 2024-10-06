@@ -44,7 +44,8 @@ class SpiderKingsbetSpider(scrapy.Spider):
             odds_dict[str(odd_item['id'])] = odd_item['price']
         for event in response_json['events']:
             sport = sports_dict[str(event['sportId'])]
-            event_url = f'https://www.kingsbet.cz/sport#/sport/{event["sportId"]}/category/{event["catId"]}/championship/{event["champId"]}/event/{event["id"]}'
+            # event_url = f'https://www.kingsbet.cz/sport#/sport/{event["sportId"]}/category/{event["catId"]}/championship/{event["champId"]}/event/{event["id"]}'
+            event_url = f"https://www.kingsbet.cz/sport?page=event&eventId={event['id']}"
             event_startTime = datetime.fromisoformat(event['startDate'].replace("Z", "+00:00")).astimezone(ZoneInfo("Europe/Prague"))
             participant_1 = competitors_dict[str(event['competitorIds'][0])]
             participant_2 = competitors_dict[str(event['competitorIds'][1])]

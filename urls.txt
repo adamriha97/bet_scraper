@@ -13,7 +13,6 @@
 (LSEN) LIVESCORE: https://www.livescore.cz/ (https://m.livesport.cz/, https://www.livesport.cz/, https://www.livescore.in/cz/, https://www.flashscore.com/)
 
 !ST: u jednoho sportu je error kvuli jine strukture JSON po decodovani - jde najit po odmazani "try/except" a zpomaleni na "DOWNLOAD_DELAY = 3"
-!KB: pravdepodobne jsou nove event_url adresy, takze treba predelat spider
 ! bylo by dobre k eventum pridat i informaci o statu, pokud je
 ! bylo by dobre k eventum pridat informaci, jestli to to muzsky, zensky nebo mix event, pokud je
 ! pokusit se sjednotit jazyky u participantu pres jednotlive spidery
