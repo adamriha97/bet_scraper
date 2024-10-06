@@ -72,7 +72,7 @@ class SpiderSazkaSpider(scrapy.Spider):
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'SA'
                     basic_sport_event_item['bookmaker_name'] = 'sazka'
-                    basic_sport_event_item['sport_name'] = sport
+                    basic_sport_event_item['sport_name'] = ''
                     basic_sport_event_item['sport_name_original'] = sport
                     basic_sport_event_item['event_url'] = event_url
                     basic_sport_event_item['event_startTime'] = event_startTime

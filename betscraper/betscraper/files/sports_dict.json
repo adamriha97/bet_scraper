@@ -68,7 +68,9 @@
             "volejbal"
         ],
         "australsky-fotbal": [],
-        "snooker": [],
+        "snooker": [
+            "snooker"
+        ],
         "padel": [],
         "netball": [],
         "badminton": [],
@@ -158,7 +160,9 @@
         "ledni-hokej": [
             "Hokej"
         ],
-        "stolni-tenis": [],
+        "stolni-tenis": [
+            "Stolní tenis"
+        ],
         "curling": [],
         "baseball": [
             "Baseball"
@@ -284,7 +288,9 @@
         "padel": [],
         "netball": [],
         "badminton": [],
-        "squash": [],
+        "squash": [
+            "squash"
+        ],
         "special": [
             "duel"
         ]
@@ -383,9 +389,13 @@
         "ledni-hokej": [
             "Lední hokej"
         ],
-        "stolni-tenis": [],
+        "stolni-tenis": [
+            "Stolní tenis"
+        ],
         "curling": [],
-        "baseball": [],
+        "baseball": [
+            "Baseball"
+        ],
         "sipky": [
             "Šipky"
         ],
@@ -653,7 +663,9 @@
         ],
         "netball": [],
         "badminton": [],
-        "squash": [],
+        "squash": [
+            "Squash"
+        ],
         "special": []
     },
     "livescore": {

@@ -23,7 +23,7 @@
         "basketbal": ["basketbal"],
         "volejbal": ["volejbal"],
         "australsky-fotbal": [],
-        "snooker": [],
+        "snooker": ["snooker"],
         "padel": [],
         "netball": [],
         "badminton": [],
@@ -65,7 +65,7 @@
         "fotbal": ["Fotbal"],
         "tenis": ["Tenis"],
         "ledni-hokej": ["Hokej"],
-        "stolni-tenis": [],
+        "stolni-tenis": ["Stolní tenis"],
         "curling": [],
         "baseball": ["Baseball"],
         "sipky": ["Šipky"],
@@ -120,7 +120,7 @@
         "padel": [],
         "netball": [],
         "badminton": [],
-        "squash": [],
+        "squash": ["squash"],
         "special": ["duel"]
     },
     "kingsbet": {
@@ -158,9 +158,9 @@
         "fotbal": ["Fotbal"],
         "tenis": ["Tenis"],
         "ledni-hokej": ["Lední hokej"],
-        "stolni-tenis": [],
+        "stolni-tenis": ["Stolní tenis"],
         "curling": [],
-        "baseball": [],
+        "baseball": ["Baseball"],
         "sipky": ["Šipky"],
         "box": ["Box"],
         "americky-fotbal": ["Am. Fotbal"],
@@ -275,7 +275,7 @@
         "padel": ["Padel"],
         "netball": [],
         "badminton": [],
-        "squash": [],
+        "squash": ["Squash"],
         "special": []
     },
     "livescore": {
