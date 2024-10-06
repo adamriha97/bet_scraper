@@ -22,6 +22,7 @@ class SpiderSazkaSpider(scrapy.Spider):
             'scrapy.downloadermiddlewares.retry.RetryMiddleware': None, 
         },
         'ITEM_PIPELINES': {
+            "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
         },
         }

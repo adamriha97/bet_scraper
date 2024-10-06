@@ -6,6 +6,7 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+from scrapy.exceptions import DropItem
 
 import os
 import json
@@ -33,3 +34,16 @@ class UnifySportNamesPipeline:
         if adapter.get('sport_name') == '':
             adapter['sport_name'] = 'other'
         return item
+
+class DropDuplicatesPipeline:
+    def __init__(self):
+        self.items_seen = set()
+
+    def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+        item_tuple = tuple(adapter.asdict().values())
+        if item_tuple in self.items_seen:
+            raise DropItem(f"Duplicate item found: {item!r}")
+        else:
+            self.items_seen.add(item_tuple)
+            return item
