@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+message SportRoot_d {
+    sport_data_d data = 1;
+}
+
+message sport_data_d {
+    sport_data_sport_d data_sport = 1;
+}
+
+message sport_data_sport_d {
+    sport_sport_d sport = 1;
+    int32 number = 3;
+    repeated sport_category_d category = 4;
+}
+
+message sport_sport_d {
+    string sport_id = 1;
+    string sport_name = 2;
+}
+
+message sport_category_d {
+    sport_category_info_d category_info = 1;
+    repeated sport_category_events_d category_events = 2;
+}
+
+message sport_category_info_d {
+    string category_x = 1;
+    string category_name= 2;
+    string category_id = 3;
+}
+
+message sport_category_events_d {
+    sport_events_info_d events_info = 1;
+}
+
+message sport_events_info_d {
+    string events_xx = 1;
+    string events_category = 2;
+    string events_x = 3;
+    repeated sport_event_d events = 5;
+}
+
+message sport_event_d {
+    int64 event_id = 1;
+    string event_name = 2;
+    sport_event_time_d event_time = 4;
+    string number_5 = 5;
+    sport_bet_details_d bet_details = 6;
+    string event_xx = 7;
+    int32 number_10 = 10;
+    int32 number_12 = 12;
+}
+
+message sport_event_time_d {
+    int64 datetime = 1;
+}
+
+message sport_bet_details_d {
+    int32 bet_category = 1;
+    string bet_category_name = 2;
+    sport_bet_d bet = 3;
+}
+
+message sport_bet_d {
+    string bets_id = 1;
+    string bets_name = 2;
+    sport_bets_info_d bets_info = 6;
+    int32 number_11 = 11;
+    int32 number_12 = 12;
+}
+
+message sport_bets_info_d {
+    int64 bet_id = 1;
+    string bet_name = 2;
+    int32 bet_number = 3;
+    repeated sport_odd_d odds = 4;
+}
+
+message sport_odd_d {
+    string odd_id = 1;
+    string odd_name = 2;
+    float odd_number = 3;
+}

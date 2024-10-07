@@ -12,7 +12,6 @@
 
 (LSEN) LIVESCORE: https://www.livescore.cz/ (https://m.livesport.cz/, https://www.livesport.cz/, https://www.livescore.in/cz/, https://www.flashscore.com/)
 
-!ST: u jednoho sportu je error kvuli jine strukture JSON po decodovani - jde najit po odmazani "try/except" a zpomaleni na "DOWNLOAD_DELAY = 3"
 ! bylo by dobre k eventum pridat i informaci o statu, pokud je
 ! bylo by dobre k eventum pridat informaci, jestli to to muzsky, zensky nebo mix event, pokud je
 ! pokusit se sjednotit jazyky u participantu pres jednotlive spidery
@@ -114,6 +113,13 @@ https://sport.synottip.cz/WebServices/Api/SportsBettingService.svc/help
 https://sport.synottip.cz/WebServices/Api/SportsBettingService.svc/help/operations/GetWebStandardEvents
 https://sport.synottip.cz/WebServices/Api/SportsBettingService.svc
 https://learn.microsoft.com/en-us/dotnet/framework/wcf/feature-details/publishing-metadata?redirectedfrom=MSDN
+
+stack overflow:
+https://stackoverflow.com/questions/78990799/how-to-reverse-engineer-an-encrypted-api-call-response-from-this-betting-website
+https://stackoverflow.com/questions/78994657/how-can-i-extract-data-from-this-encoded-string
+
+cyberchef:
+https://gchq.github.io/CyberChef/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)Protobuf_Decode('',false,false)&input=Q29FRUN2NERDdnNEQ2d3S0FqRXlFZ1pHYjNSaVlXd1l2d1lpNXdNS0dBb0RlRFEwRWcxTlpYcHBic09oY205a2JzT3RHZ0l4TWhMS0F3ckhBd29HZUhneE1qYzRFaGhMZG1Gc2FXWnBhMkZqWlNCTlV5d2dRMDlPVFVWQ1Qwd2FBM2cwTkNxZEF3alV0NHdCRWhWV1pXNWxlblZsYkdFZ0xTQkJjbWRsYm5ScGJtRWlCd2lBcTZURnB6SXFDRFV6TmpJME5qUTVNdDRDQ0RzU0RraHNZWFp1dzYwZ2M4T2hlbXQ1R21vS0N6SmtNakl6TlRJNE16UTVFZ1phdzZGd1lYTXlUd2lkaTh0cUVnWmF3NkZ3WVhNWWtGOGlFd29KTkRnNE16ZzVPRE15RWdFeEhkZWpzRUFpRXdvSk5EZzRNemc1T0RNekVnRXdIU2xjZjBBaUV3b0pORGc0TXpnNU9ETTBFZ0V5SGJnZXhUOVlBbUFDR204S0N6TmtNakl6TlRJNE16VXdFZ2RFZG05cWRHbHdNbE1Jbm92TGFoSUhSSFp2YW5ScGNCaVNYeUlVQ2drME9EZ3pPRGs0TWpnU0FqRXdIUitGQzBBaUZBb0pORGc0TXpnNU9ESTVFZ0l4TWgxSTRaby9JaFFLQ1RRNE9ETTRPVGd6TUJJQ01ESWRoZXVSUDFnQllBSWFiUW9MTkdReU1qTTFNamd6TlRFU0VsUERvWHByWVNCaVpYb2djbVZ0dzYxNmVUSkdDSitMeTJvU0VsUERvWHByWVNCaVpYb2djbVZ0dzYxNmVSaVRYeUlUQ2drME9EZ3pPRGs0TXpFU0FURWRjVDE2UUNJVENnazBPRGd6T0RrNE16VVNBVElkbXBtWlAxZ0JZQUk2Qm5oNE1USTNPRkFEWUw4Rw&oenc=65001
 
 
 SAZKA:

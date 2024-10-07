@@ -1,7 +1,7 @@
 import scrapy
 import json
 import base64
-from protofiles.synottip import protofile_categories_pb2, protofile_sport_pb2
+from protofiles.synottip import protofile_categories_pb2, protofile_sport_double_category_pb2, protofile_sport_single_category_pb2
 from google.protobuf.json_format import MessageToJson
 import datetime
 
@@ -58,53 +58,68 @@ class SpiderSynottipSpider(scrapy.Spider):
     def parse_sport(self, response):
         response_json = json.loads(response.text)
         decoded_bytes = base64.b64decode(response_json['ReturnValue'])
-        message = protofile_sport_pb2.SportRoot()
-        message.ParseFromString(decoded_bytes)
-        message_json = json.loads(MessageToJson(message))
-        try:
-            sport = message_json['data']['dataSport']['sport']['sportName']
-            sport_id = message_json['data']['dataSport']['sport']['sportId']
-            for event in message_json['data']['dataSport']['category']['categoryEvents']['eventsInfo']['events']:
-                if event['betDetails']['bet']['betsName'] in ['Zápas', 'Vítěz zápasu']:
-                    event_id = event['eventId']
-                    event_xx = event['eventXx']
-                    bet_id = event['betDetails']['bet']['betsInfo']['betId']
-                    event_url = f"https://sport.synottip.cz/zapasy/{sport_id}/{event_id}c{event_xx}/{bet_id}?categoryId={sport_id}"
-                    event_startTime = datetime.datetime.fromtimestamp(int(event['eventTime']['datetime'])/1000)
-                    participants = event['eventName'].split(' - ')
-                    participant_1 = participants[0]
-                    participant_2 = participants[1]
-                    bet_1 = bet_0 = bet_2 = bet_10 = bet_02 = bet_12 = bet_11 = bet_22 = -1
-                    for odd in event['betDetails']['bet']['betsInfo']['odds']:
-                        if odd['oddName'] == '1':
-                            bet_1 = odd['oddNumber']
-                        elif odd['oddName'] == '0':
-                            bet_0 = odd['oddNumber']
-                        elif odd['oddName'] == '2':
-                            bet_2 = odd['oddNumber']
-                    # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
-                    if (bet_0 == -1) and (not (bet_1 == bet_2 == -1)):
-                        bet_11 = bet_1
-                        bet_1 = -1
-                        bet_22 = bet_2
-                        bet_2 = -1
-                    basic_sport_event_item = BasicSportEventItem()
-                    basic_sport_event_item['bookmaker_id'] = 'ST'
-                    basic_sport_event_item['bookmaker_name'] = 'synottip'
-                    basic_sport_event_item['sport_name'] = ''
-                    basic_sport_event_item['sport_name_original'] = sport
-                    basic_sport_event_item['event_url'] = event_url
-                    basic_sport_event_item['event_startTime'] = event_startTime
-                    basic_sport_event_item['participant_home'] = participant_1
-                    basic_sport_event_item['participant_away'] = participant_2
-                    basic_sport_event_item['bet_1'] = bet_1
-                    basic_sport_event_item['bet_0'] = bet_0
-                    basic_sport_event_item['bet_2'] = bet_2
-                    basic_sport_event_item['bet_10'] = bet_10
-                    basic_sport_event_item['bet_02'] = bet_02
-                    basic_sport_event_item['bet_12'] = bet_12
-                    basic_sport_event_item['bet_11'] = bet_11
-                    basic_sport_event_item['bet_22'] = bet_22
-                    yield basic_sport_event_item
+        try: # this "try" is due to categories call also contains some special items without categories
+            try:
+                message = protofile_sport_double_category_pb2.SportRoot_d()
+                message.ParseFromString(decoded_bytes)
+                message_json = json.loads(MessageToJson(message))
+                sport = message_json['data']['dataSport']['sport']['sportName']
+                sport_id = message_json['data']['dataSport']['sport']['sportId']
+                for category in message_json['data']['dataSport']['category']:
+                    for category_event in category['categoryEvents']:
+                        for event in category_event['eventsInfo']['events']:
+                            yield self.prepare_event_item(sport, sport_id, event)
+            except:
+                message = protofile_sport_single_category_pb2.SportRoot_s() # seems that single category protofile is only for esports
+                message.ParseFromString(decoded_bytes)
+                message_json = json.loads(MessageToJson(message))
+                sport = message_json['data']['dataSport']['sport']['sportName']
+                sport_id = message_json['data']['dataSport']['sport']['sportId']
+                for category in message_json['data']['dataSport']['category']:
+                    for event in category['eventsInfo']['events']:
+                        yield self.prepare_event_item(sport, sport_id, event)
         except:
             pass
+
+    def prepare_event_item(self, sport, sport_id, event):
+        if event['betDetails']['bet']['betsName'] in ['Zápas', 'Vítěz zápasu', 'Vítěz (včetně extra směn)', 'Vítěz (včetně prodloužení)', 'Vítěz (včetně super over)']:
+            event_id = event['eventId']
+            event_xx = event['eventXx']
+            bet_id = event['betDetails']['bet']['betsInfo']['betId']
+            event_url = f"https://sport.synottip.cz/zapasy/{sport_id}/{event_id}c{event_xx}/{bet_id}?categoryId={sport_id}"
+            event_startTime = datetime.datetime.fromtimestamp(int(event['eventTime']['datetime'])/1000)
+            participants = event['eventName'].split(' - ')
+            participant_1 = participants[0]
+            participant_2 = participants[1]
+            bet_1 = bet_0 = bet_2 = bet_10 = bet_02 = bet_12 = bet_11 = bet_22 = -1
+            for odd in event['betDetails']['bet']['betsInfo']['odds']:
+                if odd['oddName'] == '1':
+                    bet_1 = odd['oddNumber']
+                elif odd['oddName'] == '0':
+                    bet_0 = odd['oddNumber']
+                elif odd['oddName'] == '2':
+                    bet_2 = odd['oddNumber']
+            # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
+            if (bet_0 == -1) and (not (bet_1 == bet_2 == -1)):
+                bet_11 = bet_1
+                bet_1 = -1
+                bet_22 = bet_2
+                bet_2 = -1
+            basic_sport_event_item = BasicSportEventItem()
+            basic_sport_event_item['bookmaker_id'] = 'ST'
+            basic_sport_event_item['bookmaker_name'] = 'synottip'
+            basic_sport_event_item['sport_name'] = ''
+            basic_sport_event_item['sport_name_original'] = sport
+            basic_sport_event_item['event_url'] = event_url
+            basic_sport_event_item['event_startTime'] = event_startTime
+            basic_sport_event_item['participant_home'] = participant_1
+            basic_sport_event_item['participant_away'] = participant_2
+            basic_sport_event_item['bet_1'] = bet_1
+            basic_sport_event_item['bet_0'] = bet_0
+            basic_sport_event_item['bet_2'] = bet_2
+            basic_sport_event_item['bet_10'] = bet_10
+            basic_sport_event_item['bet_02'] = bet_02
+            basic_sport_event_item['bet_12'] = bet_12
+            basic_sport_event_item['bet_11'] = bet_11
+            basic_sport_event_item['bet_22'] = bet_22
+            return basic_sport_event_item

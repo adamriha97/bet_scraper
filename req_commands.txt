@@ -18,6 +18,7 @@ scrapy-impersonate==1.4.1
 pymongo==4.8.0
 msgpack==1.1.0
 protobuf==5.28.2
+protoc --python_out=. message.proto
 
 google==3.0.0
 pip install --upgrade google-api-python-client
