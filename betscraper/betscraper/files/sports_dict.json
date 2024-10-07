@@ -73,7 +73,9 @@
         ],
         "padel": [],
         "netball": [],
-        "badminton": [],
+        "badminton": [
+            "badminton"
+        ],
         "squash": [],
         "special": []
     },
@@ -144,7 +146,9 @@
         "snooker": [],
         "padel": [],
         "netball": [],
-        "badminton": [],
+        "badminton": [
+            "Badminton"
+        ],
         "squash": [],
         "special": [
             "BetX chance"
@@ -213,8 +217,12 @@
         "snooker": [],
         "padel": [],
         "netball": [],
-        "badminton": [],
-        "squash": [],
+        "badminton": [
+            "Badminton"
+        ],
+        "squash": [
+            "Squash"
+        ],
         "special": []
     },
     "fortuna": {
@@ -287,7 +295,9 @@
         ],
         "padel": [],
         "netball": [],
-        "badminton": [],
+        "badminton": [
+            "badminton"
+        ],
         "squash": [
             "squash"
         ],
@@ -375,8 +385,12 @@
             "Padel"
         ],
         "netball": [],
-        "badminton": [],
-        "squash": [],
+        "badminton": [
+            "Badminton"
+        ],
+        "squash": [
+            "Squash"
+        ],
         "special": []
     },
     "merkur": {
@@ -521,7 +535,9 @@
         "padel": [],
         "netball": [],
         "badminton": [],
-        "squash": [],
+        "squash": [
+            "Squash"
+        ],
         "special": []
     },
     "synottip": {
@@ -538,14 +554,18 @@
             "Stolní tenis"
         ],
         "curling": [],
-        "baseball": [],
+        "baseball": [
+            "Baseball"
+        ],
         "sipky": [
             "Šipky"
         ],
         "box": [
             "Box"
         ],
-        "americky-fotbal": [],
+        "americky-fotbal": [
+            "Americký fotbal"
+        ],
         "bojove-sporty": [
             "MMA"
         ],
@@ -564,7 +584,9 @@
         "vodni-polo": [
             "Vodní pólo"
         ],
-        "esports": [],
+        "esports": [
+            "E-sporty"
+        ],
         "plazovy-fotbal": [
             "Plážový fotbal"
         ],
@@ -575,7 +597,9 @@
         "hazena": [
             "Házená"
         ],
-        "basketbal": [],
+        "basketbal": [
+            "Basketbal"
+        ],
         "volejbal": [
             "Volejbal"
         ],
@@ -587,7 +611,9 @@
         ],
         "padel": [],
         "netball": [],
-        "badminton": [],
+        "badminton": [
+            "Badminton"
+        ],
         "squash": [
             "Squash"
         ],
@@ -662,7 +688,9 @@
             "Padel"
         ],
         "netball": [],
-        "badminton": [],
+        "badminton": [
+            "Badminton"
+        ],
         "squash": [
             "Squash"
         ],
