@@ -111,7 +111,7 @@
         "kriket": ["kriket"],
         "pozemni-hokej": [],
         "vodni-polo": ["vodni-polo"],
-        "esports": ["esport-rainbow-six", "esport-dota2", "esport-lol", "esport-counter-strike"],
+        "esports": ["esport-rainbow-six", "esport-dota2", "esport-lol", "esport-counter-strike", "esport-valorant"],
         "plazovy-fotbal": ["plazovy-fotbal"],
         "bandy": [],
         "florbal": ["florbal"],
