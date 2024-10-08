@@ -28,6 +28,7 @@
         "netball": [],
         "badminton": ["badminton"],
         "squash": [],
+        "bowling": [],
         "special": []
     },
     "betx": {
@@ -39,7 +40,7 @@
         "baseball": ["Baseball"],
         "sipky": ["Darts"],
         "box": ["Boxing"],
-        "americky-fotbal": ["American Football"],
+        "americky-fotbal": ["American Football", "Football"],
         "bojove-sporty": ["MMA"],
         "futsal": ["Futsal"],
         "rugby": ["Rugby"],
@@ -53,12 +54,13 @@
         "hazena": ["Handball"],
         "basketbal": ["Basketball"],
         "volejbal": ["Volleyball"],
-        "australsky-fotbal": ["Aussie Rules"],
+        "australsky-fotbal": ["Aussie Rules", "Aussie rules"],
         "snooker": [],
         "padel": [],
         "netball": [],
         "badminton": ["Badminton"],
         "squash": [],
+        "bowling": ["Bowls"],
         "special": ["BetX chance"]
     },
     "forbet": {
@@ -90,6 +92,7 @@
         "netball": [],
         "badminton": ["Badminton"],
         "squash": ["Squash"],
+        "bowling": ["Bowls"],
         "special": []
     },
     "fortuna": {
@@ -121,6 +124,7 @@
         "netball": [],
         "badminton": ["badminton"],
         "squash": ["squash"],
+        "bowling": ["bowls"],
         "special": ["duel"]
     },
     "kingsbet": {
@@ -128,7 +132,7 @@
         "tenis": ["Tenis"],
         "ledni-hokej": ["Hokej"],
         "stolni-tenis": ["Stolní tenis"],
-        "curling": [""],
+        "curling": [],
         "baseball": ["Baseball"],
         "sipky": ["Šipky"],
         "box": ["Box"],
@@ -136,22 +140,23 @@
         "bojove-sporty": ["MMA"],
         "futsal": ["Futsal"],
         "rugby": ["Rugby League", "Rugby Union"],
-        "kriket": [""],
+        "kriket": [],
         "pozemni-hokej": ["Pozemní hokej"],
         "vodni-polo": ["Vodní pólo"],
         "esports": ["E-sports", "eBasketbal", "eFotbal"],
         "plazovy-fotbal": ["Plážový fotbal"],
-        "bandy": [""],
+        "bandy": [],
         "florbal": ["Florbal"],
         "hazena": ["Házená"],
         "basketbal": ["Basketbal"],
         "volejbal": ["Volejbal"],
-        "australsky-fotbal": [""],
-        "snooker": [""],
+        "australsky-fotbal": [],
+        "snooker": [],
         "padel": ["Padel"],
         "netball": [],
         "badminton": ["Badminton"],
         "squash": ["Squash"],
+        "bowling": ["Bowls"],
         "special": []
     },
     "merkur": {
@@ -177,12 +182,13 @@
         "hazena": ["Házená"],
         "basketbal": ["Basketbal"],
         "volejbal": ["Volejbal"],
-        "australsky-fotbal": [""],
+        "australsky-fotbal": [],
         "snooker": ["Snooker"],
         "padel": [],
         "netball": [],
         "badminton": [],
         "squash": [],
+        "bowling": [],
         "special": []
     },
     "sazka": {
@@ -214,6 +220,7 @@
         "netball": [],
         "badminton": [],
         "squash": ["Squash"],
+        "bowling": [],
         "special": []
     },
     "synottip": {
@@ -245,6 +252,7 @@
         "netball": [],
         "badminton": ["Badminton"],
         "squash": ["Squash"],
+        "bowling": ["Bowls"],
         "special": []
     },
     "tipsport": {
@@ -276,6 +284,7 @@
         "netball": [],
         "badminton": ["Badminton"],
         "squash": ["Squash"],
+        "bowling": ["Bowls"],
         "special": []
     },
     "livescore": {
@@ -283,7 +292,7 @@
         "tenis": ["Tennis"],
         "ledni-hokej": ["Hockey"],
         "stolni-tenis": ["Table tennis"],
-        "curling": [""],
+        "curling": [],
         "baseball": ["Baseball"],
         "sipky": ["Darts"],
         "box": ["Boxing"],
@@ -294,7 +303,7 @@
         "kriket": ["Cricket"],
         "pozemni-hokej": ["Field hockey"],
         "vodni-polo": ["Water polo"],
-        "esports": [""],
+        "esports": [],
         "plazovy-fotbal": ["Beach soccer"],
         "bandy": ["Bandy"],
         "florbal": ["Floorball"],
@@ -303,11 +312,12 @@
         "volejbal": ["Volleyball"],
         "australsky-fotbal": ["Aussie rules"],
         "snooker": ["Snooker"],
-        "padel": [""],
+        "padel": [],
         "netball": ["Netball"],
         "badminton": ["Badminton"],
         "squash": [],
-        "special": [""]
+        "bowling": [],
+        "special": []
     },
     "other": {
         "fotbal": [""],
@@ -338,6 +348,7 @@
         "netball": [""],
         "badminton": [""],
         "squash": [""],
+        "bowling": [""],
         "special": [""]
     }
 }
