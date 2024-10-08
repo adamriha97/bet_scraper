@@ -15,6 +15,7 @@ class SpiderFortunaSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS': 64, # default 16
         'CONCURRENT_REQUESTS_PER_DOMAIN': 64, # default 8
         'ITEM_PIPELINES': {
+            "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
         },
         }

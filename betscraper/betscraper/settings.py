@@ -68,6 +68,7 @@ ROBOTSTXT_OBEY = False
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 # ITEM_PIPELINES = {
 #    "betscraper.pipelines.BetscraperPipeline": 300,
+#    "betscraper.pipelines.DropDuplicatesPipeline": 350,
 #    "betscraper.pipelines.UnifySportNamesPipeline": 400,
 # }
 
