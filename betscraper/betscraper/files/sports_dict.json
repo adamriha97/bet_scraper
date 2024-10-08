@@ -465,39 +465,49 @@
         ],
         "padel": [],
         "netball": [],
-        "badminton": [],
+        "badminton": [
+            "Badminton"
+        ],
         "squash": [],
         "bowling": [],
         "special": []
     },
     "sazka": {
         "fotbal": [
-            "Soccer"
+            "Soccer",
+            "Fotbal"
         ],
         "tenis": [
-            "Tennis"
+            "Tennis",
+            "Tenis"
         ],
         "ledni-hokej": [
-            "Ice Hockey"
+            "Ice Hockey",
+            "Hokej"
         ],
         "stolni-tenis": [
-            "Table Tennis"
+            "Table Tennis",
+            "Stolní tenis"
         ],
         "curling": [],
         "baseball": [
             "Baseball"
         ],
         "sipky": [
-            "Darts"
+            "Darts",
+            "Šipky"
         ],
         "box": [
-            "Boxing"
+            "Boxing",
+            "Box"
         ],
         "americky-fotbal": [
-            "Football"
+            "Football",
+            "Americký fotbal"
         ],
         "bojove-sporty": [
-            "Mixed Martial Arts"
+            "Mixed Martial Arts",
+            "Bojové sporty"
         ],
         "futsal": [
             "Futsal"
@@ -507,30 +517,37 @@
             "Rugby Union"
         ],
         "kriket": [
-            "Cricket"
+            "Cricket",
+            "Kriket"
         ],
         "pozemni-hokej": [
             "Hockey"
         ],
         "vodni-polo": [
-            "Water Polo"
+            "Water Polo",
+            "Vodní pólo"
         ],
         "esports": [
-            "eSports"
+            "eSports",
+            "eSport"
         ],
         "plazovy-fotbal": [],
         "bandy": [],
         "florbal": [
-            "Floorball"
+            "Floorball",
+            "Florbal"
         ],
         "hazena": [
-            "Handball"
+            "Handball",
+            "Házená"
         ],
         "basketbal": [
-            "Basketball"
+            "Basketball",
+            "Basketbal"
         ],
         "volejbal": [
-            "Volleyball"
+            "Volleyball",
+            "Volejbal"
         ],
         "australsky-fotbal": [],
         "snooker": [
