@@ -15,7 +15,6 @@
 ! bylo by dobre k eventum pridat i informaci o statu, pokud je
 ! bylo by dobre k eventum pridat informaci, jestli to to muzsky, zensky nebo mix event, pokud je
 ! pokusit se sjednotit jazyky u participantu pres jednotlive spidery
-!SA: rozbilo se ziskavani remiz.. u hokej i fotmalu to hazi 1 a 2 sazky do 11 a 22 sekce
 !FO: spider duplikuje eventy (nekdy)
 ! pridat pipelinu na upravu bet_11 a bet_22 namisto reseni ve spiderech
 ! pridat pipelinu na odebrani eventu, ktere nemaji zadne bety, namisto reseni ve spiderech

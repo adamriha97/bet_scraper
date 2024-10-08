@@ -59,7 +59,7 @@ class SpiderSazkaSpider(scrapy.Spider):
                             bet_1 = bet['prices'][0]['decimal']
                         elif bet["name"] == participant_2:
                             bet_2 = bet['prices'][0]['decimal']
-                        elif bet["name"] == 'Draw':
+                        elif bet["name"] == 'Remíza': # in en version: Draw
                             bet_0 = bet['prices'][0]['decimal']
                     # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
                     if (bet_0 == -1) and (not (bet_1 == bet_2 == -1)):
