@@ -9,30 +9,27 @@ from betscraper.items import BasicSportEventItem
 
 class SpiderBetxSpider(scrapy.Spider):
     name = "spider_betx"
-    allowed_domains = ["bet-x.cz", 'sportapis-cz.betx.bet']
-    # start_urls = ["https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/sports/offer?Limit=9999"] # https://bet-x.cz/cs/sports-betting
+    allowed_domains = ["bet-x.cz"]
+    start_urls = ["https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/sports/offer?Limit=9999"] # https://bet-x.cz/cs/sports-betting
 
     custom_settings = {
         'FEEDS': {'data/data_betx.json': {'format': 'json', 'overwrite': True}},
-        'USER_AGENT': "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
+        'DOWNLOADER_MIDDLEWARES': {
+            'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
+            'betscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware': 300,
+            'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550, 
+            'scrapy.downloadermiddlewares.retry.RetryMiddleware': None, 
+        },
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
         },
         }
-    
-    def start_requests(self):
-        url = "https://sportapis-cz.betx.bet/SportsOfferApi/api/sport/offer/v3/sports/offer?Limit=9999"
-        headers = {
-            'Accept-Language': 'cs',
-            # 'LanguageId': 'cs',
-        }
-        yield scrapy.Request(url, method = 'GET', headers = headers, callback = self.parse)
 
     def parse(self, response):
         response_json = json.loads(response.text)
-        not_interested = ['BETX Superšance', 'Superchance', 'Cycling', 'BetX Chance']
+        not_interested = ['BETX Superšance', 'Superchance', 'Cycling']
         for section in response_json['Response']:
-            sport = section['OriginName'] # used to be Name, but changed to OriginName so I do not need to change sports_dict from en to cs
+            sport = section['Name']
             if sport not in not_interested:
                 for category in section['Categories']:
                     for league in category['Leagues']:
