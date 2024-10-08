@@ -555,7 +555,9 @@
         ],
         "padel": [],
         "netball": [],
-        "badminton": [],
+        "badminton": [
+            "Badminton"
+        ],
         "squash": [
             "Squash"
         ],

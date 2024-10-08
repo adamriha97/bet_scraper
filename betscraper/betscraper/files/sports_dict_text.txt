@@ -218,7 +218,7 @@
         "snooker": ["Snooker"],
         "padel": [],
         "netball": [],
-        "badminton": [],
+        "badminton": ["Badminton"],
         "squash": ["Squash"],
         "bowling": [],
         "special": []
