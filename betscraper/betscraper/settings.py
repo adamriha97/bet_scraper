@@ -70,6 +70,7 @@ ROBOTSTXT_OBEY = False
 #    "betscraper.pipelines.BetscraperPipeline": 300,
 #    "betscraper.pipelines.DropDuplicatesPipeline": 350,
 #    "betscraper.pipelines.UnifySportNamesPipeline": 400,
+#    "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
 # }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

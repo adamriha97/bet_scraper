@@ -28,6 +28,7 @@ class SpiderTipsportSpider(scrapy.Spider):
         },
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
+            "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
     
@@ -70,12 +71,6 @@ class SpiderTipsportSpider(scrapy.Spider):
                                         bet_2 = opp_odd
                                 except:
                                     pass
-                        # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
-                        if (bet_0 == -1) and (not (bet_1 == bet_2 == -1)):
-                            bet_11 = bet_1
-                            bet_1 = -1
-                            bet_22 = bet_2
-                            bet_2 = -1
                         basic_sport_event_item = BasicSportEventItem()
                         basic_sport_event_item['bookmaker_id'] = 'TS'
                         basic_sport_event_item['bookmaker_name'] = 'tipsport'

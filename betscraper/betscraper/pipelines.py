@@ -47,3 +47,14 @@ class DropDuplicatesPipeline:
         else:
             self.items_seen.add(item_tuple)
             return item
+
+class UpdateNonDrawBetsPipeline:
+    def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+        # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
+        if (adapter.get('bet_0') == -1) and (not (adapter.get('bet_1') == adapter.get('bet_2') == -1)):
+            adapter['bet_11'] = adapter.get('bet_1')
+            adapter['bet_1'] = -1
+            adapter['bet_22'] = adapter.get('bet_2')
+            adapter['bet_2'] = -1
+        return item

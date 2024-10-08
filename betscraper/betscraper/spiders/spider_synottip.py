@@ -20,6 +20,7 @@ class SpiderSynottipSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
+            "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
     
@@ -99,12 +100,6 @@ class SpiderSynottipSpider(scrapy.Spider):
                     bet_0 = odd['oddNumber']
                 elif odd['oddName'] == '2':
                     bet_2 = odd['oddNumber']
-            # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
-            if (bet_0 == -1) and (not (bet_1 == bet_2 == -1)):
-                bet_11 = bet_1
-                bet_1 = -1
-                bet_22 = bet_2
-                bet_2 = -1
             basic_sport_event_item = BasicSportEventItem()
             basic_sport_event_item['bookmaker_id'] = 'ST'
             basic_sport_event_item['bookmaker_name'] = 'synottip'

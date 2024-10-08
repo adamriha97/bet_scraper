@@ -17,6 +17,7 @@ class SpiderBetanoSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
+            "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
     
@@ -41,22 +42,20 @@ class SpiderBetanoSpider(scrapy.Spider):
                     event_startTime = datetime.datetime.fromtimestamp(event["startTime"]/1000)
                     participant_1 = event["participants"][0]["name"]
                     participant_2 = event["participants"][1]["name"]
+                    # pridavam alternativu, jelikoz nektere bety se nedotahovali z duvodu odlisnosti nazvu participantu (smiseny tenis mel prohozene jmena hracu)
+                    participants_alternative = event['name'].split(' - ')
+                    participant_1_alternative = participants_alternative[0]
+                    participant_2_alternative = participants_alternative[1]
                     bet_1 = bet_0 = bet_2 = bet_10 = bet_02 = bet_12 = bet_11 = bet_22 = -1
                     for market in event['markets']:
                         if market["name"].startswith(("Výsledek", "Vítěz")):
                             for selection in market["selections"]:
                                 if selection["name"] == '0':
                                     bet_0 = selection["price"]
-                                elif selection["name"] in ['1', participant_1]:
+                                elif selection["name"] in ['1', participant_1, participant_1_alternative]:
                                     bet_1 = selection["price"]
-                                elif selection["name"] in ['2', participant_2]:
+                                elif selection["name"] in ['2', participant_2, participant_2_alternative]:
                                     bet_2 = selection["price"]
-                    # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
-                    if (bet_0 == -1) and (not (bet_1 == bet_2 == -1)):
-                        bet_11 = bet_1
-                        bet_1 = -1
-                        bet_22 = bet_2
-                        bet_2 = -1
                     if not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == bet_11 == bet_22 == -1):
                         basic_sport_event_item = BasicSportEventItem()
                         basic_sport_event_item['bookmaker_id'] = 'BE'

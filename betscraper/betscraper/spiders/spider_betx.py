@@ -56,12 +56,6 @@ class SpiderBetxSpider(scrapy.Spider):
                                         bet_02 = bet["Odd"]
                                     elif bet["Name"] == '12':
                                         bet_12 = bet["Odd"]
-                                # not a perfect solution because bet_0 can be locked or not available on the site but still relevant option
-                                if (bet_0 == -1) and (not (bet_1 == bet_2 == -1)):
-                                    bet_11 = bet_1
-                                    bet_1 = -1
-                                    bet_22 = bet_2
-                                    bet_2 = -1
                                 if (not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == bet_11 == bet_22 == -1)) and (participant_2 != None):
                                     basic_sport_event_item = BasicSportEventItem()
                                     basic_sport_event_item['bookmaker_id'] = 'BX'
