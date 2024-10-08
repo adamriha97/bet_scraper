@@ -13,9 +13,14 @@ class SpiderSazkaSpider(scrapy.Spider):
 
     custom_settings = {
         'FEEDS': {'data/data_sazka.json': {'format': 'json', 'overwrite': True}},
-        'USER_AGENT': "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
         'CONCURRENT_REQUESTS': 64, # default 16
         'CONCURRENT_REQUESTS_PER_DOMAIN': 64, # default 8
+        'DOWNLOADER_MIDDLEWARES': {
+            'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
+            'betscraper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware': 300,
+            'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550, 
+            'scrapy.downloadermiddlewares.retry.RetryMiddleware': None, 
+        },
         'ITEM_PIPELINES': {
             "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
@@ -36,12 +41,9 @@ class SpiderSazkaSpider(scrapy.Spider):
         if soccer_node:
             soccer_competitions_dict = {node["name"]: node["id"] for node in soccer_node["drilldownNodes"]}
         ids_for_urls_dict = {**sports_dict, **soccer_competitions_dict}
-        headers = {
-            'x-accept-language': 'cs-CZ',
-        }
         for name, id_value in ids_for_urls_dict.items():
             url = f'https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/time-band-event-list?maxMarkets=1&marketSortsIncluded=--%2CCS%2CDC%2CDN%2CHH%2CHL%2CMH%2CMR%2CWH&marketGroupTypesIncluded=CUSTOM_GROUP%2CMONEYLINE%2CROLLING_SPREAD%2CROLLING_TOTAL%2CSTATIC_SPREAD%2CSTATIC_TOTAL&allowedEventSorts=MTCH&includeChildMarkets=true&prioritisePrimaryMarkets=true&drilldownTagIds={id_value}&maxTotalItems=1000&maxEventsPerCompetition=30&maxCompetitionsPerSportPerBand=1000'
-            yield response.follow(url, method = 'GET', headers = headers, callback = self.parse_sport)
+            yield response.follow(url, callback = self.parse_sport)
 
     def parse_sport(self, response):
         response_json = json.loads(response.text)
