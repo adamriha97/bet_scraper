@@ -1,20 +1,27 @@
-(BE) BETANO: https://www.betano.cz/
-(FO) FORTUNA: https://www.ifortuna.cz/
-(TS) TIPSPORT: https://www.tipsport.cz/
-(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
-(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/
-(ME) MERKUR: https://www.merkurxtip.cz/
-(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200
-(FB) FORBET: https://www.iforbet.cz/prematch/landing
-(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview
+(BE) BETANO: https://www.betano.cz/ -----  |  |  | 
+(FO) FORTUNA: https://www.ifortuna.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(TS) TIPSPORT: https://www.tipsport.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(ME) MERKUR: https://www.merkurxtip.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(FB) FORBET: https://www.iforbet.cz/prematch/landing ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 
 (CH) CHANCE: https://www.chance.cz/ (same data as tipsport)
 
 (LSEN) LIVESCORE: https://www.livescore.cz/ (https://m.livesport.cz/, https://www.livesport.cz/, https://www.livescore.in/cz/, https://www.flashscore.com/)
 
 ! bylo by dobre k eventum pridat i informaci o statu, pokud je
-! bylo by dobre k eventum pridat informaci, jestli to to muzsky, zensky nebo mix event, pokud je
-! pokusit se sjednotit jazyky u participantu pres jednotlive spidery
+! bylo by dobre k eventum pridat informaci, jestli to to muzsky, zensky nebo mix event, pokud je + vek
+
+! budouci cisteni dat:
+    betano:
+        u nekterych esport zapasu je na konci tymu napis (esport) a sport je napriklad fotbal
+        nektere zenske tymy jsou zakonceny (Ž)
+        nektere kategorie (videl jsem u secondary) jsou zakonceny (Ž)
+        nektere kategorie (videl jsem u primary) jsou maji ženy nebo Ženy v nazvu
+        napriklad dvacitky mohou mit kombinaci -> (Ž) U20
 
 
 

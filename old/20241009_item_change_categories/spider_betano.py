@@ -1,7 +1,6 @@
 import scrapy
 import json
 import datetime
-import re
 
 from betscraper.items import BasicSportEventItem
 
@@ -39,21 +38,10 @@ class SpiderBetanoSpider(scrapy.Spider):
             sport = response.url.split('/')[5]
             for league in response_json["data"]["blocks"]:
                 for event in league["events"]:
-                    primary_category_original = event["regionName"]
-                    secondary_category_original = event["leagueName"]
                     event_url = f'https://www.betano.cz{event["url"]}'
                     event_startTime = datetime.datetime.fromtimestamp(event["startTime"]/1000)
                     participant_1 = event["participants"][0]["name"]
                     participant_2 = event["participants"][1]["name"]
-                    participants_gender = ''
-                    if '(Ž)' in secondary_category_original:
-                        participants_gender = 'zeny'
-                    elif 'muži' in primary_category_original:
-                        participants_gender = 'muzi'
-                    participants_age = ''
-                    hasAge = re.search(r'U\d{2}', secondary_category_original)
-                    if hasAge:
-                        participants_age = hasAge.group(0)
                     # pridavam alternativu, jelikoz nektere bety se nedotahovali z duvodu odlisnosti nazvu participantu (smiseny tenis mel prohozene jmena hracu)
                     participants_alternative = event['name'].split(' - ')
                     participant_1_alternative = participants_alternative[0]
@@ -74,13 +62,9 @@ class SpiderBetanoSpider(scrapy.Spider):
                         basic_sport_event_item['bookmaker_name'] = 'betano'
                         basic_sport_event_item['sport_name'] = ''
                         basic_sport_event_item['sport_name_original'] = sport
-                        basic_sport_event_item['primary_category_original'] = primary_category_original
-                        basic_sport_event_item['secondary_category_original'] = secondary_category_original
                         basic_sport_event_item['event_startTime'] = event_startTime
                         basic_sport_event_item['participant_home'] = participant_1
                         basic_sport_event_item['participant_away'] = participant_2
-                        basic_sport_event_item['participants_gender'] = participants_gender
-                        basic_sport_event_item['participants_age'] = participants_age
                         basic_sport_event_item['bet_1'] = bet_1
                         basic_sport_event_item['bet_0'] = bet_0
                         basic_sport_event_item['bet_2'] = bet_2
