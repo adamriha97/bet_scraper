@@ -2,7 +2,7 @@
 (FO) FORTUNA: https://www.ifortuna.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (TS) TIPSPORT: https://www.tipsport.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi ----- PRIM_CAT | SECO_CAT | GENDER | AGE
-(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ -----  |  |  | 
 (ME) MERKUR: https://www.merkurxtip.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (FB) FORBET: https://www.iforbet.cz/prematch/landing ----- PRIM_CAT | SECO_CAT | GENDER | AGE
