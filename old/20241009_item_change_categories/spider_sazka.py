@@ -2,7 +2,6 @@ import scrapy
 import json
 from datetime import datetime
 from zoneinfo import ZoneInfo
-import re
 
 from betscraper.items import BasicSportEventItem
 
@@ -51,21 +50,10 @@ class SpiderSazkaSpider(scrapy.Spider):
             for event in time_band['events']:
                 try:
                     sport = event['category']['name']
-                    primary_category_original = event['class']['name']
-                    secondary_category_original = event['type']['name']
                     event_url = f'https://www.sazka.cz/kurzove-sazky/sports/event/{event["id"]}'
                     event_startTime = datetime.fromisoformat(event['startTime'].replace("Z", "+00:00")).replace(tzinfo=ZoneInfo('UTC')).astimezone(ZoneInfo('Europe/Prague'))
                     participant_1 = event['teams'][0]['name']
                     participant_2 = event['teams'][1]['name']
-                    participants_gender = ''
-                    if 'ženy' in secondary_category_original:
-                        participants_gender = 'zeny'
-                    elif 'muži' in secondary_category_original:
-                        participants_gender = 'muzi'
-                    participants_age = ''
-                    hasAge = re.search(r'U\d{2}', secondary_category_original)
-                    if hasAge:
-                        participants_age = hasAge.group(0)
                     bet_1 = bet_0 = bet_2 = bet_10 = bet_02 = bet_12 = bet_11 = bet_22 = -1
                     for bet in event['markets'][0]['outcomes']:
                         if bet["name"] == participant_1:
@@ -79,13 +67,10 @@ class SpiderSazkaSpider(scrapy.Spider):
                     basic_sport_event_item['bookmaker_name'] = 'sazka'
                     basic_sport_event_item['sport_name'] = ''
                     basic_sport_event_item['sport_name_original'] = sport
-                    basic_sport_event_item['primary_category_original'] = primary_category_original
-                    basic_sport_event_item['secondary_category_original'] = secondary_category_original
+                    basic_sport_event_item['event_url'] = event_url
                     basic_sport_event_item['event_startTime'] = event_startTime
                     basic_sport_event_item['participant_home'] = participant_1
                     basic_sport_event_item['participant_away'] = participant_2
-                    basic_sport_event_item['participants_gender'] = participants_gender
-                    basic_sport_event_item['participants_age'] = participants_age
                     basic_sport_event_item['bet_1'] = bet_1
                     basic_sport_event_item['bet_0'] = bet_0
                     basic_sport_event_item['bet_2'] = bet_2
@@ -94,7 +79,6 @@ class SpiderSazkaSpider(scrapy.Spider):
                     basic_sport_event_item['bet_12'] = bet_12
                     basic_sport_event_item['bet_11'] = bet_11
                     basic_sport_event_item['bet_22'] = bet_22
-                    basic_sport_event_item['event_url'] = event_url
                     yield basic_sport_event_item
                 except:
                     continue

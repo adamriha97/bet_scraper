@@ -22,6 +22,9 @@
         nektere kategorie (videl jsem u secondary) jsou zakonceny (Ž)
         nektere kategorie (videl jsem u primary) jsou maji ženy nebo Ženy v nazvu
         napriklad dvacitky mohou mit kombinaci -> (Ž) U20
+    sazka:
+        u zenskych typu je nekdy na konci Ž, nekdy (W) a nekdy nic, mozna i neco jine, to nevim
+        mlade tymy maji na konci U20 nebo U19 apod asi
 
 
 
