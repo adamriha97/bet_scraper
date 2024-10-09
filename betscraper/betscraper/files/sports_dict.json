@@ -78,6 +78,7 @@
         ],
         "squash": [],
         "bowling": [],
+        "plazovy-volejbal": [],
         "special": []
     },
     "betx": {
@@ -156,6 +157,7 @@
         "bowling": [
             "Bowls"
         ],
+        "plazovy-volejbal": [],
         "special": [
             "BetX chance"
         ]
@@ -232,6 +234,7 @@
         "bowling": [
             "Bowls"
         ],
+        "plazovy-volejbal": [],
         "special": []
     },
     "fortuna": {
@@ -314,6 +317,7 @@
         "bowling": [
             "bowls"
         ],
+        "plazovy-volejbal": [],
         "special": [
             "duel"
         ]
@@ -397,6 +401,7 @@
         "bowling": [
             "Bowls"
         ],
+        "plazovy-volejbal": [],
         "special": []
     },
     "merkur": {
@@ -471,6 +476,7 @@
         ],
         "squash": [],
         "bowling": [],
+        "plazovy-volejbal": [],
         "special": []
     },
     "sazka": {
@@ -563,6 +569,9 @@
             "Squash"
         ],
         "bowling": [],
+        "plazovy-volejbal": [
+            "Plážový volejbal"
+        ],
         "special": []
     },
     "synottip": {
@@ -645,6 +654,7 @@
         "bowling": [
             "Bowls"
         ],
+        "plazovy-volejbal": [],
         "special": []
     },
     "tipsport": {
@@ -725,6 +735,7 @@
         "bowling": [
             "Bowls"
         ],
+        "plazovy-volejbal": [],
         "special": []
     },
     "livescore": {
@@ -806,6 +817,7 @@
         ],
         "squash": [],
         "bowling": [],
+        "plazovy-volejbal": [],
         "special": []
     },
     "other": {
@@ -894,6 +906,9 @@
             ""
         ],
         "bowling": [
+            ""
+        ],
+        "plazovy-volejbal": [
             ""
         ],
         "special": [

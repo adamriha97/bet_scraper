@@ -29,6 +29,7 @@
         "badminton": ["badminton"],
         "squash": [],
         "bowling": [],
+        "plazovy-volejbal": [],
         "special": []
     },
     "betx": {
@@ -61,6 +62,7 @@
         "badminton": ["Badminton"],
         "squash": [],
         "bowling": ["Bowls"],
+        "plazovy-volejbal": [],
         "special": ["BetX chance"]
     },
     "forbet": {
@@ -93,6 +95,7 @@
         "badminton": ["Badminton"],
         "squash": ["Squash"],
         "bowling": ["Bowls"],
+        "plazovy-volejbal": [],
         "special": []
     },
     "fortuna": {
@@ -125,6 +128,7 @@
         "badminton": ["badminton"],
         "squash": ["squash"],
         "bowling": ["bowls"],
+        "plazovy-volejbal": [],
         "special": ["duel"]
     },
     "kingsbet": {
@@ -157,6 +161,7 @@
         "badminton": ["Badminton"],
         "squash": ["Squash"],
         "bowling": ["Bowls"],
+        "plazovy-volejbal": [],
         "special": []
     },
     "merkur": {
@@ -189,6 +194,7 @@
         "badminton": ["Badminton"],
         "squash": [],
         "bowling": [],
+        "plazovy-volejbal": [],
         "special": []
     },
     "sazka": {
@@ -221,6 +227,7 @@
         "badminton": ["Badminton"],
         "squash": ["Squash"],
         "bowling": [],
+        "plazovy-volejbal": ["Plážový volejbal"],
         "special": []
     },
     "synottip": {
@@ -253,6 +260,7 @@
         "badminton": ["Badminton"],
         "squash": ["Squash"],
         "bowling": ["Bowls"],
+        "plazovy-volejbal": [],
         "special": []
     },
     "tipsport": {
@@ -285,6 +293,7 @@
         "badminton": ["Badminton"],
         "squash": ["Squash"],
         "bowling": ["Bowls"],
+        "plazovy-volejbal": [],
         "special": []
     },
     "livescore": {
@@ -317,6 +326,7 @@
         "badminton": ["Badminton"],
         "squash": [],
         "bowling": [],
+        "plazovy-volejbal": [],
         "special": []
     },
     "other": {
@@ -349,6 +359,7 @@
         "badminton": [""],
         "squash": [""],
         "bowling": [""],
+        "plazovy-volejbal": [""],
         "special": [""]
     }
 }
