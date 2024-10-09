@@ -30,7 +30,7 @@ class SpiderBetxSpider(scrapy.Spider):
 
     def parse(self, response):
         response_json = json.loads(response.text)
-        not_interested = ['BETX Superšance', 'Superchance', 'Cycling', 'BetX Chance']
+        not_interested = ['BETX Superšance', 'Superchance', 'Cycling', 'BetX Chance', 'Horse Racing']
         for section in response_json['Response']:
             sport = section['OriginName'] # used to be Name, but changed to OriginName so I do not need to change sports_dict from en to cs
             if sport not in not_interested:
