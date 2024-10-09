@@ -3,7 +3,7 @@
 (TS) TIPSPORT: https://www.tipsport.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ -----  |  |  | 
-(ME) MERKUR: https://www.merkurxtip.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(ME) MERKUR: https://www.merkurxtip.cz/ -----  |  |  | 
 (BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (FB) FORBET: https://www.iforbet.cz/prematch/landing ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (KB) KINGSBET: https://www.kingsbet.cz/sport#/overview ----- PRIM_CAT | SECO_CAT | GENDER | AGE
@@ -25,6 +25,9 @@
     sazka:
         u zenskych typu je nekdy na konci Ž, nekdy (W) a nekdy nic, mozna i neco jine, to nevim
         mlade tymy maji na konci U20 nebo U19 apod asi
+    merkur:
+        zenske tymy zakonceny (asi) W
+        mladsi tymy zakonceny (asi) U20, U19 apod.
 
 
 
