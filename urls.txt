@@ -1,5 +1,5 @@
 (BE) BETANO: https://www.betano.cz/ -----  |  |  | 
-(FO) FORTUNA: https://www.ifortuna.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(FO) FORTUNA: https://www.ifortuna.cz/ -----  |  |  | 
 (TS) TIPSPORT: https://www.tipsport.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ -----  |  |  | 
