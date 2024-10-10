@@ -4,7 +4,6 @@ import base64
 from protofiles.synottip import protofile_categories_pb2, protofile_sport_double_category_pb2, protofile_sport_single_category_pb2
 from google.protobuf.json_format import MessageToJson
 import datetime
-import re
 
 from betscraper.items import BasicSportEventItem
 
@@ -68,11 +67,9 @@ class SpiderSynottipSpider(scrapy.Spider):
                 sport = message_json['data']['dataSport']['sport']['sportName']
                 sport_id = message_json['data']['dataSport']['sport']['sportId']
                 for category in message_json['data']['dataSport']['category']:
-                    primary_category_original = category['categoryInfo']['categoryName']
                     for category_event in category['categoryEvents']:
-                        secondary_category_original = category_event['eventsInfo']['eventsCategory']
                         for event in category_event['eventsInfo']['events']:
-                            yield self.prepare_event_item(sport, sport_id, primary_category_original, secondary_category_original, event)
+                            yield self.prepare_event_item(sport, sport_id, event)
             except:
                 message = protofile_sport_single_category_pb2.SportRoot_s() # seems that single category protofile is only for esports
                 message.ParseFromString(decoded_bytes)
@@ -80,14 +77,12 @@ class SpiderSynottipSpider(scrapy.Spider):
                 sport = message_json['data']['dataSport']['sport']['sportName']
                 sport_id = message_json['data']['dataSport']['sport']['sportId']
                 for category in message_json['data']['dataSport']['category']:
-                    secondary_category_original = category['eventsInfo']['eventsCategory']
-                    primary_category_original = secondary_category_original
                     for event in category['eventsInfo']['events']:
-                        yield self.prepare_event_item(sport, sport_id, primary_category_original, secondary_category_original, event)
+                        yield self.prepare_event_item(sport, sport_id, event)
         except:
             pass
 
-    def prepare_event_item(self, sport, sport_id, primary_category_original, secondary_category_original, event):
+    def prepare_event_item(self, sport, sport_id, event):
         if event['betDetails']['bet']['betsName'] in ['Zápas', 'Vítěz zápasu', 'Vítěz (včetně extra směn)', 'Vítěz (včetně prodloužení)', 'Vítěz (včetně super over)']:
             event_id = event['eventId']
             event_xx = event['eventXx']
@@ -97,16 +92,6 @@ class SpiderSynottipSpider(scrapy.Spider):
             participants = event['eventName'].split(' - ')
             participant_1 = participants[0]
             participant_2 = participants[1]
-            participants_gender = ''
-            if any('ženy' in string for string in [primary_category_original, secondary_category_original]):
-                participants_gender = 'zeny'
-            elif any('muži' in string for string in [primary_category_original, secondary_category_original]):
-                participants_gender = 'muzi'
-            participants_age = ''
-            participant_1_hasAge = re.search(r'U\d{2}', participant_1)
-            participant_2_hasAge = re.search(r'U\d{2}', participant_2)
-            if participant_1_hasAge and participant_2_hasAge and (participant_1_hasAge.group(0) == participant_2_hasAge.group(0)):
-                participants_age = participant_1_hasAge.group(0)
             bet_1 = bet_0 = bet_2 = bet_10 = bet_02 = bet_12 = bet_11 = bet_22 = -1
             for odd in event['betDetails']['bet']['betsInfo']['odds']:
                 if odd['oddName'] == '1':
@@ -120,13 +105,10 @@ class SpiderSynottipSpider(scrapy.Spider):
             basic_sport_event_item['bookmaker_name'] = 'synottip'
             basic_sport_event_item['sport_name'] = ''
             basic_sport_event_item['sport_name_original'] = sport
-            basic_sport_event_item['primary_category_original'] = primary_category_original
-            basic_sport_event_item['secondary_category_original'] = secondary_category_original
+            basic_sport_event_item['event_url'] = event_url
             basic_sport_event_item['event_startTime'] = event_startTime
             basic_sport_event_item['participant_home'] = participant_1
             basic_sport_event_item['participant_away'] = participant_2
-            basic_sport_event_item['participants_gender'] = participants_gender
-            basic_sport_event_item['participants_age'] = participants_age
             basic_sport_event_item['bet_1'] = bet_1
             basic_sport_event_item['bet_0'] = bet_0
             basic_sport_event_item['bet_2'] = bet_2
@@ -135,5 +117,4 @@ class SpiderSynottipSpider(scrapy.Spider):
             basic_sport_event_item['bet_12'] = bet_12
             basic_sport_event_item['bet_11'] = bet_11
             basic_sport_event_item['bet_22'] = bet_22
-            basic_sport_event_item['event_url'] = event_url
             return basic_sport_event_item
