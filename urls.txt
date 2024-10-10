@@ -1,6 +1,6 @@
 (BE) BETANO: https://www.betano.cz/ -----  |  |  | 
 (FO) FORTUNA: https://www.ifortuna.cz/ -----  |  |  | 
-(TS) TIPSPORT: https://www.tipsport.cz/ ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(TS) TIPSPORT: https://www.tipsport.cz/ -----  |  |  | 
 (ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ -----  |  |  | 
 (ME) MERKUR: https://www.merkurxtip.cz/ -----  |  |  | 
@@ -27,6 +27,11 @@
         mlade tymy maji na konci U20 nebo U19 apod asi
     merkur:
         zenske tymy zakonceny (asi) W
+        mladsi tymy zakonceny (asi) U20, U19 apod.
+    fortuna:
+        mladsi tymy zakonceny (asi) U20, U19 apod.
+    tipsport:
+        zenske tymy zakonceny (asi) Ž
         mladsi tymy zakonceny (asi) U20, U19 apod.
 
 
