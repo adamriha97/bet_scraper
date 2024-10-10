@@ -1,18 +1,18 @@
-(BE) BETANO: https://www.betano.cz/ -----  |  |  | 
-(FO) FORTUNA: https://www.ifortuna.cz/ -----  |  |  | 
-(TS) TIPSPORT: https://www.tipsport.cz/ -----  |  |  | 
-(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi -----  |  |  | 
-(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ -----  |  |  | 
-(ME) MERKUR: https://www.merkurxtip.cz/ -----  |  |  | 
-(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 -----  |  |  | 
-(FB) FORBET: https://www.iforbet.cz/prematch/landing -----  |  |  | 
-(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(BE) BETANO: https://www.betano.cz/
+(FO) FORTUNA: https://www.ifortuna.cz/
+(TS) TIPSPORT: https://www.tipsport.cz/
+(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
+(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/
+(ME) MERKUR: https://www.merkurxtip.cz/
+(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200
+(FB) FORBET: https://www.iforbet.cz/prematch/landing
+(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview
 
 (CH) CHANCE: https://www.chance.cz/ (same data as tipsport)
 
 (LSEN) LIVESCORE: https://www.livescore.cz/ (https://m.livesport.cz/, https://www.livesport.cz/, https://www.livescore.in/cz/, https://www.flashscore.com/)
 
-! vsechny bety prevest na cisla, pokud jsou nekde stringy
+! vsechny bety prevest na cisla, pokud jsou nekde stringy, plus neco je treba zaokrouhlit podle toho jak je to na webu (napr kingsbet asi)
 ! narovnavani jmen - nektere stranky maji jen prvni pismeno u krestnich jmen
 ! u ziskavani statu je treba vetsina v primary category, ale u Rugby je to v secondary (napr. forbet)
 
@@ -42,6 +42,9 @@
     betx:
         liga WTA neni identifikovana jako 'zeny', mozna prozkoumat i u ostatnich spideru
     forbet:
+        mladsi tymy zakonceny (asi) U20, U19 apod. - jen nektere
+    kingsbet:
+        zenske tymy zakonceny (asi) "- ženy", jednou jsem videl i zakonceni "(F)" - nektere asi
         mladsi tymy zakonceny (asi) U20, U19 apod. - jen nektere
 
 

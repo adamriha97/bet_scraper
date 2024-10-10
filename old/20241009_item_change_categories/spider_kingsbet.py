@@ -2,7 +2,6 @@ import scrapy
 import json
 from datetime import datetime
 from zoneinfo import ZoneInfo
-import re
 
 from betscraper.items import BasicSportEventItem
 
@@ -31,10 +30,12 @@ class SpiderKingsbetSpider(scrapy.Spider):
 
     def parse_sport(self, response):
         response_json = json.loads(response.text)
-        sports_dict = self.create_dict_from_list(response_json['sports'])
-        categories_dict = self.create_dict_from_list(response_json['categories'])
-        champs_dict = self.create_dict_from_list(response_json['champs'])
-        competitors_dict = self.create_dict_from_list(response_json['competitors'])
+        sports_dict = {}
+        for sport_item in response_json['sports']:
+            sports_dict[str(sport_item['id'])] = sport_item['name']
+        competitors_dict = {}
+        for competitor_item in response_json['competitors']:
+            competitors_dict[str(competitor_item['id'])] = competitor_item['name']
         markets_dict = {}
         for market_item in response_json['markets']:
             markets_dict[str(market_item['id'])] = {'name': market_item['name'], 'oddIds': market_item['oddIds']}
@@ -43,23 +44,11 @@ class SpiderKingsbetSpider(scrapy.Spider):
             odds_dict[str(odd_item['id'])] = odd_item['price']
         for event in response_json['events']:
             sport = sports_dict[str(event['sportId'])]
-            primary_category_original = categories_dict[str(event['catId'])]
-            secondary_category_original = champs_dict[str(event['champId'])]
             # event_url = f'https://www.kingsbet.cz/sport#/sport/{event["sportId"]}/category/{event["catId"]}/championship/{event["champId"]}/event/{event["id"]}'
             event_url = f"https://www.kingsbet.cz/sport?page=event&eventId={event['id']}"
             event_startTime = datetime.fromisoformat(event['startDate'].replace("Z", "+00:00")).astimezone(ZoneInfo("Europe/Prague"))
             participant_1 = competitors_dict[str(event['competitorIds'][0])]
             participant_2 = competitors_dict[str(event['competitorIds'][1])]
-            participants_gender = ''
-            if any('ženy' in string for string in [primary_category_original, secondary_category_original]):
-                participants_gender = 'zeny'
-            elif any('muži' in string for string in [primary_category_original, secondary_category_original]):
-                participants_gender = 'muzi'
-            participants_age = ''
-            participant_1_hasAge = re.search(r'U\d{2}', participant_1)
-            participant_2_hasAge = re.search(r'U\d{2}', participant_2)
-            if participant_1_hasAge and participant_2_hasAge and (participant_1_hasAge.group(0) == participant_2_hasAge.group(0)):
-                participants_age = participant_1_hasAge.group(0)
             bet_1 = bet_0 = bet_2 = bet_10 = bet_02 = bet_12 = bet_11 = bet_22 = -1
             for market_id in event['marketIds']:
                 if markets_dict[str(market_id)]['name'] == 'Výsledek zápasu':
@@ -79,13 +68,10 @@ class SpiderKingsbetSpider(scrapy.Spider):
                 basic_sport_event_item['bookmaker_name'] = 'kingsbet'
                 basic_sport_event_item['sport_name'] = ''
                 basic_sport_event_item['sport_name_original'] = sport
-                basic_sport_event_item['primary_category_original'] = primary_category_original
-                basic_sport_event_item['secondary_category_original'] = secondary_category_original
+                basic_sport_event_item['event_url'] = event_url
                 basic_sport_event_item['event_startTime'] = event_startTime
                 basic_sport_event_item['participant_home'] = participant_1
                 basic_sport_event_item['participant_away'] = participant_2
-                basic_sport_event_item['participants_gender'] = participants_gender
-                basic_sport_event_item['participants_age'] = participants_age
                 basic_sport_event_item['bet_1'] = bet_1
                 basic_sport_event_item['bet_0'] = bet_0
                 basic_sport_event_item['bet_2'] = bet_2
@@ -94,11 +80,4 @@ class SpiderKingsbetSpider(scrapy.Spider):
                 basic_sport_event_item['bet_12'] = bet_12
                 basic_sport_event_item['bet_11'] = bet_11
                 basic_sport_event_item['bet_22'] = bet_22
-                basic_sport_event_item['event_url'] = event_url
                 yield basic_sport_event_item
-
-    def create_dict_from_list(self, list):
-        dict = {}
-        for item in list:
-            dict[str(item['id'])] = item['name']
-        return dict
