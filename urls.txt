@@ -5,12 +5,16 @@
 (SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ -----  |  |  | 
 (ME) MERKUR: https://www.merkurxtip.cz/ -----  |  |  | 
 (BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 -----  |  |  | 
-(FB) FORBET: https://www.iforbet.cz/prematch/landing ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(FB) FORBET: https://www.iforbet.cz/prematch/landing -----  |  |  | 
 (KB) KINGSBET: https://www.kingsbet.cz/sport#/overview ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 
 (CH) CHANCE: https://www.chance.cz/ (same data as tipsport)
 
 (LSEN) LIVESCORE: https://www.livescore.cz/ (https://m.livesport.cz/, https://www.livesport.cz/, https://www.livescore.in/cz/, https://www.flashscore.com/)
+
+! vsechny bety prevest na cisla, pokud jsou nekde stringy
+! narovnavani jmen - nektere stranky maji jen prvni pismeno u krestnich jmen
+! u ziskavani statu je treba vetsina v primary category, ale u Rugby je to v secondary (napr. forbet)
 
 ! bylo by dobre k eventum pridat i informaci o statu, pokud je
 ! bylo by dobre k eventum pridat informaci, jestli to to muzsky, zensky nebo mix event, pokud je + vek
@@ -37,6 +41,8 @@
         mladsi tymy zakonceny (asi) U20, U19 apod.
     betx:
         liga WTA neni identifikovana jako 'zeny', mozna prozkoumat i u ostatnich spideru
+    forbet:
+        mladsi tymy zakonceny (asi) U20, U19 apod. - jen nektere
 
 
 
