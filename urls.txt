@@ -4,7 +4,7 @@
 (ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi -----  |  |  | 
 (SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ -----  |  |  | 
 (ME) MERKUR: https://www.merkurxtip.cz/ -----  |  |  | 
-(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 ----- PRIM_CAT | SECO_CAT | GENDER | AGE
+(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 -----  |  |  | 
 (FB) FORBET: https://www.iforbet.cz/prematch/landing ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 (KB) KINGSBET: https://www.kingsbet.cz/sport#/overview ----- PRIM_CAT | SECO_CAT | GENDER | AGE
 
@@ -35,6 +35,8 @@
         mladsi tymy zakonceny (asi) U20, U19 apod.
     synottip:
         mladsi tymy zakonceny (asi) U20, U19 apod.
+    betx:
+        liga WTA neni identifikovana jako 'zeny', mozna prozkoumat i u ostatnich spideru
 
 
 

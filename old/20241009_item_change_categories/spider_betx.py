@@ -3,7 +3,6 @@ import json
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from unidecode import unidecode
-import re
 
 from betscraper.items import BasicSportEventItem
 
@@ -36,24 +35,17 @@ class SpiderBetxSpider(scrapy.Spider):
             sport = section['OriginName'] # used to be Name, but changed to OriginName so I do not need to change sports_dict from en to cs
             if sport not in not_interested:
                 for category in section['Categories']:
-                    primary_category_original = category['Name']
+                    # primary_category_original = category['Name']
                     for league in category['Leagues']:
-                        secondary_category_original = league['Name']
+                        # secondary_category_original = league['Name']
                         for match in league['Matches']:
                             try:
                                 event_url = f'https://bet-x.cz/cs/sports-betting/offer/{unidecode(sport.lower().replace(" ", "-"))}?match={str(match["Id"])}'
                                 event_startTime = datetime.fromisoformat(match['MatchStartTime'].replace("Z", "+00:00")).replace(tzinfo=ZoneInfo('UTC')).astimezone(ZoneInfo('Europe/Prague'))
                                 participant_1 = match['TeamHome']
                                 participant_2 = match['TeamAway']
-                                participants_gender = ''
-                                if any('ženy' in string for string in [primary_category_original, secondary_category_original]):
-                                    participants_gender = 'zeny'
-                                elif any('muži' in string for string in [primary_category_original, secondary_category_original]):
-                                    participants_gender = 'muzi'
-                                participants_age = ''
-                                hasAge = re.search(r'U\d{2}', secondary_category_original)
-                                if hasAge:
-                                    participants_age = hasAge.group(0)
+                                # participants_gender = ''
+                                # participants_age = ''
                                 bet_1 = bet_0 = bet_2 = bet_10 = bet_02 = bet_12 = bet_11 = bet_22 = -1
                                 for bet in match['BasicOffer']['Odds']:
                                     if bet["Name"] == '1':
@@ -74,13 +66,13 @@ class SpiderBetxSpider(scrapy.Spider):
                                     basic_sport_event_item['bookmaker_name'] = 'betx'
                                     basic_sport_event_item['sport_name'] = ''
                                     basic_sport_event_item['sport_name_original'] = sport
-                                    basic_sport_event_item['primary_category_original'] = primary_category_original
-                                    basic_sport_event_item['secondary_category_original'] = secondary_category_original
+                                    # basic_sport_event_item['primary_category_original'] = primary_category_original
+                                    # basic_sport_event_item['secondary_category_original'] = secondary_category_original
                                     basic_sport_event_item['event_startTime'] = event_startTime
                                     basic_sport_event_item['participant_home'] = participant_1
                                     basic_sport_event_item['participant_away'] = participant_2
-                                    basic_sport_event_item['participants_gender'] = participants_gender
-                                    basic_sport_event_item['participants_age'] = participants_age
+                                    # basic_sport_event_item['participants_gender'] = participants_gender
+                                    # basic_sport_event_item['participants_age'] = participants_age
                                     basic_sport_event_item['bet_1'] = bet_1
                                     basic_sport_event_item['bet_0'] = bet_0
                                     basic_sport_event_item['bet_2'] = bet_2
