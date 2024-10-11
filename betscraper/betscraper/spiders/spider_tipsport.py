@@ -28,6 +28,7 @@ class SpiderTipsportSpider(scrapy.Spider):
             "scrapy.downloadermiddlewares.cookies.CookiesMiddleware": 543,
         },
         'ITEM_PIPELINES': {
+            "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
