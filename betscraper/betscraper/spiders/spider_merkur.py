@@ -90,7 +90,7 @@ class SpiderMerkurSpider(scrapy.Spider):
                         keepMatch = True
                     except:
                         pass
-                if keepMatch:
+                if keepMatch and (participant_2 != 'Vítěz'):
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'ME'
                     basic_sport_event_item['bookmaker_name'] = 'merkur'
