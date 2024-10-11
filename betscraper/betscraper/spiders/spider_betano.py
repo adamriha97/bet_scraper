@@ -62,7 +62,7 @@ class SpiderBetanoSpider(scrapy.Spider):
                     for market in event['markets']:
                         if market["name"].startswith(("Výsledek", "Vítěz")):
                             for selection in market["selections"]:
-                                if selection["name"] == '0':
+                                if selection["name"] in ['0', 'Remíza']:
                                     bet_0 = selection["price"]
                                 elif selection["name"] in ['1', participant_1, participant_1_alternative]:
                                     bet_1 = selection["price"]
