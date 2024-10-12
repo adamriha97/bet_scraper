@@ -217,7 +217,7 @@
         "futsal": ["Futsal"],
         "rugby": ["Rugby League", "Rugby Union"],
         "kriket": ["Cricket", "Kriket"],
-        "pozemni-hokej": ["Hockey"],
+        "pozemni-hokej": ["Hockey", "Pozemní hokej"],
         "vodni-polo": ["Water Polo", "Vodní pólo"],
         "esports": ["eSports", "eSport"],
         "plazovy-fotbal": [],
