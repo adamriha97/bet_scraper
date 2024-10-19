@@ -80,7 +80,8 @@ class SpiderKingsbetSpider(scrapy.Spider):
                 basic_sport_event_item['bookmaker_name'] = 'kingsbet'
                 basic_sport_event_item['sport_name'] = ''
                 basic_sport_event_item['sport_name_original'] = sport
-                basic_sport_event_item['country_name'] = country_name
+                basic_sport_event_item['country_name'] = ''
+                basic_sport_event_item['country_name_original'] = country_name
                 basic_sport_event_item['primary_category_original'] = primary_category_original
                 basic_sport_event_item['secondary_category_original'] = secondary_category_original
                 basic_sport_event_item['event_startTime'] = event_startTime
