@@ -67,7 +67,7 @@
         "plazovy-volejbal": [],
         "sachy": [],
         "kabadi": [],
-        "special": ["BetX chance"]
+        "special": ["BetX chance", "Motor sport"]
     },
     "forbet": {
         "fotbal": ["Fotbal"],
