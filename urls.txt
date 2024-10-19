@@ -1,12 +1,12 @@
-(BE) BETANO: https://www.betano.cz/
-(FO) FORTUNA: https://www.ifortuna.cz/
-(TS) TIPSPORT: https://www.tipsport.cz/
-(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi
-(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/
-(ME) MERKUR: https://www.merkurxtip.cz/
-(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200
-(FB) FORBET: https://www.iforbet.cz/prematch/landing
-(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview
+(BE) BETANO: https://www.betano.cz/ _____country_name
+(FO) FORTUNA: https://www.ifortuna.cz/ _____country_name
+(TS) TIPSPORT: https://www.tipsport.cz/ _____country_name
+(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi _____country_name
+(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ _____country_name
+(ME) MERKUR: https://www.merkurxtip.cz/ _____country_name
+(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 _____country_name
+(FB) FORBET: https://www.iforbet.cz/prematch/landing _____country_name
+(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview _____country_name
 
 (CH) CHANCE: https://www.chance.cz/ (same data as tipsport)
 
