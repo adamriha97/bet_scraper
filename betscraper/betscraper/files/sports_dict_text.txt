@@ -29,8 +29,9 @@
         "badminton": ["badminton"],
         "squash": [],
         "bowling": [],
-        "plazovy-volejbal": [],
+        "plazovy-volejbal": ["plazovy-volejbal"],
         "sachy": ["sachy"],
+        "kabadi": [],
         "special": []
     },
     "betx": {
@@ -65,6 +66,7 @@
         "bowling": ["Bowls"],
         "plazovy-volejbal": [],
         "sachy": [],
+        "kabadi": [],
         "special": ["BetX chance"]
     },
     "forbet": {
@@ -91,14 +93,15 @@
         "basketbal": ["Basketbal"],
         "volejbal": ["Volejbal"],
         "australsky-fotbal": ["Australský fotbal"],
-        "snooker": [],
+        "snooker": ["Snooker"],
         "padel": [],
         "netball": [],
         "badminton": ["Badminton"],
         "squash": ["Squash"],
         "bowling": ["Bowls"],
-        "plazovy-volejbal": [],
+        "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
+        "kabadi": [],
         "special": []
     },
     "fortuna": {
@@ -131,8 +134,9 @@
         "badminton": ["badminton"],
         "squash": ["squash"],
         "bowling": ["bowls"],
-        "plazovy-volejbal": [],
-        "sachy": [],
+        "plazovy-volejbal": ["plazovy-volejbal"],
+        "sachy": ["sachy"],
+        "kabadi": [],
         "special": ["duel"]
     },
     "kingsbet": {
@@ -165,8 +169,9 @@
         "badminton": ["Badminton"],
         "squash": ["Squash"],
         "bowling": ["Bowls"],
-        "plazovy-volejbal": [],
+        "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
+        "kabadi": [],
         "special": []
     },
     "merkur": {
@@ -199,9 +204,10 @@
         "badminton": ["Badminton"],
         "squash": [],
         "bowling": [],
-        "plazovy-volejbal": [],
+        "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
-        "special": []
+        "kabadi": [],
+        "special": ["Společenské sázky"]
     },
     "sazka": {
         "fotbal": ["Soccer", "Fotbal"],
@@ -235,6 +241,7 @@
         "bowling": [],
         "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
+        "kabadi": [],
         "special": []
     },
     "synottip": {
@@ -267,8 +274,9 @@
         "badminton": ["Badminton"],
         "squash": ["Squash"],
         "bowling": ["Bowls"],
-        "plazovy-volejbal": [],
+        "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
+        "kabadi": ["Kabaddi"],
         "special": []
     },
     "tipsport": {
@@ -301,8 +309,9 @@
         "badminton": ["Badminton"],
         "squash": ["Squash"],
         "bowling": ["Bowls"],
-        "plazovy-volejbal": [],
+        "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": ["Šachy"],
+        "kabadi": [],
         "special": []
     },
     "livescore": {
@@ -337,6 +346,7 @@
         "bowling": [],
         "plazovy-volejbal": [],
         "sachy": [],
+        "kabadi": [],
         "special": []
     },
     "other": {
@@ -371,6 +381,7 @@
         "bowling": [""],
         "plazovy-volejbal": [""],
         "sachy": [""],
+        "kabadi": [""],
         "special": [""]
     }
 }
