@@ -18,6 +18,7 @@ class SpiderBetanoSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
+            "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
