@@ -41,6 +41,7 @@ class SpiderMerkurSpider(scrapy.Spider):
                 sport = sport_name
                 primary_category_original = match['leagueGroupToken'].split('#')[1]
                 secondary_category_original = match['leagueName']
+                country_name = primary_category_original
                 try:
                     sportToken = unidecode(sport_name.lower().replace(' ', '-').replace('.', ''))
                     leagueName = unidecode(match["leagueName"].lower().replace(" ", "-"))
@@ -96,6 +97,7 @@ class SpiderMerkurSpider(scrapy.Spider):
                     basic_sport_event_item['bookmaker_name'] = 'merkur'
                     basic_sport_event_item['sport_name'] = ''
                     basic_sport_event_item['sport_name_original'] = sport
+                    basic_sport_event_item['country_name'] = country_name
                     basic_sport_event_item['primary_category_original'] = primary_category_original
                     basic_sport_event_item['secondary_category_original'] = secondary_category_original
                     basic_sport_event_item['event_startTime'] = event_startTime

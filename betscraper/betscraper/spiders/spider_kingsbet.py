@@ -45,6 +45,7 @@ class SpiderKingsbetSpider(scrapy.Spider):
             sport = sports_dict[str(event['sportId'])]
             primary_category_original = categories_dict[str(event['catId'])]
             secondary_category_original = champs_dict[str(event['champId'])]
+            country_name = primary_category_original
             # event_url = f'https://www.kingsbet.cz/sport#/sport/{event["sportId"]}/category/{event["catId"]}/championship/{event["champId"]}/event/{event["id"]}'
             event_url = f"https://www.kingsbet.cz/sport?page=event&eventId={event['id']}"
             event_startTime = datetime.fromisoformat(event['startDate'].replace("Z", "+00:00")).astimezone(ZoneInfo("Europe/Prague"))
@@ -79,6 +80,7 @@ class SpiderKingsbetSpider(scrapy.Spider):
                 basic_sport_event_item['bookmaker_name'] = 'kingsbet'
                 basic_sport_event_item['sport_name'] = ''
                 basic_sport_event_item['sport_name_original'] = sport
+                basic_sport_event_item['country_name'] = country_name
                 basic_sport_event_item['primary_category_original'] = primary_category_original
                 basic_sport_event_item['secondary_category_original'] = secondary_category_original
                 basic_sport_event_item['event_startTime'] = event_startTime

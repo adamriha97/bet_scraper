@@ -46,6 +46,7 @@ class SpiderFortunaSpider(scrapy.Spider):
             primary_category_original = re.sub(r'U\d{2}', '', primary_category_original)
             for substring in ['-ženy', '-muži', 'Ž-', 'M-', ', dvouhra', ', čtyřhra', ' ()']:
                 primary_category_original = primary_category_original.replace(substring, '')
+            country_name = primary_category_original
             for table in section.css('table.events-table'):
                 continue_parse = True
                 try:
@@ -88,6 +89,7 @@ class SpiderFortunaSpider(scrapy.Spider):
                                 basic_sport_event_item['bookmaker_name'] = 'fortuna'
                                 basic_sport_event_item['sport_name'] = ''
                                 basic_sport_event_item['sport_name_original'] = sport
+                                basic_sport_event_item['country_name'] = country_name
                                 basic_sport_event_item['primary_category_original'] = primary_category_original
                                 basic_sport_event_item['secondary_category_original'] = secondary_category_original
                                 basic_sport_event_item['event_startTime'] = event_startTime

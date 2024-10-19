@@ -16,6 +16,7 @@ class BasicSportEventItem(scrapy.Item):
     bookmaker_name = scrapy.Field()
     sport_name = scrapy.Field()
     sport_name_original = scrapy.Field()
+    country_name = scrapy.Field()
     primary_category_original = scrapy.Field()
     secondary_category_original = scrapy.Field()
     event_startTime = scrapy.Field()
