@@ -25,7 +25,8 @@
             "Aruba"
         ],
         "australie": [
-            "Austrálie"
+            "Austrálie",
+            "Playford City"
         ],
         "azerbajdzan": [
             "Ázerbájdžán"
@@ -34,7 +35,11 @@
             "Bahrajn"
         ],
         "belgie": [
-            "Belgie"
+            "Belgie",
+            "Antverpy"
+        ],
+        "belorusko": [
+            "Brest"
         ],
         "bolivie": [
             "Bolívie"
@@ -46,7 +51,10 @@
             "Botswana"
         ],
         "brazilie": [
-            "Brazílie"
+            "Brazílie",
+            "Joao Pessoa",
+            "Curitiba",
+            "Campinas"
         ],
         "bulharsko": [
             "Bulharsko"
@@ -58,7 +66,8 @@
             "Chorvatsko"
         ],
         "cina": [
-            "Čína"
+            "Čína",
+            "Guangzhou"
         ],
         "cinsky-tchaj-pej": [
             "Čínský Tchaj-pej"
@@ -97,7 +106,8 @@
             "Finsko"
         ],
         "francie": [
-            "Francie"
+            "Francie",
+            "St. Brieuc"
         ],
         "ghana": [
             "Ghana"
@@ -123,6 +133,9 @@
         "irak": [
             "Irák"
         ],
+        "iran": [
+            "Írán"
+        ],
         "irsko": [
             "Irsko"
         ],
@@ -135,8 +148,12 @@
         "italie": [
             "Itálie"
         ],
+        "jamajka": [
+            "Jamajka"
+        ],
         "japonsko": [
-            "Japonsko"
+            "Japonsko",
+            "Tokio"
         ],
         "jihoafricka-republika": [
             "Jihoafrická republika"
@@ -151,7 +168,8 @@
             "Kambodža"
         ],
         "kanada": [
-            "Kanada"
+            "Kanada",
+            "Calgary"
         ],
         "kazachstan": [
             "Kazachstán"
@@ -173,6 +191,9 @@
         ],
         "kypr": [
             "Kypr"
+        ],
+        "liberie": [
+            "Libérie"
         ],
         "litva": [
             "Litva"
@@ -202,7 +223,8 @@
             "Mauritánie"
         ],
         "mexiko": [
-            "Mexiko"
+            "Mexiko",
+            "Tampico"
         ],
         "mongolsko": [
             "Mongolsko"
@@ -253,7 +275,8 @@
             "Portugalsko"
         ],
         "rakousko": [
-            "Rakousko"
+            "Rakousko",
+            "Vídeň"
         ],
         "rwanda": [
             "Rwanda"
@@ -295,7 +318,9 @@
             "Spojené arabské emiráty"
         ],
         "spojene-kralovstvi": [
-            "Spojené království"
+            "Spojené království",
+            "Velká Británie",
+            "Gibraltar"
         ],
         "spanelsko": [
             "Španělsko"
@@ -304,10 +329,15 @@
             "Srbsko"
         ],
         "svycarsko": [
-            "Švýcarsko"
+            "Švýcarsko",
+            "Basilej"
         ],
         "svedsko": [
-            "Švédsko"
+            "Švédsko",
+            "Stockholm"
+        ],
+        "taiwan": [
+            "Taipei"
         ],
         "tanzanie": [
             "Tanzanie"
@@ -331,13 +361,12 @@
             "Uruguay"
         ],
         "usa": [
-            "USA"
+            "USA",
+            "USA 2",
+            "Sioux Falls"
         ],
         "uzbekistan": [
             "Uzbekistán"
-        ],
-        "velka-britanie": [
-            "Velká Británie"
         ],
         "venezuela": [
             "Venezuela"
@@ -349,7 +378,18 @@
             "Zambie"
         ],
         "special": [
-            ""
+            "Mezinárodní",
+            "Evropa",
+            "Counter Strike",
+            "DOTA 2",
+            "Esoccer",
+            "King of Glory",
+            "League of Legends",
+            "Valorant",
+            "Rainbow Six",
+            "Evropská tour",
+            "Evropské ligy",
+            "Jadranská liga"
         ]
     },
     "other": {
@@ -408,6 +448,9 @@
             ""
         ],
         "belize": [
+            ""
+        ],
+        "belorusko": [
             ""
         ],
         "benin": [
@@ -866,6 +909,9 @@
         "tadzikistan": [
             ""
         ],
+        "taiwan": [
+            ""
+        ],
         "tanzanie": [
             ""
         ],
@@ -909,9 +955,6 @@
             ""
         ],
         "vatican": [
-            ""
-        ],
-        "velka-britanie": [
             ""
         ],
         "venezuela": [

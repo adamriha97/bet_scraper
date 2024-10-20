@@ -18,7 +18,7 @@ class SpiderBetanoSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
-            # "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
+            "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
@@ -70,7 +70,7 @@ class SpiderBetanoSpider(scrapy.Spider):
                                 elif selection["name"] in ['2', participant_2, participant_2_alternative]:
                                     bet_2 = selection["price"]
                     primary_category = primary_category_original
-                    secondary_category = secondary_category_original
+                    secondary_category = secondary_category_original.replace(' (Ž)', '').split(' - ')[0].split(',')[0]
                     if not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == bet_11 == bet_22 == -1):
                         basic_sport_event_item = BasicSportEventItem()
                         basic_sport_event_item['bookmaker_id'] = 'BE'
