@@ -18,7 +18,7 @@ class SpiderBetanoSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
-            "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
+            # "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
@@ -42,7 +42,6 @@ class SpiderBetanoSpider(scrapy.Spider):
                 for event in league["events"]:
                     primary_category_original = event["regionName"]
                     secondary_category_original = event["leagueName"]
-                    country_name = primary_category_original
                     event_url = f'https://www.betano.cz{event["url"]}'
                     event_startTime = datetime.datetime.fromtimestamp(event["startTime"]/1000)
                     participant_1 = event["participants"][0]["name"]
@@ -70,6 +69,8 @@ class SpiderBetanoSpider(scrapy.Spider):
                                     bet_1 = selection["price"]
                                 elif selection["name"] in ['2', participant_2, participant_2_alternative]:
                                     bet_2 = selection["price"]
+                    primary_category = primary_category_original
+                    secondary_category = secondary_category_original
                     if not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == bet_11 == bet_22 == -1):
                         basic_sport_event_item = BasicSportEventItem()
                         basic_sport_event_item['bookmaker_id'] = 'BE'
@@ -77,8 +78,10 @@ class SpiderBetanoSpider(scrapy.Spider):
                         basic_sport_event_item['sport_name'] = ''
                         basic_sport_event_item['sport_name_original'] = sport
                         basic_sport_event_item['country_name'] = ''
-                        basic_sport_event_item['country_name_original'] = country_name
+                        basic_sport_event_item['country_name_original'] = ''
+                        basic_sport_event_item['primary_category'] = primary_category
                         basic_sport_event_item['primary_category_original'] = primary_category_original
+                        basic_sport_event_item['secondary_category'] = secondary_category
                         basic_sport_event_item['secondary_category_original'] = secondary_category_original
                         basic_sport_event_item['event_startTime'] = event_startTime
                         basic_sport_event_item['participant_home'] = participant_1

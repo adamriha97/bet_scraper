@@ -47,7 +47,6 @@ class SpiderForbetSpider(scrapy.Spider):
                     sport = sport_json['name']
                     primary_category_original = category_json['name']
                     secondary_category_original = tournament_json['name']
-                    country_name = primary_category_original
                     event_url = f'https://www.iforbet.cz/prematch/event/{market["eventId"]}'
                     event_startTime = datetime.fromisoformat(event_json['startTs'].replace("Z", "+00:00")).astimezone(ZoneInfo("Europe/Prague"))
                     participant_1 = response_json['data']['competitors'][str(event_json['competitors'][0])]['name']
@@ -85,14 +84,18 @@ class SpiderForbetSpider(scrapy.Spider):
                         bet_1 = odds_list[0]
                         bet_0 = odds_list[1]
                         bet_2 = odds_list[2]
+                    primary_category = primary_category_original
+                    secondary_category = secondary_category_original
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'FB'
                     basic_sport_event_item['bookmaker_name'] = 'forbet'
                     basic_sport_event_item['sport_name'] = ''
                     basic_sport_event_item['sport_name_original'] = sport
                     basic_sport_event_item['country_name'] = ''
-                    basic_sport_event_item['country_name_original'] = country_name
+                    basic_sport_event_item['country_name_original'] = ''
+                    basic_sport_event_item['primary_category'] = primary_category
                     basic_sport_event_item['primary_category_original'] = primary_category_original
+                    basic_sport_event_item['secondary_category'] = secondary_category
                     basic_sport_event_item['secondary_category_original'] = secondary_category_original
                     basic_sport_event_item['event_startTime'] = event_startTime
                     basic_sport_event_item['participant_home'] = participant_1

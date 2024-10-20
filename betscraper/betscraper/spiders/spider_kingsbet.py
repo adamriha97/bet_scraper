@@ -45,7 +45,6 @@ class SpiderKingsbetSpider(scrapy.Spider):
             sport = sports_dict[str(event['sportId'])]
             primary_category_original = categories_dict[str(event['catId'])]
             secondary_category_original = champs_dict[str(event['champId'])]
-            country_name = primary_category_original
             # event_url = f'https://www.kingsbet.cz/sport#/sport/{event["sportId"]}/category/{event["catId"]}/championship/{event["champId"]}/event/{event["id"]}'
             event_url = f"https://www.kingsbet.cz/sport?page=event&eventId={event['id']}"
             event_startTime = datetime.fromisoformat(event['startDate'].replace("Z", "+00:00")).astimezone(ZoneInfo("Europe/Prague"))
@@ -74,6 +73,8 @@ class SpiderKingsbetSpider(scrapy.Spider):
                 if markets_dict[str(market_id)]['name'] in ('Vítěz', 'Vítěz zápasu', 'Vítěz (vč. prodl.)', 'Vítěz  (vč. extra směny)', 'Vítěz (včetně prodloužení a nájezdů)', 'Výsledek zápasu bez remízy'):
                     bet_11 = odds_dict[str(markets_dict[str(market_id)]['oddIds'][0])]
                     bet_22 = odds_dict[str(markets_dict[str(market_id)]['oddIds'][1])]
+            primary_category = primary_category_original
+            secondary_category = secondary_category_original
             if not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == bet_11 == bet_22 == -1):
                 basic_sport_event_item = BasicSportEventItem()
                 basic_sport_event_item['bookmaker_id'] = 'KB'
@@ -81,8 +82,10 @@ class SpiderKingsbetSpider(scrapy.Spider):
                 basic_sport_event_item['sport_name'] = ''
                 basic_sport_event_item['sport_name_original'] = sport
                 basic_sport_event_item['country_name'] = ''
-                basic_sport_event_item['country_name_original'] = country_name
+                basic_sport_event_item['country_name_original'] = ''
+                basic_sport_event_item['primary_category'] = primary_category
                 basic_sport_event_item['primary_category_original'] = primary_category_original
+                basic_sport_event_item['secondary_category'] = secondary_category
                 basic_sport_event_item['secondary_category_original'] = secondary_category_original
                 basic_sport_event_item['event_startTime'] = event_startTime
                 basic_sport_event_item['participant_home'] = participant_1

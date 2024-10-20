@@ -40,7 +40,6 @@ class SpiderBetxSpider(scrapy.Spider):
                     primary_category_original = category['Name']
                     for league in category['Leagues']:
                         secondary_category_original = league['Name']
-                        country_name = primary_category_original
                         for match in league['Matches']:
                             try:
                                 event_url = f'https://bet-x.cz/cs/sports-betting/offer/{unidecode(sport.lower().replace(" ", "-"))}?match={str(match["Id"])}'
@@ -70,6 +69,8 @@ class SpiderBetxSpider(scrapy.Spider):
                                         bet_02 = bet["Odd"]
                                     elif bet["Name"] == '12':
                                         bet_12 = bet["Odd"]
+                                primary_category = primary_category_original
+                                secondary_category = secondary_category_original
                                 if (not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == bet_11 == bet_22 == -1)) and (participant_2 != None):
                                     basic_sport_event_item = BasicSportEventItem()
                                     basic_sport_event_item['bookmaker_id'] = 'BX'
@@ -77,8 +78,10 @@ class SpiderBetxSpider(scrapy.Spider):
                                     basic_sport_event_item['sport_name'] = ''
                                     basic_sport_event_item['sport_name_original'] = sport
                                     basic_sport_event_item['country_name'] = ''
-                                    basic_sport_event_item['country_name_original'] = country_name
+                                    basic_sport_event_item['country_name_original'] = ''
+                                    basic_sport_event_item['primary_category'] = primary_category
                                     basic_sport_event_item['primary_category_original'] = primary_category_original
+                                    basic_sport_event_item['secondary_category'] = secondary_category
                                     basic_sport_event_item['secondary_category_original'] = secondary_category_original
                                     basic_sport_event_item['event_startTime'] = event_startTime
                                     basic_sport_event_item['participant_home'] = participant_1

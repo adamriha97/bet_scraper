@@ -41,7 +41,6 @@ class SpiderMerkurSpider(scrapy.Spider):
                 sport = sport_name
                 primary_category_original = match['leagueGroupToken'].split('#')[1]
                 secondary_category_original = match['leagueName']
-                country_name = primary_category_original
                 try:
                     sportToken = unidecode(sport_name.lower().replace(' ', '-').replace('.', ''))
                     leagueName = unidecode(match["leagueName"].lower().replace(" ", "-"))
@@ -91,6 +90,8 @@ class SpiderMerkurSpider(scrapy.Spider):
                         keepMatch = True
                     except:
                         pass
+                primary_category = primary_category_original
+                secondary_category = secondary_category_original
                 if keepMatch and (participant_2 != 'Vítěz'):
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'ME'
@@ -98,8 +99,10 @@ class SpiderMerkurSpider(scrapy.Spider):
                     basic_sport_event_item['sport_name'] = ''
                     basic_sport_event_item['sport_name_original'] = sport
                     basic_sport_event_item['country_name'] = ''
-                    basic_sport_event_item['country_name_original'] = country_name
+                    basic_sport_event_item['country_name_original'] = ''
+                    basic_sport_event_item['primary_category'] = primary_category
                     basic_sport_event_item['primary_category_original'] = primary_category_original
+                    basic_sport_event_item['secondary_category'] = secondary_category
                     basic_sport_event_item['secondary_category_original'] = secondary_category_original
                     basic_sport_event_item['event_startTime'] = event_startTime
                     basic_sport_event_item['participant_home'] = participant_1

@@ -53,7 +53,6 @@ class SpiderSazkaSpider(scrapy.Spider):
                     sport = event['category']['name']
                     primary_category_original = event['class']['name']
                     secondary_category_original = event['type']['name']
-                    country_name = primary_category_original
                     event_url = f'https://www.sazka.cz/kurzove-sazky/sports/event/{event["id"]}'
                     event_startTime = datetime.fromisoformat(event['startTime'].replace("Z", "+00:00")).replace(tzinfo=ZoneInfo('UTC')).astimezone(ZoneInfo('Europe/Prague'))
                     participant_1 = event['teams'][0]['name']
@@ -75,14 +74,18 @@ class SpiderSazkaSpider(scrapy.Spider):
                             bet_2 = bet['prices'][0]['decimal']
                         elif bet["name"] == 'Remíza': # in en version: Draw
                             bet_0 = bet['prices'][0]['decimal']
+                    primary_category = primary_category_original
+                    secondary_category = secondary_category_original
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'SA'
                     basic_sport_event_item['bookmaker_name'] = 'sazka'
                     basic_sport_event_item['sport_name'] = ''
                     basic_sport_event_item['sport_name_original'] = sport
                     basic_sport_event_item['country_name'] = ''
-                    basic_sport_event_item['country_name_original'] = country_name
+                    basic_sport_event_item['country_name_original'] = ''
+                    basic_sport_event_item['primary_category'] = primary_category
                     basic_sport_event_item['primary_category_original'] = primary_category_original
+                    basic_sport_event_item['secondary_category'] = secondary_category
                     basic_sport_event_item['secondary_category_original'] = secondary_category_original
                     basic_sport_event_item['event_startTime'] = event_startTime
                     basic_sport_event_item['participant_home'] = participant_1

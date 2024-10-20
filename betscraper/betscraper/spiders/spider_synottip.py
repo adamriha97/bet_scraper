@@ -89,7 +89,6 @@ class SpiderSynottipSpider(scrapy.Spider):
 
     def prepare_event_item(self, sport, sport_id, primary_category_original, secondary_category_original, event):
         if event['betDetails']['bet']['betsName'] in ['Zápas', 'Vítěz zápasu', 'Vítěz (včetně extra směn)', 'Vítěz (včetně prodloužení)', 'Vítěz (včetně super over)']:
-            country_name = primary_category_original
             event_id = event['eventId']
             event_xx = event['eventXx']
             bet_id = event['betDetails']['bet']['betsInfo']['betId']
@@ -116,14 +115,18 @@ class SpiderSynottipSpider(scrapy.Spider):
                     bet_0 = odd['oddNumber']
                 elif odd['oddName'] == '2':
                     bet_2 = odd['oddNumber']
+            primary_category = primary_category_original
+            secondary_category = secondary_category_original
             basic_sport_event_item = BasicSportEventItem()
             basic_sport_event_item['bookmaker_id'] = 'ST'
             basic_sport_event_item['bookmaker_name'] = 'synottip'
             basic_sport_event_item['sport_name'] = ''
             basic_sport_event_item['sport_name_original'] = sport
             basic_sport_event_item['country_name'] = ''
-            basic_sport_event_item['country_name_original'] = country_name
+            basic_sport_event_item['country_name_original'] = ''
+            basic_sport_event_item['primary_category'] = primary_category
             basic_sport_event_item['primary_category_original'] = primary_category_original
+            basic_sport_event_item['secondary_category'] = secondary_category
             basic_sport_event_item['secondary_category_original'] = secondary_category_original
             basic_sport_event_item['event_startTime'] = event_startTime
             basic_sport_event_item['participant_home'] = participant_1
