@@ -171,6 +171,9 @@
             "Kanada",
             "Calgary"
         ],
+        "katar": [
+            "Katar"
+        ],
         "kazachstan": [
             "Kazachstán"
         ],
@@ -299,6 +302,9 @@
         "senegal": [
             "Senegal"
         ],
+        "severni-irsko": [
+            "Severní Irsko"
+        ],
         "severni-makedonie": [
             "Severní Makedonie"
         ],
@@ -323,7 +329,8 @@
             "Gibraltar"
         ],
         "spanelsko": [
-            "Španělsko"
+            "Španělsko",
+            "Španělsko 2"
         ],
         "srbsko": [
             "Srbsko"
@@ -335,6 +342,9 @@
         "svedsko": [
             "Švédsko",
             "Stockholm"
+        ],
+        "syrie": [
+            "Sýrie"
         ],
         "taiwan": [
             "Taipei"
@@ -363,7 +373,8 @@
         "usa": [
             "USA",
             "USA 2",
-            "Sioux Falls"
+            "Sioux Falls",
+            "U.S. Chess Championship"
         ],
         "uzbekistan": [
             "Uzbekistán"
@@ -374,12 +385,16 @@
         "vietnam": [
             "Vietnam"
         ],
+        "wales": [
+            "Wales"
+        ],
         "zambie": [
             "Zambie"
         ],
         "special": [
             "Mezinárodní",
             "Evropa",
+            "Asie",
             "Counter Strike",
             "DOTA 2",
             "Esoccer",
@@ -390,6 +405,11 @@
             "Evropská tour",
             "Evropské ligy",
             "Jadranská liga"
+        ],
+        "unknown": [
+            "CAF",
+            "AFC Clubs",
+            "kluby UEFA"
         ]
     },
     "other": {
@@ -849,6 +869,9 @@
         "senegal": [
             ""
         ],
+        "severni-irsko": [
+            ""
+        ],
         "severni-makedonie": [
             ""
         ],
@@ -904,6 +927,9 @@
             ""
         ],
         "svedsko": [
+            ""
+        ],
+        "syrie": [
             ""
         ],
         "tadzikistan": [
@@ -966,6 +992,9 @@
         "vychodni-timor": [
             ""
         ],
+        "wales": [
+            ""
+        ],
         "zambie": [
             ""
         ],
@@ -973,6 +1002,9 @@
             ""
         ],
         "special": [
+            ""
+        ],
+        "unknown": [
             ""
         ]
     }

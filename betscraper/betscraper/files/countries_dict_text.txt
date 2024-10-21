@@ -54,6 +54,7 @@
         "jordan": ["Jordan"],
         "kambodza": ["Kambodža"],
         "kanada": ["Kanada", "Calgary"],
+        "katar": ["Katar"],
         "kazachstan": ["Kazachstán"],
         "kena": ["Keňa"],
         "kolumbie": ["Kolumbie"],
@@ -96,6 +97,7 @@
         "san-marino": ["San Marino"],
         "saudska-arabie": ["Saúdská Arábie"],
         "senegal": ["Senegal"],
+        "severni-irsko": ["Severní Irsko"],
         "severni-makedonie": ["Severní Makedonie"],
         "singapur": ["Singapur"],
         "skotsko": ["Skotsko"],
@@ -103,10 +105,11 @@
         "slovinsko": ["Slovinsko"],
         "spojene-arabske-emiraty": ["Spojené arabské emiráty"],
         "spojene-kralovstvi": ["Spojené království", "Velká Británie", "Gibraltar"],
-        "spanelsko": ["Španělsko"],
+        "spanelsko": ["Španělsko", "Španělsko 2"],
         "srbsko": ["Srbsko"],
         "svycarsko": ["Švýcarsko", "Basilej"],
         "svedsko": ["Švédsko", "Stockholm"],
+        "syrie": ["Sýrie"],
         "taiwan": ["Taipei"],
         "tanzanie": ["Tanzanie"],
         "thajsko": ["Thajsko"],
@@ -115,12 +118,14 @@
         "uganda": ["Uganda"],
         "ukrajina": ["Ukrajina"],
         "uruguay": ["Uruguay"],
-        "usa": ["USA", "USA 2", "Sioux Falls"],
+        "usa": ["USA", "USA 2", "Sioux Falls", "U.S. Chess Championship"],
         "uzbekistan": ["Uzbekistán"],
         "venezuela": ["Venezuela"],
         "vietnam": ["Vietnam"],
+        "wales": ["Wales"],
         "zambie": ["Zambie"],
-        "special": ["Mezinárodní", "Evropa", "Counter Strike", "DOTA 2", "Esoccer", "King of Glory", "League of Legends", "Valorant", "Rainbow Six", "Evropská tour", "Evropské ligy", "Jadranská liga"]
+        "special": ["Mezinárodní", "Evropa", "Asie", "Counter Strike", "DOTA 2", "Esoccer", "King of Glory", "League of Legends", "Valorant", "Rainbow Six", "Evropská tour", "Evropské ligy", "Jadranská liga"],
+        "unknown": ["CAF", "AFC Clubs", "kluby UEFA"]
     },
     "other": {
         "afghanistan": [""],
@@ -275,6 +280,7 @@
         "san-marino": [""],
         "saudska-arabie": [""],
         "senegal": [""],
+        "severni-irsko": [""],
         "severni-makedonie": [""],
         "seychely": [""],
         "singapur": [""],
@@ -294,6 +300,7 @@
         "svazijsko": [""],
         "svycarsko": [""],
         "svedsko": [""],
+        "syrie": [""],
         "tadzikistan": [""],
         "taiwan": [""],
         "tanzanie": [""],
@@ -314,8 +321,10 @@
         "venezuela": [""],
         "vietnam": [""],
         "vychodni-timor": [""],
+        "wales": [""],
         "zambie": [""],
         "zimbabwe": [""],
-        "special": [""]
+        "special": [""],
+        "unknown": [""]
     }
 }
