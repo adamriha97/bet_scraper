@@ -59,8 +59,8 @@ class UnifyCountryNamesPipeline:
                     adapter['country_name_original'] = country_name_original
                     break
         if adapter.get('country_name') == '':
-            adapter['country_name'] = 'unknown'
-            adapter['country_name_original'] = 'unknown'
+            adapter['country_name'] = 'other'
+            adapter['country_name_original'] = 'other'
         return item
 
 class DropDuplicatesPipeline:
