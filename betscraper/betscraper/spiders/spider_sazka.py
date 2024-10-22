@@ -20,6 +20,7 @@ class SpiderSazkaSpider(scrapy.Spider):
         'ITEM_PIPELINES': {
             "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
+            "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
@@ -58,7 +59,7 @@ class SpiderSazkaSpider(scrapy.Spider):
                     participant_1 = event['teams'][0]['name']
                     participant_2 = event['teams'][1]['name']
                     participants_gender = ''
-                    if 'ženy' in secondary_category_original:
+                    if any(string in secondary_category_original for string in ['ženy', 'Women']):
                         participants_gender = 'zeny'
                     elif 'muži' in secondary_category_original:
                         participants_gender = 'muzi'
@@ -75,7 +76,10 @@ class SpiderSazkaSpider(scrapy.Spider):
                         elif bet["name"] == 'Remíza': # in en version: Draw
                             bet_0 = bet['prices'][0]['decimal']
                     primary_category = primary_category_original
-                    secondary_category = secondary_category_original
+                    secondary_category = secondary_category_original.split(',')[0]
+                    for substring in ['ženy', 'muži', 'Women', 'WTA', 'ATP', 'ITF', 'Challenger']:
+                        secondary_category = secondary_category.replace(substring, '')
+                    secondary_category = secondary_category.strip()
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'SA'
                     basic_sport_event_item['bookmaker_name'] = 'sazka'

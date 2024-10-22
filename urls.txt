@@ -3,8 +3,8 @@
 (FB) FORBET: https://www.iforbet.cz/prematch/landing 
 (FO) FORTUNA: https://www.ifortuna.cz/ 
 (KB) KINGSBET: https://www.kingsbet.cz/sport#/overview 
-(ME) MERKUR: https://www.merkurxtip.cz/ _________________________country_name
-(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ _________________________country_name
+(ME) MERKUR: https://www.merkurxtip.cz/ 
+(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ 
 (ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi _________________________country_name
 (TS) TIPSPORT: https://www.tipsport.cz/ _________________________country_name
 
@@ -14,7 +14,10 @@
 
 ! vsechny bety prevest na cisla, pokud jsou nekde stringy, plus neco je treba zaokrouhlit podle toho jak je to na webu (napr kingsbet asi)
 ! narovnavani jmen - nektere stranky maji jen prvni pismeno u krestnich jmen
-! u ziskavani statu je treba vetsina v primary category, ale u Rugby je to v secondary (napr. forbet)
+! u ziskavani statu je treba vetsina v primary category
+    - ale u Rugby je to v secondary (napr. forbet)
+    - nebo je tam treba NHL namisto USA (pro vetsi ligy je nazev ligy - např. ME)
+    - u sazky u ITF tenisu mam stat i mesto, musim dodelat, az bude seznam statu
 
 ! bylo by dobre k eventum pridat i informaci o statu, pokud je
 ! UnifyCountryNamesPipeline by mozna sla udelat efektivneji nebo jinak lepe

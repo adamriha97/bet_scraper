@@ -24,6 +24,7 @@ class SpiderMerkurSpider(scrapy.Spider):
         },
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
+            "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
@@ -90,8 +91,9 @@ class SpiderMerkurSpider(scrapy.Spider):
                         keepMatch = True
                     except:
                         pass
-                primary_category = primary_category_original
-                secondary_category = secondary_category_original
+                primary_category = primary_category_original.replace(' am.', '').replace(' klubové', '')
+                secondary_category = ' '.join([word for word in secondary_category_original.split() if not re.search(r'\d', word)])
+                secondary_category = secondary_category.replace(' Doubles', '').strip()
                 if keepMatch and (participant_2 != 'Vítěz'):
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'ME'
