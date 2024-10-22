@@ -18,6 +18,7 @@ class SpiderFortunaSpider(scrapy.Spider):
         'ITEM_PIPELINES': {
             "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
+            "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
         },
         }
 
@@ -42,10 +43,13 @@ class SpiderFortunaSpider(scrapy.Spider):
         page_number = int(response.url.split('=')[-1])
         for section in response.css('section.competition-box'):
             secondary_category_original = section.css('section.competition-box ::attr(data-competition-name)').get()
-            primary_category_original = re.sub(r'\d+\.', '', secondary_category_original)
-            primary_category_original = re.sub(r'U\d{2}', '', primary_category_original)
-            for substring in ['-ženy', '-muži', 'Ž-', 'M-', ', dvouhra', ', čtyřhra', ' ()']:
-                primary_category_original = primary_category_original.replace(substring, '')
+            primary_category_original = secondary_category_original
+            primary_category = re.sub(r'\d+\.', '', primary_category_original)
+            primary_category = re.sub(r'U\d{2}', '', primary_category)
+            for substring in ['-ženy', '-muži', 'Ž-', 'M-', ', dvouhra', ', čtyřhra', ' ()', 'WTA ', 'ATP ', 'ITF ']:
+                primary_category = primary_category.replace(substring, '')
+            primary_category = primary_category.split('-')[0].strip()
+            secondary_category = primary_category
             for table in section.css('table.events-table'):
                 continue_parse = True
                 try:
@@ -83,8 +87,6 @@ class SpiderFortunaSpider(scrapy.Spider):
                                     bet_10 = bets[3] # toto poradi tipuji, na strankach jsem to nezkontroloval
                                     bet_12 = bets[4] # toto poradi tipuji, na strankach jsem to nezkontroloval
                                     bet_02 = bets[5] # toto poradi tipuji, na strankach jsem to nezkontroloval
-                                primary_category = primary_category_original
-                                secondary_category = secondary_category_original
                                 basic_sport_event_item = BasicSportEventItem()
                                 basic_sport_event_item['bookmaker_id'] = 'FO'
                                 basic_sport_event_item['bookmaker_name'] = 'fortuna'

@@ -1,8 +1,8 @@
 (BE) BETANO: https://www.betano.cz/ 
-(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 _________________________country_name
-(FB) FORBET: https://www.iforbet.cz/prematch/landing _________________________country_name
-(FO) FORTUNA: https://www.ifortuna.cz/ _________________________country_name
-(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview _________________________country_name
+(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 
+(FB) FORBET: https://www.iforbet.cz/prematch/landing 
+(FO) FORTUNA: https://www.ifortuna.cz/ 
+(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview 
 (ME) MERKUR: https://www.merkurxtip.cz/ _________________________country_name
 (SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ _________________________country_name
 (ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi _________________________country_name

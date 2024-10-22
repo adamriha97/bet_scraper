@@ -16,6 +16,7 @@ class SpiderForbetSpider(scrapy.Spider):
         'FEEDS': {'data/data_forbet.json': {'format': 'json', 'overwrite': True}},
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
+            "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
@@ -84,8 +85,8 @@ class SpiderForbetSpider(scrapy.Spider):
                         bet_1 = odds_list[0]
                         bet_0 = odds_list[1]
                         bet_2 = odds_list[2]
-                    primary_category = primary_category_original
-                    secondary_category = secondary_category_original
+                    primary_category = primary_category_original.replace(' amatéři', '').replace(' klubové', '').replace(' mládežnické', '')
+                    secondary_category = secondary_category_original.split(', ')[0].split(' - ')[0]
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'FB'
                     basic_sport_event_item['bookmaker_name'] = 'forbet'
