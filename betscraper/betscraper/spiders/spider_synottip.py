@@ -21,6 +21,7 @@ class SpiderSynottipSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
+            "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
@@ -69,10 +70,12 @@ class SpiderSynottipSpider(scrapy.Spider):
                 sport_id = message_json['data']['dataSport']['sport']['sportId']
                 for category in message_json['data']['dataSport']['category']:
                     primary_category_original = category['categoryInfo']['categoryName']
+                    primary_category = primary_category_original.replace(' amatéři', '').replace(' klubové', '')
                     for category_event in category['categoryEvents']:
                         secondary_category_original = category_event['eventsInfo']['eventsCategory']
+                        secondary_category = secondary_category_original.split(', ')[0].split(' (')[0].strip()
                         for event in category_event['eventsInfo']['events']:
-                            yield self.prepare_event_item(sport, sport_id, primary_category_original, secondary_category_original, event)
+                            yield self.prepare_event_item(sport, sport_id, primary_category, secondary_category, primary_category_original, secondary_category_original, event)
             except:
                 message = protofile_sport_single_category_pb2.SportRoot_s() # seems that single category protofile is only for esports
                 message.ParseFromString(decoded_bytes)
@@ -82,12 +85,14 @@ class SpiderSynottipSpider(scrapy.Spider):
                 for category in message_json['data']['dataSport']['category']:
                     secondary_category_original = category['eventsInfo']['eventsCategory']
                     primary_category_original = secondary_category_original
+                    primary_category = primary_category_original.replace(' amatéři', '').replace(' klubové', '')
+                    secondary_category = secondary_category_original.split(', ')[0].split(' (')[0].strip()
                     for event in category['eventsInfo']['events']:
-                        yield self.prepare_event_item(sport, sport_id, primary_category_original, secondary_category_original, event)
+                        yield self.prepare_event_item(sport, sport_id, primary_category, secondary_category, primary_category_original, secondary_category_original, event)
         except:
             pass
 
-    def prepare_event_item(self, sport, sport_id, primary_category_original, secondary_category_original, event):
+    def prepare_event_item(self, sport, sport_id, primary_category, secondary_category, primary_category_original, secondary_category_original, event):
         if event['betDetails']['bet']['betsName'] in ['Zápas', 'Vítěz zápasu', 'Vítěz (včetně extra směn)', 'Vítěz (včetně prodloužení)', 'Vítěz (včetně super over)']:
             event_id = event['eventId']
             event_xx = event['eventXx']
@@ -115,8 +120,8 @@ class SpiderSynottipSpider(scrapy.Spider):
                     bet_0 = odd['oddNumber']
                 elif odd['oddName'] == '2':
                     bet_2 = odd['oddNumber']
-            primary_category = primary_category_original
-            secondary_category = secondary_category_original
+            # muze se hodit v budoucnu
+            # secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
             basic_sport_event_item = BasicSportEventItem()
             basic_sport_event_item['bookmaker_id'] = 'ST'
             basic_sport_event_item['bookmaker_name'] = 'synottip'

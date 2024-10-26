@@ -30,6 +30,7 @@ class SpiderTipsportSpider(scrapy.Spider):
         'ITEM_PIPELINES': {
             "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
+            "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
@@ -88,7 +89,17 @@ class SpiderTipsportSpider(scrapy.Spider):
                                 except:
                                     pass
                         primary_category = primary_category_original
-                        secondary_category = secondary_category_original
+                        if sport == 'Tenis':
+                            secondary_category = secondary_category_original.split('-')[0]
+                            for substring in ['ATP ', 'ITF ', 'WTA ']:
+                                secondary_category = secondary_category.replace(substring, '')
+                            secondary_category = secondary_category.strip()
+                            secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
+                        else:
+                            secondary_category = secondary_category_original.lower().split('-')[0].split('.')[-1]
+                            for substring in [' liga', 'extraliga', ' superliga', ' národní', ' pohár', ' cup', ' tipsport', ' chance', ' challenge']:
+                                secondary_category = secondary_category.replace(substring, '')
+                            secondary_category = secondary_category.strip()[:-1]
                         basic_sport_event_item = BasicSportEventItem()
                         basic_sport_event_item['bookmaker_id'] = 'TS'
                         basic_sport_event_item['bookmaker_name'] = 'tipsport'
