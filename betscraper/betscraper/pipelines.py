@@ -40,27 +40,24 @@ class UnifyCountryNamesPipeline:
         script_dir = os.path.dirname(os.path.realpath(__file__))
         countries_dict_path = os.path.join(script_dir, 'files/countries_dict.json')
         with open(countries_dict_path, 'r') as file:
-            self.translator = json.load(file)
+            self.translator_reverse = json.load(file)
+        self.translator = {}
+        for translator_country_name, translator_original_list in self.translator_reverse.items():
+            for list_item in translator_original_list:
+                self.translator[list_item] = translator_country_name
 
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
-        bookmaker_name = adapter.get('bookmaker_name')
-        country_name_original = adapter.get('primary_category')
-        for translator_country_name, translator_original_list in self.translator[bookmaker_name].items():
-            if country_name_original in translator_original_list:
-                adapter['country_name'] = translator_country_name
-                adapter['country_name_original'] = country_name_original
-                break
-        if adapter.get('country_name') == '':
-            country_name_original = adapter.get('secondary_category')
-            for translator_country_name, translator_original_list in self.translator[bookmaker_name].items():
-                if country_name_original in translator_original_list:
-                    adapter['country_name'] = translator_country_name
-                    adapter['country_name_original'] = country_name_original
-                    break
-        if adapter.get('country_name') == '':
-            adapter['country_name'] = 'other'
-            adapter['country_name_original'] = 'other'
+        try:
+            adapter['country_name'] = self.translator[adapter.get('primary_category')]
+            adapter['country_name_original'] = adapter.get('primary_category')
+        except:
+            try:
+                adapter['country_name'] = self.translator[adapter.get('secondary_category')]
+                adapter['country_name_original'] = adapter.get('secondary_category')
+            except:
+                adapter['country_name'] = 'other'
+                adapter['country_name_original'] = 'other'
         return item
 
 class DropDuplicatesPipeline:

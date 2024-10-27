@@ -46,9 +46,10 @@ class SpiderFortunaSpider(scrapy.Spider):
             primary_category_original = secondary_category_original
             primary_category = re.sub(r'\d+\.', '', primary_category_original)
             primary_category = re.sub(r'U\d{2}', '', primary_category)
-            for substring in ['-ženy', '-muži', 'Ž-', 'M-', ', dvouhra', ', čtyřhra', ' ()', 'WTA ', 'ATP ', 'ITF ']:
+            for substring in ['-ženy', '-muži', 'Ž-', 'M-', ', dvouhra', ', čtyřhra', ' ()', 'WTA ', 'ATP ', 'ITF ', 'Chall. ']:
                 primary_category = primary_category.replace(substring, '')
             primary_category = primary_category.split('-')[0].strip()
+            primary_category = ' '.join([word for word in primary_category.split() if not re.search(r'\d', word)])
             secondary_category = primary_category
             for table in section.css('table.events-table'):
                 continue_parse = True

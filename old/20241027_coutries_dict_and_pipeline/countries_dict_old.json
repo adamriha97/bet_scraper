@@ -1,0 +1,1431 @@
+{
+    "betano": {
+        "albanie": [
+            "Albánie"
+        ],
+        "alzirsko": [
+            "Alžírsko"
+        ],
+        "andorra": [
+            "Andorra"
+        ],
+        "anglie": [
+            "Anglie"
+        ],
+        "angola": [
+            "Angola"
+        ],
+        "argentina": [
+            "Argentina"
+        ],
+        "armenie": [
+            "Arménie"
+        ],
+        "aruba": [
+            "Aruba"
+        ],
+        "australie": [
+            "Austrálie",
+            "Playford City"
+        ],
+        "azerbajdzan": [
+            "Ázerbájdžán"
+        ],
+        "bahrajn": [
+            "Bahrajn"
+        ],
+        "belgie": [
+            "Belgie",
+            "Antverpy"
+        ],
+        "belorusko": [
+            "Brest"
+        ],
+        "bolivie": [
+            "Bolívie"
+        ],
+        "bosna-a-hercegovina": [
+            "Bosna a Hercegovina"
+        ],
+        "botswana": [
+            "Botswana"
+        ],
+        "brazilie": [
+            "Brazílie",
+            "Joao Pessoa",
+            "Curitiba",
+            "Campinas"
+        ],
+        "bulharsko": [
+            "Bulharsko"
+        ],
+        "chile": [
+            "Chile"
+        ],
+        "chorvatsko": [
+            "Chorvatsko"
+        ],
+        "cina": [
+            "Čína",
+            "Guangzhou"
+        ],
+        "cinsky-tchaj-pej": [
+            "Čínský Tchaj-pej"
+        ],
+        "cerna-hora": [
+            "Černá Hora"
+        ],
+        "ceska-republika": [
+            "Česko"
+        ],
+        "dansko": [
+            "Dánsko"
+        ],
+        "dominikanska-republika": [
+            "Dominikánská republika"
+        ],
+        "egypt": [
+            "Egypt"
+        ],
+        "ekvador": [
+            "Ekvádor"
+        ],
+        "estonsko": [
+            "Estonsko"
+        ],
+        "etiopie": [
+            "Etiopie"
+        ],
+        "faerske-ostrovy": [
+            "Faerské ostrovy"
+        ],
+        "filipiny": [
+            "Filipíny"
+        ],
+        "finsko": [
+            "Finsko"
+        ],
+        "francie": [
+            "Francie",
+            "St. Brieuc"
+        ],
+        "ghana": [
+            "Ghana"
+        ],
+        "gruzie": [
+            "Gruzie"
+        ],
+        "guatemala": [
+            "Guatemala"
+        ],
+        "honduras": [
+            "Honduras"
+        ],
+        "hongkong": [
+            "Hongkong"
+        ],
+        "indie": [
+            "Indie"
+        ],
+        "indonesie": [
+            "Indonésie"
+        ],
+        "irak": [
+            "Irák"
+        ],
+        "iran": [
+            "Írán"
+        ],
+        "irsko": [
+            "Irsko"
+        ],
+        "island": [
+            "Island"
+        ],
+        "izrael": [
+            "Izrael"
+        ],
+        "italie": [
+            "Itálie"
+        ],
+        "jamajka": [
+            "Jamajka"
+        ],
+        "japonsko": [
+            "Japonsko",
+            "Tokio"
+        ],
+        "jihoafricka-republika": [
+            "Jihoafrická republika"
+        ],
+        "jizni-korea": [
+            "Jižní Korea"
+        ],
+        "jordan": [
+            "Jordan"
+        ],
+        "kambodza": [
+            "Kambodža"
+        ],
+        "kanada": [
+            "Kanada",
+            "Calgary"
+        ],
+        "katar": [
+            "Katar"
+        ],
+        "kazachstan": [
+            "Kazachstán"
+        ],
+        "kena": [
+            "Keňa"
+        ],
+        "kolumbie": [
+            "Kolumbie"
+        ],
+        "kosovo": [
+            "Kosovo"
+        ],
+        "kostarika": [
+            "Kostarika"
+        ],
+        "kuvajt": [
+            "Kuvajt"
+        ],
+        "kypr": [
+            "Kypr"
+        ],
+        "liberie": [
+            "Libérie"
+        ],
+        "litva": [
+            "Litva"
+        ],
+        "lotyssko": [
+            "Lotyšsko"
+        ],
+        "lucembursko": [
+            "Lucembursko"
+        ],
+        "madarsko": [
+            "Maďarsko"
+        ],
+        "malajsie": [
+            "Malajsie"
+        ],
+        "malawi": [
+            "Malawi"
+        ],
+        "malta": [
+            "Malta"
+        ],
+        "maroko": [
+            "Maroko"
+        ],
+        "mauritanie": [
+            "Mauritánie"
+        ],
+        "mexiko": [
+            "Mexiko",
+            "Tampico"
+        ],
+        "mongolsko": [
+            "Mongolsko"
+        ],
+        "myanmar": [
+            "Myanmar"
+        ],
+        "nemecko": [
+            "Německo"
+        ],
+        "nigerie": [
+            "Nigérie"
+        ],
+        "nikaragua": [
+            "Nikaragua"
+        ],
+        "nizozemsko": [
+            "Nizozemsko"
+        ],
+        "norsko": [
+            "Norsko"
+        ],
+        "novy-zeland": [
+            "Nový Zéland"
+        ],
+        "oman": [
+            "Omán"
+        ],
+        "panama": [
+            "Panama"
+        ],
+        "paraguay": [
+            "Paraguay"
+        ],
+        "peru": [
+            "Peru"
+        ],
+        "pobrezi-slonoviny": [
+            "Pobřeží slonoviny"
+        ],
+        "polsko": [
+            "Polsko"
+        ],
+        "portoriko": [
+            "Portoriko"
+        ],
+        "portugalsko": [
+            "Portugalsko"
+        ],
+        "rakousko": [
+            "Rakousko",
+            "Vídeň"
+        ],
+        "rwanda": [
+            "Rwanda"
+        ],
+        "recko": [
+            "Řecko"
+        ],
+        "rumunsko": [
+            "Rumunsko"
+        ],
+        "salvador": [
+            "Salvador"
+        ],
+        "san-marino": [
+            "San Marino"
+        ],
+        "saudska-arabie": [
+            "Saúdská Arábie"
+        ],
+        "senegal": [
+            "Senegal"
+        ],
+        "severni-irsko": [
+            "Severní Irsko"
+        ],
+        "severni-makedonie": [
+            "Severní Makedonie"
+        ],
+        "singapur": [
+            "Singapur"
+        ],
+        "skotsko": [
+            "Skotsko"
+        ],
+        "slovensko": [
+            "Slovensko"
+        ],
+        "slovinsko": [
+            "Slovinsko"
+        ],
+        "spojene-arabske-emiraty": [
+            "Spojené arabské emiráty"
+        ],
+        "spojene-kralovstvi": [
+            "Spojené království",
+            "Velká Británie",
+            "Gibraltar"
+        ],
+        "spanelsko": [
+            "Španělsko",
+            "Španělsko 2"
+        ],
+        "srbsko": [
+            "Srbsko"
+        ],
+        "svycarsko": [
+            "Švýcarsko",
+            "Basilej"
+        ],
+        "svedsko": [
+            "Švédsko",
+            "Stockholm"
+        ],
+        "syrie": [
+            "Sýrie"
+        ],
+        "taiwan": [
+            "Taipei"
+        ],
+        "tanzanie": [
+            "Tanzanie"
+        ],
+        "thajsko": [
+            "Thajsko"
+        ],
+        "tunisko": [
+            "Tunisko"
+        ],
+        "turecko": [
+            "Turecko"
+        ],
+        "uganda": [
+            "Uganda"
+        ],
+        "ukrajina": [
+            "Ukrajina"
+        ],
+        "uruguay": [
+            "Uruguay"
+        ],
+        "usa": [
+            "USA",
+            "USA 2",
+            "Sioux Falls",
+            "U.S. Chess Championship"
+        ],
+        "uzbekistan": [
+            "Uzbekistán"
+        ],
+        "venezuela": [
+            "Venezuela"
+        ],
+        "vietnam": [
+            "Vietnam"
+        ],
+        "wales": [
+            "Wales"
+        ],
+        "zambie": [
+            "Zambie"
+        ],
+        "special": [
+            "Mezinárodní",
+            "Evropa",
+            "Asie",
+            "Counter Strike",
+            "DOTA 2",
+            "Esoccer",
+            "King of Glory",
+            "League of Legends",
+            "Valorant",
+            "Rainbow Six",
+            "Evropská tour",
+            "Evropské ligy",
+            "Jadranská liga"
+        ],
+        "unknown": [
+            "CAF",
+            "AFC Clubs",
+            "kluby UEFA"
+        ]
+    },
+    "betx": {
+        "albanie": [
+            "Albánie"
+        ],
+        "alzirsko": [
+            "Alžírsko"
+        ],
+        "andorra": [
+            "Andorra"
+        ],
+        "anglie": [
+            "Anglie"
+        ],
+        "angola": [
+            "Angola"
+        ],
+        "argentina": [
+            "Argentina"
+        ],
+        "armenie": [
+            "Arménie"
+        ],
+        "aruba": [
+            "Aruba"
+        ],
+        "australie": [
+            "Austrálie",
+            "Playford City"
+        ],
+        "azerbajdzan": [
+            "Ázerbájdžán"
+        ],
+        "bahrajn": [
+            "Bahrajn"
+        ],
+        "belgie": [
+            "Belgie",
+            "Antverpy"
+        ],
+        "belorusko": [
+            "Brest"
+        ],
+        "bolivie": [
+            "Bolívie"
+        ],
+        "bosna-a-hercegovina": [
+            "Bosna a Hercegovina"
+        ],
+        "botswana": [
+            "Botswana"
+        ],
+        "brazilie": [
+            "Brazílie",
+            "Joao Pessoa",
+            "Curitiba",
+            "Campinas"
+        ],
+        "bulharsko": [
+            "Bulharsko"
+        ],
+        "chile": [
+            "Chile"
+        ],
+        "chorvatsko": [
+            "Chorvatsko"
+        ],
+        "cina": [
+            "Čína",
+            "Guangzhou"
+        ],
+        "cinsky-tchaj-pej": [
+            "Čínský Tchaj-pej"
+        ],
+        "cerna-hora": [
+            "Černá Hora"
+        ],
+        "ceska-republika": [
+            "Česko"
+        ],
+        "dansko": [
+            "Dánsko"
+        ],
+        "dominikanska-republika": [
+            "Dominikánská republika"
+        ],
+        "egypt": [
+            "Egypt"
+        ],
+        "ekvador": [
+            "Ekvádor"
+        ],
+        "estonsko": [
+            "Estonsko"
+        ],
+        "etiopie": [
+            "Etiopie"
+        ],
+        "faerske-ostrovy": [
+            "Faerské ostrovy"
+        ],
+        "filipiny": [
+            "Filipíny"
+        ],
+        "finsko": [
+            "Finsko"
+        ],
+        "francie": [
+            "Francie",
+            "St. Brieuc"
+        ],
+        "ghana": [
+            "Ghana"
+        ],
+        "gruzie": [
+            "Gruzie"
+        ],
+        "guatemala": [
+            "Guatemala"
+        ],
+        "honduras": [
+            "Honduras"
+        ],
+        "hongkong": [
+            "Hongkong"
+        ],
+        "indie": [
+            "Indie"
+        ],
+        "indonesie": [
+            "Indonésie"
+        ],
+        "irak": [
+            "Irák"
+        ],
+        "iran": [
+            "Írán"
+        ],
+        "irsko": [
+            "Irsko"
+        ],
+        "island": [
+            "Island"
+        ],
+        "izrael": [
+            "Izrael"
+        ],
+        "italie": [
+            "Itálie"
+        ],
+        "jamajka": [
+            "Jamajka"
+        ],
+        "japonsko": [
+            "Japonsko",
+            "Tokio"
+        ],
+        "jihoafricka-republika": [
+            "Jihoafrická republika"
+        ],
+        "jizni-korea": [
+            "Jižní Korea"
+        ],
+        "jordan": [
+            "Jordan"
+        ],
+        "kambodza": [
+            "Kambodža"
+        ],
+        "kanada": [
+            "Kanada",
+            "Calgary"
+        ],
+        "katar": [
+            "Katar"
+        ],
+        "kazachstan": [
+            "Kazachstán"
+        ],
+        "kena": [
+            "Keňa"
+        ],
+        "kolumbie": [
+            "Kolumbie"
+        ],
+        "kosovo": [
+            "Kosovo"
+        ],
+        "kostarika": [
+            "Kostarika"
+        ],
+        "kuvajt": [
+            "Kuvajt"
+        ],
+        "kypr": [
+            "Kypr"
+        ],
+        "liberie": [
+            "Libérie"
+        ],
+        "litva": [
+            "Litva"
+        ],
+        "lotyssko": [
+            "Lotyšsko"
+        ],
+        "lucembursko": [
+            "Lucembursko"
+        ],
+        "madarsko": [
+            "Maďarsko"
+        ],
+        "malajsie": [
+            "Malajsie"
+        ],
+        "malawi": [
+            "Malawi"
+        ],
+        "malta": [
+            "Malta"
+        ],
+        "maroko": [
+            "Maroko"
+        ],
+        "mauritanie": [
+            "Mauritánie"
+        ],
+        "mexiko": [
+            "Mexiko",
+            "Tampico"
+        ],
+        "mongolsko": [
+            "Mongolsko"
+        ],
+        "myanmar": [
+            "Myanmar"
+        ],
+        "nemecko": [
+            "Německo"
+        ],
+        "nigerie": [
+            "Nigérie"
+        ],
+        "nikaragua": [
+            "Nikaragua"
+        ],
+        "nizozemsko": [
+            "Nizozemsko"
+        ],
+        "norsko": [
+            "Norsko"
+        ],
+        "novy-zeland": [
+            "Nový Zéland"
+        ],
+        "oman": [
+            "Omán"
+        ],
+        "panama": [
+            "Panama"
+        ],
+        "paraguay": [
+            "Paraguay"
+        ],
+        "peru": [
+            "Peru"
+        ],
+        "pobrezi-slonoviny": [
+            "Pobřeží slonoviny"
+        ],
+        "polsko": [
+            "Polsko"
+        ],
+        "portoriko": [
+            "Portoriko"
+        ],
+        "portugalsko": [
+            "Portugalsko"
+        ],
+        "rakousko": [
+            "Rakousko",
+            "Vídeň"
+        ],
+        "rwanda": [
+            "Rwanda"
+        ],
+        "recko": [
+            "Řecko"
+        ],
+        "rumunsko": [
+            "Rumunsko"
+        ],
+        "salvador": [
+            "Salvador"
+        ],
+        "san-marino": [
+            "San Marino"
+        ],
+        "saudska-arabie": [
+            "Saúdská Arábie"
+        ],
+        "senegal": [
+            "Senegal"
+        ],
+        "severni-irsko": [
+            "Severní Irsko"
+        ],
+        "severni-makedonie": [
+            "Severní Makedonie"
+        ],
+        "singapur": [
+            "Singapur"
+        ],
+        "skotsko": [
+            "Skotsko"
+        ],
+        "slovensko": [
+            "Slovensko"
+        ],
+        "slovinsko": [
+            "Slovinsko"
+        ],
+        "spojene-arabske-emiraty": [
+            "Spojené arabské emiráty"
+        ],
+        "spojene-kralovstvi": [
+            "Spojené království",
+            "Velká Británie",
+            "Gibraltar"
+        ],
+        "spanelsko": [
+            "Španělsko",
+            "Španělsko 2"
+        ],
+        "srbsko": [
+            "Srbsko"
+        ],
+        "svycarsko": [
+            "Švýcarsko",
+            "Basilej"
+        ],
+        "svedsko": [
+            "Švédsko",
+            "Stockholm"
+        ],
+        "syrie": [
+            "Sýrie"
+        ],
+        "taiwan": [
+            "Taipei"
+        ],
+        "tanzanie": [
+            "Tanzanie"
+        ],
+        "thajsko": [
+            "Thajsko"
+        ],
+        "tunisko": [
+            "Tunisko"
+        ],
+        "turecko": [
+            "Turecko"
+        ],
+        "uganda": [
+            "Uganda"
+        ],
+        "ukrajina": [
+            "Ukrajina"
+        ],
+        "uruguay": [
+            "Uruguay"
+        ],
+        "usa": [
+            "USA",
+            "USA 2",
+            "Sioux Falls",
+            "U.S. Chess Championship"
+        ],
+        "uzbekistan": [
+            "Uzbekistán"
+        ],
+        "venezuela": [
+            "Venezuela"
+        ],
+        "vietnam": [
+            "Vietnam"
+        ],
+        "wales": [
+            "Wales"
+        ],
+        "zambie": [
+            "Zambie"
+        ],
+        "special": [
+            "Mezinárodní",
+            "Evropa",
+            "Asie",
+            "Counter Strike",
+            "DOTA 2",
+            "Esoccer",
+            "King of Glory",
+            "League of Legends",
+            "Valorant",
+            "Rainbow Six",
+            "Evropská tour",
+            "Evropské ligy",
+            "Jadranská liga"
+        ],
+        "unknown": [
+            "CAF",
+            "AFC Clubs",
+            "kluby UEFA"
+        ]
+    },
+    "forbet": {},
+    "fortuna": {},
+    "kingsbet": {},
+    "merkur": {},
+    "sazka": {},
+    "synottip": {},
+    "tipsport": {},
+    "other": {
+        "afghanistan": [
+            ""
+        ],
+        "albanie": [
+            ""
+        ],
+        "alzirsko": [
+            ""
+        ],
+        "andorra": [
+            ""
+        ],
+        "anglie": [
+            ""
+        ],
+        "angola": [
+            ""
+        ],
+        "antigua-a-barbuda": [
+            ""
+        ],
+        "argentina": [
+            ""
+        ],
+        "armenie": [
+            ""
+        ],
+        "aruba": [
+            ""
+        ],
+        "australie": [
+            ""
+        ],
+        "austrie": [
+            ""
+        ],
+        "azerbajdzan": [
+            ""
+        ],
+        "bahamy": [
+            ""
+        ],
+        "bahrajn": [
+            ""
+        ],
+        "banglades": [
+            ""
+        ],
+        "barbados": [
+            ""
+        ],
+        "belgie": [
+            ""
+        ],
+        "belize": [
+            ""
+        ],
+        "belorusko": [
+            ""
+        ],
+        "benin": [
+            ""
+        ],
+        "bhutan": [
+            ""
+        ],
+        "bila-hora": [
+            ""
+        ],
+        "bocvana": [
+            ""
+        ],
+        "bolivie": [
+            ""
+        ],
+        "bosna-a-hercegovina": [
+            ""
+        ],
+        "botswana": [
+            ""
+        ],
+        "brazilie": [
+            ""
+        ],
+        "brunej": [
+            ""
+        ],
+        "bulharsko": [
+            ""
+        ],
+        "burkina-faso": [
+            ""
+        ],
+        "burundi": [
+            ""
+        ],
+        "cap-verd": [
+            ""
+        ],
+        "chile": [
+            ""
+        ],
+        "chorvatsko": [
+            ""
+        ],
+        "cina": [
+            ""
+        ],
+        "cinsky-tchaj-pej": [
+            ""
+        ],
+        "cerna-hora": [
+            ""
+        ],
+        "ceska-republika": [
+            ""
+        ],
+        "dansko": [
+            ""
+        ],
+        "dominika": [
+            ""
+        ],
+        "dominikanska-republika": [
+            ""
+        ],
+        "dzunglie": [
+            ""
+        ],
+        "egypt": [
+            ""
+        ],
+        "ekvador": [
+            ""
+        ],
+        "eritrea": [
+            ""
+        ],
+        "estonsko": [
+            ""
+        ],
+        "etiopie": [
+            ""
+        ],
+        "faerske-ostrovy": [
+            ""
+        ],
+        "fidzi": [
+            ""
+        ],
+        "filipiny": [
+            ""
+        ],
+        "finsko": [
+            ""
+        ],
+        "francie": [
+            ""
+        ],
+        "gabun": [
+            ""
+        ],
+        "gambie": [
+            ""
+        ],
+        "ghana": [
+            ""
+        ],
+        "gronsko": [
+            ""
+        ],
+        "gruzie": [
+            ""
+        ],
+        "guatemala": [
+            ""
+        ],
+        "guinea": [
+            ""
+        ],
+        "guinea-bissau": [
+            ""
+        ],
+        "guyana": [
+            ""
+        ],
+        "honduras": [
+            ""
+        ],
+        "hongkong": [
+            ""
+        ],
+        "indie": [
+            ""
+        ],
+        "indonesie": [
+            ""
+        ],
+        "irak": [
+            ""
+        ],
+        "iran": [
+            ""
+        ],
+        "irsko": [
+            ""
+        ],
+        "island": [
+            ""
+        ],
+        "izrael": [
+            ""
+        ],
+        "italie": [
+            ""
+        ],
+        "jamajka": [
+            ""
+        ],
+        "japonsko": [
+            ""
+        ],
+        "jemen": [
+            ""
+        ],
+        "jordansko": [
+            ""
+        ],
+        "jihoafricka-republika": [
+            ""
+        ],
+        "jizni-korea": [
+            ""
+        ],
+        "jordan": [
+            ""
+        ],
+        "kambodza": [
+            ""
+        ],
+        "kanada": [
+            ""
+        ],
+        "katar": [
+            ""
+        ],
+        "kazachstan": [
+            ""
+        ],
+        "kena": [
+            ""
+        ],
+        "kirgizie": [
+            ""
+        ],
+        "kolumbie": [
+            ""
+        ],
+        "komory": [
+            ""
+        ],
+        "kongo": [
+            ""
+        ],
+        "kosovo": [
+            ""
+        ],
+        "kostarika": [
+            ""
+        ],
+        "kuba": [
+            ""
+        ],
+        "kuvajt": [
+            ""
+        ],
+        "kypr": [
+            ""
+        ],
+        "laos": [
+            ""
+        ],
+        "lesotho": [
+            ""
+        ],
+        "libanon": [
+            ""
+        ],
+        "liberie": [
+            ""
+        ],
+        "libye": [
+            ""
+        ],
+        "lichtenstejnsko": [
+            ""
+        ],
+        "litva": [
+            ""
+        ],
+        "lotyssko": [
+            ""
+        ],
+        "lucembursko": [
+            ""
+        ],
+        "madagaskar": [
+            ""
+        ],
+        "madarsko": [
+            ""
+        ],
+        "makedonie": [
+            ""
+        ],
+        "malajsie": [
+            ""
+        ],
+        "malawi": [
+            ""
+        ],
+        "maldivy": [
+            ""
+        ],
+        "mali": [
+            ""
+        ],
+        "malta": [
+            ""
+        ],
+        "maroko": [
+            ""
+        ],
+        "marshallovy-ostrovy": [
+            ""
+        ],
+        "mauritanie": [
+            ""
+        ],
+        "mauritius": [
+            ""
+        ],
+        "mexiko": [
+            ""
+        ],
+        "mikronesie": [
+            ""
+        ],
+        "moldavsko": [
+            ""
+        ],
+        "monako": [
+            ""
+        ],
+        "mongolsko": [
+            ""
+        ],
+        "mosambik": [
+            ""
+        ],
+        "myanmar": [
+            ""
+        ],
+        "namibie": [
+            ""
+        ],
+        "nauru": [
+            ""
+        ],
+        "nepal": [
+            ""
+        ],
+        "nemecko": [
+            ""
+        ],
+        "niger": [
+            ""
+        ],
+        "nigerie": [
+            ""
+        ],
+        "nikaragua": [
+            ""
+        ],
+        "nizozemsko": [
+            ""
+        ],
+        "norsko": [
+            ""
+        ],
+        "novy-zeland": [
+            ""
+        ],
+        "oman": [
+            ""
+        ],
+        "pakistan": [
+            ""
+        ],
+        "palau": [
+            ""
+        ],
+        "panama": [
+            ""
+        ],
+        "papua-nova-guinea": [
+            ""
+        ],
+        "paraguay": [
+            ""
+        ],
+        "peru": [
+            ""
+        ],
+        "pobrezi-slonoviny": [
+            ""
+        ],
+        "polsko": [
+            ""
+        ],
+        "portoriko": [
+            ""
+        ],
+        "portugalsko": [
+            ""
+        ],
+        "rakousko": [
+            ""
+        ],
+        "rwanda": [
+            ""
+        ],
+        "recko": [
+            ""
+        ],
+        "rumunsko": [
+            ""
+        ],
+        "rusko": [
+            ""
+        ],
+        "salvador": [
+            ""
+        ],
+        "samooa": [
+            ""
+        ],
+        "san-marino": [
+            ""
+        ],
+        "saudska-arabie": [
+            ""
+        ],
+        "senegal": [
+            ""
+        ],
+        "severni-irsko": [
+            ""
+        ],
+        "severni-makedonie": [
+            ""
+        ],
+        "seychely": [
+            ""
+        ],
+        "singapur": [
+            ""
+        ],
+        "skotsko": [
+            ""
+        ],
+        "siria": [
+            ""
+        ],
+        "slovensko": [
+            ""
+        ],
+        "slovinsko": [
+            ""
+        ],
+        "somalsko": [
+            ""
+        ],
+        "spojene-arabske-emiraty": [
+            ""
+        ],
+        "spojene-kralovstvi": [
+            ""
+        ],
+        "spanelsko": [
+            ""
+        ],
+        "srbsko": [
+            ""
+        ],
+        "sri-lanka": [
+            ""
+        ],
+        "stredni-africka-republika": [
+            ""
+        ],
+        "sudan": [
+            ""
+        ],
+        "surinam": [
+            ""
+        ],
+        "svazijsko": [
+            ""
+        ],
+        "svycarsko": [
+            ""
+        ],
+        "svedsko": [
+            ""
+        ],
+        "syrie": [
+            ""
+        ],
+        "tadzikistan": [
+            ""
+        ],
+        "taiwan": [
+            ""
+        ],
+        "tanzanie": [
+            ""
+        ],
+        "thajsko": [
+            ""
+        ],
+        "togo": [
+            ""
+        ],
+        "tonga": [
+            ""
+        ],
+        "trinidad-a-tobago": [
+            ""
+        ],
+        "tunisko": [
+            ""
+        ],
+        "turecko": [
+            ""
+        ],
+        "turkmenistan": [
+            ""
+        ],
+        "uganda": [
+            ""
+        ],
+        "ukrajina": [
+            ""
+        ],
+        "uruguay": [
+            ""
+        ],
+        "usa": [
+            ""
+        ],
+        "uzbekistan": [
+            ""
+        ],
+        "vanuatu": [
+            ""
+        ],
+        "vatican": [
+            ""
+        ],
+        "venezuela": [
+            ""
+        ],
+        "vietnam": [
+            ""
+        ],
+        "vychodni-timor": [
+            ""
+        ],
+        "wales": [
+            ""
+        ],
+        "zambie": [
+            ""
+        ],
+        "zimbabwe": [
+            ""
+        ],
+        "special": [
+            ""
+        ],
+        "unknown": [
+            ""
+        ]
+    }
+}

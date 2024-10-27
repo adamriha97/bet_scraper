@@ -77,9 +77,15 @@ class SpiderSazkaSpider(scrapy.Spider):
                             bet_0 = bet['prices'][0]['decimal']
                     primary_category = primary_category_original
                     secondary_category = secondary_category_original.split(',')[0]
-                    for substring in ['ženy', 'muži', 'Women', 'WTA', 'ATP', 'ITF', 'Challenger']:
+                    for substring in ['ženy', 'muži', 'Women', 'WTA', 'ATP', 'ITF', 'Challenger', ' 2']:
                         secondary_category = secondary_category.replace(substring, '')
                     secondary_category = secondary_category.strip()
+                    if 'ITF ' in primary_category:
+                        secondary_category_split = secondary_category.split()
+                        if secondary_category_split[0] == 'Velká':
+                            secondary_category = ' '.join([secondary_category_split[0], secondary_category_split[1]])
+                        else:
+                            secondary_category = secondary_category_split[0]
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'SA'
                     basic_sport_event_item['bookmaker_name'] = 'sazka'

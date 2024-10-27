@@ -39,8 +39,14 @@ class SpiderBetxSpider(scrapy.Spider):
             if sport not in not_interested:
                 for category in section['Categories']:
                     primary_category_original = category['Name']
+                    primary_category = primary_category_original.replace(' Amatéři', '').replace(' mládežnické', '').replace(' klubové', '')
                     for league in category['Leagues']:
                         secondary_category_original = league['Name']
+                        secondary_category = secondary_category_original.split(' - ')[0].split(', ')[0]
+                        for substring in ['ATP ', 'WTA ', 'ITF ', 'Challenger ', ' 4-hra', ' tvrdý povrch', ' II']:
+                            secondary_category = secondary_category.replace(substring, '')
+                        secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
+                        secondary_category = secondary_category.strip()
                         for match in league['Matches']:
                             try:
                                 event_url = f'https://bet-x.cz/cs/sports-betting/offer/{unidecode(sport.lower().replace(" ", "-"))}?match={str(match["Id"])}'
@@ -70,8 +76,6 @@ class SpiderBetxSpider(scrapy.Spider):
                                         bet_02 = bet["Odd"]
                                     elif bet["Name"] == '12':
                                         bet_12 = bet["Odd"]
-                                primary_category = primary_category_original.replace(' Amatéři', '').replace(' mládežnické', '').replace(' klubové', '')
-                                secondary_category = secondary_category_original.replace(' 4-hra', '').split(' - ')[0].replace(' tvrdý povrch', '')
                                 if (not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == bet_11 == bet_22 == -1)) and (participant_2 != None):
                                     basic_sport_event_item = BasicSportEventItem()
                                     basic_sport_event_item['bookmaker_id'] = 'BX'

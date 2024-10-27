@@ -3,316 +3,260 @@
         "Afghánistán",
         "Kabul",
         "Afghanistan",
-        "Kábul",
-        "afghánsk"
+        "Kábul"
     ],
     "albanie": [
         "Tirana",
         "Albánie",
-        "albánsk",
         "Albania"
     ],
     "alzirsko": [
-        "Alžír",
-        "Algeria",
-        "alžírsk",
         "Algiers",
+        "Algeria",
+        "Alžír",
         "Alžírsko"
     ],
     "andorra": [
         "Andorra",
-        "Andora",
         "Andorra la Vella",
-        "andorrsk"
+        "Andora"
     ],
     "angola": [
-        "angolsk",
         "Luanda",
         "Angola"
     ],
     "antigua-a-barbuda": [
         "Antigua a Barbuda",
         "Antigua and Barbuda",
-        "antiguanská a barbudsk",
-        "antiguansk",
-        "barbudsk",
         "Saint John's"
     ],
     "argentina": [
         "Córdoba",
-        "argentinsk",
         "Argentina",
         "Buenos Aires"
     ],
     "armenie": [
-        "Yerevan",
         "Arménie",
-        "Jerevan",
         "Armenia",
-        "arménsk"
+        "Jerevan",
+        "Yerevan"
     ],
     "australie": [
         "Hobart",
         "Brisbane",
         "Adelaide",
-        "australsk",
         "Austrálie",
         "Australian Open",
-        "Cairns",
-        "Sydney",
         "Canberra",
         "United Cup",
-        "Australia"
+        "Australia",
+        "Sydney",
+        "Cairns"
     ],
     "azerbajdzan": [
-        "Baku",
-        "ázerbájdžánsk",
+        "Azerbaijan",
         "Ázerbájdžán",
-        "Azerbaijan"
+        "Baku"
     ],
     "bahamy": [
-        "Nassau",
         "Bahamas",
-        "Bahamy",
-        "bahamsk"
+        "Nassau",
+        "Bahamy"
     ],
     "bahrajn": [
-        "Manama",
-        "Manáma",
         "Bahrajn",
-        "bahrajnsk",
+        "Manáma",
+        "Manama",
         "Bahrain"
     ],
     "banglades": [
         "Dhaka",
         "Bangladéš",
         "Bangladesh",
-        "Dháka",
-        "bangladéšsk"
+        "Dháka"
     ],
     "barbados": [
         "Barbados",
-        "Bridgetown",
-        "barbadosk"
+        "Bridgetown"
     ],
     "belgie": [
         "Antwerp",
         "Belgie",
         "Brusel",
-        "belgick",
         "Brussels",
         "Belgium",
         "Antverpy"
     ],
     "belize": [
         "Belize",
-        "belizsk",
         "Belmopan"
     ],
     "belorusko": [
         "Bělorusko",
-        "bělorusk",
         "Belarus",
         "Minsk"
     ],
     "benin": [
-        "Benin",
-        "beninsk",
+        "Porto-Novo",
         "Porto Novo",
-        "Porto-Novo"
+        "Benin"
     ],
     "bhutan": [
-        "Bhutan",
         "Thimphu",
-        "Bhútán",
-        "bhútánsk",
-        "Thimbú"
+        "Bhutan",
+        "Thimbú",
+        "Bhútán"
     ],
     "bolivie": [
-        "bolivijsk",
-        "bolívijsk",
         "Sucre",
         "Bolívie",
         "Bolivia"
     ],
     "bosna-a-hercegovina": [
-        "bosenská a hercegovsk",
-        "bosensk",
-        "hercegovsk",
-        "bosenskohercegovsk",
         "Bosnia and Herzegovina",
         "Bosna a Hercegovina",
-        "Sarajevo",
-        "Bosna a Herc."
+        "Sarajevo"
     ],
     "botswana": [
-        "botswansk",
         "Gaborone",
         "Botswana"
     ],
     "brazilie": [
-        "brazilsk",
+        "Rio de Janeiro",
         "Brazílie",
         "Brazil",
         "Brasília",
-        "Rio de Janeiro",
-        "Curitiba",
-        "Lajeado"
+        "Curitiba"
     ],
     "brunej": [
         "Bandar Seri Begawan",
         "Brunei",
-        "Brunej",
-        "brunejsk"
+        "Brunej"
     ],
     "bulharsko": [
         "Bulharsko",
-        "bulharsk",
         "Sofia",
         "Bulgaria"
     ],
     "burkina-faso": [
-        "burkinafask",
         "Ouagadougou",
         "Burkina Faso"
     ],
     "burundi": [
         "Burundi",
-        "burundsk",
         "Gitega"
     ],
     "cad": [
         "Čad",
-        "čadsk",
         "Chad",
         "N'Djamena"
     ],
     "cerna-hora": [
         "Černá Hora",
-        "černohorsk",
-        "Podgorica",
-        "Montenegro"
+        "Montenegro",
+        "Podgorica"
     ],
     "ceska-republika": [
-        "česk",
         "Česká republika",
         "Česko",
         "Czech Republic",
         "Prague",
         "Praha",
         "Czechia",
-        "Česká Republika",
-        "česko"
+        "Česká Republika"
     ],
     "cina": [
         "Wuhan",
         "Shanghai",
         "Hong Kong",
-        "čínsk",
         "Beijing",
         "Peking",
         "Čína",
         "Hongkong",
-        "Qiandaohu",
         "Jiujiang",
         "Guangzhou",
         "Hangzhou",
         "Ningbo",
         "Chengdu",
         "Šanghaj",
+        "China",
         "Qian Daohu",
-        "China"
+        "Qiandaohu"
     ],
     "dansko": [
-        "Dánsko",
         "Copenhagen",
-        "Denmark",
         "Kodaň",
-        "dánsk"
+        "Denmark",
+        "Dánsko"
     ],
     "konzska-demokraticka-republika": [
         "Konžská demokratická republika",
         "Kinshasa",
-        "konžsk",
         "Democratic Republic of the Congo"
     ],
     "dominika": [
         "Roseau",
         "Dominica",
-        "dominikánsk",
         "Dominika"
     ],
     "dominikanska-republika": [
         "Dominican Republic",
-        "dominikánsk",
         "Santo Domingo",
         "Dominikánská republika"
     ],
     "dzibutsko": [
         "Džibuti",
         "Džibutsko",
-        "džibutsk",
         "Djibouti"
     ],
     "egypt": [
         "Egypt",
         "Cairo",
-        "Káhira",
-        "egyptsk"
+        "Káhira"
     ],
     "ekvador": [
-        "Ecuador",
-        "Guayaquil",
-        "ekvádorsk",
         "Quito",
-        "Ekvádor"
+        "Ekvádor",
+        "Ecuador",
+        "Guayaquil"
     ],
     "eritrea": [
         "Eritrea",
-        "Asmara",
-        "eritrejsk"
+        "Asmara"
     ],
     "estonsko": [
         "Tallinn",
         "Estonsko",
-        "Estonia",
-        "estonsk"
+        "Estonia"
     ],
     "etiopie": [
-        "Addis Abeba",
-        "etiopsk",
+        "Addis Ababa",
         "Ethiopia",
         "Etiopie",
-        "Addis Ababa"
+        "Addis Abeba"
     ],
     "fidzi": [
         "Fiji",
-        "fidžijsk",
         "Suva",
         "Fidži"
     ],
     "filipiny": [
         "Filipíny",
-        "filipínsk",
         "Manila",
         "Philippines"
     ],
     "finsko": [
         "Helsinki",
         "Finsko",
-        "finsk",
         "Finland"
     ],
     "francie": [
         "Metz",
-        "Brest",
         "Roland Garros",
         "French Open",
         "France",
         "Marseille",
         "Paris",
-        "Nantes",
-        "francouzsk",
         "Paříž",
         "Lyon",
         "Rouen",
@@ -320,72 +264,62 @@
         "Montpellier",
         "Strasbourg",
         "Štrasburk",
-        "Méty"
+        "Méty",
+        "Nantes",
+        "Brest"
     ],
     "gabon": [
         "Gabon",
-        "Libreville",
-        "gabonsk"
+        "Libreville"
     ],
     "gambie": [
         "Banjul",
         "Gambie",
-        "gambijsk",
         "Gambia"
     ],
     "ghana": [
+        "Accra",
         "Akkra",
-        "Ghana",
-        "ghansk",
-        "Accra"
+        "Ghana"
     ],
     "grenada": [
-        "grenadsk",
         "Grenada",
         "Saint George's"
     ],
     "gruzie": [
         "Tbilisi",
         "Georgia",
-        "Gruzie",
-        "gruzínsk"
+        "Gruzie"
     ],
     "guatemala": [
         "Ciudad de Guatemala",
         "Guatemala",
-        "guatemalsk",
         "Guatemala City"
     ],
     "guinea": [
         "Konakry",
         "Guinea",
-        "guinejsk",
         "Conakry"
     ],
     "guinea-bissau": [
-        "guinejsko-bissausk",
         "Guinea-Bissau",
         "Bissau"
     ],
     "guyana": [
-        "guyansk",
         "Guyana",
         "Georgetown"
     ],
     "haiti": [
         "Haiti",
-        "Port-au-Prince",
-        "haitsk"
+        "Port-au-Prince"
     ],
     "honduras": [
         "Honduras",
-        "Tegucigalpa",
-        "hondurask"
+        "Tegucigalpa"
     ],
     "chile": [
         "Santiago",
         "Chile",
-        "chilsk",
         "Santiago de Chile"
     ],
     "chorvatsko": [
@@ -393,103 +327,90 @@
         "Croatia",
         "Umag",
         "Zagreb",
-        "Chorvatsko",
-        "chorvatsk"
+        "Chorvatsko"
     ],
     "indie": [
         "India",
-        "indick",
-        "Nové Dillí",
         "Indie",
-        "New Delhi"
+        "New Delhi",
+        "Nové Dillí"
     ],
     "indonesie": [
         "Jakarta",
         "Indonesia",
-        "Indonésie",
-        "indonésk"
+        "Indonésie"
     ],
     "irak": [
-        "Baghdad",
-        "Irák",
         "Bagdád",
+        "Irák",
         "Iraq",
-        "iráck"
+        "Baghdad"
     ],
     "iran": [
+        "Teherán",
         "Tehran",
         "Írán",
-        "Iran",
-        "Teherán",
-        "íránsk"
+        "Iran"
     ],
     "irsko": [
-        "irsk",
         "Dublin",
         "Ireland",
         "Irsko"
     ],
     "island": [
-        "islandsk",
-        "Island",
         "Reykjavik",
         "Reykjavík",
-        "Iceland"
+        "Iceland",
+        "Island"
     ],
     "italie": [
-        "Itálie B",
         "Palermo",
         "Rome",
-        "Sëlva",
         "Řím",
-        "italsk",
         "Itálie",
-        "Selva Gardena",
-        "Itálie A",
         "Italy",
+        "Selva Gardena",
+        "Sëlva",
+        "Itálie A",
+        "Itálie B",
         "Itálie C"
     ],
     "izrael": [
+        "Jeruzalém",
         "Jerusalem",
         "Izrael",
-        "izraelsk",
-        "Jeruzalém",
         "Israel"
     ],
     "jamajka": [
         "Jamaica",
         "Jamajka",
-        "jamajsk",
         "Kingston"
     ],
     "japonsko": [
         "Japonsko",
         "Japan",
-        "japonsk",
         "Osaka",
-        "Makinohara",
         "Tokyo",
-        "Tokio"
+        "Tokio",
+        "Makinohara"
     ],
     "jemen": [
-        "jemensk",
-        "Yemen",
         "Saná",
         "Sana'a",
-        "Jemen"
+        "Jemen",
+        "Yemen"
     ],
     "jizni-afrika": [
-        "Pretoria",
-        "jihoafrick",
-        "Bloemfontein, Pretoria, Cape Town",
-        "Kapské Město",
-        "Bloemfontein, Pretorie, Kapské Město",
-        "Pretorie",
-        "JAR",
         "South Africa",
-        "Cape Town",
+        "Bloemfontein, Pretorie, Kapské Město",
         "Bloemfontein",
-        "Jižní Afrika"
+        "Pretorie",
+        "Kapské Město",
+        "Jižní Afrika",
+        "Bloemfontein, Pretoria, Cape Town",
+        "Pretoria",
+        "Cape Town",
+        "JAR"
     ],
     "jizni-korea": [
         "South Korea",
@@ -497,231 +418,189 @@
         "Soul",
         "Seoul",
         "Jižní  Korea",
-        "J.Korea",
-        "jihokorejsk"
+        "J.Korea"
     ],
     "jizni-sudan": [
-        "jižnosúdánsk",
-        "Džuba",
-        "Juba",
         "Jižní Súdán",
-        "South Sudan"
+        "Juba",
+        "South Sudan",
+        "Džuba"
     ],
     "jordansko": [
-        "Ammán",
         "Amman",
-        "Jordánsko",
-        "jordánsk",
-        "Jordan"
+        "Jordan",
+        "Ammán",
+        "Jordánsko"
     ],
     "kambodza": [
-        "kambodžsk",
         "Cambodia",
-        "Kambodža",
         "Phnom Penh",
-        "Phnompenh"
+        "Phnompenh",
+        "Kambodža"
     ],
     "kamerun": [
-        "kamerunsk",
         "Kamerun",
-        "Yaoundé",
-        "Cameroon"
+        "Cameroon",
+        "Yaoundé"
     ],
     "kanada": [
         "Kanada",
         "Canada",
-        "Saguenay",
         "Montreal",
-        "kanadsk",
         "Ottawa",
         "Toronto",
-        "OHL",
-        "WHL",
-        "MJHL",
-        "ohl",
-        "whl",
-        "mjhl"
+        "Saguenay"
     ],
     "kapverdy": [
-        "kapverdsk",
-        "Praia",
         "Cape Verde",
+        "Praia",
         "Kapverdy"
     ],
     "katar": [
+        "Doha",
         "Katar",
         "Qatar",
-        "Dauhá",
-        "Doha",
-        "katarsk"
+        "Dauhá"
     ],
     "kazachstan": [
-        "kazašsk",
+        "Kazakhstan",
         "Kazachstán",
         "Almaty",
-        "Kazakhstan",
         "Astana"
     ],
     "kena": [
         "Nairobi",
-        "keňsk",
         "Kenya",
         "Keňa"
     ],
     "kiribati": [
         "Jižní Tarawa",
         "Kiribati",
-        "South Tarawa",
-        "kiribatsk"
+        "South Tarawa"
     ],
     "kolumbie": [
+        "Kolumbie",
         "Colombia",
-        "kolumbijsk",
-        "Bogota",
         "Bogotá",
-        "Kolumbie"
+        "Bogota"
     ],
     "komory": [
         "Komory",
         "Comoros",
-        "Moroni",
-        "komorsk"
+        "Moroni"
     ],
     "kosovo": [
         "Kosovo",
         "Priština",
-        "kosovsk",
         "Pristina"
     ],
     "kostarika": [
         "San José",
         "Costa Rica",
-        "kostarick",
         "Kostarika"
     ],
     "kuba": [
         "Kuba",
         "Cuba",
-        "Havana",
-        "kubánsk"
+        "Havana"
     ],
     "kuvajt": [
-        "kuvajtsk",
         "Kuwait",
         "Kuvajt"
     ],
     "kypr": [
         "Nikósie",
-        "Kypr",
         "Cyprus",
         "Nicosia",
-        "kypersk"
+        "Kypr"
     ],
     "kyrgyzstan": [
-        "Biškek",
         "Kyrgyzstán",
-        "Bishkek",
         "Kyrgyzstan",
-        "kyrgyzsk"
+        "Bishkek",
+        "Biškek"
     ],
     "laos": [
-        "laosk",
         "Laos",
         "Vientiane"
     ],
     "lesotho": [
         "Lesotho",
-        "lesothsk",
         "Maseru"
     ],
     "libanon": [
-        "libanonsk",
-        "Libanon",
         "Bejrút",
+        "Libanon",
         "Beirut",
         "Lebanon"
     ],
     "liberie": [
         "Libérie",
         "Monrovia",
-        "liberijsk",
         "Liberia"
     ],
     "libye": [
-        "Libye",
+        "Tripoli",
         "Libya",
-        "Tripolis",
-        "libyjsk",
-        "Tripoli"
+        "Libye",
+        "Tripolis"
     ],
     "lichtenstejnsko": [
         "Liechtenstein",
         "Lichtenštejnsko",
-        "lichtenštejnsk",
         "Vaduz"
     ],
     "litva": [
         "Lithuania",
-        "litevsk",
         "Litva",
         "Vilnius"
     ],
     "lotyssko": [
-        "lotyšsk",
-        "Riga",
         "Latvia",
-        "Lotyšsko"
+        "Lotyšsko",
+        "Riga"
     ],
     "lucembursko": [
-        "lucembursk",
+        "Lucembursko",
         "Luxembourg",
-        "Lucemburk",
-        "Lucembursko"
+        "Lucemburk"
     ],
     "madagaskar": [
         "Madagaskar",
         "Antananarivo",
-        "Madagascar",
-        "madagaskarsk"
+        "Madagascar"
     ],
     "madarsko": [
         "Budapešť",
         "Budapest",
-        "maďarsk",
         "Maďarsko",
         "Hungary"
     ],
     "malajsie": [
         "Malajsie",
         "Malaysia",
-        "malajsk",
         "Kuala Lumpur"
     ],
     "malawi": [
         "Malawi",
-        "Lilongwe",
-        "malawsk"
+        "Lilongwe"
     ],
     "maledivy": [
-        "Malé",
-        "Maldives",
         "Male",
         "Maledivy",
-        "maledivsk"
+        "Malé",
+        "Maldives"
     ],
     "mali": [
         "Mali",
-        "Bamako",
-        "malijsk"
+        "Bamako"
     ],
     "malta": [
         "Malta",
-        "maltsk",
         "Valletta"
     ],
     "maroko": [
         "Rabat",
-        "marock",
         "Marrakech",
         "Morocco",
         "Marrakéš",
@@ -730,177 +609,153 @@
     "marshallovy-ostrovy": [
         "Marshallovy ostrovy",
         "Marshall Islands",
-        "Majuro",
-        "marshallsk"
+        "Majuro"
     ],
     "mauricius": [
         "Mauritius",
         "Mauricius",
-        "Port Louis",
-        "mauricijsk"
+        "Port Louis"
     ],
     "mauritanie": [
         "Nuakšott",
+        "Mauritania",
         "Mauritánie",
-        "mauritánsk",
-        "Nouakchott",
-        "Mauritania"
+        "Nouakchott"
     ],
     "mexiko": [
         "Los Cabos",
-        "Merida",
         "Guadalajara",
         "Ciudad de México",
-        "Huamantla",
-        "mexick",
         "Mexico City",
         "Acapulco",
         "Monterrey",
         "Mexico",
         "Mexiko",
+        "Mérida",
+        "Huamantla",
+        "Merida",
         "Mérida"
     ],
     "mikronesie": [
         "Mikronésie",
         "Palikir",
-        "Micronesia",
-        "mikronésk"
+        "Micronesia"
     ],
     "moldavsko": [
+        "Moldavsko",
         "Kišiněv",
         "Moldova",
-        "moldavsk",
-        "Moldavsko",
         "Chișinău"
     ],
     "monako": [
         "Monako",
-        "Monte Carlo",
         "Monaco",
-        "monack",
+        "Monte Carlo",
         "Monaco-Ville"
     ],
     "mongolsko": [
         "Mongolia",
-        "Ulánbátar",
         "Mongolsko",
-        "mongolsk",
+        "Ulánbátar",
         "Ulaanbaatar"
     ],
     "mosambik": [
-        "mosambick",
+        "Mosambik",
         "Mozambique",
-        "Maputo",
-        "Mosambik"
+        "Maputo"
     ],
     "myanmar": [
         "Myanmar",
         "Naypyidaw",
-        "myanmarsk",
-        "Neipyijto",
-        "Barma"
+        "Barma",
+        "Neipyijto"
     ],
     "namibie": [
         "Namibie",
         "Windhoek",
-        "namibijsk",
         "Namibia"
     ],
     "nauru": [
+        "Nauru",
         "Yaren District (de facto)",
-        "naursk",
-        "úředně žádné (de facto Yaren)",
-        "Nauru"
+        "úředně žádné (de facto Yaren)"
     ],
     "nemecko": [
-        "německ",
         "Germany",
-        "Hamburk",
+        "Stuttgart",
         "Berlín",
         "Halle",
         "Munich",
         "Laver Cup",
         "Berlin",
         "Německo",
-        "Bad Homburg",
         "Mnichov",
         "Hamburg",
-        "Stuttgart"
+        "Bad Homburg",
+        "Hamburk"
     ],
     "nepal": [
         "Kathmandu",
-        "nepálsk",
         "Nepál",
         "Káthmándú",
         "Nepal"
     ],
     "niger": [
         "Niamey",
-        "Niger",
-        "nigersk"
+        "Niger"
     ],
     "nigerie": [
         "Nigérie",
         "Abuja",
-        "nigerijsk",
         "Nigeria"
     ],
     "nikaragua": [
         "Nikaragua",
         "Nicaragua",
-        "nikaragujsk",
         "Managua"
     ],
     "nizozemsko": [
-        "nizozemsk",
         "Netherlands",
         "Hertogenbosch",
         "Amsterdam",
         "Rotterdam",
-        "Aruba",
-        "Nizozemsko"
+        "Nizozemsko",
+        "Aruba"
     ],
     "norsko": [
         "Oslo",
         "Norsko",
-        "norsk",
         "Norway"
     ],
     "novy-zeland": [
-        "Nový Zéland",
-        "Auckland",
-        "novozélandsk",
         "Wellington",
-        "New Zealand"
+        "Auckland",
+        "New Zealand",
+        "Nový Zéland"
     ],
     "oman": [
-        "Omán",
-        "Maskat",
+        "Oman",
         "Muscat",
-        "ománsk",
-        "Oman"
+        "Omán",
+        "Maskat"
     ],
     "pakistan": [
         "Pakistan",
-        "pákistánsk",
-        "Pákistán",
         "Islamabad",
+        "Pákistán",
         "Islámábád"
     ],
     "palau": [
-        "palausk",
         "Palau",
         "Ngerulmud"
     ],
     "palestina": [
         "Palestina",
         "Rámaláh",
-        "Palestine",
         "Ramallah",
-        "palestinsk"
+        "Palestine"
     ],
     "panama": [
-        "panamsk",
         "Panama City",
         "Ciudad de Panamá",
         "Panama"
@@ -908,44 +763,37 @@
     "papua-nova-guinea": [
         "Papua Nová Guinea",
         "Port Moresby",
-        "papuánsk",
         "Papua New Guinea"
     ],
     "paraguay": [
         "Paraguay",
-        "Asunción",
-        "paraguaysk"
+        "Asunción"
     ],
     "peru": [
-        "peruánsk",
         "Lima",
         "Peru"
     ],
     "pobrezi-slonoviny": [
-        "Ivory Coast",
-        "Pobřeží Slonoviny",
-        "Yamoussoukro",
-        "Pobreží  slonoviny",
         "Pobřeží slonoviny",
-        "slonokožsk"
+        "Yamoussoukro",
+        "Ivory Coast",
+        "Pobreží  slonoviny",
+        "Pobřeží Slonoviny"
     ],
     "polsko": [
-        "polsk",
+        "Warsaw",
         "Polsko",
-        "Varšava",
         "Poland",
-        "Warsaw"
+        "Varšava"
     ],
     "portugalsko": [
         "Lisbon",
         "Lisabon",
         "Estoril",
         "Portugalsko",
-        "portugalsk",
         "Portugal"
     ],
     "rakousko": [
-        "rakousk",
         "Rakousko",
         "Vienna",
         "Vídeň",
@@ -956,19 +804,16 @@
     ],
     "konzska-republika": [
         "Republic of the Congo",
-        "konžsk",
         "Konžská republika",
         "Brazzaville"
     ],
     "rovnikova-guinea": [
         "Malabo",
-        "rovníkovoguinejsk",
-        "Rovníková Guinea",
-        "Equatorial Guinea"
+        "Equatorial Guinea",
+        "Rovníková Guinea"
     ],
     "rumunsko": [
         "Kluž",
-        "rumunsk",
         "Bukurešť",
         "Rumunsko",
         "Bucharest",
@@ -978,134 +823,110 @@
         "Cluj-Napoca"
     ],
     "rusko": [
-        "Moscow",
         "Rusko",
-        "rusk",
         "Moskva",
-        "Russia",
-        "KHL",
-        "MHL",
-        "VHL",
-        "khl",
-        "mhl",
-        "vhl"
+        "Moscow",
+        "Russia"
     ],
     "rwanda": [
         "Kigali",
-        "rwandsk",
         "Rwanda"
     ],
     "recko": [
-        "Atény",
         "Athens",
-        "řeck",
         "Greece",
-        "Řecko"
+        "Řecko",
+        "Atény"
     ],
     "salvador": [
         "Salvador",
-        "Salvádor",
-        "salvadorsk",
         "El Salvador",
-        "San Salvador"
+        "San Salvador",
+        "Salvádor"
     ],
     "samoa": [
-        "samosk",
-        "Apia",
-        "Samoa"
+        "Samoa",
+        "Apia"
     ],
     "san-marino": [
-        "San Marino",
-        "sanmarinsk"
+        "San Marino"
     ],
     "saudska-arabie": [
-        "saúdskoarabsk",
-        "Rijád",
         "Saúdská Arábie",
+        "Rijád",
+        "Riyadh",
         "Saudi Arabia",
-        "Saudská Arábie",
-        "Riyadh"
+        "Saudská Arábie"
     ],
     "senegal": [
-        "senegalsk",
         "Senegal",
         "Dakar"
     ],
     "severni-korea": [
-        "severokorejsk",
-        "Pchjongjang",
         "Severní Korea",
         "Pyongyang",
+        "Pchjongjang",
         "North Korea"
     ],
     "severni-makedonie": [
         "Skopje",
         "Severní Makedonie",
-        "severomakedonsk",
         "North Macedonia"
     ],
     "seychely": [
         "Victoria",
-        "seychelsk",
         "Seychely",
         "Seychelles"
     ],
     "sierra-leone": [
         "Sierra Leone",
-        "sierraleonsk",
         "Freetown"
     ],
     "singapur": [
         "Singapore",
-        "Singapur",
-        "singapursk"
+        "Singapur"
     ],
     "slovensko": [
         "Slovakia",
-        "slovensk",
         "Bratislava",
         "Slovensko"
     ],
     "slovinsko": [
+        "Ljubljana",
         "Slovenia",
         "Lublaň",
-        "Ljubljana",
-        "slovinsk",
         "Slovinsko"
     ],
     "somalsko": [
-        "Somalia",
-        "somálsk",
         "Mogadišo",
-        "Mogadishu",
-        "Somálsko"
+        "Somálsko",
+        "Somalia",
+        "Mogadishu"
     ],
     "spojene-arabske-emiraty": [
         "Abú Dhabí",
-        "Dubaj",
-        "arabsk",
         "SAE",
         "Abu Dhabi",
         "Abú Zabí",
         "United Arab Emirates",
         "Dubai",
-        "Spojené arabské emiráty"
+        "Spojené arabské emiráty",
+        "Dubaj"
     ],
     "spojene-kralovstvi": [
         "Eastbourne",
         "Birmingham",
         "Spojené království",
         "Nottingham",
-        "Norwich",
         "United Kingdom",
         "London",
         "Wimbledon",
-        "Great Britain",
-        "Loughborough",
-        "Glasgow",
-        "britsk",
         "Londýn",
-        "Velká Británie"
+        "Velká Británie",
+        "Great Britain",
+        "Glasgow",
+        "Loughborough",
+        "Norwich"
     ],
     "spojene-staty-americke": [
         "USA",
@@ -1113,7 +934,6 @@
         "Atlanta",
         "Delray Beach",
         "Charlottesville",
-        "Sioux Falls",
         "Cleveland",
         "Winston-Salem",
         "Charleston",
@@ -1124,122 +944,96 @@
         "Cincinnati",
         "United States",
         "Indian Wells",
-        "Tyler",
         "Spojené státy americké",
-        "americk",
-        "Spojené státy",
         "US Open",
         "Miami",
         "Newport",
         "Houston",
-        "NHL",
-        "AHL",
-        "nhl",
-        "ahl",
-        "NBA",
-        "nba"
+        "Sioux Falls",
+        "Spojené státy",
+        "United States",
+        "Tyler"
     ],
     "srbsko": [
-        "Bělehrad",
-        "srbsk",
+        "Belgrade",
         "Serbia",
-        "Srbsko",
-        "Belgrade"
+        "Bělehrad",
+        "Srbsko"
     ],
     "stredoafricka-republika": [
         "Bangui",
         "Central African Republic",
-        "středoafrick",
         "Středoafrická republika"
     ],
     "sudan": [
-        "súdánsk",
-        "Khartoum",
-        "Chartúm",
+        "Sudan",
         "Súdán",
-        "Sudan"
+        "Khartoum",
+        "Chartúm"
     ],
     "surinam": [
         "Suriname",
         "Paramaribo",
-        "surinamsk",
         "Surinam"
     ],
     "svata-lucie": [
         "Saint Lucia",
-        "lucijsk",
         "Castries",
         "Svatá Lucie"
     ],
     "svaty-krystof-a-nevis": [
         "Svatý Kryštof a Nevis",
         "Basseterre",
-        "Saint Kitts and Nevis",
-        "kryštofská a nevisk",
-        "kryštofsk",
-        "nevisk"
+        "Saint Kitts and Nevis"
     ],
     "svaty-tomas-a-princuv-ostrov": [
         "São Tomé",
         "Svatý Tomáš a Princův ostrov",
-        "São Tomé and Príncipe",
-        "tomášská a princovsk",
-        "tomášsk",
-        "princovsk"
+        "São Tomé and Príncipe"
     ],
     "svaty-vincenc-a-grenadiny": [
         "Kingstown",
         "Svatý Vincenc a Grenadiny",
-        "Saint Vincent and the Grenadines",
-        "vincentská a grenadinsk",
-        "vincentsk",
-        "grenadinsk"
+        "Saint Vincent and the Grenadines"
     ],
     "svazijsko": [
-        "svazijsk",
         "Mbabane",
         "Svazijsko",
         "Eswatini"
     ],
     "syrie": [
-        "syrsk",
-        "Damascus",
         "Syria",
         "Sýrie",
-        "Damašek"
+        "Damašek",
+        "Damascus"
     ],
     "salomounovy-ostrovy": [
         "Šalomounovy ostrovy",
         "Honiara",
-        "Solomon Islands",
-        "šalomounsk"
+        "Solomon Islands"
     ],
     "spanelsko": [
         "Spain",
         "Barcelona",
-        "španělsk",
         "Mallorca",
         "Madrid",
         "Španělsko"
     ],
     "sri-lanka": [
-        "Srí Lanka",
-        "Šrí Džajavardanapura Kotte",
         "Sri Jayawardenepura Kotte",
         "Sri Lanka",
-        "srilansk"
+        "Srí Lanka",
+        "Šrí Džajavardanapura Kotte"
     ],
     "svedsko": [
         "Stockholm",
         "Sweden",
         "Båstad",
-        "švédsk",
         "Švédsko",
         "Bastad"
     ],
     "svycarsko": [
         "Ženeva",
-        "švýcarsk",
         "Switzerland",
         "Basel",
         "Geneva",
@@ -1251,157 +1045,128 @@
     "tadzikistan": [
         "Dušanbe",
         "Tajikistan",
-        "Dushanbe",
-        "tádžick",
-        "Tádžikistán"
+        "Tádžikistán",
+        "Dushanbe"
     ],
     "tanzanie": [
         "Dodoma",
         "Tanzania",
-        "Tanzánie",
         "Tanzanie",
-        "tanzansk"
+        "Tanzánie"
     ],
     "thajsko": [
-        "thajsk",
         "Bangkok",
-        "Thailand",
         "Thajsko",
+        "Thailand",
         "Hua Hin"
     ],
     "tchaj-wan": [
-        "tchajwansk",
-        "Tchaj-wan",
-        "Taipei",
         "Tchaj-pej",
+        "Taipei",
+        "Tchaj-wan",
         "Taiwan"
     ],
     "togo": [
         "Togo",
-        "togsk",
         "Lomé"
     ],
     "tonga": [
         "Nuku'alofa",
-        "tongsk",
         "Tonga"
     ],
     "trinidad-a-tobago": [
-        "trinidadská a tobagosk",
-        "trinidadsk",
-        "tobagosk",
         "Trinidad and Tobago",
         "Port of Spain",
         "Trinidad a Tobago"
     ],
     "tunisko": [
-        "Tunis",
+        "Monastir",
         "Tunisko",
         "Tunisia",
-        "Monastir",
-        "tunisk"
+        "Tunis"
     ],
     "turecko": [
-        "Turkiye",
-        "Kayseri",
-        "Turkey",
         "Turecko",
-        "tureck",
         "Ankara",
-        "Istanbul"
+        "Turkey",
+        "Kayseri",
+        "Turkiye"
     ],
     "turkmenistan": [
-        "Ashgabat",
-        "Turkmenistán",
-        "turkmensk",
         "Turkmenistan",
-        "Ašchabad"
+        "Ašchabad",
+        "Ashgabat",
+        "Turkmenistán"
     ],
     "tuvalu": [
         "Funafuti",
-        "tuvalsk",
         "Tuvalu"
     ],
     "uganda": [
-        "ugandsk",
         "Uganda",
         "Kampala"
     ],
     "ukrajina": [
-        "Kyiv",
-        "ukrajinsk",
         "Ukraine",
+        "Kyiv",
         "Kyjev",
         "Ukrajina"
     ],
     "uruguay": [
-        "uruguaysk",
         "Montevideo",
         "Uruguay"
     ],
     "uzbekistan": [
-        "uzbeck",
+        "Tashkent",
         "Uzbekistan",
         "Taškent",
-        "Uzbekistán",
-        "Tashkent"
+        "Uzbekistán"
     ],
     "vanuatu": [
-        "vanuatsk",
         "Port Vila",
         "Vanuatu"
     ],
     "vatikan": [
-        "vatikánsk",
         "Vatican City",
         "Vatikán"
     ],
     "venezuela": [
         "Venezuela",
-        "Caracas",
-        "venezuelsk"
+        "Caracas"
     ],
     "vietnam": [
         "Hanoj",
         "Hanoi",
-        "vietnamsk",
         "Vietnam"
     ],
     "vychodni-timor": [
         "Dili",
-        "východotimorsk",
         "East Timor",
         "Východní Timor"
     ],
     "zambie": [
-        "zambijsk",
         "Lusaka",
         "Zambia",
         "Zambie"
     ],
     "zimbabwe": [
-        "zimbabwsk",
         "Zimbabwe",
         "Harare"
     ],
     "anglie": [
-        "England",
         "Anglie",
-        "anglick"
+        "England"
     ],
     "wales": [
-        "Wales",
-        "welšsk"
+        "Wales"
     ],
     "skotsko": [
-        "Scotland",
         "Skotsko",
-        "skotsk"
+        "Scotland"
     ],
     "severni-irsko": [
         "Severní Irsko",
         "Northern Ireland",
-        "Sev.Irsko",
-        "severoirsk"
+        "Sev.Irsko"
     ]
 }

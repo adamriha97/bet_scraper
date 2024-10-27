@@ -70,10 +70,10 @@ class SpiderSynottipSpider(scrapy.Spider):
                 sport_id = message_json['data']['dataSport']['sport']['sportId']
                 for category in message_json['data']['dataSport']['category']:
                     primary_category_original = category['categoryInfo']['categoryName']
-                    primary_category = primary_category_original.replace(' amatéři', '').replace(' klubové', '')
+                    primary_category = primary_category_original.replace(' amatéři', '').replace(' klubové', '').replace(' mládežnické', '')
                     for category_event in category['categoryEvents']:
                         secondary_category_original = category_event['eventsInfo']['eventsCategory']
-                        secondary_category = secondary_category_original.split(', ')[0].split(' (')[0].strip()
+                        secondary_category = secondary_category_original.replace(' 2', '').split(', ')[0].split(' (')[0].strip()
                         for event in category_event['eventsInfo']['events']:
                             yield self.prepare_event_item(sport, sport_id, primary_category, secondary_category, primary_category_original, secondary_category_original, event)
             except:
@@ -85,8 +85,8 @@ class SpiderSynottipSpider(scrapy.Spider):
                 for category in message_json['data']['dataSport']['category']:
                     secondary_category_original = category['eventsInfo']['eventsCategory']
                     primary_category_original = secondary_category_original
-                    primary_category = primary_category_original.replace(' amatéři', '').replace(' klubové', '')
-                    secondary_category = secondary_category_original.split(', ')[0].split(' (')[0].strip()
+                    primary_category = primary_category_original.replace(' amatéři', '').replace(' klubové', '').replace(' mládežnické', '')
+                    secondary_category = secondary_category_original.replace(' 2', '').split(', ')[0].split(' (')[0].strip()
                     for event in category['eventsInfo']['events']:
                         yield self.prepare_event_item(sport, sport_id, primary_category, secondary_category, primary_category_original, secondary_category_original, event)
         except:
