@@ -65,8 +65,8 @@ class SpiderFortunaSpider(scrapy.Spider):
                                 participants_gender = ''
                                 if any(sub in secondary_category_original for sub in ['ženy', 'Ž-']):
                                     participants_gender = 'zeny'
-                                elif any(sub in secondary_category_original for sub in ['muži', 'M-']):
-                                    participants_gender = 'muzi'
+                                # elif any(sub in secondary_category_original for sub in ['muži', 'M-']):
+                                #     participants_gender = 'muzi'
                                 participants_age = ''
                                 participant_1_hasAge = re.search(r'U\d{2}', participant_1)
                                 participant_2_hasAge = re.search(r'U\d{2}', participant_2)

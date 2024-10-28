@@ -49,8 +49,8 @@ class SpiderBetanoSpider(scrapy.Spider):
                     participants_gender = ''
                     if '(Ž)' in secondary_category_original:
                         participants_gender = 'zeny'
-                    elif 'muži' in primary_category_original:
-                        participants_gender = 'muzi'
+                    # elif 'muži' in primary_category_original:
+                    #     participants_gender = 'muzi'
                     participants_age = ''
                     hasAge = re.search(r'U\d{2}', secondary_category_original)
                     if hasAge:

@@ -61,8 +61,8 @@ class SpiderSazkaSpider(scrapy.Spider):
                     participants_gender = ''
                     if any(string in secondary_category_original for string in ['ženy', 'Women']):
                         participants_gender = 'zeny'
-                    elif 'muži' in secondary_category_original:
-                        participants_gender = 'muzi'
+                    # elif 'muži' in secondary_category_original:
+                    #     participants_gender = 'muzi'
                     participants_age = ''
                     hasAge = re.search(r'U\d{2}', secondary_category_original)
                     if hasAge:

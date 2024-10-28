@@ -52,7 +52,7 @@ class SpiderTipsportSpider(scrapy.Spider):
                 participants_gender = ''
                 try:
                     sport_gender = competition_item['sportGender']
-                    gender_mapping = {"WOMEN": "zeny", "MEN": "muzi"}
+                    gender_mapping = {"WOMEN": "zeny", "MEN": ""} # "MEN": "muzi"
                     participants_gender = gender_mapping.get(sport_gender, sport_gender)
                 except:
                     pass

@@ -55,8 +55,8 @@ class SpiderForbetSpider(scrapy.Spider):
                     participants_gender = ''
                     if any('ženy' in string for string in [primary_category_original, secondary_category_original]):
                         participants_gender = 'zeny'
-                    elif any('muži' in string for string in [primary_category_original, secondary_category_original]):
-                        participants_gender = 'muzi'
+                    # elif any('muži' in string for string in [primary_category_original, secondary_category_original]):
+                    #     participants_gender = 'muzi'
                     participants_age = ''
                     participant_1_hasAge = re.search(r'U\d{2}', participant_1)
                     participant_2_hasAge = re.search(r'U\d{2}', participant_2)
