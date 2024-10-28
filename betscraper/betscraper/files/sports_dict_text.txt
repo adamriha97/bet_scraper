@@ -15,7 +15,7 @@
         "kriket": ["kriket"],
         "pozemni-hokej": ["pozemni-hokej"],
         "vodni-polo": ["vodni-polo"],
-        "esports": ["esports"],
+        "esports": ["esports", "Esoccer"],
         "plazovy-fotbal": ["plazovy-fotbal"],
         "bandy": ["bandy"],
         "florbal": ["floorbal"],
