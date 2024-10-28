@@ -21,6 +21,7 @@ class SpiderSazkaSpider(scrapy.Spider):
             "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
             "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
+            "betscraper.pipelines.UnifySportDetailsPipeline": 420,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
@@ -86,7 +87,10 @@ class SpiderSazkaSpider(scrapy.Spider):
                             secondary_category = ' '.join([secondary_category_split[0], secondary_category_split[1]])
                         else:
                             secondary_category = secondary_category_split[0]
-                    sport_detail_original = primary_category
+                    if sport in ["Rugby League", "Rugby Union"]:
+                        sport_detail_original = sport
+                    else:
+                        sport_detail_original = primary_category
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'SA'
                     basic_sport_event_item['bookmaker_name'] = 'sazka'

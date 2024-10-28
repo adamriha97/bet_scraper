@@ -19,6 +19,7 @@ class SpiderBetxSpider(scrapy.Spider):
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
             "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
+            "betscraper.pipelines.UnifySportDetailsPipeline": 420,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }
@@ -40,6 +41,7 @@ class SpiderBetxSpider(scrapy.Spider):
                 for category in section['Categories']:
                     primary_category_original = category['Name']
                     primary_category = primary_category_original.replace(' Amatéři', '').replace(' mládežnické', '').replace(' klubové', '')
+                    sport_detail_original = primary_category
                     for league in category['Leagues']:
                         secondary_category_original = league['Name']
                         secondary_category = secondary_category_original.split(' - ')[0].split(', ')[0]
@@ -76,7 +78,6 @@ class SpiderBetxSpider(scrapy.Spider):
                                         bet_02 = bet["Odd"]
                                     elif bet["Name"] == '12':
                                         bet_12 = bet["Odd"]
-                                sport_detail_original = primary_category
                                 if (not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == bet_11 == bet_22 == -1)) and (participant_2 != None):
                                     basic_sport_event_item = BasicSportEventItem()
                                     basic_sport_event_item['bookmaker_id'] = 'BX'

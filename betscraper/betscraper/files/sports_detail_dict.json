@@ -1,0 +1,63 @@
+{
+    "counter-strike": [
+        "Counter Strike",
+        "CS2",
+        "Counter-Strike",
+        "Counter-Strike 2 Duels",
+        "esport-counter-strike"
+    ],
+    "dota-2": [
+        "DOTA 2",
+        "Dota 2",
+        "Dota2",
+        "esport-dota2"
+    ],
+    "league-of-legends": [
+        "League Of Legends",
+        "League of Legends",
+        "esport-lol"
+    ],
+    "overwatch": [
+        "Overwatch",
+        "esport-overwatch"
+    ],
+    "rainbow-six": [
+        "Rainbow 6",
+        "esport-rainbow-six"
+    ],
+    "valorant": [
+        "Valorant",
+        "esport-valorant"
+    ],
+    "warcraft-3": [
+        "Warcraft 3"
+    ],
+    "honor-of-kings": [
+        "Honor of Kings",
+        "Kings of Glory",
+        "King of Glory"
+    ],
+    "mobile-legends": [
+        "Mobile Legends"
+    ],
+    "e-fotbal": [
+        "eFotbal",
+        "Esoccer",
+        "eAdriatic League",
+        "eSoccer GT Sports League"
+    ],
+    "e-basketbal": [
+        "eBasketbal"
+    ],
+    "e-hokej": [
+        "eHokej"
+    ],
+    "rugby-league": [
+        "rugby-league",
+        "Rugby League"
+    ],
+    "rugby-union": [
+        "rugby-union",
+        "Rugby Union"
+    ]
+}

@@ -31,6 +31,7 @@ class SpiderTipsportSpider(scrapy.Spider):
             "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
             "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
+            "betscraper.pipelines.UnifySportDetailsPipeline": 420,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
         },
         }

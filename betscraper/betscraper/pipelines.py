@@ -60,6 +60,25 @@ class UnifyCountryNamesPipeline:
                 adapter['country_name_original'] = 'other'
         return item
 
+class UnifySportDetailsPipeline:
+    def __init__(self):
+        script_dir = os.path.dirname(os.path.realpath(__file__))
+        sports_detail_dict_path = os.path.join(script_dir, 'files/sports_detail_dict.json')
+        with open(sports_detail_dict_path, 'r') as file:
+            self.translator_reverse = json.load(file)
+        self.translator = {}
+        for translator_sport_detail_name, translator_original_list in self.translator_reverse.items():
+            for list_item in translator_original_list:
+                self.translator[list_item] = translator_sport_detail_name
+
+    def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+        try:
+            adapter['sport_detail'] = self.translator[adapter.get('sport_detail_original')]
+        except:
+            adapter['sport_detail'] = 'other'
+        return item
+
 class DropDuplicatesPipeline:
     def __init__(self):
         self.items_seen = set()

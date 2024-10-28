@@ -155,7 +155,7 @@
         "kriket": [],
         "pozemni-hokej": ["Pozemní hokej"],
         "vodni-polo": ["Vodní pólo"],
-        "esports": ["E-sports", "eBasketbal", "eFotbal"],
+        "esports": ["E-sports", "eFotbal", "eBasketbal", "eHokej"],
         "plazovy-fotbal": ["Plážový fotbal"],
         "bandy": [],
         "florbal": ["Florbal"],

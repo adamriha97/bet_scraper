@@ -20,6 +20,7 @@ class SpiderKingsbetSpider(scrapy.Spider):
         'ITEM_PIPELINES': {
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
             "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
+            "betscraper.pipelines.UnifySportDetailsPipeline": 420,
         },
         }
 
@@ -77,7 +78,10 @@ class SpiderKingsbetSpider(scrapy.Spider):
             primary_category = primary_category_original
             secondary_category = secondary_category_original.split(', ')[0].replace('ATP ', '').replace('WTA ', '').replace('ITF ', '').replace('Challenger ', '')
             secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
-            sport_detail_original = primary_category
+            if sport == 'E-sports':
+                sport_detail_original = primary_category
+            else:
+                sport_detail_original = sport
             if not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == bet_11 == bet_22 == -1):
                 basic_sport_event_item = BasicSportEventItem()
                 basic_sport_event_item['bookmaker_id'] = 'KB'

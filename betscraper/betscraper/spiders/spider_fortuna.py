@@ -19,6 +19,7 @@ class SpiderFortunaSpider(scrapy.Spider):
             "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
             "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
+            "betscraper.pipelines.UnifySportDetailsPipeline": 420,
         },
         }
 
@@ -51,6 +52,10 @@ class SpiderFortunaSpider(scrapy.Spider):
             primary_category = primary_category.split('-')[0].strip()
             primary_category = ' '.join([word for word in primary_category.split() if not re.search(r'\d', word)])
             secondary_category = primary_category
+            if 'esport' in sport:
+                sport_detail_original = sport
+            else:
+                sport_detail_original = primary_category
             for table in section.css('table.events-table'):
                 continue_parse = True
                 try:
@@ -88,7 +93,6 @@ class SpiderFortunaSpider(scrapy.Spider):
                                     bet_10 = bets[3] # toto poradi tipuji, na strankach jsem to nezkontroloval
                                     bet_12 = bets[4] # toto poradi tipuji, na strankach jsem to nezkontroloval
                                     bet_02 = bets[5] # toto poradi tipuji, na strankach jsem to nezkontroloval
-                                sport_detail_original = primary_category
                                 basic_sport_event_item = BasicSportEventItem()
                                 basic_sport_event_item['bookmaker_id'] = 'FO'
                                 basic_sport_event_item['bookmaker_name'] = 'fortuna'
