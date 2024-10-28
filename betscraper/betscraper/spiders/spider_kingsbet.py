@@ -77,12 +77,15 @@ class SpiderKingsbetSpider(scrapy.Spider):
             primary_category = primary_category_original
             secondary_category = secondary_category_original.split(', ')[0].replace('ATP ', '').replace('WTA ', '').replace('ITF ', '').replace('Challenger ', '')
             secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
+            sport_detail_original = primary_category
             if not (bet_1 == bet_0 == bet_2 == bet_10 == bet_02 == bet_12 == bet_11 == bet_22 == -1):
                 basic_sport_event_item = BasicSportEventItem()
                 basic_sport_event_item['bookmaker_id'] = 'KB'
                 basic_sport_event_item['bookmaker_name'] = 'kingsbet'
                 basic_sport_event_item['sport_name'] = ''
                 basic_sport_event_item['sport_name_original'] = sport
+                basic_sport_event_item['sport_detail'] = ''
+                basic_sport_event_item['sport_detail_original'] = sport_detail_original
                 basic_sport_event_item['country_name'] = ''
                 basic_sport_event_item['country_name_original'] = ''
                 basic_sport_event_item['primary_category'] = primary_category

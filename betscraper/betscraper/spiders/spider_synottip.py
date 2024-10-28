@@ -122,11 +122,14 @@ class SpiderSynottipSpider(scrapy.Spider):
                     bet_2 = odd['oddNumber']
             # muze se hodit v budoucnu
             # secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
+            sport_detail_original = primary_category
             basic_sport_event_item = BasicSportEventItem()
             basic_sport_event_item['bookmaker_id'] = 'ST'
             basic_sport_event_item['bookmaker_name'] = 'synottip'
             basic_sport_event_item['sport_name'] = ''
             basic_sport_event_item['sport_name_original'] = sport
+            basic_sport_event_item['sport_detail'] = ''
+            basic_sport_event_item['sport_detail_original'] = sport_detail_original
             basic_sport_event_item['country_name'] = ''
             basic_sport_event_item['country_name_original'] = ''
             basic_sport_event_item['primary_category'] = primary_category

@@ -87,11 +87,14 @@ class SpiderForbetSpider(scrapy.Spider):
                         bet_2 = odds_list[2]
                     primary_category = primary_category_original.replace(' amatéři', '').replace(' klubové', '').replace(' mládežnické', '')
                     secondary_category = secondary_category_original.split(', ')[0].split(' - ')[0]
+                    sport_detail_original = primary_category
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'FB'
                     basic_sport_event_item['bookmaker_name'] = 'forbet'
                     basic_sport_event_item['sport_name'] = ''
                     basic_sport_event_item['sport_name_original'] = sport
+                    basic_sport_event_item['sport_detail'] = ''
+                    basic_sport_event_item['sport_detail_original'] = sport_detail_original
                     basic_sport_event_item['country_name'] = ''
                     basic_sport_event_item['country_name_original'] = ''
                     basic_sport_event_item['primary_category'] = primary_category

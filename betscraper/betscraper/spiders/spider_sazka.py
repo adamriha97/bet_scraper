@@ -86,11 +86,14 @@ class SpiderSazkaSpider(scrapy.Spider):
                             secondary_category = ' '.join([secondary_category_split[0], secondary_category_split[1]])
                         else:
                             secondary_category = secondary_category_split[0]
+                    sport_detail_original = primary_category
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'SA'
                     basic_sport_event_item['bookmaker_name'] = 'sazka'
                     basic_sport_event_item['sport_name'] = ''
                     basic_sport_event_item['sport_name_original'] = sport
+                    basic_sport_event_item['sport_detail'] = ''
+                    basic_sport_event_item['sport_detail_original'] = sport_detail_original
                     basic_sport_event_item['country_name'] = ''
                     basic_sport_event_item['country_name_original'] = ''
                     basic_sport_event_item['primary_category'] = primary_category
