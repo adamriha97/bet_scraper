@@ -11,6 +11,9 @@ class BetscraperItem(scrapy.Item):
     # name = scrapy.Field()
     pass
 
+def serialize_bet(value):
+    return round(float(value), 2)
+
 class BasicSportEventItem(scrapy.Item):
     bookmaker_id = scrapy.Field()
     bookmaker_name = scrapy.Field()
@@ -27,12 +30,12 @@ class BasicSportEventItem(scrapy.Item):
     participant_away = scrapy.Field()
     participants_gender = scrapy.Field()
     participants_age = scrapy.Field()
-    bet_1 = scrapy.Field()
-    bet_0 = scrapy.Field()
-    bet_2 = scrapy.Field()
-    bet_10 = scrapy.Field()
-    bet_02 = scrapy.Field()
-    bet_12 = scrapy.Field()
-    bet_11 = scrapy.Field()
-    bet_22 = scrapy.Field()
+    bet_1 = scrapy.Field(serializer = serialize_bet)
+    bet_0 = scrapy.Field(serializer = serialize_bet)
+    bet_2 = scrapy.Field(serializer = serialize_bet)
+    bet_10 = scrapy.Field(serializer = serialize_bet)
+    bet_02 = scrapy.Field(serializer = serialize_bet)
+    bet_12 = scrapy.Field(serializer = serialize_bet)
+    bet_11 = scrapy.Field(serializer = serialize_bet)
+    bet_22 = scrapy.Field(serializer = serialize_bet)
     event_url = scrapy.Field()
