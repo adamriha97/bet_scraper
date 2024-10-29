@@ -13,6 +13,8 @@
 (LSEN) LIVESCORE: https://www.livescore.cz/ (https://m.livesport.cz/, https://www.livesport.cz/, https://www.livescore.in/cz/, https://www.flashscore.com/)
 
 ! narovnavani jmen - nektere stranky maji jen prvni pismeno u krestnich jmen
+? k genderu mohu pridat smisene dvojice, pokud se da identifikovat.. napr. u tenisu
+? k sport_detail mohu pridat dalsi ligy jako tenisove ATP, WTA, ITF, ale i nejake ligi v jinych sportech (napr. i ty co pouzivam u zemi - NHL, KHL, ...)
 
 ! budouci cisteni dat:
     betano:
