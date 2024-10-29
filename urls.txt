@@ -1,34 +1,25 @@
-(BE) BETANO: https://www.betano.cz/ _____________________sport_detail
-(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 _____________________sport_detail
-(FB) FORBET: https://www.iforbet.cz/prematch/landing _____________________sport_detail
-(FO) FORTUNA: https://www.ifortuna.cz/ _____________________sport_detail
-(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview _____________________sport_detail
-(ME) MERKUR: https://www.merkurxtip.cz/sazeni _____________________sport_detail
-(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ _____________________sport_detail
-(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi _____________________sport_detail
-(TS) TIPSPORT: https://www.tipsport.cz/ _____________________sport_detail
+(BE) BETANO: https://www.betano.cz/ 
+(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 
+(FB) FORBET: https://www.iforbet.cz/prematch/landing 
+(FO) FORTUNA: https://www.ifortuna.cz/ 
+(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview 
+(ME) MERKUR: https://www.merkurxtip.cz/sazeni 
+(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ 
+(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi 
+(TS) TIPSPORT: https://www.tipsport.cz/ 
 
 (CH) CHANCE: https://www.chance.cz/ (same data as tipsport)
 
 (LSEN) LIVESCORE: https://www.livescore.cz/ (https://m.livesport.cz/, https://www.livesport.cz/, https://www.livescore.in/cz/, https://www.flashscore.com/)
 
-! vsechny bety prevest na cisla, pokud jsou nekde stringy, plus neco je treba zaokrouhlit podle toho jak je to na webu (napr kingsbet asi)
 ! narovnavani jmen - nektere stranky maji jen prvni pismeno u krestnich jmen
-! u ziskavani statu je treba vetsina v primary category
-    - ale u Rugby je to v secondary (napr. forbet)
-    - nebo je tam treba NHL namisto USA (pro vetsi ligy je nazev ligy - např. ME)
-    - u sazky u ITF tenisu mam stat i mesto, musim dodelat, az bude seznam statu
-
-! bylo by dobre k eventum pridat i informaci o statu, pokud je
-! UnifyCountryNamesPipeline by mozna sla udelat efektivneji nebo jinak lepe
-! bylo by dobre k eventum pridat informaci, jestli to to muzsky, zensky nebo mix event, pokud je + vek
 
 ! budouci cisteni dat:
     betano:
         u nekterych esport zapasu je na konci tymu napis (esport) a sport je napriklad fotbal
         nektere zenske tymy jsou zakonceny (Ž)
         nektere kategorie (videl jsem u secondary) jsou zakonceny (Ž)
-        nektere kategorie (videl jsem u primary) jsou maji ženy nebo Ženy v nazvu
+        nektere kategorie (videl jsem u primary) maji ženy nebo Ženy v nazvu
         napriklad dvacitky mohou mit kombinaci -> (Ž) U20
     sazka:
         u zenskych typu je nekdy na konci Ž, nekdy (W) a nekdy nic, mozna i neco jine, to nevim
