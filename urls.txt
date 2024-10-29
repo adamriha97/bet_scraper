@@ -42,7 +42,7 @@
 
 
 ? k genderu mohu pridat smisene dvojice, pokud se da identifikovat.. napr. u tenisu
-? k sport_detail mohu pridat dalsi ligy jako tenisove ATP, WTA, ITF, ale i nejake ligi v jinych sportech (napr. i ty co pouzivam u zemi - NHL, KHL, ...)
+? k sport_detail mohu pridat dalsi ligy jako tenisove ATP, WTA, ITF, ale i nejake ligy v jinych sportech (napr. i ty co pouzivam u zemi - NHL, KHL, ...)
 
 ! budouci cisteni dat:
     betano:
