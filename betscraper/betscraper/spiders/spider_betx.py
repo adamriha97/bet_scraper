@@ -56,7 +56,7 @@ class SpiderBetxSpider(scrapy.Spider):
                                 participant_1 = match['TeamHome']
                                 participant_2 = match['TeamAway']
                                 participants_gender = ''
-                                if any('ženy' in string for string in [primary_category_original, secondary_category_original]):
+                                if any(word in string for word in ['ženy', 'WTA'] for string in [primary_category_original, secondary_category_original]):
                                     participants_gender = 'zeny'
                                 # elif any('muži' in string for string in [primary_category_original, secondary_category_original]):
                                 #     participants_gender = 'muzi'
