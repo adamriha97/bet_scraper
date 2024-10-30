@@ -10,6 +10,7 @@ from scrapy.exceptions import DropItem
 
 import os
 import json
+from unidecode import unidecode
 
 
 class BetscraperPipeline:
@@ -101,4 +102,40 @@ class UpdateNonDrawBetsPipeline:
             adapter['bet_1'] = -1
             adapter['bet_22'] = adapter.get('bet_2')
             adapter['bet_2'] = -1
+        return item
+
+class PopulateParticipantListsPipeline:
+    def create_tuple(self, participant, bookmaker_name = 'default'):
+        if ',' in participant: # kdyz carka, tak prohod
+            parts = participant.split(',', 1)
+            participant = parts[1] + parts[0]
+        participant = participant.replace('.', ' ') # vymen tecky za mezery
+        participant = " ".join(word for word in participant.split() if len(word) > 1) # odstran jednopismenna slova
+        if bookmaker_name == 'tipsport': # kdyz tipsport (ne u dvouher), tak odstran posledni slovo
+            participant = " ".join(participant.split()[:-1])
+        participant = participant.replace('-', ' ').replace("'", " ") # vymen pomlcky a apostrofy za mezery
+        participant = unidecode(participant.lower()) # asi na libovolne urovni dat na lower a bez diakritiky
+        if bookmaker_name == 'tipsport': # kdyz tipsport, vem vsechny slova, jinak vem posledni slovo
+            return tuple(participant.split())
+        else:
+            return (participant.split()[-1],)
+
+    def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+        bookmaker_name = adapter.get('bookmaker_name')
+        sport_name = adapter.get('sport_name')
+        participant_home = adapter.get('participant_home')
+        participant_away = adapter.get('participant_away')
+        participants = {'home': participant_home, 'away': participant_away}
+        for participant_status, participant_name in participants.items():
+            if sport_name in ['tenis', 'stolni-tenis', 'sipky', 'box', 'bojove-sporty', 'snooker', 'padel', 'badminton', 'squash', 'sachy']: # sports with people
+                if '/' in participant_name: # people, doubles
+                    participant_members = participant_name.split('/', 1)
+                    member_1 = self.create_tuple(participant = participant_members[0])[0]
+                    member_2 = self.create_tuple(participant = participant_members[1])[0]
+                    adapter[f'participant_{participant_status}_list'] = (member_1 + member_2, member_2 + member_1)
+                else: # people, singles
+                    adapter[f'participant_{participant_status}_list'] = self.create_tuple(participant = participant_name, bookmaker_name = bookmaker_name)
+            else: # sports with teams
+                pass
         return item

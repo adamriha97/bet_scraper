@@ -19,6 +19,7 @@ class SpiderForbetSpider(scrapy.Spider):
             "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
             "betscraper.pipelines.UnifySportDetailsPipeline": 420,
             "betscraper.pipelines.UpdateNonDrawBetsPipeline": 500,
+            "betscraper.pipelines.PopulateParticipantListsPipeline": 600,
         },
         }
     

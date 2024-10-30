@@ -33,13 +33,12 @@
     1. kdyz carka, tak prohod
     2. vymen tecky za mezery
     3. odstran jednopismenna slova
-    4. kdyz tipsport (ne u dvouher), tak odstran posledni Slovensko
-    5. vymen mezery a apostrofy za mezery
+    4. kdyz tipsport (ne u dvouher), tak odstran posledni slovo
+    5. vymen pomlcky a apostrofy za mezery
     6. kdyz tipsport, vem vsechny slova, jinak vem posledni slovo
     7. asi na libovolne urovni dat na lower a bez diakritiky
     - sporty s lidmy: tenis, stolni-tenis, sipky, box, bojove-sporty, snooker, padel, badminton, squash, sachy
     - sporty mozna s lidmy: curling, bowling
-
 
 ? k genderu mohu pridat smisene dvojice, pokud se da identifikovat.. napr. u tenisu
 ? k sport_detail mohu pridat dalsi ligy jako tenisove ATP, WTA, ITF, ale i nejake ligy v jinych sportech (napr. i ty co pouzivam u zemi - NHL, KHL, ...)

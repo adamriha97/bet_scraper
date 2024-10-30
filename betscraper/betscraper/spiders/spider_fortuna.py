@@ -20,6 +20,7 @@ class SpiderFortunaSpider(scrapy.Spider):
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
             "betscraper.pipelines.UnifyCountryNamesPipeline": 410,
             "betscraper.pipelines.UnifySportDetailsPipeline": 420,
+            "betscraper.pipelines.PopulateParticipantListsPipeline": 600,
         },
         }
 
