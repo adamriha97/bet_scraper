@@ -95,6 +95,8 @@ class SpiderBetxSpider(scrapy.Spider):
                                     basic_sport_event_item['event_startTime'] = event_startTime
                                     basic_sport_event_item['participant_home'] = participant_1
                                     basic_sport_event_item['participant_away'] = participant_2
+                                    basic_sport_event_item['participant_home_list'] = ()
+                                    basic_sport_event_item['participant_away_list'] = ()
                                     basic_sport_event_item['participants_gender'] = participants_gender
                                     basic_sport_event_item['participants_age'] = participants_age
                                     basic_sport_event_item['bet_1'] = bet_1

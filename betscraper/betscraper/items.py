@@ -30,6 +30,8 @@ class BasicSportEventItem(scrapy.Item):
     event_startTime = scrapy.Field()
     participant_home = scrapy.Field()
     participant_away = scrapy.Field()
+    participant_home_list = scrapy.Field()
+    participant_away_list = scrapy.Field()
     participants_gender = scrapy.Field()
     participants_age = scrapy.Field()
     bet_1 = scrapy.Field(serializer = serialize_bet)
