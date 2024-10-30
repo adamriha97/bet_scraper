@@ -70,6 +70,12 @@
     kingsbet:
         zenske tymy zakonceny (asi) "- ženy", jednou jsem videl i zakonceni "(F)" - nektere asi
         mladsi tymy zakonceny (asi) U20, U19 apod. - jen nektere
+    1. prevest vse na lower case
+    2. odstranit vyrazy jako: 'ženy', 'muži', '(esport)', plus mozna ' ž', '(ž)', '(w)', '(f)', ale ty se vyresi v dalsich krocich
+    3. vymeni '(', ')', '-', "'" za mezery ' '
+    4. odstranit vsechny jednopismenna slova
+    5. odstranit slova ve formatu u20, u19, ...
+    (6. odstranit 'fc' a podobně?)
 
 
 
