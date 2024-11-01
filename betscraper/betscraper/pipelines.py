@@ -154,5 +154,6 @@ class PopulateParticipantListsPipeline:
                 participant_name = ' '.join(word for word in participant_name.split() if len(word) > 2)
                 participant_name = ' '.join([word for word in participant_name.split() if not re.search(r'u\d{2}', word)])
                 participant_name = unidecode(participant_name)
-                adapter[f'participant_{participant_status}_list'] = self.create_all_combinations_tuple(input_tuple = tuple(participant_name.split()))
+                # adapter[f'participant_{participant_status}_list'] = self.create_all_combinations_tuple(input_tuple = tuple(participant_name.split()))
+                adapter[f'participant_{participant_status}_list'] = tuple(participant_name.split())
         return item
