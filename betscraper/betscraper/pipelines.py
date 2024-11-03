@@ -115,7 +115,7 @@ class PopulateParticipantListsPipeline:
         participant = ' '.join(word for word in participant.split() if len(word) > 1) # odstran jednopismenna slova
         if bookmaker_name == 'tipsport': # kdyz tipsport (ne u dvouher), tak odstran posledni slovo
             participant = ' '.join(participant.split()[:-1])
-        participant = participant.replace('-', ' ').replace("'", " ") # vymen pomlcky a apostrofy za mezery
+        participant = participant.replace('-', ' ').replace("'", "") # vymen pomlcky za mezery a apostrofy za nic (to je kvuli betanu - tam nejsou apostrofy)
         participant = unidecode(participant.lower()) # asi na libovolne urovni dat na lower a bez diakritiky
         if bookmaker_name == 'tipsport': # kdyz tipsport, vem vsechny slova, jinak vem posledni slovo
             return tuple(participant.split())
@@ -151,7 +151,13 @@ class PopulateParticipantListsPipeline:
                 strings = ['ženy', 'muži', '(esports)', '(', ')', '-', "'", '.'] # ' ž', '(ž)', '(w)', '(f)'
                 for string in strings:
                     participant_name = participant_name.replace(string, ' ')
-                participant_name = ' '.join(word for word in participant_name.split() if len(word) > 2)
+                max_word_length = max(len(word) for word in participant_name.split())
+                if max_word_length > 2:
+                    participant_name = ' '.join(word for word in participant_name.split() if len(word) > 2)
+                elif max_word_length == 2:
+                    participant_name = ' '.join(word for word in participant_name.split() if len(word) > 1)
+                else:
+                    participant_name = ' '.join(participant_name.split())
                 participant_name = ' '.join([word for word in participant_name.split() if not re.search(r'u\d{2}', word)])
                 participant_name = unidecode(participant_name)
                 # adapter[f'participant_{participant_status}_list'] = self.create_all_combinations_tuple(input_tuple = tuple(participant_name.split()))
