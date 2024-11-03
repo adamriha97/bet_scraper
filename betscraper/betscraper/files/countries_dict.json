@@ -301,7 +301,8 @@
         "Helsinki",
         "Finsko",
         "finsk",
-        "Finland"
+        "Finland",
+        "Helsinky"
     ],
     "francie": [
         "Metz",
@@ -320,7 +321,11 @@
         "Montpellier",
         "Strasbourg",
         "Štrasburk",
-        "Méty"
+        "Méty",
+        "Mety",
+        "Reims",
+        "Villeneuve ďAscq",
+        "Villeneuve-d'Ascq"
     ],
     "gabon": [
         "Gabon",
@@ -447,7 +452,10 @@
         "Selva Gardena",
         "Itálie A",
         "Italy",
-        "Itálie C"
+        "Itálie C",
+        "San Gregorio di Catania",
+        "Santa Margherita di Pula",
+        "Solarino"
     ],
     "izrael": [
         "Jerusalem",
@@ -469,7 +477,10 @@
         "Osaka",
         "Makinohara",
         "Tokyo",
-        "Tokio"
+        "Tokio",
+        "Hamamatsu",
+        "Matsuyama",
+        "Macujama"
     ],
     "jemen": [
         "jemensk",
@@ -579,7 +590,8 @@
         "kolumbijsk",
         "Bogota",
         "Bogotá",
-        "Kolumbie"
+        "Kolumbie",
+        "Cali"
     ],
     "komory": [
         "Komory",
@@ -676,7 +688,9 @@
         "lucembursk",
         "Luxembourg",
         "Lucemburk",
-        "Lucembursko"
+        "Lucembursko",
+        "Petange",
+        "Pétange"
     ],
     "madagaskar": [
         "Madagaskar",
@@ -689,7 +703,8 @@
         "Budapest",
         "maďarsk",
         "Maďarsko",
-        "Hungary"
+        "Hungary",
+        "Szabolcsveresmart"
     ],
     "malajsie": [
         "Malajsie",
@@ -825,7 +840,8 @@
         "Bad Homburg",
         "Mnichov",
         "Hamburg",
-        "Stuttgart"
+        "Stuttgart",
+        "Ismaning"
     ],
     "nepal": [
         "Kathmandu",
@@ -1137,7 +1153,10 @@
         "nhl",
         "ahl",
         "NBA",
-        "nba"
+        "nba",
+        "Knoxville",
+        "Midland",
+        "Santa Cruz"
     ],
     "srbsko": [
         "Bělehrad",
@@ -1308,7 +1327,8 @@
         "Turecko",
         "tureck",
         "Ankara",
-        "Istanbul"
+        "Istanbul",
+        "Antalya"
     ],
     "turkmenistan": [
         "Ashgabat",

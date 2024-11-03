@@ -46,7 +46,7 @@ class SpiderBetxSpider(scrapy.Spider):
                     for league in category['Leagues']:
                         secondary_category_original = league['Name']
                         secondary_category = secondary_category_original.split(' - ')[0].split(', ')[0]
-                        for substring in ['ATP ', 'WTA ', 'ITF ', 'Challenger ', ' 4-hra', ' tvrdý povrch', ' II']:
+                        for substring in ['ATP ', 'WTA ', 'ITF ', 'Challenger ', ' 4-hra', ' tvrdý povrch', ' II', ' Men', ' Women', ' Singles', ' Doubles']:
                             secondary_category = secondary_category.replace(substring, '')
                         secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
                         secondary_category = secondary_category.strip()

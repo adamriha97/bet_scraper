@@ -95,7 +95,7 @@ class SpiderMerkurSpider(scrapy.Spider):
                         pass
                 primary_category = primary_category_original.replace(' am.', '').replace(' klubové', '')
                 secondary_category = ' '.join([word for word in secondary_category_original.split() if not re.search(r'\d', word)])
-                secondary_category = secondary_category.replace(' Doubles', '').replace(' Qual.', '').strip()
+                secondary_category = secondary_category.split(' - ')[0].replace(' Doubles', '').replace(' Qual.', '').strip()
                 sport_detail_original = primary_category
                 if keepMatch and (participant_2 != 'Vítěz'):
                     basic_sport_event_item = BasicSportEventItem()

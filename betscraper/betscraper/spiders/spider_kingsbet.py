@@ -77,7 +77,9 @@ class SpiderKingsbetSpider(scrapy.Spider):
                     bet_11 = odds_dict[str(markets_dict[str(market_id)]['oddIds'][0])]
                     bet_22 = odds_dict[str(markets_dict[str(market_id)]['oddIds'][1])]
             primary_category = primary_category_original
-            secondary_category = secondary_category_original.split(', ')[0].replace('ATP ', '').replace('WTA ', '').replace('ITF ', '').replace('Challenger ', '')
+            secondary_category = secondary_category_original.split(', ')[0]
+            for substring in ['ATP ', 'WTA ', 'ITF ', 'Challenger ', ' Men', ' Women', ' Singles', ' Doubles']:
+                secondary_category = secondary_category.replace(substring, '')
             secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
             if sport == 'E-sports':
                 sport_detail_original = primary_category
