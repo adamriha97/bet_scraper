@@ -79,7 +79,7 @@ class SpiderSazkaSpider(scrapy.Spider):
                             bet_0 = bet['prices'][0]['decimal']
                     primary_category = primary_category_original
                     secondary_category = secondary_category_original.split(',')[0]
-                    for substring in ['ženy', 'muži', 'Women', 'WTA', 'ATP', 'ITF', 'Challenger', ' 2', 'dvouhra', 'čtyřhra']:
+                    for substring in ['ženy', 'muži', 'Women', 'Men', 'WTA', 'ATP', 'ITF', 'Challenger', ' 2', 'dvouhra', 'čtyřhra']:
                         secondary_category = secondary_category.replace(substring, '')
                     secondary_category = secondary_category.strip()
                     if 'ITF ' in primary_category:

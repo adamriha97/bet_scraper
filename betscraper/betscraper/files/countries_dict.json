@@ -68,7 +68,9 @@
         "Baku",
         "ázerbájdžánsk",
         "Ázerbájdžán",
-        "Azerbaijan"
+        "Azerbaijan",
+        "Ázerbajdžán",
+        "Azerbajdžán"
     ],
     "bahamy": [
         "Nassau",
@@ -157,7 +159,8 @@
         "Brasília",
         "Rio de Janeiro",
         "Curitiba",
-        "Lajeado"
+        "Lajeado",
+        "Recife"
     ],
     "brunej": [
         "Bandar Seri Begawan",
@@ -258,7 +261,10 @@
         "Egypt",
         "Cairo",
         "Káhira",
-        "egyptsk"
+        "egyptsk",
+        "Sharm El Sheikh",
+        "Sharm ElSheikh",
+        "Sharm El-Sheikh"
     ],
     "ekvador": [
         "Ecuador",
@@ -325,7 +331,11 @@
         "Mety",
         "Reims",
         "Villeneuve ďAscq",
-        "Villeneuve-d'Ascq"
+        "Villeneuve-d'Ascq",
+        "Villeneuve D´ascq",
+        "Villeneuve d'Ascq",
+        "Villeneuve d´Ascq",
+        "Le Neubourg"
     ],
     "gabon": [
         "Gabon",
@@ -406,7 +416,8 @@
         "indick",
         "Nové Dillí",
         "Indie",
-        "New Delhi"
+        "New Delhi",
+        "Bhubaneswar"
     ],
     "indonesie": [
         "Jakarta",
@@ -455,7 +466,8 @@
         "Itálie C",
         "San Gregorio di Catania",
         "Santa Margherita di Pula",
-        "Solarino"
+        "Solarino",
+        "Turín"
     ],
     "izrael": [
         "Jerusalem",
@@ -551,7 +563,10 @@
         "MJHL",
         "ohl",
         "whl",
-        "mjhl"
+        "mjhl",
+        "Saint Augustin de Desmaures",
+        "Saint-Augustin-de-Desmaures",
+        "Saint-Augustin"
     ],
     "kapverdy": [
         "kapverdsk",
@@ -682,7 +697,8 @@
         "lotyšsk",
         "Riga",
         "Latvia",
-        "Lotyšsko"
+        "Lotyšsko",
+        "lotyšsko"
     ],
     "lucembursko": [
         "lucembursk",
@@ -773,7 +789,8 @@
         "Monterrey",
         "Mexico",
         "Mexiko",
-        "Mérida"
+        "Mérida",
+        "Veracruz"
     ],
     "mikronesie": [
         "Mikronésie",
@@ -930,7 +947,8 @@
     "paraguay": [
         "Paraguay",
         "Asunción",
-        "paraguaysk"
+        "paraguaysk",
+        "Asuncion"
     ],
     "peru": [
         "peruánsk",
@@ -1016,7 +1034,8 @@
         "Athens",
         "řeck",
         "Greece",
-        "Řecko"
+        "Řecko",
+        "Heraklion"
     ],
     "salvador": [
         "Salvador",
@@ -1121,10 +1140,13 @@
         "Glasgow",
         "britsk",
         "Londýn",
-        "Velká Británie"
+        "Velká Británie",
+        "Británie",
+        "Lincoln"
     ],
     "spojene-staty-americke": [
         "USA",
+        "usa",
         "San Diego",
         "Atlanta",
         "Delray Beach",

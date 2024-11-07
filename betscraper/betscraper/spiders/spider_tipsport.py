@@ -92,7 +92,7 @@ class SpiderTipsportSpider(scrapy.Spider):
                                     pass
                         primary_category = primary_category_original
                         if sport == 'Tenis':
-                            secondary_category = secondary_category_original.split('-')[0]
+                            secondary_category = secondary_category_original.split(' - ')[0] # bylo zde '-'
                             for substring in ['ATP ', 'ITF ', 'WTA ']:
                                 secondary_category = secondary_category.replace(substring, '')
                             secondary_category = secondary_category.strip()

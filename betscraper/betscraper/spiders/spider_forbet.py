@@ -89,6 +89,7 @@ class SpiderForbetSpider(scrapy.Spider):
                         bet_2 = odds_list[2]
                     primary_category = primary_category_original.replace(' amatéři', '').replace(' klubové', '').replace(' mládežnické', '')
                     secondary_category = secondary_category_original.split(', ')[0].split(' - ')[0]
+                    secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
                     sport_detail_original = primary_category
                     basic_sport_event_item = BasicSportEventItem()
                     basic_sport_event_item['bookmaker_id'] = 'FB'

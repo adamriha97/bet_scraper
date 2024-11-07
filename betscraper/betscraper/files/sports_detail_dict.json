@@ -23,14 +23,21 @@
     ],
     "rainbow-six": [
         "Rainbow 6",
-        "esport-rainbow-six"
+        "esport-rainbow-six",
+        "Rainbow Six"
     ],
     "valorant": [
         "Valorant",
         "esport-valorant"
     ],
+    "rocket-league": [
+        "Rocket League"
+    ],
     "warcraft-3": [
         "Warcraft 3"
+    ],
+    "starcraft-2": [
+        "Starcraft 2"
     ],
     "honor-of-kings": [
         "Honor of Kings",

@@ -50,9 +50,9 @@ class SpiderFortunaSpider(scrapy.Spider):
             primary_category = re.sub(r'U\d{2}', '', primary_category)
             for substring in ['-ženy', '-muži', 'Ž-', 'M-', ', dvouhra', ', čtyřhra', ' ()', 'WTA ', 'ATP ', 'ITF ', 'Chall. ']:
                 primary_category = primary_category.replace(substring, '')
-            primary_category = primary_category.split('-')[0].strip()
             primary_category = ' '.join([word for word in primary_category.split() if not re.search(r'\d', word)])
             secondary_category = primary_category
+            primary_category = primary_category.split('-')[0].strip()
             if 'esport' in sport:
                 sport_detail_original = sport
             else:

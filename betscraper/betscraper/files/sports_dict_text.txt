@@ -24,7 +24,7 @@
         "volejbal": ["volejbal"],
         "australsky-fotbal": [],
         "snooker": ["snooker"],
-        "padel": [],
+        "padel": ["padel"],
         "netball": [],
         "badminton": ["badminton"],
         "squash": [],
