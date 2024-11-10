@@ -277,7 +277,7 @@
         "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
         "kabadi": ["Kabaddi"],
-        "special": ["WTA Tour Finals"]
+        "special": ["WTA Tour Finals", "ATP Tour Finals"]
     },
     "tipsport": {
         "fotbal": ["Fotbal"],
