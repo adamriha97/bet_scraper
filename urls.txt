@@ -12,7 +12,8 @@
 
 (LSEN) LIVESCORE: https://www.livescore.cz/ (https://m.livesport.cz/, https://www.livesport.cz/, https://www.livescore.in/cz/, https://www.flashscore.com/)
 
-! u KB zlobi casy - problem je primo na strankach/API - seznam vs. detail zapasu (napr. tenis) je jiny cas a v API detail je jeste jiny
+! KB: u KB zlobi casy - problem je primo na strankach/API - seznam vs. detail zapasu (napr. tenis) je jiny cas a v API detail je jeste jiny
+! zkontrolovat, zda se u vsech spideru spravne identifikuji zenske ligy (hlavne WTA - tenis) jako "zeny" u genderu
 
 ! narovnavani jmen - nektere stranky maji jen prvni pismeno u krestnich jmen
 ! jmena:
@@ -42,7 +43,7 @@
 
 ? k genderu mohu pridat smisene dvojice, pokud se da identifikovat.. napr. u tenisu
 ? k sport_detail mohu pridat dalsi ligy jako tenisove ATP, WTA, ITF, ale i nejake ligy v jinych sportech (napr. i ty co pouzivam u zemi - NHL, KHL, ...)
-? u synottip spideru mám někdy kategorii sportu jako "WTA Tour Finals" a "ATP Tour Finals" - zatim dano do "special"
+? ST: u synottip spideru mám někdy kategorii sportu jako "WTA Tour Finals" a "ATP Tour Finals" - zatim dano do "special"
     - eventy jsou i v normalnim sportu (tenis), ale event tam ma mensi detail (napr nemam mesto turnaje a tedy zemi)
     - dalo by se nejak odstranit tyto duplicity, abych brat ten event s nejvetsim detailem?
 
