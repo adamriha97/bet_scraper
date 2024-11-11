@@ -107,6 +107,12 @@ class UpdateNonDrawBetsPipeline:
         return item
 
 class PopulateParticipantListsPipeline:
+    def __init__(self):
+        script_dir = os.path.dirname(os.path.realpath(__file__))
+        deleted_names_dict_path = os.path.join(script_dir, 'files/deleted_names_dict.json')
+        with open(deleted_names_dict_path, 'r') as file:
+            self.deleted_names_dict = json.load(file)
+
     def create_name_tuple(self, participant, bookmaker_name = 'default'):
         if ',' in participant: # kdyz carka, tak prohod
             parts = participant.split(',', 1)
@@ -129,6 +135,16 @@ class PopulateParticipantListsPipeline:
                 for perm in permutations(combo):
                     all_combinations.append(''.join(perm))
         return tuple(all_combinations)
+    
+    def delete_selected_names_from_list(self, sport_name, input_list):
+        output_list = input_list
+        for sport_name_deleted, deleted_names_list in self.deleted_names_dict.items():
+            if sport_name_deleted == 'vsechny-sporty' or sport_name_deleted == sport_name:
+                output_list = [item for item in output_list if item not in deleted_names_list]
+        if output_list:
+            return output_list
+        else:
+            return input_list
 
     def process_item(self, item, spider):
         adapter = ItemAdapter(item)
@@ -161,5 +177,5 @@ class PopulateParticipantListsPipeline:
                 participant_name = ' '.join([word for word in participant_name.split() if not re.search(r'u\d{2}', word)])
                 participant_name = unidecode(participant_name)
                 # adapter[f'participant_{participant_status}_list'] = self.create_all_combinations_tuple(input_tuple = tuple(participant_name.split()))
-                adapter[f'participant_{participant_status}_list'] = tuple(participant_name.split())
+                adapter[f'participant_{participant_status}_list'] = tuple(self.delete_selected_names_from_list(sport_name, participant_name.split()))
         return item

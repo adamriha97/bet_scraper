@@ -1,0 +1,33 @@
+{
+    "vsechny-sporty": [
+        "united",
+        "city",
+        "utd",
+        "town",
+        "team",
+        "club",
+        "real",
+        "state",
+        "san"
+    ],
+    "fotbal": [
+        "afc"
+    ],
+    "basketbal": [
+        "basket",
+        "pallacanestro"
+    ],
+    "esports": [
+        "esports",
+        "esport"
+    ],
+    "volejbal": [
+        "volley",
+        "voley"
+    ],
+    "ledni-hokej": [
+        "jun",
+        "vyber",
+        "nhl"
+    ]
+}
