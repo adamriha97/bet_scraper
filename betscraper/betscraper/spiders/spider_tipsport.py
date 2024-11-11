@@ -103,8 +103,9 @@ class SpiderTipsportSpider(scrapy.Spider):
                                 secondary_category = secondary_category.replace(substring, '')
                             secondary_category = secondary_category.strip()
                             secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)]) # primárně kvůli U21 atd.
-                            if secondary_category[-1] in ['á', 'ý', 'é']:
-                                secondary_category = secondary_category[:-1]
+                            if len(secondary_category) > 0:
+                                if secondary_category[-1] in ['á', 'ý', 'é', 'í']:
+                                    secondary_category = secondary_category[:-1]
                         sport_detail_original = primary_category
                         basic_sport_event_item = BasicSportEventItem()
                         basic_sport_event_item['bookmaker_id'] = 'TS'
