@@ -167,6 +167,8 @@ class PopulateParticipantListsPipeline:
                 strings = ['ženy', 'muži', '(esports)', '(', ')', '-', "'", '.'] # ' ž', '(ž)', '(w)', '(f)'
                 for string in strings:
                     participant_name = participant_name.replace(string, ' ')
+                participant_name = ' '.join(self.delete_selected_names_from_list(sport_name, participant_name.split()))
+                participant_name = ' '.join([word for word in participant_name.split() if not re.search(r'u\d{2}', word)])
                 max_word_length = max(len(word) for word in participant_name.split())
                 if max_word_length > 2:
                     participant_name = ' '.join(word for word in participant_name.split() if len(word) > 2)
@@ -174,8 +176,7 @@ class PopulateParticipantListsPipeline:
                     participant_name = ' '.join(word for word in participant_name.split() if len(word) > 1)
                 else:
                     participant_name = ' '.join(participant_name.split())
-                participant_name = ' '.join([word for word in participant_name.split() if not re.search(r'u\d{2}', word)])
                 participant_name = unidecode(participant_name)
                 # adapter[f'participant_{participant_status}_list'] = self.create_all_combinations_tuple(input_tuple = tuple(participant_name.split()))
-                adapter[f'participant_{participant_status}_list'] = tuple(self.delete_selected_names_from_list(sport_name, participant_name.split()))
+                adapter[f'participant_{participant_status}_list'] = tuple(participant_name.split())
         return item

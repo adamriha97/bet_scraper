@@ -11,7 +11,8 @@
         "san"
     ],
     "fotbal": [
-        "afc"
+        "afc",
+        "calcio"
     ],
     "basketbal": [
         "basket",
@@ -23,11 +24,15 @@
     ],
     "volejbal": [
         "volley",
-        "voley"
+        "voley",
+        "zok"
     ],
     "ledni-hokej": [
         "jun",
         "vyber",
         "nhl"
+    ],
+    "hazena": [
+        "csm"
     ]
 }
