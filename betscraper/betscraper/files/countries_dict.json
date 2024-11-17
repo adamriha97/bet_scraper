@@ -62,7 +62,8 @@
         "Sydney",
         "Canberra",
         "United Cup",
-        "Australia"
+        "Australia",
+        "Caloundra"
     ],
     "azerbajdzan": [
         "Baku",
@@ -160,7 +161,10 @@
         "Rio de Janeiro",
         "Curitiba",
         "Lajeado",
-        "Recife"
+        "Recife",
+        "São Paulo",
+        "Sao Paolo",
+        "Sao Paulo"
     ],
     "brunej": [
         "Bandar Seri Begawan",
@@ -401,7 +405,8 @@
         "Santiago",
         "Chile",
         "chilsk",
-        "Santiago de Chile"
+        "Santiago de Chile",
+        "Colina"
     ],
     "chorvatsko": [
         "Záhřeb",
@@ -417,7 +422,9 @@
         "Nové Dillí",
         "Indie",
         "New Delhi",
-        "Bhubaneswar"
+        "Bhubaneswar",
+        "Dharwad",
+        "Kalaburagi"
     ],
     "indonesie": [
         "Jakarta",
@@ -467,7 +474,9 @@
         "San Gregorio di Catania",
         "Santa Margherita di Pula",
         "Solarino",
-        "Turín"
+        "Turín",
+        "Rovereto",
+        "Roverto"
     ],
     "izrael": [
         "Jerusalem",
@@ -492,7 +501,10 @@
         "Tokio",
         "Hamamatsu",
         "Matsuyama",
-        "Macujama"
+        "Macujama",
+        "Yokohama",
+        "Jokohama",
+        "Takasaki"
     ],
     "jemen": [
         "jemensk",
@@ -790,7 +802,8 @@
         "Mexico",
         "Mexiko",
         "Mérida",
-        "Veracruz"
+        "Veracruz",
+        "Puerto Vallarta"
     ],
     "mikronesie": [
         "Mikronésie",
@@ -976,7 +989,10 @@
         "Estoril",
         "Portugalsko",
         "portugalsk",
-        "Portugal"
+        "Portugal",
+        "Lousada",
+        "Vale Do Lobo",
+        "Vale do Lobo"
     ],
     "rakousko": [
         "rakousk",
@@ -1261,7 +1277,8 @@
         "španělsk",
         "Mallorca",
         "Madrid",
-        "Španělsko"
+        "Španělsko",
+        "Montemar"
     ],
     "sri-lanka": [
         "Srí Lanka",

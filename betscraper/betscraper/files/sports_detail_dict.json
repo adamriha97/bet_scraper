@@ -4,7 +4,8 @@
         "CS2",
         "Counter-Strike",
         "Counter-Strike 2 Duels",
-        "esport-counter-strike"
+        "esport-counter-strike",
+        "Counter Strike 1v1"
     ],
     "dota-2": [
         "DOTA 2",
@@ -39,13 +40,17 @@
     "starcraft-2": [
         "Starcraft 2"
     ],
+    "lol-wild-rift": [
+        "Wild Rift"
+    ],
     "honor-of-kings": [
         "Honor of Kings",
         "Kings of Glory",
         "King of Glory"
     ],
     "mobile-legends": [
-        "Mobile Legends"
+        "Mobile Legends",
+        "Mobile Legends: Bang Bang"
     ],
     "e-fotbal": [
         "eFotbal",

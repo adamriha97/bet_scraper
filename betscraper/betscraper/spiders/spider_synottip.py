@@ -122,8 +122,10 @@ class SpiderSynottipSpider(scrapy.Spider):
                     bet_0 = odd['oddNumber']
                 elif odd['oddName'] == '2':
                     bet_2 = odd['oddNumber']
-            # muze se hodit v budoucnu
-            # secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
+            # dodatecna uprava pro secondary_category -> bylo by asi lepsi resit najednou
+            for substring in ['WTA']:
+                secondary_category = secondary_category.replace(substring, '')
+            secondary_category = ' '.join([word for word in secondary_category.split() if not re.search(r'\d', word)])
             sport_detail_original = primary_category
             basic_sport_event_item = BasicSportEventItem()
             basic_sport_event_item['bookmaker_id'] = 'ST'

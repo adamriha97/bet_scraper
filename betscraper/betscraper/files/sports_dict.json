@@ -103,7 +103,9 @@
         "stolni-tenis": [
             "Table tennis"
         ],
-        "curling": [],
+        "curling": [
+            "Curling"
+        ],
         "baseball": [
             "Baseball"
         ],
@@ -189,7 +191,9 @@
         "stolni-tenis": [
             "Stolní tenis"
         ],
-        "curling": [],
+        "curling": [
+            "Curling"
+        ],
         "baseball": [
             "Baseball"
         ],
@@ -272,7 +276,9 @@
         "stolni-tenis": [
             "stolni-tenis"
         ],
-        "curling": [],
+        "curling": [
+            "curling"
+        ],
         "baseball": [
             "baseball"
         ],
@@ -400,7 +406,8 @@
             "E-sports",
             "eFotbal",
             "eBasketbal",
-            "eHokej"
+            "eHokej",
+            "Esporty"
         ],
         "plazovy-fotbal": [
             "Plážový fotbal"
@@ -634,7 +641,9 @@
         "stolni-tenis": [
             "Stolní tenis"
         ],
-        "curling": [],
+        "curling": [
+            "Curling"
+        ],
         "baseball": [
             "Baseball"
         ],
@@ -728,7 +737,9 @@
         "stolni-tenis": [
             "Stolní tenis"
         ],
-        "curling": [],
+        "curling": [
+            "Curling"
+        ],
         "baseball": [
             "Baseball"
         ],
