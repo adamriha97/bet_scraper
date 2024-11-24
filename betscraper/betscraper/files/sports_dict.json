@@ -333,7 +333,9 @@
         "volejbal": [
             "volejbal"
         ],
-        "australsky-fotbal": [],
+        "australsky-fotbal": [
+            "australsky-fotbal"
+        ],
         "snooker": [
             "snooker"
         ],
@@ -608,7 +610,9 @@
             "Volleyball",
             "Volejbal"
         ],
-        "australsky-fotbal": [],
+        "australsky-fotbal": [
+            "Australský fotbal"
+        ],
         "snooker": [
             "Snooker"
         ],

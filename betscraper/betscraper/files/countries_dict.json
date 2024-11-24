@@ -406,7 +406,8 @@
         "Chile",
         "chilsk",
         "Santiago de Chile",
-        "Colina"
+        "Colina",
+        "Temuco"
     ],
     "chorvatsko": [
         "Záhřeb",
@@ -476,7 +477,8 @@
         "Solarino",
         "Turín",
         "Rovereto",
-        "Roverto"
+        "Roverto",
+        "Carrara"
     ],
     "izrael": [
         "Jerusalem",
@@ -504,7 +506,9 @@
         "Macujama",
         "Yokohama",
         "Jokohama",
-        "Takasaki"
+        "Takasaki",
+        "Yokkaichi",
+        "Jokkaiči"
     ],
     "jemen": [
         "jemensk",
@@ -803,7 +807,8 @@
         "Mexiko",
         "Mérida",
         "Veracruz",
-        "Puerto Vallarta"
+        "Puerto Vallarta",
+        "Manzanillo"
     ],
     "mikronesie": [
         "Mikronésie",
@@ -992,7 +997,9 @@
         "Portugal",
         "Lousada",
         "Vale Do Lobo",
-        "Vale do Lobo"
+        "Vale do Lobo",
+        "Maia",
+        "Cidade da Maia"
     ],
     "rakousko": [
         "rakousk",
@@ -1194,7 +1201,9 @@
         "nba",
         "Knoxville",
         "Midland",
-        "Santa Cruz"
+        "Santa Cruz",
+        "Tallahassee",
+        "Boca Raton"
     ],
     "srbsko": [
         "Bělehrad",
