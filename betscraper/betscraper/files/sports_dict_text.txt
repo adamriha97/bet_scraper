@@ -302,7 +302,7 @@
         "hazena": ["Házená"],
         "basketbal": ["Basketbal"],
         "volejbal": ["Volejbal"],
-        "australsky-fotbal": [],
+        "australsky-fotbal": ["Australský fotbal"],
         "snooker": ["Snooker"],
         "padel": ["Padel"],
         "netball": [],
