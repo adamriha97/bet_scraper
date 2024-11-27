@@ -16,71 +16,12 @@
 ! zkontrolovat, zda se u vsech spideru spravne identifikuji zenske ligy (hlavne WTA - tenis) jako "zeny" u genderu
 ! ME: nasel jsem u Merkuru téměř duplikované řádky, u kterých se lišila asi jen event_url
 
-! narovnavani jmen - nektere stranky maji jen prvni pismeno u krestnich jmen
-! jmena:
-    - single:
-        Jmeno Prijmeni - betano, (kingsbet), sazka
-        Prijmeni, Jmeno - betx, forbet, kingsbet, synottip (Mpetshi Perricard, Giovanni)
-        Prijmeni J. - fortuna (Mpetshi Perricard G.)
-        J. Prijmeni - merkur
-        Prijmeni Jmeno - tipsport (pr.: Mpetshi Perricard Giovanni - jmenuje se spravne takto: Giovanni Mpetshi Perricard)
-    - double:
-        Jmeno Prijmeni / Jmeno Prijmeni - betano
-        Prijmeni J / Prijmeni J - betx, forbet - kingsbet, sazka, synottip (pr.: Fils A / Mpetshi Perricard G)
-        Prijmeni J. / Prijmeni J. - fortuna
-        Prijmeni J./Prijmeni J. - merkur
-        Prijmeni/Prijmeni - tipsport
-        J.Prijmeni/J.Prijmeni - (tipsport)
-    - co zmenit za ' ' - '.', "'", '-'
-    1. kdyz carka, tak prohod
-    2. vymen tecky za mezery
-    3. odstran jednopismenna slova
-    4. kdyz tipsport (ne u dvouher), tak odstran posledni slovo
-    5. vymen pomlcky a apostrofy za mezery
-    6. kdyz tipsport, vem vsechny slova, jinak vem posledni slovo
-    7. asi na libovolne urovni dat na lower a bez diakritiky
-    - sporty s lidmy: tenis, stolni-tenis, sipky, box, bojove-sporty, snooker, padel, badminton, squash, sachy
-    - sporty mozna s lidmy: curling, bowling
 
 ? k genderu mohu pridat smisene dvojice, pokud se da identifikovat.. napr. u tenisu
 ? k sport_detail mohu pridat dalsi ligy jako tenisove ATP, WTA, ITF, ale i nejake ligy v jinych sportech (napr. i ty co pouzivam u zemi - NHL, KHL, ...)
 ? ST: u synottip spideru mám někdy kategorii sportu jako "WTA Tour Finals" a "ATP Tour Finals" - zatim dano do "special"
     - eventy jsou i v normalnim sportu (tenis), ale event tam ma mensi detail (napr nemam mesto turnaje a tedy zemi)
-    - dalo by se nejak odstranit tyto duplicity, abych brat ten event s nejvetsim detailem?
-
-! budouci cisteni dat:
-    betano:
-        u nekterych esport zapasu je na konci tymu napis (esport) a sport je napriklad fotbal
-        nektere zenske tymy jsou zakonceny (Ž)
-        nektere kategorie (videl jsem u secondary) jsou zakonceny (Ž)
-        nektere kategorie (videl jsem u primary) maji ženy nebo Ženy v nazvu
-        napriklad dvacitky mohou mit kombinaci -> (Ž) U20
-    sazka:
-        u zenskych typu je nekdy na konci Ž, nekdy (W) a nekdy nic, mozna i neco jine, to nevim
-        mlade tymy maji na konci U20 nebo U19 apod asi
-    merkur:
-        zenske tymy zakonceny (asi) W
-        mladsi tymy zakonceny (asi) U20, U19 apod.
-    fortuna:
-        mladsi tymy zakonceny (asi) U20, U19 apod.
-    tipsport:
-        zenske tymy zakonceny (asi) Ž
-        mladsi tymy zakonceny (asi) U20, U19 apod.
-    synottip:
-        mladsi tymy zakonceny (asi) U20, U19 apod.
-    betx:
-        liga WTA neni identifikovana jako 'zeny', mozna prozkoumat i u ostatnich spideru
-    forbet:
-        mladsi tymy zakonceny (asi) U20, U19 apod. - jen nektere
-    kingsbet:
-        zenske tymy zakonceny (asi) "- ženy", jednou jsem videl i zakonceni "(F)" - nektere asi
-        mladsi tymy zakonceny (asi) U20, U19 apod. - jen nektere
-    1. prevest vse na lower case
-    2. odstranit vyrazy jako: 'ženy', 'muži', '(esport)', plus mozna ' ž', '(ž)', '(w)', '(f)', ale ty se vyresi v dalsich krocich
-    3. vymeni '(', ')', '-', "'" za mezery ' '
-    4. odstranit vsechny jednopismenna slova
-    5. odstranit slova ve formatu u20, u19, ...
-    (6. odstranit 'fc' a podobně?)
+    - dalo by se nejak odstranit tyto duplicity, abych bral ten event s nejvetsim detailem?
 
 
 
@@ -273,3 +214,65 @@ https://sb2frontend-altenar2.biahosted.com/api/widget/GetSportMenu?culture=cs-CZ
 https://sb2frontend-altenar2.biahosted.com/api/widget/GetEvents?culture=cs-CZ&timezoneOffset=-120&integration=kingsbet&deviceType=1&numFormat=en-GB&countryCode=CZ&eventCount=0&sportId=0&catIds=590
 # events and markets for more categories - budu pouzivat jen categorie od jednoho sportu, jelikoz pri pouziti categorie z ruznych sportu v jednom callu, tak nedostanu vsechny markety
 https://sb2frontend-altenar2.biahosted.com/api/widget/GetEvents?culture=cs-CZ&timezoneOffset=-120&integration=kingsbet&deviceType=1&numFormat=en-GB&countryCode=CZ&eventCount=0&sportId=0&catIds=1132%2C1178%2C1133%2C1134%2C590%2C497%2C592
+
+
+
+-> jmena:
+    - single:
+        Jmeno Prijmeni - betano, (kingsbet), sazka
+        Prijmeni, Jmeno - betx, forbet, kingsbet, synottip (Mpetshi Perricard, Giovanni)
+        Prijmeni J. - fortuna (Mpetshi Perricard G.)
+        J. Prijmeni - merkur
+        Prijmeni Jmeno - tipsport (pr.: Mpetshi Perricard Giovanni - jmenuje se spravne takto: Giovanni Mpetshi Perricard)
+    - double:
+        Jmeno Prijmeni / Jmeno Prijmeni - betano
+        Prijmeni J / Prijmeni J - betx, forbet - kingsbet, sazka, synottip (pr.: Fils A / Mpetshi Perricard G)
+        Prijmeni J. / Prijmeni J. - fortuna
+        Prijmeni J./Prijmeni J. - merkur
+        Prijmeni/Prijmeni - tipsport
+        J.Prijmeni/J.Prijmeni - (tipsport)
+    - co zmenit za ' ' - '.', "'", '-'
+    1. kdyz carka, tak prohod
+    2. vymen tecky za mezery
+    3. odstran jednopismenna slova
+    4. kdyz tipsport (ne u dvouher), tak odstran posledni slovo
+    5. vymen pomlcky a apostrofy za mezery
+    6. kdyz tipsport, vem vsechny slova, jinak vem posledni slovo
+    7. asi na libovolne urovni dat na lower a bez diakritiky
+    - sporty s lidmy: tenis, stolni-tenis, sipky, box, bojove-sporty, snooker, padel, badminton, squash, sachy
+    - sporty mozna s lidmy: curling, bowling
+
+
+-> budouci cisteni dat:
+    betano:
+        u nekterych esport zapasu je na konci tymu napis (esport) a sport je napriklad fotbal
+        nektere zenske tymy jsou zakonceny (Ž)
+        nektere kategorie (videl jsem u secondary) jsou zakonceny (Ž)
+        nektere kategorie (videl jsem u primary) maji ženy nebo Ženy v nazvu
+        napriklad dvacitky mohou mit kombinaci -> (Ž) U20
+    sazka:
+        u zenskych typu je nekdy na konci Ž, nekdy (W) a nekdy nic, mozna i neco jine, to nevim
+        mlade tymy maji na konci U20 nebo U19 apod asi
+    merkur:
+        zenske tymy zakonceny (asi) W
+        mladsi tymy zakonceny (asi) U20, U19 apod.
+    fortuna:
+        mladsi tymy zakonceny (asi) U20, U19 apod.
+    tipsport:
+        zenske tymy zakonceny (asi) Ž
+        mladsi tymy zakonceny (asi) U20, U19 apod.
+    synottip:
+        mladsi tymy zakonceny (asi) U20, U19 apod.
+    betx:
+        liga WTA neni identifikovana jako 'zeny', mozna prozkoumat i u ostatnich spideru
+    forbet:
+        mladsi tymy zakonceny (asi) U20, U19 apod. - jen nektere
+    kingsbet:
+        zenske tymy zakonceny (asi) "- ženy", jednou jsem videl i zakonceni "(F)" - nektere asi
+        mladsi tymy zakonceny (asi) U20, U19 apod. - jen nektere
+    1. prevest vse na lower case
+    2. odstranit vyrazy jako: 'ženy', 'muži', '(esport)', plus mozna ' ž', '(ž)', '(w)', '(f)', ale ty se vyresi v dalsich krocich
+    3. vymeni '(', ')', '-', "'" za mezery ' '
+    4. odstranit vsechny jednopismenna slova
+    5. odstranit slova ve formatu u20, u19, ...
+    (6. odstranit 'fc' a podobně?)
