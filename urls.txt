@@ -1,12 +1,12 @@
-(BE) BETANO: https://www.betano.cz/ 
-(BX) BETX: https://bet-x.cz/cs/sports-betting?hours=7200 
-(FB) FORBET: https://www.iforbet.cz/prematch/landing 
-(FO) FORTUNA: https://www.ifortuna.cz/ 
-(KB) KINGSBET: https://www.kingsbet.cz/sport#/overview 
-(ME) MERKUR: https://www.merkurxtip.cz/sazeni 
-(SA) SAZKA: https://www.sazka.cz/kurzove-sazky/ 
-(ST) SYNOTTIP: https://sport.synottip.cz/cz/nejsazenejsi 
-(TS) TIPSPORT: https://www.tipsport.cz/ 
+(BE) BETANO (betano) ....... https://www.betano.cz/ .................................
+(BX) BETX (betx) ........... https://bet-x.cz/cs/sports-betting?hours=7200 ..........detail
+(FB) FORBET (forbet) ....... https://www.iforbet.cz/prematch/landing ................detail
+(FO) FORTUNA (fortuna) ..... https://www.ifortuna.cz/ ...............................detail
+(KB) KINGSBET (kingsbet) ... https://www.kingsbet.cz/sport#/overview ................detail
+(ME) MERKUR (merkur) ....... https://www.merkurxtip.cz/sazeni .......................detail
+(SA) SAZKA (sazka) ......... https://www.sazka.cz/kurzove-sazky/ ....................detail
+(ST) SYNOTTIP (synottip) ... https://sport.synottip.cz/cz/nejsazenejsi ..............detail
+(TS) TIPSPORT (tipsport) ... https://www.tipsport.cz/ ...............................detail
 
 (CH) CHANCE: https://www.chance.cz/ (same data as tipsport)
 
@@ -79,6 +79,9 @@ https://www.betano.cz/danae-webapi/api/live/overview/latest?includeVirtuals=true
 https://www.betano.cz/danae-webapi/api/live/events/53620821/?isInit=false&version=58
 https://www.betano.cz/danae-webapi/api/live/events/53620821/latest
 https://www.betano.cz/api/sport/fotbal/nadchazejici-zapasy-dnes/?sort=Leagues&req=la,s,stnf,c,mb
+
+individual event call:
+https://www.betano.cz/api/zapas-sance/blyth-spartans-bamber-bridge/59017406/?bt=7&req=la,s,stnf,c,mb
 
 helper:
 scrapy shell -s USER_AGENT="Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0"
