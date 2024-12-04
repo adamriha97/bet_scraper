@@ -44,8 +44,8 @@ class SpiderTipsportSpider(scrapy.Spider):
     def parse(self, response):
         url = "https://www.tipsport.cz/rest/offer/v2/offer?limit=9999"
         headers = {
-        'Cookie': f"JSESSIONID={str(response.headers.getlist('Set-Cookie')).split('JSESSIONID=')[1].split(';')[0]}",
-        'Content-Type': 'application/json'
+            'Cookie': f"JSESSIONID={str(response.headers.getlist('Set-Cookie')).split('JSESSIONID=')[1].split(';')[0]}",
+            'Content-Type': 'application/json'
         }
         response_post = requests.request("POST", url, headers=headers, data=json.dumps({}), impersonate='chrome')
         response_json = json.loads(response_post.text)

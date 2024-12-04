@@ -27,7 +27,7 @@ class SpiderBetanoDetailSpider(scrapy.Spider):
     
     def __init__(self, *args, **kwargs):
         super(SpiderBetanoDetailSpider, self).__init__(*args, **kwargs)
-        with open('data/data_betano.json', 'r') as file:
+        with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
             self.data = json.load(file)
 
         script_dir = os.path.dirname(os.path.realpath(__file__))
