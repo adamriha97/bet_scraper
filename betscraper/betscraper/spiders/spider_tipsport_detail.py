@@ -59,7 +59,7 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
             'Cookie': f"JSESSIONID={str(response.headers.getlist('Set-Cookie')).split('JSESSIONID=')[1].split(';')[0]}",
             'Content-Type': 'application/json'
         }
-        for item in self.data[:5]:
+        for item in self.data[-5:]:
             sport_name = item['sport_name']
             event_url = item['event_url']
             url = f"https://www.tipsport.cz/rest/offer/v1/matches/{event_url.split('/')[-1]}/event-tables"
@@ -77,7 +77,7 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
                         participant_1 = event_table['boxes'][0]['cells'][0]['name']
                         participant_2 = event_table['boxes'][0]['cells'][2]['name']
                         break
-                    if event_table['name'] == 'Vítěz zápasu':
+                    if event_table['name'] in ('Vítěz zápasu', 'Vítěz zápasu do rozhodnutí'):
                         participant_1 = event_table['boxes'][0]['cells'][0]['name']
                         participant_2 = event_table['boxes'][0]['cells'][1]['name']
                         break
@@ -98,10 +98,8 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
                             except:
                                 pass
                 yield {
-                    'sport_name': sport_name,
                     'event_url': event_url,
-                    'participant_1': participant_1,
-                    'participant_2': participant_2,
+                    'bet_dict': template,
                 }
             except:
                 pass

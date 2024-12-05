@@ -1441,7 +1441,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Vítěz 2. setu 1"
+                ]
             },
             "2": {
                 "betano": [
@@ -1454,7 +1456,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Vítěz 2. setu 2"
+                ]
             }
         },
         "oba-vyhraji-set": {
@@ -1469,7 +1473,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet setů v zápasu (na dva vítězné) Více než 2.5"
+                ]
             },
             "Ne": {
                 "betano": [
@@ -1482,7 +1488,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet setů v zápasu (na dva vítězné) Méně než 2.5"
+                ]
             }
         },
         "1-vyhraje-set": {
@@ -1497,7 +1505,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet vyhraných setů v zápasu 1 Více než 0.5"
+                ]
             },
             "Ne": {
                 "betano": [
@@ -1510,7 +1520,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet vyhraných setů v zápasu 1 Méně než 0.5"
+                ]
             }
         },
         "2-vyhraje-set": {
@@ -1525,7 +1537,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet vyhraných setů v zápasu 2 Více než 0.5"
+                ]
             },
             "Ne": {
                 "betano": [
@@ -1538,7 +1552,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet vyhraných setů v zápasu 2 Méně než 0.5"
+                ]
             }
         },
         "vice-mene-pocet-gamu-22,5": {
@@ -1585,7 +1601,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Vítěz zápasu do rozhodnutí 1"
+                ]
             },
             "2": {
                 "betano": [
@@ -1598,7 +1616,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Vítěz zápasu do rozhodnutí 2"
+                ]
             }
         },
         "vysledek-v-zakladni-hraci-dobe": {
@@ -1613,7 +1633,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek zápasu 1"
+                ]
             },
             "0": {
                 "betano": [
@@ -1626,7 +1648,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek zápasu 0"
+                ]
             },
             "2": {
                 "betano": [
@@ -1639,7 +1663,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek zápasu 2"
+                ]
             }
         },
         "vysledek-v-prvni-tretine": {
@@ -1654,7 +1680,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek 1. třetiny 1"
+                ]
             },
             "0": {
                 "betano": [
@@ -1667,7 +1695,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek 1. třetiny 0"
+                ]
             },
             "2": {
                 "betano": [
@@ -1680,7 +1710,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek 1. třetiny 2"
+                ]
             }
         },
         "vysledek-ve-druhe-tretine": {
@@ -1695,7 +1727,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek 2. třetiny 1"
+                ]
             },
             "0": {
                 "betano": [
@@ -1708,7 +1742,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek 2. třetiny 0"
+                ]
             },
             "2": {
                 "betano": [
@@ -1721,7 +1757,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek 2. třetiny 2"
+                ]
             }
         },
         "vysledek-ve-treti-tretine": {
@@ -1736,7 +1774,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek 3. třetiny 1"
+                ]
             },
             "0": {
                 "betano": [
@@ -1749,7 +1789,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek 3. třetiny 0"
+                ]
             },
             "2": {
                 "betano": [
@@ -1762,7 +1804,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek 3. třetiny 2"
+                ]
             }
         },
         "vice-mene-pocet-golu-1,5": {
@@ -1778,7 +1822,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Více než 1.5"
+                ]
             },
             "mene-nez-1,5": {
                 "betano": [
@@ -1792,7 +1838,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Méně než 1.5"
+                ]
             }
         },
         "vice-mene-pocet-golu-2,5": {
@@ -1808,7 +1856,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Více než 2.5"
+                ]
             },
             "mene-nez-2,5": {
                 "betano": [
@@ -1822,7 +1872,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Méně než 2.5"
+                ]
             }
         },
         "vice-mene-pocet-golu-3,5": {
@@ -1838,7 +1890,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Více než 3.5"
+                ]
             },
             "mene-nez-3,5": {
                 "betano": [
@@ -1852,7 +1906,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Méně než 3.5"
+                ]
             }
         },
         "vice-mene-pocet-golu-4,5": {
@@ -1868,7 +1924,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Více než 4.5"
+                ]
             },
             "mene-nez-4,5": {
                 "betano": [
@@ -1882,7 +1940,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Méně než 4.5"
+                ]
             }
         },
         "vice-mene-pocet-golu-5,5": {
@@ -1898,7 +1958,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Více než 5.5"
+                ]
             },
             "mene-nez-5,5": {
                 "betano": [
@@ -1912,7 +1974,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Méně než 5.5"
+                ]
             }
         },
         "vice-mene-pocet-golu-6,5": {
@@ -1928,7 +1992,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Více než 6.5"
+                ]
             },
             "mene-nez-6,5": {
                 "betano": [
@@ -1942,7 +2008,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Méně než 6.5"
+                ]
             }
         },
         "vice-mene-pocet-golu-7,5": {
@@ -1958,7 +2026,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Více než 7.5"
+                ]
             },
             "mene-nez-7,5": {
                 "betano": [
@@ -1972,7 +2042,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Méně než 7.5"
+                ]
             }
         },
         "vice-mene-pocet-golu-8,5": {
@@ -1988,7 +2060,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Více než 8.5"
+                ]
             },
             "mene-nez-8,5": {
                 "betano": [
@@ -2002,7 +2076,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet gólů v zápasu Méně než 8.5"
+                ]
             }
         }
     },
@@ -2019,7 +2095,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Vítěz zápasu do rozhodnutí 1"
+                ]
             },
             "2": {
                 "betano": [
@@ -2032,7 +2110,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Vítěz zápasu do rozhodnutí 2"
+                ]
             }
         },
         "vysledek-v-zakladni-hraci-dobe": {
@@ -2047,7 +2127,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek zápasu 1"
+                ]
             },
             "0": {
                 "betano": [
@@ -2060,7 +2142,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek zápasu 0"
+                ]
             },
             "2": {
                 "betano": [
@@ -2073,7 +2157,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Výsledek zápasu 2"
+                ]
             }
         },
         "vice-mene-pocet-bodu-168,5": {
@@ -2089,7 +2175,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet bodů včetně prodloužení Více než 168.5"
+                ]
             },
             "mene-nez-168,5": {
                 "betano": [
@@ -2103,7 +2191,9 @@
                 "merkur": [],
                 "sazka": [],
                 "synottip": [],
-                "tipsport": []
+                "tipsport": [
+                    "Počet bodů včetně prodloužení Méně než 168.5"
+                ]
             }
         }
     },
@@ -2123,7 +2213,8 @@
                 "sazka": [],
                 "synottip": [],
                 "tipsport": [
-                    "Vítěz zápasu 1"
+                    "Vítěz zápasu 1",
+                    "Vítěz zápasu do rozhodnutí 1"
                 ]
             },
             "2": {
@@ -2140,7 +2231,8 @@
                 "sazka": [],
                 "synottip": [],
                 "tipsport": [
-                    "Vítěz zápasu 2"
+                    "Vítěz zápasu 2",
+                    "Vítěz zápasu do rozhodnutí 2"
                 ]
             }
         },
