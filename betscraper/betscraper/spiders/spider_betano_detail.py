@@ -60,7 +60,7 @@ class SpiderBetanoDetailSpider(scrapy.Spider):
         try:
             if response_json["errorCode"] == 302:
                 pass
-            yield {
+            yield { # s timto neco udelaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat mozna
                 'test': response_json["errorCode"],
                 'full_translator': self.full_translator['other'],
                 'full_template': self.full_template['other'],
