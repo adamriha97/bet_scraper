@@ -1372,7 +1372,9 @@
                 ],
                 "betx": [],
                 "forbet": [],
-                "fortuna": [],
+                "fortuna": [
+                    "Vítěz zápasu 1"
+                ],
                 "kingsbet": [],
                 "merkur": [],
                 "sazka": [],
@@ -1387,7 +1389,9 @@
                 ],
                 "betx": [],
                 "forbet": [],
-                "fortuna": [],
+                "fortuna": [
+                    "Vítěz zápasu 2"
+                ],
                 "kingsbet": [],
                 "merkur": [],
                 "sazka": [],
