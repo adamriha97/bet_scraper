@@ -9,7 +9,7 @@ from betscraper.items import BasicSportEventItem
 
 class SpiderForbetSpider(scrapy.Spider):
     name = "spider_forbet"
-    allowed_domains = ["www.iforbet.cz"]
+    allowed_domains = ["www.iforbet.cz", 'www.fbet.cz']
     # start_urls = ["https://www.iforbet.cz"]
 
     custom_settings = {
@@ -24,7 +24,7 @@ class SpiderForbetSpider(scrapy.Spider):
         }
     
     def start_requests(self):
-        url = 'https://www.iforbet.cz/api/web/v1/offer/full_offer'
+        url = 'https://www.fbet.cz/api/web/v1/offer/full_offer'
         body = json.dumps({
             "offerMode": "prematch",
             "lang": "cs"
@@ -50,7 +50,7 @@ class SpiderForbetSpider(scrapy.Spider):
                     sport = sport_json['name']
                     primary_category_original = category_json['name']
                     secondary_category_original = tournament_json['name']
-                    event_url = f'https://www.iforbet.cz/prematch/event/{market["eventId"]}'
+                    event_url = f'https://www.fbet.cz/prematch/event/{market["eventId"]}'
                     event_startTime = datetime.fromisoformat(event_json['startTs'].replace("Z", "+00:00")).astimezone(ZoneInfo("Europe/Prague"))
                     participant_1 = response_json['data']['competitors'][str(event_json['competitors'][0])]['name']
                     participant_2 = response_json['data']['competitors'][str(event_json['competitors'][1])]['name']
