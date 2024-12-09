@@ -2,7 +2,7 @@
 (BX) BETX (betx) ........... https://bet-x.cz/cs/sports-betting?hours=7200 ..........detailxxx
 (FB) FORBET (forbet) ....... https://www.iforbet.cz/prematch/landing ................detailxxx -> error code 429 - narazi na limit poctu callu
 (FO) FORTUNA (fortuna) ..... https://www.ifortuna.cz/ ...............................detailxxx
-(KB) KINGSBET (kingsbet) ... https://www.kingsbet.cz/sport#/overview ................detail
+(KB) KINGSBET (kingsbet) ... https://www.kingsbet.cz/sport#/overview ................detailxxx
 (ME) MERKUR (merkur) ....... https://www.merkurxtip.cz/sazeni .......................detailxxx
 (SA) SAZKA (sazka) ......... https://www.sazka.cz/kurzove-sazky/ ....................detailxxx
 (ST) SYNOTTIP (synottip) ... https://sport.synottip.cz/cz/nejsazenejsi ..............detail
