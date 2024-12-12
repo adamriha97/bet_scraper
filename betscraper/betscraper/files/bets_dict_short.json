@@ -1,0 +1,1342 @@
+{
+    "fotbal": {
+        "vysledek-zapasu": {
+            "1": {
+                "betano": [
+                    "Výsledek zápasu MAX Kurz 1",
+                    "Výsledek zápasu 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 1"
+                ]
+            },
+            "0": {
+                "betano": [
+                    "Výsledek zápasu MAX Kurz 0",
+                    "Výsledek zápasu 0"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 0"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Výsledek zápasu MAX Kurz 2",
+                    "Výsledek zápasu 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 2"
+                ]
+            }
+        },
+        "vysledek-prvniho-polocasu": {
+            "1": {
+                "betano": [
+                    "Výsledek prvního poločasu 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 1. poločasu 1"
+                ]
+            },
+            "0": {
+                "betano": [
+                    "Výsledek prvního poločasu 0"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 1. poločasu 0"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Výsledek prvního poločasu 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 1. poločasu 2"
+                ]
+            }
+        },
+        "vysledek-druheho-polocasu": {
+            "1": {
+                "betano": [
+                    "Výsledek druhého poločasu 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 2. poločasu 1"
+                ]
+            },
+            "0": {
+                "betano": [
+                    "Výsledek druhého poločasu 0"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 2. poločasu 0"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Výsledek druhého poločasu 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 2. poločasu 2"
+                ]
+            }
+        },
+        "vitez-bez-remizy": {
+            "1": {
+                "betano": [
+                    "Sázka bez remízy 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu bez remízy 1"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Sázka bez remízy 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu bez remízy 2"
+                ]
+            }
+        },
+        "vitez-prvniho-polocasu-bez-remizy": {
+            "1": {
+                "betano": [
+                    "Poločas – sázka bez remízy 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 1. poločasu bez remízy 1"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Poločas – sázka bez remízy 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 1. poločasu bez remízy 2"
+                ]
+            }
+        },
+        "vitez-druheho-polocasu-bez-remizy": {
+            "1": {
+                "betano": [
+                    "Druhý poločas – sázka bez remízy 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 2. poločasu bez remízy 1"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Druhý poločas – sázka bez remízy 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 2. poločasu bez remízy 2"
+                ]
+            }
+        },
+        "prvni-gol": {
+            "1": {
+                "betano": [
+                    "Další gól (Gól 1) 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Kdo dá v zápasu 1. gól 1"
+                ]
+            },
+            "0": {
+                "betano": [
+                    "Další gól (Gól 1) Žádný gól"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Kdo dá v zápasu 1. gól Nikdo"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Další gól (Gól 1) 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Kdo dá v zápasu 1. gól 2"
+                ]
+            }
+        },
+        "oba-tymy-skoruji": {
+            "ano": {
+                "betano": [
+                    "Oba týmy skórují Ano"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Každý tým dá v zápasu 1 a více gólů Ano"
+                ]
+            },
+            "ne": {
+                "betano": [
+                    "Oba týmy skórují Ne"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Každý tým dá v zápasu 1 a více gólů Ne"
+                ]
+            }
+        },
+        "oba-tymy-skoruji-v-prvnim-polocasu": {
+            "ano": {
+                "betano": [
+                    "Oba týmy dají gól v 1. poločasu Ano"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Každý tým dá v 1. poločasu 1 a více gólů Ano"
+                ]
+            },
+            "ne": {
+                "betano": [
+                    "Oba týmy dají gól v 1. poločasu Ne"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Každý tým dá v 1. poločasu 1 a více gólů Ne"
+                ]
+            }
+        },
+        "oba-tymy-skoruji-ve-druhem-polocasu": {
+            "ano": {
+                "betano": [
+                    "Oba týmy dají gól ve 2. poločasu Ano"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Každý tým dá ve 2. poločasu 1 a více gólů Ano"
+                ]
+            },
+            "ne": {
+                "betano": [
+                    "Oba týmy dají gól ve 2. poločasu Ne"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Každý tým dá ve 2. poločasu 1 a více gólů Ne"
+                ]
+            }
+        },
+        "1-vyhraje-oba-polocasy": {
+            "ano": {
+                "betano": [
+                    "1 vyhraje oba poločasy Ano"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Tým vyhraje oba poločasy 1 Ano"
+                ]
+            },
+            "ne": {
+                "betano": [
+                    "1 vyhraje oba poločasy Ne"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Tým vyhraje oba poločasy 1 Ne"
+                ]
+            }
+        },
+        "2-vyhraje-oba-polocasy": {
+            "ano": {
+                "betano": [
+                    "2 vyhraje oba poločasy Ano"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Tým vyhraje oba poločasy 2 Ano"
+                ]
+            },
+            "ne": {
+                "betano": [
+                    "2 vyhraje oba poločasy Ne"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Tým vyhraje oba poločasy 2 Ne"
+                ]
+            }
+        },
+        "narizena-penalta": {
+            "ano": {
+                "betano": [
+                    "Nařízená penalta Ano"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet penalt v zápasu Více než 0.5"
+                ]
+            },
+            "ne": {
+                "betano": [
+                    "Nařízená penalta Ne"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet penalt v zápasu Méně než 0.5"
+                ]
+            }
+        },
+        "vice-mene-pocet-golu-0,5": {
+            "vice-nez-0,5": {
+                "betano": [
+                    "Více než/Méně než celkový počet gólů Více než 0.5",
+                    "Více než/Méně než celkový počet gólů (extra) Více než 0.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet gólů v zápasu Více než 0.5"
+                ]
+            },
+            "mene-nez-0,5": {
+                "betano": [
+                    "Více než/Méně než celkový počet gólů Méně než 0.5",
+                    "Více než/Méně než celkový počet gólů (extra) Méně než 0.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet gólů v zápasu Méně než 0.5"
+                ]
+            }
+        },
+        "prvni-polocas-vice-mene-pocet-golu-0,5": {
+            "vice-nez-0,5": {
+                "betano": [
+                    "Počet gólů v prvním poločasu Více než/Méně než Více než 0.5",
+                    "Počet gólů v prvním poločasu Více než/Méně než (extra) Více než 0.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet gólů v 1. poločasu Více než 0.5"
+                ]
+            },
+            "mene-nez-0,5": {
+                "betano": [
+                    "Počet gólů v prvním poločasu Více než/Méně než Méně než 0.5",
+                    "Počet gólů v prvním poločasu Více než/Méně než (extra) Méně než 0.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet gólů v 1. poločasu Méně než 0.5"
+                ]
+            }
+        },
+        "1-vice-mene-pocet-golu-0,5": {
+            "vice-nez-0,5": {
+                "betano": [
+                    "1 - Více než/Méně než celkový počet gólů Více než 0.5",
+                    "1 - Více než/Méně než celkový počet gólů (extra) Více než 0.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet gólů týmu v zápasu 1 Více než 0.5"
+                ]
+            },
+            "mene-nez-0,5": {
+                "betano": [
+                    "1 - Více než/Méně než celkový počet gólů Méně než 0.5",
+                    "1 - Více než/Méně než celkový počet gólů (extra) Méně než 0.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet gólů týmu v zápasu 1 Méně než 0.5"
+                ]
+            }
+        },
+        "2-vice-mene-pocet-golu-0,5": {
+            "vice-nez-0,5": {
+                "betano": [
+                    "2 - Více než/Méně než celkový počet gólů Více než 0.5",
+                    "2 - Více než/Méně než celkový počet gólů (extra) Více než 0.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet gólů týmu v zápasu 2 Více než 0.5"
+                ]
+            },
+            "mene-nez-0,5": {
+                "betano": [
+                    "2 - Více než/Méně než celkový počet gólů Méně než 0.5",
+                    "2 - Více než/Méně než celkový počet gólů (extra) Méně než 0.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet gólů týmu v zápasu 2 Méně než 0.5"
+                ]
+            }
+        },
+        "vice-mene-pocet-rohovych-kopu-7,5": {
+            "vice-nez-7,5": {
+                "betano": [
+                    "Rohy Méně než/Více než Více než 7.5",
+                    "Rohy Méně než/Více než (extra) Více než 7.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet rohů v zápasu Více než 7.5"
+                ]
+            },
+            "mene-nez-7,5": {
+                "betano": [
+                    "Rohy Méně než/Více než Méně než 7.5",
+                    "Rohy Méně než/Více než (extra) Méně než 7.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet rohů v zápasu Méně než 7.5"
+                ]
+            }
+        }
+    },
+    "tenis": {
+        "vitez": {
+            "1": {
+                "betano": [
+                    "Vítěz 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [
+                    "Vítěz zápasu 1"
+                ],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz zápasu 1"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Vítěz 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [
+                    "Vítěz zápasu 2"
+                ],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz zápasu 2"
+                ]
+            }
+        },
+        "vitez-prvniho-setu": {
+            "1": {
+                "betano": [
+                    "Vítěz setu 1 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz 1. setu 1"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Vítěz setu 1 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz 1. setu 2"
+                ]
+            }
+        },
+        "vitez-druheho-setu": {
+            "1": {
+                "betano": [
+                    "Vítěz setu 2 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz 2. setu 1"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Vítěz setu 2 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz 2. setu 2"
+                ]
+            }
+        },
+        "oba-vyhraji-set": {
+            "Ano": {
+                "betano": [
+                    "Oba hráči vyhrají set Ano"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet setů v zápasu (na dva vítězné) Více než 2.5"
+                ]
+            },
+            "Ne": {
+                "betano": [
+                    "Oba hráči vyhrají set Ne"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet setů v zápasu (na dva vítězné) Méně než 2.5"
+                ]
+            }
+        },
+        "1-vyhraje-set": {
+            "Ano": {
+                "betano": [
+                    "1 Vyhraje set Ano"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet vyhraných setů v zápasu 1 Více než 0.5"
+                ]
+            },
+            "Ne": {
+                "betano": [
+                    "1 Vyhraje set Ne"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet vyhraných setů v zápasu 1 Méně než 0.5"
+                ]
+            }
+        },
+        "2-vyhraje-set": {
+            "Ano": {
+                "betano": [
+                    "2 Vyhraje set Ano"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet vyhraných setů v zápasu 2 Více než 0.5"
+                ]
+            },
+            "Ne": {
+                "betano": [
+                    "2 Vyhraje set Ne"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet vyhraných setů v zápasu 2 Méně než 0.5"
+                ]
+            }
+        },
+        "vice-mene-pocet-gamu-22,5": {
+            "vice-nez-22,5": {
+                "betano": [
+                    "Gamy Více než 22.5",
+                    "Gamy (extra) Více než 22.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": []
+            },
+            "mene-nez-22,5": {
+                "betano": [
+                    "Gamy Méně než 22.5",
+                    "Gamy (extra) Méně než 22.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": []
+            }
+        }
+    },
+    "ledni-hokej": {
+        "vitez": {
+            "1": {
+                "betano": [
+                    "Vítěz 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz zápasu do rozhodnutí 1"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Vítěz 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz zápasu do rozhodnutí 2"
+                ]
+            }
+        },
+        "vysledek-v-zakladni-hraci-dobe": {
+            "1": {
+                "betano": [
+                    "Výsledek (zákl. hrací doba) 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 1"
+                ]
+            },
+            "0": {
+                "betano": [
+                    "Výsledek (zákl. hrací doba) 0"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 0"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Výsledek (zákl. hrací doba) 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 2"
+                ]
+            }
+        },
+        "vysledek-v-prvni-tretine": {
+            "1": {
+                "betano": [
+                    "Třetina 1 - Výsledek 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 1. třetiny 1"
+                ]
+            },
+            "0": {
+                "betano": [
+                    "Třetina 1 - Výsledek 0"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 1. třetiny 0"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Třetina 1 - Výsledek 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 1. třetiny 2"
+                ]
+            }
+        },
+        "vysledek-ve-druhe-tretine": {
+            "1": {
+                "betano": [
+                    "Třetina 2 - Výsledek 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 2. třetiny 1"
+                ]
+            },
+            "0": {
+                "betano": [
+                    "Třetina 2 - Výsledek 0"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 2. třetiny 0"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Třetina 2 - Výsledek 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 2. třetiny 2"
+                ]
+            }
+        },
+        "vysledek-ve-treti-tretine": {
+            "1": {
+                "betano": [
+                    "Třetina 3 - Výsledek 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 3. třetiny 1"
+                ]
+            },
+            "0": {
+                "betano": [
+                    "Třetina 3 - Výsledek 0"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 3. třetiny 0"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Třetina 3 - Výsledek 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek 3. třetiny 2"
+                ]
+            }
+        },
+        "vice-mene-pocet-golu-1,5": {
+            "vice-nez-1,5": {
+                "betano": [
+                    "Počet gólů Více než 1.5",
+                    "Počet gólů (extra) Více než 1.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet gólů v zápasu Více než 1.5"
+                ]
+            },
+            "mene-nez-1,5": {
+                "betano": [
+                    "Počet gólů Méně než 1.5",
+                    "Počet gólů (extra) Méně než 1.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet gólů v zápasu Méně než 1.5"
+                ]
+            }
+        }
+    },
+    "basketbal": {
+        "vitez": {
+            "1": {
+                "betano": [
+                    "Vítěz 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz zápasu do rozhodnutí 1"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Vítěz 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz zápasu do rozhodnutí 2"
+                ]
+            }
+        },
+        "vysledek-v-zakladni-hraci-dobe": {
+            "1": {
+                "betano": [
+                    "Výsledek (zákl. hrací doba) 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 1"
+                ]
+            },
+            "0": {
+                "betano": [
+                    "Výsledek (zákl. hrací doba) 0"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 0"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Výsledek (zákl. hrací doba) 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 2"
+                ]
+            }
+        },
+        "vice-mene-pocet-bodu-168,5": {
+            "vice-nez-168,5": {
+                "betano": [
+                    "Celkový počet bodů Více než 168.5",
+                    "Celkový počet bodů 168.5 Více než 168.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet bodů včetně prodloužení Více než 168.5"
+                ]
+            },
+            "mene-nez-168,5": {
+                "betano": [
+                    "Celkový počet bodů Méně než 168.5",
+                    "Celkový počet bodů 168.5 Méně než 168.5"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Počet bodů včetně prodloužení Méně než 168.5"
+                ]
+            }
+        }
+    },
+    "other": {
+        "vitez-bez-remizy": {
+            "1": {
+                "betano": [
+                    "Vítěz 1",
+                    "Vítěz zápasu 1",
+                    "Sázka bez remízy 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz zápasu 1",
+                    "Vítěz zápasu do rozhodnutí 1"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Vítěz 2",
+                    "Vítěz zápasu 2",
+                    "Sázka bez remízy 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Vítěz zápasu 2",
+                    "Vítěz zápasu do rozhodnutí 2"
+                ]
+            }
+        },
+        "vysledek-zapasu-s-remizou": {
+            "1": {
+                "betano": [
+                    "Výsledek zápasu 1",
+                    "Výsledek (zákl. hrací doba) 1"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 1"
+                ]
+            },
+            "0": {
+                "betano": [
+                    "Výsledek zápasu 0",
+                    "Výsledek (zákl. hrací doba) 0"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 0"
+                ]
+            },
+            "2": {
+                "betano": [
+                    "Výsledek zápasu 2",
+                    "Výsledek (zákl. hrací doba) 2"
+                ],
+                "betx": [],
+                "forbet": [],
+                "fortuna": [],
+                "kingsbet": [],
+                "merkur": [],
+                "sazka": [],
+                "synottip": [],
+                "tipsport": [
+                    "Výsledek zápasu 2"
+                ]
+            }
+        }
+    }
+}

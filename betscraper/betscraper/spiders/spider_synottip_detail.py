@@ -19,8 +19,10 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
         }
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, arg_sport_name = None, arg_event_url = None, *args, **kwargs):
         super(SpiderSynottipDetailSpider, self).__init__(*args, **kwargs)
+        self.arg_sport_name = arg_sport_name
+        self.arg_event_url = arg_event_url
         with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
             self.data = json.load(file)
 
@@ -48,7 +50,11 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json',
         }
-        for item in self.data[:3]:
+        if self.arg_sport_name == None or self.arg_event_url == None:
+            list_of_items = self.data[:3]
+        else:
+            list_of_items = [{'sport_name': self.arg_sport_name, 'event_url': self.arg_event_url}]
+        for item in list_of_items:
             sport_name = item['sport_name']
             event_url = item['event_url']
             payload = json.dumps({
@@ -96,10 +102,10 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
                                         template[translator_result['name']][translator_result['option']] = odd['oddNumber']
                                 except:
                                     pass
-                                # yield {
-                                #     'bet_name': bet_name,
-                                #     'value': odd['oddNumber']
-                                # }
+                                yield { #############################################################################################################
+                                    'bet_name': bet_name,
+                                    'value': odd['oddNumber']
+                                }
                 yield {
                     'event_url': event_url,
                     'bet_dict': template,
@@ -131,10 +137,10 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
                                         template[translator_result['name']][translator_result['option']] = odd['oddNumber']
                                 except:
                                     pass
-                                # yield {
-                                #     'bet_name': bet_name,
-                                #     'value': odd['oddNumber']
-                                # }
+                                yield { #############################################################################################################
+                                    'bet_name': bet_name,
+                                    'value': odd['oddNumber']
+                                }
                 yield {
                     'event_url': event_url,
                     'bet_dict': template,

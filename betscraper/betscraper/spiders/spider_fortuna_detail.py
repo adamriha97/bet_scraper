@@ -16,8 +16,10 @@ class SpiderFortunaDetailSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 64, # default 8
         }
     
-    def __init__(self, *args, **kwargs):
+    def __init__(self, arg_sport_name = None, arg_event_url = None, *args, **kwargs):
         super(SpiderFortunaDetailSpider, self).__init__(*args, **kwargs)
+        self.arg_sport_name = arg_sport_name
+        self.arg_event_url = arg_event_url
         with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
             self.data = json.load(file)
 
@@ -40,7 +42,11 @@ class SpiderFortunaDetailSpider(scrapy.Spider):
                         self.full_translator[sport_name][bookmaker_bets_name]['option'] = bet_option
     
     def start_requests(self):
-        for item in self.data[:3]:
+        if self.arg_sport_name == None or self.arg_event_url == None:
+            list_of_items = self.data[:3]
+        else:
+            list_of_items = [{'sport_name': self.arg_sport_name, 'event_url': self.arg_event_url}]
+        for item in list_of_items:
             sport_name = item['sport_name']
             event_url = item['event_url']
             url = f"{event_url}?market_filter=all"
@@ -64,13 +70,17 @@ class SpiderFortunaDetailSpider(scrapy.Spider):
             for col_name, col_value in zip(col_names, col_values):
                 col_name_text = col_name.css('span ::text').get().replace('\n', '').strip()
                 col_value_text = col_value.css('span ::text').get()
-                bet_name = ' '.join([main_market_name, col_name_text]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0')
+                bet_name = ' '.join(' '.join([main_market_name, col_name_text]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0').split())
                 try:
                     translator_result = translator[bet_name]
                     if template[translator_result['name']][translator_result['option']] < float(col_value_text):
                         template[translator_result['name']][translator_result['option']] = float(col_value_text)
                 except:
                     pass
+                yield { #############################################################################################################
+                    'bet_name': bet_name,
+                    'value': float(col_value_text)
+                }
             markets = response.css('div.market')
             for market in markets:
                 market_name = market.css('h3 a ::text').get().replace('\n', '')
@@ -78,13 +88,17 @@ class SpiderFortunaDetailSpider(scrapy.Spider):
                 for button in buttons:
                     button_name = button.css('span.odds-name ::text').get().replace('\n', '')
                     value_text = button.css('span.odds-value ::text').get()
-                    bet_name = ' '.join([market_name, button_name]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0')
+                    bet_name = ' '.join(' '.join([market_name, button_name]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0').split())
                     try:
                         translator_result = translator[bet_name]
                         if template[translator_result['name']][translator_result['option']] < float(value_text):
                             template[translator_result['name']][translator_result['option']] = float(value_text)
                     except:
                         pass
+                    yield { #############################################################################################################
+                        'bet_name': bet_name,
+                        'value': float(value_text)
+                    }
             yield {
                 'event_url': event_url,
                 'bet_dict': template,

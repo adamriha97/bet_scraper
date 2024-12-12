@@ -21,8 +21,10 @@ class SpiderMerkurDetailSpider(scrapy.Spider):
         },
         }
     
-    def __init__(self, *args, **kwargs):
+    def __init__(self, arg_sport_name = None, arg_event_url = None, *args, **kwargs):
         super(SpiderMerkurDetailSpider, self).__init__(*args, **kwargs)
+        self.arg_sport_name = arg_sport_name
+        self.arg_event_url = arg_event_url
         with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
             self.data = json.load(file)
 
@@ -48,7 +50,11 @@ class SpiderMerkurDetailSpider(scrapy.Spider):
         response_json = json.loads(response.text)
         self.betMap_dict = {item['code']: item['caption'] for item in response_json['betMap'].values()}
         self.betPickMap_dict = {item['betPickCode']: item['caption'] for item in response_json['betPickMap'].values()}
-        for item in self.data[:3]:
+        if self.arg_sport_name == None or self.arg_event_url == None:
+            list_of_items = self.data[:3]
+        else:
+            list_of_items = [{'sport_name': self.arg_sport_name, 'event_url': self.arg_event_url}]
+        for item in list_of_items:
             sport_name = item['sport_name']
             event_url = item['event_url']
             url = f"https://sb.merkurxtip.cz/restapi/offer/cs/match/{event_url.split('/')[-1]}?annex=19&desktopVersion=1.37.2.5"
@@ -65,8 +71,11 @@ class SpiderMerkurDetailSpider(scrapy.Spider):
                 template = copy.deepcopy(self.full_template['other'])
             for bet in response_json['betMap'].values():
                 for sv_name, bet_detail in bet.items():
-                    market_name = self.betMap_dict[bet_detail['bc']]
-                    selection_name = self.betPickMap_dict[bet_detail['bpc']]
+                    try:
+                        market_name = self.betMap_dict[bet_detail['bc']]
+                        selection_name = self.betPickMap_dict[bet_detail['bpc']]
+                    except:
+                        continue
                     if sv_name == 'NULL':
                         bet_name = ' '.join([market_name, selection_name])
                     else:
@@ -78,10 +87,10 @@ class SpiderMerkurDetailSpider(scrapy.Spider):
                             template[translator_result['name']][translator_result['option']] = bet_detail['ov']
                     except:
                         pass
-                    # yield {
-                    #     'bet_name': bet_name,
-                    #     'value': bet_detail['ov']
-                    # }
+                    yield { #############################################################################################################
+                        'bet_name': bet_name,
+                        'value': bet_detail['ov']
+                    }
             yield {
                 'event_url': event_url,
                 'bet_dict': template,

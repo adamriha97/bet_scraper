@@ -16,8 +16,10 @@ class SpiderKingsbetDetailSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
         }
     
-    def __init__(self, *args, **kwargs):
+    def __init__(self, arg_sport_name = None, arg_event_url = None, *args, **kwargs):
         super(SpiderKingsbetDetailSpider, self).__init__(*args, **kwargs)
+        self.arg_sport_name = arg_sport_name
+        self.arg_event_url = arg_event_url
         with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
             self.data = json.load(file)
 
@@ -40,7 +42,11 @@ class SpiderKingsbetDetailSpider(scrapy.Spider):
                         self.full_translator[sport_name][bookmaker_bets_name]['option'] = bet_option
 
     def start_requests(self):
-        for item in self.data[:3]:
+        if self.arg_sport_name == None or self.arg_event_url == None:
+            list_of_items = self.data[:3]
+        else:
+            list_of_items = [{'sport_name': self.arg_sport_name, 'event_url': self.arg_event_url}]
+        for item in list_of_items:
             sport_name = item['sport_name']
             event_url = item['event_url']
             url = f"https://sb2frontend-altenar2.biahosted.com/api/widget/GetEventDetails?culture=cs-CZ&timezoneOffset=-60&integration=kingsbet&deviceType=1&numFormat=en-GB&countryCode=CZ&eventId={event_url.split('=')[-1]}"
@@ -68,10 +74,10 @@ class SpiderKingsbetDetailSpider(scrapy.Spider):
                                 template[translator_result['name']][translator_result['option']] = odds_dict[str(odd_id)]['price']
                         except:
                             pass
-                        # yield {
-                        #     'bet_name': bet_name,
-                        #     'value': odds_dict[str(odd_id)]['price']
-                        # }
+                        yield { #############################################################################################################
+                            'bet_name': bet_name,
+                            'value': odds_dict[str(odd_id)]['price']
+                        }
             yield {
                 'event_url': event_url,
                 'bet_dict': template,

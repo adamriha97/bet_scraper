@@ -16,8 +16,10 @@ class SpiderSazkaDetailSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 64, # default 8
         }
     
-    def __init__(self, *args, **kwargs):
+    def __init__(self, arg_sport_name = None, arg_event_url = None, *args, **kwargs):
         super(SpiderSazkaDetailSpider, self).__init__(*args, **kwargs)
+        self.arg_sport_name = arg_sport_name
+        self.arg_event_url = arg_event_url
         with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
             self.data = json.load(file)
 
@@ -43,7 +45,11 @@ class SpiderSazkaDetailSpider(scrapy.Spider):
         headers = {
             'x-accept-language': 'cs-CZ',
         }
-        for item in self.data[:10]:
+        if self.arg_sport_name == None or self.arg_event_url == None:
+            list_of_items = self.data[:3]
+        else:
+            list_of_items = [{'sport_name': self.arg_sport_name, 'event_url': self.arg_event_url}]
+        for item in list_of_items:
             sport_name = item['sport_name']
             event_url = item['event_url']
             url = f"https://sg-content-engage-prod.sazka.cz/content-service/api/v1/q/events-by-ids?eventIds={event_url.split('/')[-1]}&includeChildMarkets=true&includeCollections=true&includePriceHistory=false&includeCommentary=false&includeIncidents=false&includeRace=false&includeMedia=false&includePools=false&includeNonFixedOdds=false"
@@ -71,6 +77,10 @@ class SpiderSazkaDetailSpider(scrapy.Spider):
                             template[translator_result['name']][translator_result['option']] = outcome['prices'][0]['decimal']
                     except:
                         pass
+                    yield { #############################################################################################################
+                        'bet_name': bet_name,
+                        'value': outcome['prices'][0]['decimal']
+                    }
             yield {
                 'event_url': event_url,
                 'bet_dict': template,
