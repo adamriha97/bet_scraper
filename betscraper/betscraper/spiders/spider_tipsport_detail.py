@@ -27,9 +27,10 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
         },
         }
     
-    def __init__(self, arg_sport_name = None, arg_event_url = None, *args, **kwargs):
+    def __init__(self, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, *args, **kwargs):
         super(SpiderTipsportDetailSpider, self).__init__(*args, **kwargs)
         self.arg_sport_name = arg_sport_name
+        self.arg_events_limit = int(arg_events_limit)
         self.arg_event_url = arg_event_url
         with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
             self.data = json.load(file)
@@ -61,8 +62,10 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
             'Cookie': f"JSESSIONID={str(response.headers.getlist('Set-Cookie')).split('JSESSIONID=')[1].split(';')[0]}",
             'Content-Type': 'application/json'
         }
-        if self.arg_sport_name == None or self.arg_event_url == None:
-            list_of_items = self.data[:3]
+        if self.arg_sport_name == None and self.arg_event_url == None:
+            list_of_items = self.data[:self.arg_events_limit]
+        elif self.arg_event_url == None:
+            list_of_items = [item for item in self.data if item['sport_name'] == self.arg_sport_name][:self.arg_events_limit]
         else:
             list_of_items = [{'sport_name': self.arg_sport_name, 'event_url': self.arg_event_url}]
         for item in list_of_items:

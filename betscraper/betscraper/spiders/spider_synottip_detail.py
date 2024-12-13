@@ -19,9 +19,10 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
         }
 
-    def __init__(self, arg_sport_name = None, arg_event_url = None, *args, **kwargs):
+    def __init__(self, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, *args, **kwargs):
         super(SpiderSynottipDetailSpider, self).__init__(*args, **kwargs)
         self.arg_sport_name = arg_sport_name
+        self.arg_events_limit = int(arg_events_limit)
         self.arg_event_url = arg_event_url
         with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
             self.data = json.load(file)
@@ -50,8 +51,10 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json',
         }
-        if self.arg_sport_name == None or self.arg_event_url == None:
-            list_of_items = self.data[:3]
+        if self.arg_sport_name == None and self.arg_event_url == None:
+            list_of_items = self.data[:self.arg_events_limit]
+        elif self.arg_event_url == None:
+            list_of_items = [item for item in self.data if item['sport_name'] == self.arg_sport_name][:self.arg_events_limit]
         else:
             list_of_items = [{'sport_name': self.arg_sport_name, 'event_url': self.arg_event_url}]
         for item in list_of_items:
@@ -81,78 +84,80 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
                 message.ParseFromString(decoded_bytes)
                 message_json = json.loads(MessageToJson(message))
                 event_dict = message_json['root']['data']['dataSport']['category'][0]['categoryEvents'][0]['eventsInfo']['events'][0]
-                # yield self.fill_template_with_bets(event_dict, sport_name, event_url)
+                for yield_item in self.fill_template_with_bets(event_dict, sport_name, event_url):
+                    yield yield_item
 
-                bet_list = event_dict['betDetails']
-                try: # toto je zde jen pro test, po dodelani mohu odstranit a nechat jen funkci viz nizeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-                    translator = copy.deepcopy(self.full_translator[sport_name])
-                    template = copy.deepcopy(self.full_template[sport_name])
-                except:
-                    translator = copy.deepcopy(self.full_translator['other'])
-                    template = copy.deepcopy(self.full_template['other'])
-                participants = event_dict['eventName'].split(' - ')
-                participant_1 = participants[0]
-                participant_2 = participants[1]
-                for bet_category in bet_list:
-                    for bet in bet_category['bet']:
-                        for bets_info in bet['betsInfo']:
-                            market_name = bets_info['betName']
-                            for odd in bets_info['odds']:
-                                odd_name = odd['oddName']
-                                bet_name = ' '.join(' '.join([market_name, odd_name]).replace(participant_1, '1').replace(participant_2, '2').split())
-                                try:
-                                    translator_result = translator[bet_name]
-                                    if template[translator_result['name']][translator_result['option']] < odd['oddNumber']:
-                                        template[translator_result['name']][translator_result['option']] = odd['oddNumber']
-                                except:
-                                    pass
-                                yield { #############################################################################################################
-                                    'bet_name': bet_name,
-                                    'value': odd['oddNumber']
-                                }
-                yield {
-                    'event_url': event_url,
-                    'bet_dict': template,
-                }
+                # bet_list = event_dict['betDetails']
+                # try: # toto je zde jen pro test, po dodelani mohu odstranit a nechat jen funkci viz nizeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                #     translator = copy.deepcopy(self.full_translator[sport_name])
+                #     template = copy.deepcopy(self.full_template[sport_name])
+                # except:
+                #     translator = copy.deepcopy(self.full_translator['other'])
+                #     template = copy.deepcopy(self.full_template['other'])
+                # participants = event_dict['eventName'].split(' - ')
+                # participant_1 = participants[0]
+                # participant_2 = participants[1]
+                # for bet_category in bet_list:
+                #     for bet in bet_category['bet']:
+                #         for bets_info in bet['betsInfo']:
+                #             market_name = bets_info['betName']
+                #             for odd in bets_info['odds']:
+                #                 odd_name = odd['oddName']
+                #                 bet_name = ' '.join(' '.join([market_name, odd_name]).replace(participant_1, '1').replace(participant_2, '2').split())
+                #                 try:
+                #                     translator_result = translator[bet_name]
+                #                     if template[translator_result['name']][translator_result['option']] < odd['oddNumber']:
+                #                         template[translator_result['name']][translator_result['option']] = odd['oddNumber']
+                #                 except:
+                #                     pass
+                #                 yield { #############################################################################################################
+                #                     'bet_name': bet_name,
+                #                     'value': odd['oddNumber']
+                #                 }
+                # yield {
+                #     'event_url': event_url,
+                #     'bet_dict': template,
+                # }
 
             except:
                 message = protofile_event_single_category_pb2.SportOrigin_e_s() # seems that single category protofile is only for esports
                 message.ParseFromString(decoded_bytes)
                 message_json = json.loads(MessageToJson(message))
                 event_dict = message_json['root']['data']['dataSport']['category'][0]['eventsInfo']['events'][0]
-                # yield self.fill_template_with_bets(event_dict, sport_name, event_url)
+                for yield_item in self.fill_template_with_bets(event_dict, sport_name, event_url):
+                    yield yield_item
 
-                bet_list = event_dict['betDetails']
-                try: # toto je zde jen pro test, po dodelani mohu odstranit a nechat jen funkci viz nizeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-                    translator = copy.deepcopy(self.full_translator[sport_name])
-                    template = copy.deepcopy(self.full_template[sport_name])
-                except:
-                    translator = copy.deepcopy(self.full_translator['other'])
-                    template = copy.deepcopy(self.full_template['other'])
-                participants = event_dict['eventName'].split(' - ')
-                participant_1 = participants[0]
-                participant_2 = participants[1]
-                for bet_category in bet_list:
-                    for bet in bet_category['bet']:
-                        for bets_info in bet['betsInfo']:
-                            market_name = bets_info['betName']
-                            for odd in bets_info['odds']:
-                                odd_name = odd['oddName']
-                                bet_name = ' '.join(' '.join([market_name, odd_name]).replace(participant_1, '1').replace(participant_2, '2').split())
-                                try:
-                                    translator_result = translator[bet_name]
-                                    if template[translator_result['name']][translator_result['option']] < odd['oddNumber']:
-                                        template[translator_result['name']][translator_result['option']] = odd['oddNumber']
-                                except:
-                                    pass
-                                yield { #############################################################################################################
-                                    'bet_name': bet_name,
-                                    'value': odd['oddNumber']
-                                }
-                yield {
-                    'event_url': event_url,
-                    'bet_dict': template,
-                }
+                # bet_list = event_dict['betDetails']
+                # try: # toto je zde jen pro test, po dodelani mohu odstranit a nechat jen funkci viz nizeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+                #     translator = copy.deepcopy(self.full_translator[sport_name])
+                #     template = copy.deepcopy(self.full_template[sport_name])
+                # except:
+                #     translator = copy.deepcopy(self.full_translator['other'])
+                #     template = copy.deepcopy(self.full_template['other'])
+                # participants = event_dict['eventName'].split(' - ')
+                # participant_1 = participants[0]
+                # participant_2 = participants[1]
+                # for bet_category in bet_list:
+                #     for bet in bet_category['bet']:
+                #         for bets_info in bet['betsInfo']:
+                #             market_name = bets_info['betName']
+                #             for odd in bets_info['odds']:
+                #                 odd_name = odd['oddName']
+                #                 bet_name = ' '.join(' '.join([market_name, odd_name]).replace(participant_1, '1').replace(participant_2, '2').split())
+                #                 try:
+                #                     translator_result = translator[bet_name]
+                #                     if template[translator_result['name']][translator_result['option']] < odd['oddNumber']:
+                #                         template[translator_result['name']][translator_result['option']] = odd['oddNumber']
+                #                 except:
+                #                     pass
+                #                 yield { #############################################################################################################
+                #                     'bet_name': bet_name,
+                #                     'value': odd['oddNumber']
+                #                 }
+                # yield {
+                #     'event_url': event_url,
+                #     'bet_dict': template,
+                # }
 
         except:
             yield { # toto pak muzu asi smazaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat
@@ -161,6 +166,7 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
             }
 
     def fill_template_with_bets(self, event_dict, sport_name, event_url):
+        yield_list = []
         bet_list = event_dict['betDetails']
         try:
             translator = copy.deepcopy(self.full_translator[sport_name])
@@ -184,11 +190,12 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
                                 template[translator_result['name']][translator_result['option']] = odd['oddNumber']
                         except:
                             pass
-                        # yield {
-                        #     'bet_name': bet_name,
-                        #     'value': odd['oddNumber']
-                        # }
-        return {
+                        yield_list.append({
+                            'bet_name': bet_name,
+                            'value': odd['oddNumber']
+                        })
+        yield_list.append({
             'event_url': event_url,
             'bet_dict': template,
-        }
+        })
+        return yield_list
