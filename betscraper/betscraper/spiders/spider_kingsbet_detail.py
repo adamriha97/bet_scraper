@@ -62,12 +62,14 @@ class SpiderKingsbetDetailSpider(scrapy.Spider):
             except:
                 translator = copy.deepcopy(self.full_translator['other'])
                 template = copy.deepcopy(self.full_template['other'])
+            participant_1 = response_json['competitors'][0]['name']
+            participant_2 = response_json['competitors'][1]['name']
             for market in response_json['markets']:
                 market_name = market['name']
                 for odd_id_list in market['desktopOddIds']:
                     for odd_id in odd_id_list:
                         odd_name = odds_dict[str(odd_id)]['name']
-                        bet_name = ' '.join([market_name, odd_name])
+                        bet_name = ' '.join([market_name, odd_name]).replace(participant_1, '1').replace(participant_2, '2')
                         try:
                             translator_result = translator[bet_name]
                             if template[translator_result['name']][translator_result['option']] < odds_dict[str(odd_id)]['price']:

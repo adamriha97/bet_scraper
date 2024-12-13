@@ -80,22 +80,26 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
                 message = protofile_event_double_category_pb2.SportOrigin_e_d()
                 message.ParseFromString(decoded_bytes)
                 message_json = json.loads(MessageToJson(message))
-                bet_list = message_json['root']['data']['dataSport']['category'][0]['categoryEvents'][0]['eventsInfo']['events'][0]['betDetails']
-                # yield self.fill_template_with_bets(bet_list, sport_name, event_url)
+                event_dict = message_json['root']['data']['dataSport']['category'][0]['categoryEvents'][0]['eventsInfo']['events'][0]
+                # yield self.fill_template_with_bets(event_dict, sport_name, event_url)
 
+                bet_list = event_dict['betDetails']
                 try: # toto je zde jen pro test, po dodelani mohu odstranit a nechat jen funkci viz nizeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
                     translator = copy.deepcopy(self.full_translator[sport_name])
                     template = copy.deepcopy(self.full_template[sport_name])
                 except:
                     translator = copy.deepcopy(self.full_translator['other'])
                     template = copy.deepcopy(self.full_template['other'])
+                participants = event_dict['eventName'].split(' - ')
+                participant_1 = participants[0]
+                participant_2 = participants[1]
                 for bet_category in bet_list:
                     for bet in bet_category['bet']:
                         for bets_info in bet['betsInfo']:
                             market_name = bets_info['betName']
                             for odd in bets_info['odds']:
                                 odd_name = odd['oddName']
-                                bet_name = ' '.join([market_name, odd_name])
+                                bet_name = ' '.join(' '.join([market_name, odd_name]).replace(participant_1, '1').replace(participant_2, '2').split())
                                 try:
                                     translator_result = translator[bet_name]
                                     if template[translator_result['name']][translator_result['option']] < odd['oddNumber']:
@@ -115,22 +119,26 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
                 message = protofile_event_single_category_pb2.SportOrigin_e_s() # seems that single category protofile is only for esports
                 message.ParseFromString(decoded_bytes)
                 message_json = json.loads(MessageToJson(message))
-                bet_list = message_json['root']['data']['dataSport']['category'][0]['eventsInfo']['events'][0]['betDetails']
-                # yield self.fill_template_with_bets(bet_list, sport_name, event_url)
+                event_dict = message_json['root']['data']['dataSport']['category'][0]['eventsInfo']['events'][0]
+                # yield self.fill_template_with_bets(event_dict, sport_name, event_url)
 
+                bet_list = event_dict['betDetails']
                 try: # toto je zde jen pro test, po dodelani mohu odstranit a nechat jen funkci viz nizeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
                     translator = copy.deepcopy(self.full_translator[sport_name])
                     template = copy.deepcopy(self.full_template[sport_name])
                 except:
                     translator = copy.deepcopy(self.full_translator['other'])
                     template = copy.deepcopy(self.full_template['other'])
+                participants = event_dict['eventName'].split(' - ')
+                participant_1 = participants[0]
+                participant_2 = participants[1]
                 for bet_category in bet_list:
                     for bet in bet_category['bet']:
                         for bets_info in bet['betsInfo']:
                             market_name = bets_info['betName']
                             for odd in bets_info['odds']:
                                 odd_name = odd['oddName']
-                                bet_name = ' '.join([market_name, odd_name])
+                                bet_name = ' '.join(' '.join([market_name, odd_name]).replace(participant_1, '1').replace(participant_2, '2').split())
                                 try:
                                     translator_result = translator[bet_name]
                                     if template[translator_result['name']][translator_result['option']] < odd['oddNumber']:
@@ -152,20 +160,24 @@ class SpiderSynottipDetailSpider(scrapy.Spider):
                 'error': True
             }
 
-    def fill_template_with_bets(self, bet_list, sport_name, event_url):
+    def fill_template_with_bets(self, event_dict, sport_name, event_url):
+        bet_list = event_dict['betDetails']
         try:
             translator = copy.deepcopy(self.full_translator[sport_name])
             template = copy.deepcopy(self.full_template[sport_name])
         except:
             translator = copy.deepcopy(self.full_translator['other'])
             template = copy.deepcopy(self.full_template['other'])
+        participants = event_dict['eventName'].split(' - ')
+        participant_1 = participants[0]
+        participant_2 = participants[1]
         for bet_category in bet_list:
             for bet in bet_category['bet']:
                 for bets_info in bet['betsInfo']:
                     market_name = bets_info['betName']
                     for odd in bets_info['odds']:
                         odd_name = odd['oddName']
-                        bet_name = ' '.join([market_name, odd_name])
+                        bet_name = ' '.join(' '.join([market_name, odd_name]).replace(participant_1, '1').replace(participant_2, '2').split())
                         try:
                             translator_result = translator[bet_name]
                             if template[translator_result['name']][translator_result['option']] < odd['oddNumber']:

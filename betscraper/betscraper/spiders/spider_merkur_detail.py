@@ -49,7 +49,7 @@ class SpiderMerkurDetailSpider(scrapy.Spider):
     def parse(self, response):
         response_json = json.loads(response.text)
         self.betMap_dict = {item['code']: item['caption'] for item in response_json['betMap'].values()}
-        self.betPickMap_dict = {item['betPickCode']: item['caption'] for item in response_json['betPickMap'].values()}
+        self.betPickMap_dict = {item['betPickCode']: {'caption': item['caption'], 'label': item['label']} for item in response_json['betPickMap'].values()}
         if self.arg_sport_name == None or self.arg_event_url == None:
             list_of_items = self.data[:3]
         else:
@@ -73,14 +73,16 @@ class SpiderMerkurDetailSpider(scrapy.Spider):
                 for sv_name, bet_detail in bet.items():
                     try:
                         market_name = self.betMap_dict[bet_detail['bc']]
-                        selection_name = self.betPickMap_dict[bet_detail['bpc']]
+                        selection_name = self.betPickMap_dict[bet_detail['bpc']]['caption']
+                        if market_name == 'KAŽDÝ TÝM DÁ GÓL':
+                            market_name = market_name + self.betPickMap_dict[bet_detail['bpc']]['label']
                     except:
                         continue
                     if sv_name == 'NULL':
                         bet_name = ' '.join([market_name, selection_name])
                     else:
                         detail_name = sv_name.split('=')[-1]
-                        bet_name = ' '.join([market_name, selection_name, detail_name])
+                        bet_name = ' '.join(' '.join([market_name, detail_name, selection_name]).replace('{!goalnr}', '').split())
                     try:
                         translator_result = translator[bet_name]
                         if template[translator_result['name']][translator_result['option']] < bet_detail['ov']:

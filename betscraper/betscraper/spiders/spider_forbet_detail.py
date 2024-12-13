@@ -102,7 +102,7 @@ class SpiderForbetDetailSpider(scrapy.Spider):
                     specifier_name = ''
                 for odd in market['odds'].values():
                     outcome_name = market_dict['outcome'][str(odd['outcomeId'])]['short']
-                    bet_name = ' '.join([market_name, outcome_name, specifier_name]).replace('{$competitor1}', '1').replace('{$competitor2}', '2').replace(' {total}', '').replace(' {hcp}', '').strip()
+                    bet_name = ' '.join(' '.join([market_name, specifier_name, outcome_name]).replace('{$competitor1}', '1').replace('{$competitor2}', '2').replace('{total}', '').replace('{hcp}', '').replace('{!goalnr}', '').split())
                     try:
                         translator_result = translator[bet_name]
                         if template[translator_result['name']][translator_result['option']] < odd['odds']:

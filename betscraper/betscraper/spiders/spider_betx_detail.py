@@ -69,7 +69,7 @@ class SpiderBetxDetailSpider(scrapy.Spider):
                 offer_name = offer['Description']
                 for odd in offer['Odds']:
                     odd_name = odd['ExtendedName']
-                    bet_name = ' '.join([offer_name, odd_name])
+                    bet_name = ' '.join([offer_name, odd_name]).strip()
                     try:
                         translator_result = translator[bet_name]
                         if template[translator_result['name']][translator_result['option']] < odd['Odd']:
