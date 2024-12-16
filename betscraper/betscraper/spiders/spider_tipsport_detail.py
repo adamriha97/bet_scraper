@@ -72,9 +72,17 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
             sport_name = item['sport_name']
             event_url = item['event_url']
             url = f"https://www.tipsport.cz/rest/offer/v1/matches/{event_url.split('/')[-1]}/event-tables"
-            response_get = requests.request("GET", url, headers=headers, impersonate='chrome')
-            response_json = json.loads(response_get.text)
+            isError = True
+            error_counter = 0
+            while isError and error_counter < 5:
+                response_get = requests.request("GET", url, headers=headers, impersonate='chrome')
+                try:
+                    response_json = json.loads(response_get.text)
+                    isError = False
+                except:
+                    error_counter += 1
             try:
+                response_json = json.loads(response_get.text)
                 try:
                     translator = copy.deepcopy(self.full_translator[sport_name])
                     template = copy.deepcopy(self.full_template[sport_name])
@@ -115,4 +123,8 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
                     'bet_dict': template,
                 }
             except:
-                pass
+                yield { # toto pak muzu asi smazaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat
+                    'event_url': event_url,
+                    'error': True,
+                    'response': response_get.text
+                }
