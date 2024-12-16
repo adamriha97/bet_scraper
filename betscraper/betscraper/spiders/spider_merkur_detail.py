@@ -49,8 +49,12 @@ class SpiderMerkurDetailSpider(scrapy.Spider):
 
     def parse(self, response):
         response_json = json.loads(response.text)
-        self.betMap_dict = {item['code']: item['caption'] for item in response_json['betMap'].values()}
-        self.betPickMap_dict = {item['betPickCode']: {'caption': item['caption'], 'label': item['label']} for item in response_json['betPickMap'].values()}
+
+        # self.betMap_dict = {item['code']: item['caption'] for item in response_json['betMap'].values()} # toto byla puvodni verze s nepresnymi nazvy betuuuuuuuuuuuuuuuuuuuuuuuuuuu
+        # self.betPickMap_dict = {item['betPickCode']: {'caption': item['caption'], 'label': item['label']} for item in response_json['betPickMap'].values()}
+
+        self.betPickMap_newdict = response_json['betPickMap']
+        self.betPickGroupMap_newdict = {f"{str(tip_type)}_{item['sport']}": item['name'] for item in response_json['betPickGroupMap'].values() if item['tipTypes'] for tip_type in item['tipTypes']}
         if self.arg_sport_name == None and self.arg_event_url == None:
             list_of_items = self.data[:self.arg_events_limit]
         elif self.arg_event_url == None:
@@ -75,10 +79,15 @@ class SpiderMerkurDetailSpider(scrapy.Spider):
             for bet in response_json['betMap'].values():
                 for sv_name, bet_detail in bet.items():
                     try:
-                        market_name = self.betMap_dict[bet_detail['bc']]
-                        selection_name = self.betPickMap_dict[bet_detail['bpc']]['caption']
-                        if market_name == 'KAŽDÝ TÝM DÁ GÓL':
-                            market_name = market_name + self.betPickMap_dict[bet_detail['bpc']]['label']
+                        
+                        # market_name = self.betMap_dict[bet_detail['bc']] # toto byla puvodni verze s nepresnymi nazvy betuuuuuuuuuuuuuuuuuuuuuuuuuuu
+                        # selection_name = self.betPickMap_dict[bet_detail['bpc']]['caption']
+                        # if market_name == 'KAŽDÝ TÝM DÁ GÓL':
+                        #     market_name = market_name + self.betPickMap_dict[bet_detail['bpc']]['label']
+
+                        tip_type = f"{str(bet_detail['tt'])}_{response_json['sport']}"
+                        market_name = self.betPickGroupMap_newdict[tip_type]
+                        selection_name = self.betPickMap_newdict[tip_type]['caption']
                     except:
                         continue
                     if sv_name == 'NULL':
