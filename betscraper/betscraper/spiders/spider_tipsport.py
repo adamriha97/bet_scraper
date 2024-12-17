@@ -64,6 +64,7 @@ class SpiderTipsportSpider(scrapy.Spider):
                         primary_category_original = match_item['nameSport']
                         secondary_category_original = match_item['nameCompetition']
                         event_url = f"https://www.tipsport.cz{match_item['matchUrl']}"
+                        event_id = event_url.split('/')[-1]
                         event_startTime = datetime.fromisoformat(match_item['datetimeClosed'])
                         participant_1 = match_item['participantHome']
                         participant_2 = match_item['participantVisiting']
@@ -135,5 +136,6 @@ class SpiderTipsportSpider(scrapy.Spider):
                         basic_sport_event_item['bet_12'] = bet_12
                         basic_sport_event_item['bet_11'] = bet_11
                         basic_sport_event_item['bet_22'] = bet_22
+                        basic_sport_event_item['event_id'] = basic_sport_event_item['bookmaker_id'] + '_' + event_id
                         basic_sport_event_item['event_url'] = event_url
                         yield basic_sport_event_item

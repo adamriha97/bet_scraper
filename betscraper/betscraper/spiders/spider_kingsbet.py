@@ -50,6 +50,7 @@ class SpiderKingsbetSpider(scrapy.Spider):
             secondary_category_original = champs_dict[str(event['champId'])]
             # event_url = f'https://www.kingsbet.cz/sport#/sport/{event["sportId"]}/category/{event["catId"]}/championship/{event["champId"]}/event/{event["id"]}'
             event_url = f"https://www.kingsbet.cz/sport?page=event&eventId={event['id']}"
+            event_id = event_url.split('=')[-1]
             event_startTime = datetime.fromisoformat(event['startDate'].replace("Z", "+00:00")).astimezone(ZoneInfo("Europe/Prague"))
             participant_1 = competitors_dict[str(event['competitorIds'][0])]
             participant_2 = competitors_dict[str(event['competitorIds'][1])]
@@ -114,6 +115,7 @@ class SpiderKingsbetSpider(scrapy.Spider):
                 basic_sport_event_item['bet_12'] = bet_12
                 basic_sport_event_item['bet_11'] = bet_11
                 basic_sport_event_item['bet_22'] = bet_22
+                basic_sport_event_item['event_id'] = basic_sport_event_item['bookmaker_id'] + '_' + event_id
                 basic_sport_event_item['event_url'] = event_url
                 yield basic_sport_event_item
 

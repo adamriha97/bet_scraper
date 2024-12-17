@@ -42,4 +42,5 @@ class BasicSportEventItem(scrapy.Item):
     bet_12 = scrapy.Field(serializer = serialize_bet)
     bet_11 = scrapy.Field(serializer = serialize_bet)
     bet_22 = scrapy.Field(serializer = serialize_bet)
+    event_id = scrapy.Field()
     event_url = scrapy.Field()

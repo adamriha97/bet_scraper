@@ -53,6 +53,7 @@ class SpiderMerkurSpider(scrapy.Spider):
                     event_url = f'https://www.merkurxtip.cz/sazeni/online/{sportToken}/{match["sport"]}/{leagueName}/{leagueToken}/special/{home}-v-{away}/{str(match["id"])}'
                 except:
                     event_url = 'N/A'
+                event_id = event_url.split('/')[-1]
                 event_startTime = datetime.fromtimestamp(match['kickOffTime'] / 1000)
                 participant_1 = match['home']
                 participant_2 = match['away']
@@ -126,5 +127,6 @@ class SpiderMerkurSpider(scrapy.Spider):
                     basic_sport_event_item['bet_12'] = bet_12
                     basic_sport_event_item['bet_11'] = bet_11
                     basic_sport_event_item['bet_22'] = bet_22
+                    basic_sport_event_item['event_id'] = basic_sport_event_item['bookmaker_id'] + '_' + event_id
                     basic_sport_event_item['event_url'] = event_url
                     yield basic_sport_event_item

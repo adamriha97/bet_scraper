@@ -45,6 +45,7 @@ class SpiderBetanoSpider(scrapy.Spider):
                     primary_category_original = event["regionName"]
                     secondary_category_original = event["leagueName"]
                     event_url = f'https://www.betano.cz{event["url"]}'
+                    event_id = event_url.split('/')[-2]
                     event_startTime = datetime.datetime.fromtimestamp(event["startTime"]/1000)
                     participant_1 = event["participants"][0]["name"]
                     participant_2 = event["participants"][1]["name"]
@@ -110,5 +111,6 @@ class SpiderBetanoSpider(scrapy.Spider):
                         basic_sport_event_item['bet_12'] = bet_12
                         basic_sport_event_item['bet_11'] = bet_11
                         basic_sport_event_item['bet_22'] = bet_22
+                        basic_sport_event_item['event_id'] = basic_sport_event_item['bookmaker_id'] + '_' + event_id
                         basic_sport_event_item['event_url'] = event_url
                         yield basic_sport_event_item

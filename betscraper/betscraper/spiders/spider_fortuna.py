@@ -64,6 +64,7 @@ class SpiderFortunaSpider(scrapy.Spider):
                         for event in table.css('tbody tr'):
                             try:
                                 event_url = f"https://www.ifortuna.cz{event.css('a.event-link ::attr(href)').get()}"
+                                event_id = event_url.split('-')[-1]
                                 event_startTime = datetime.datetime.fromtimestamp(int(event.css('td.col-date ::attr(data-value)').get())/1000)
                                 participants = event.css('div.title-container div.event-name span ::text').get().replace('\n', '').split(' - ')
                                 participant_1 = participants[0]
@@ -122,6 +123,7 @@ class SpiderFortunaSpider(scrapy.Spider):
                                 basic_sport_event_item['bet_12'] = bet_12
                                 basic_sport_event_item['bet_11'] = bet_11
                                 basic_sport_event_item['bet_22'] = bet_22
+                                basic_sport_event_item['event_id'] = basic_sport_event_item['bookmaker_id'] + '_' + event_id
                                 basic_sport_event_item['event_url'] = event_url
                                 yield basic_sport_event_item
                             except:

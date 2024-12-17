@@ -53,6 +53,7 @@ class SpiderBetxSpider(scrapy.Spider):
                         for match in league['Matches']:
                             try:
                                 event_url = f'https://bet-x.cz/cs/sports-betting/offer/{unidecode(sport.lower().replace(" ", "-"))}?match={str(match["Id"])}'
+                                event_id = event_url.split('=')[-1]
                                 event_startTime = datetime.fromisoformat(match['MatchStartTime'].replace("Z", "+00:00")).replace(tzinfo=ZoneInfo('UTC')).astimezone(ZoneInfo('Europe/Prague'))
                                 participant_1 = match['TeamHome']
                                 participant_2 = match['TeamAway']
@@ -108,6 +109,7 @@ class SpiderBetxSpider(scrapy.Spider):
                                     basic_sport_event_item['bet_12'] = bet_12
                                     basic_sport_event_item['bet_11'] = bet_11
                                     basic_sport_event_item['bet_22'] = bet_22
+                                    basic_sport_event_item['event_id'] = basic_sport_event_item['bookmaker_id'] + '_' + event_id
                                     basic_sport_event_item['event_url'] = event_url
                                     yield basic_sport_event_item
                             except:

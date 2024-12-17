@@ -100,6 +100,7 @@ class SpiderSynottipSpider(scrapy.Spider):
             event_xx = event['eventXx']
             bet_id = event['betDetails']['bet']['betsInfo']['betId']
             event_url = f"https://sport.synottip.cz/zapasy/{sport_id}/{event_id}c{event_xx}/{bet_id}?categoryId={sport_id}"
+            event_id = event_url.split('/')[5].split('c')[0]
             event_startTime = datetime.datetime.fromtimestamp(int(event['eventTime']['datetime'])/1000)
             participants = event['eventName'].split(' - ')
             participant_1 = participants[0]
@@ -155,5 +156,6 @@ class SpiderSynottipSpider(scrapy.Spider):
             basic_sport_event_item['bet_12'] = bet_12
             basic_sport_event_item['bet_11'] = bet_11
             basic_sport_event_item['bet_22'] = bet_22
+            basic_sport_event_item['event_id'] = basic_sport_event_item['bookmaker_id'] + '_' + event_id
             basic_sport_event_item['event_url'] = event_url
             return basic_sport_event_item

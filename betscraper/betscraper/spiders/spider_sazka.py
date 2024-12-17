@@ -57,6 +57,7 @@ class SpiderSazkaSpider(scrapy.Spider):
                     primary_category_original = event['class']['name']
                     secondary_category_original = event['type']['name']
                     event_url = f'https://www.sazka.cz/kurzove-sazky/sports/event/{event["id"]}'
+                    event_id = event_url.split('/')[-1]
                     event_startTime = datetime.fromisoformat(event['startTime'].replace("Z", "+00:00")).replace(tzinfo=ZoneInfo('UTC')).astimezone(ZoneInfo('Europe/Prague'))
                     participant_1 = event['teams'][0]['name']
                     participant_2 = event['teams'][1]['name']
@@ -120,6 +121,7 @@ class SpiderSazkaSpider(scrapy.Spider):
                     basic_sport_event_item['bet_12'] = bet_12
                     basic_sport_event_item['bet_11'] = bet_11
                     basic_sport_event_item['bet_22'] = bet_22
+                    basic_sport_event_item['event_id'] = basic_sport_event_item['bookmaker_id'] + '_' + event_id
                     basic_sport_event_item['event_url'] = event_url
                     yield basic_sport_event_item
                 except:
