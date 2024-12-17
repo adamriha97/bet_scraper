@@ -25,31 +25,23 @@ class SpiderBetanoDetailSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 512, # default 8
         }
     
-    def __init__(self, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, *args, **kwargs):
+    def __init__(self, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, arg_yieldBetNames = False, *args, **kwargs):
         super(SpiderBetanoDetailSpider, self).__init__(*args, **kwargs)
         self.arg_sport_name = arg_sport_name
         self.arg_events_limit = int(arg_events_limit)
         self.arg_event_url = arg_event_url
+        self.arg_yieldBetNames = bool(arg_yieldBetNames)
+
         with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
             self.data = json.load(file)
-
+        
         script_dir = os.path.dirname(os.path.realpath(__file__))
-        bets_dict_path = os.path.join(script_dir, '../files/bets_dict.json')
-        with open(bets_dict_path, 'r') as file:
-            bets_dict = json.load(file)
-        self.full_translator = {}
-        self.full_template = {}
-        for sport_name, bet_name_dict in bets_dict.items():
-            self.full_translator[sport_name] = {}
-            self.full_template[sport_name] = {}
-            for bet_name, bet_option_dict in bet_name_dict.items():
-                self.full_template[sport_name][bet_name] = {}
-                for bet_option, bookmaker_bets_names_dict in bet_option_dict.items():
-                    self.full_template[sport_name][bet_name][bet_option] = -1.0
-                    for bookmaker_bets_name in bookmaker_bets_names_dict[self.name.split('_')[1]]:
-                        self.full_translator[sport_name][bookmaker_bets_name] = {}
-                        self.full_translator[sport_name][bookmaker_bets_name]['name'] = bet_name
-                        self.full_translator[sport_name][bookmaker_bets_name]['option'] = bet_option
+        translator_path = os.path.join(script_dir, f"../files/detail_dicts/{self.name.split('_')[1]}_translator.json")
+        with open(translator_path, 'r') as file:
+            self.full_translator = json.load(file)
+        template_path = os.path.join(script_dir, '../files/detail_dicts/template.json')
+        with open(template_path, 'r') as file:
+            self.full_template = json.load(file)
 
     def start_requests(self):
         if self.arg_sport_name == None and self.arg_event_url == None:
@@ -87,21 +79,26 @@ class SpiderBetanoDetailSpider(scrapy.Spider):
                     template = copy.deepcopy(self.full_template['other'])
                 participant_1 = response_json['data']['event']['participants'][0]['name']
                 participant_2 = response_json['data']['event']['participants'][1]['name']
-                for market in response_json['data']['event']['markets']:
+                try:
+                    markets = response_json['data']['event']['sixPackLayout']['columns'] + response_json['data']['event']['markets']
+                except:
+                    markets = response_json['data']['event']['markets']
+                for market in markets:
                     market_name = market['name']
                     for selection in market['selections']:
                         selection_name = selection['name']
                         bet_name = ' '.join([market_name, selection_name]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0')
                         try:
                             translator_result = translator[bet_name]
-                            if template[translator_result['name']][translator_result['option']] < selection['price']:
-                                template[translator_result['name']][translator_result['option']] = selection['price']
+                            if template[translator_result['name']][translator_result['group']][translator_result['option']] < selection['price']:
+                                template[translator_result['name']][translator_result['group']][translator_result['option']] = selection['price']
                         except:
                             pass
-                        yield { #############################################################################################################
-                            'bet_name': bet_name,
-                            'value': selection['price']
-                        }
+                        if self.arg_yieldBetNames:
+                            yield { #############################################################################################################
+                                'bet_name': bet_name,
+                                'value': selection['price']
+                            }
                     try:
                         table_name = market['tableLayout']['title']
                         for row in market['tableLayout']['rows']:
@@ -112,14 +109,15 @@ class SpiderBetanoDetailSpider(scrapy.Spider):
                                     bet_name = ' '.join([table_name, row_name, selection_name]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0')
                                     try:
                                         translator_result = translator[bet_name]
-                                        if template[translator_result['name']][translator_result['option']] < selection['price']:
-                                            template[translator_result['name']][translator_result['option']] = selection['price']
+                                        if template[translator_result['name']][translator_result['group']][translator_result['option']] < selection['price']:
+                                            template[translator_result['name']][translator_result['group']][translator_result['option']] = selection['price']
                                     except:
                                         pass
-                                    yield { #############################################################################################################
-                                        'bet_name': bet_name,
-                                        'value': selection['price']
-                                    }
+                                    if self.arg_yieldBetNames:
+                                        yield { #############################################################################################################
+                                            'bet_name': bet_name,
+                                            'value': selection['price']
+                                        }
                     except:
                         pass
                 yield {

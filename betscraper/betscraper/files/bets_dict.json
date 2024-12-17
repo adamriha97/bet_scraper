@@ -1348,7 +1348,8 @@
                     "CELKEM GÓLŮ"
                 ],
                 "sazka": [
-                    "Góly nad/pod"
+                    "Góly nad/pod",
+                    "Góly nad/pod speciální"
                 ],
                 "synottip": [
                     "Celkový počet gólů"
@@ -1442,7 +1443,8 @@
                     "1. POL - POČET GÓLŮ"
                 ],
                 "sazka": [
-                    "1.poločas: góly nad/pod"
+                    "1.poločas: góly nad/pod",
+                    "1.poločas: góly nad/pod speciální"
                 ],
                 "synottip": [
                     "1. poločas - Počet gólů"
@@ -1535,7 +1537,8 @@
                     "2. POL - POČET GÓLŮ"
                 ],
                 "sazka": [
-                    "2.poločas: góly nad/pod"
+                    "2.poločas: góly nad/pod",
+                    "2.poločas: góly nad/pod speciální"
                 ],
                 "synottip": [
                     "2. poločas - Počet gólů"
@@ -1629,7 +1632,8 @@
                     "DOMACÍ POČET GOLŮ"
                 ],
                 "sazka": [
-                    "1 Góly nad/pod"
+                    "1 Góly nad/pod",
+                    "1 Góly nad/pod speciální"
                 ],
                 "synottip": [
                     "Tým1 celkový počet gólů"
@@ -1723,7 +1727,8 @@
                     "HOSTÉ POČET GÓLŮ"
                 ],
                 "sazka": [
-                    "2 Góly nad/pod"
+                    "2 Góly nad/pod",
+                    "2 Góly nad/pod speciální"
                 ],
                 "synottip": [
                     "Tým2 celkový počet gólů"
@@ -1817,7 +1822,8 @@
                     ""
                 ],
                 "sazka": [
-                    "Rohy nad/pod"
+                    "Rohy nad/pod",
+                    "Rohy nad/pod speciální"
                 ],
                 "synottip": [
                     ""
@@ -2471,7 +2477,8 @@
                     ""
                 ],
                 "sazka": [
-                    "Hry: nad/pod"
+                    "Hry: nad/pod",
+                    "Hry: nad/pod speciální"
                 ],
                 "synottip": [
                     "Celkový počet gamů"
@@ -3149,7 +3156,8 @@
                     ""
                 ],
                 "sazka": [
-                    "Góly nad/pod (do rozhodnutí)"
+                    "Góly nad/pod (do rozhodnutí)",
+                    "Góly nad/pod (do rozhodnutí) speciální"
                 ],
                 "synottip": [
                     "Celkový počet gólů"
@@ -3459,7 +3467,8 @@
                     "CELKEM POČET BODŮ VČETNĚ PRODLOUŽENÍ"
                 ],
                 "sazka": [
-                    "Body: nad/pod"
+                    "Body: nad/pod",
+                    "Body: nad/pod speciální"
                 ],
                 "synottip": [
                     "Počet bodů (včetně prodloužení)"

@@ -27,31 +27,23 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
         },
         }
     
-    def __init__(self, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, *args, **kwargs):
+    def __init__(self, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, arg_yieldBetNames = False, *args, **kwargs):
         super(SpiderTipsportDetailSpider, self).__init__(*args, **kwargs)
         self.arg_sport_name = arg_sport_name
         self.arg_events_limit = int(arg_events_limit)
         self.arg_event_url = arg_event_url
+        self.arg_yieldBetNames = bool(arg_yieldBetNames)
+
         with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
             self.data = json.load(file)
 
         script_dir = os.path.dirname(os.path.realpath(__file__))
-        bets_dict_path = os.path.join(script_dir, '../files/bets_dict.json')
-        with open(bets_dict_path, 'r') as file:
-            bets_dict = json.load(file)
-        self.full_translator = {}
-        self.full_template = {}
-        for sport_name, bet_name_dict in bets_dict.items():
-            self.full_translator[sport_name] = {}
-            self.full_template[sport_name] = {}
-            for bet_name, bet_option_dict in bet_name_dict.items():
-                self.full_template[sport_name][bet_name] = {}
-                for bet_option, bookmaker_bets_names_dict in bet_option_dict.items():
-                    self.full_template[sport_name][bet_name][bet_option] = -1.0
-                    for bookmaker_bets_name in bookmaker_bets_names_dict[self.name.split('_')[1]]:
-                        self.full_translator[sport_name][bookmaker_bets_name] = {}
-                        self.full_translator[sport_name][bookmaker_bets_name]['name'] = bet_name
-                        self.full_translator[sport_name][bookmaker_bets_name]['option'] = bet_option
+        translator_path = os.path.join(script_dir, f"../files/detail_dicts/{self.name.split('_')[1]}_translator.json")
+        with open(translator_path, 'r') as file:
+            self.full_translator = json.load(file)
+        template_path = os.path.join(script_dir, '../files/detail_dicts/template.json')
+        with open(template_path, 'r') as file:
+            self.full_template = json.load(file)
     
     def start_requests(self):
         url = 'https://www.tipsport.cz/kurzy.xml'
@@ -110,14 +102,15 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
                             bet_name = ' '.join(' '.join([event_table_name, box_name, cell_name]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0').split())
                             try:
                                 translator_result = translator[bet_name]
-                                if template[translator_result['name']][translator_result['option']] < cell['odd']:
-                                    template[translator_result['name']][translator_result['option']] = cell['odd']
+                                if template[translator_result['name']][translator_result['group']][translator_result['option']] < cell['odd']:
+                                    template[translator_result['name']][translator_result['group']][translator_result['option']] = cell['odd']
                             except:
                                 pass
-                            yield { #############################################################################################################
-                                'bet_name': bet_name,
-                                'value': cell['odd']
-                            }
+                            if self.arg_yieldBetNames:
+                                yield { #############################################################################################################
+                                    'bet_name': bet_name,
+                                    'value': cell['odd']
+                                }
                 yield {
                     'event_url': event_url,
                     'bet_dict': template,
