@@ -150,7 +150,17 @@
             "group": "0,5",
             "option": "vice-nez-0,5"
         },
+        "Góly nad/pod speciální 0.5 Nad": {
+            "name": "vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "vice-nez-0,5"
+        },
         "Góly nad/pod 0.5 Pod": {
+            "name": "vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "mene-nez-0,5"
+        },
+        "Góly nad/pod speciální 0.5 Pod": {
             "name": "vice-mene-pocet-golu",
             "group": "0,5",
             "option": "mene-nez-0,5"
@@ -160,7 +170,17 @@
             "group": "0,5",
             "option": "vice-nez-0,5"
         },
+        "1.poločas: góly nad/pod speciální 0.5 Nad": {
+            "name": "prvni-polocas-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "vice-nez-0,5"
+        },
         "1.poločas: góly nad/pod 0.5 Pod": {
+            "name": "prvni-polocas-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "mene-nez-0,5"
+        },
+        "1.poločas: góly nad/pod speciální 0.5 Pod": {
             "name": "prvni-polocas-vice-mene-pocet-golu",
             "group": "0,5",
             "option": "mene-nez-0,5"
@@ -170,7 +190,17 @@
             "group": "0,5",
             "option": "vice-nez-0,5"
         },
+        "2.poločas: góly nad/pod speciální 0.5 Nad": {
+            "name": "druhy-polocas-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "vice-nez-0,5"
+        },
         "2.poločas: góly nad/pod 0.5 Pod": {
+            "name": "druhy-polocas-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "mene-nez-0,5"
+        },
+        "2.poločas: góly nad/pod speciální 0.5 Pod": {
             "name": "druhy-polocas-vice-mene-pocet-golu",
             "group": "0,5",
             "option": "mene-nez-0,5"
@@ -180,7 +210,17 @@
             "group": "0,5",
             "option": "vice-nez-0,5"
         },
+        "1 Góly nad/pod speciální 0.5 Nad": {
+            "name": "1-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "vice-nez-0,5"
+        },
         "1 Góly nad/pod 0.5 Pod": {
+            "name": "1-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "mene-nez-0,5"
+        },
+        "1 Góly nad/pod speciální 0.5 Pod": {
             "name": "1-vice-mene-pocet-golu",
             "group": "0,5",
             "option": "mene-nez-0,5"
@@ -190,7 +230,17 @@
             "group": "0,5",
             "option": "vice-nez-0,5"
         },
+        "2 Góly nad/pod speciální 0.5 Nad": {
+            "name": "2-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "vice-nez-0,5"
+        },
         "2 Góly nad/pod 0.5 Pod": {
+            "name": "2-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "mene-nez-0,5"
+        },
+        "2 Góly nad/pod speciální 0.5 Pod": {
             "name": "2-vice-mene-pocet-golu",
             "group": "0,5",
             "option": "mene-nez-0,5"
@@ -200,7 +250,17 @@
             "group": "7,5",
             "option": "vice-nez-7,5"
         },
+        "Rohy nad/pod speciální 7.5 Nad": {
+            "name": "vice-mene-pocet-rohovych-kopu",
+            "group": "7,5",
+            "option": "vice-nez-7,5"
+        },
         "Rohy nad/pod 7.5 Pod": {
+            "name": "vice-mene-pocet-rohovych-kopu",
+            "group": "7,5",
+            "option": "mene-nez-7,5"
+        },
+        "Rohy nad/pod speciální 7.5 Pod": {
             "name": "vice-mene-pocet-rohovych-kopu",
             "group": "7,5",
             "option": "mene-nez-7,5"
@@ -272,7 +332,17 @@
             "group": "22,5",
             "option": "vice-nez-22,5"
         },
+        "Hry: nad/pod speciální 22.5 Nad": {
+            "name": "vice-mene-pocet-gamu",
+            "group": "22,5",
+            "option": "vice-nez-22,5"
+        },
         "Hry: nad/pod 22.5 Pod": {
+            "name": "vice-mene-pocet-gamu",
+            "group": "22,5",
+            "option": "mene-nez-22,5"
+        },
+        "Hry: nad/pod speciální 22.5 Pod": {
             "name": "vice-mene-pocet-gamu",
             "group": "22,5",
             "option": "mene-nez-22,5"
@@ -354,7 +424,17 @@
             "group": "1,5",
             "option": "vice-nez-1,5"
         },
+        "Góly nad/pod (do rozhodnutí) speciální 1.5 Nad": {
+            "name": "vice-mene-pocet-golu",
+            "group": "1,5",
+            "option": "vice-nez-1,5"
+        },
         "Góly nad/pod (do rozhodnutí) 1.5 Pod": {
+            "name": "vice-mene-pocet-golu",
+            "group": "1,5",
+            "option": "mene-nez-1,5"
+        },
+        "Góly nad/pod (do rozhodnutí) speciální 1.5 Pod": {
             "name": "vice-mene-pocet-golu",
             "group": "1,5",
             "option": "mene-nez-1,5"
@@ -391,7 +471,17 @@
             "group": "168,5",
             "option": "vice-nez-168,5"
         },
+        "Body: nad/pod speciální 168.5 Nad": {
+            "name": "vice-mene-pocet-bodu",
+            "group": "168,5",
+            "option": "vice-nez-168,5"
+        },
         "Body: nad/pod 168.5 Pod": {
+            "name": "vice-mene-pocet-bodu",
+            "group": "168,5",
+            "option": "mene-nez-168,5"
+        },
+        "Body: nad/pod speciální 168.5 Pod": {
             "name": "vice-mene-pocet-bodu",
             "group": "168,5",
             "option": "mene-nez-168,5"
