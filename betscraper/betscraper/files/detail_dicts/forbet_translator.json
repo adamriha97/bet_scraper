@@ -1,0 +1,447 @@
+{
+    "fotbal": {
+        "Výsledek zápasu 1": {
+            "name": "vysledek-zapasu",
+            "group": "-",
+            "option": "1"
+        },
+        "Výsledek zápasu X": {
+            "name": "vysledek-zapasu",
+            "group": "-",
+            "option": "0"
+        },
+        "Výsledek zápasu 2": {
+            "name": "vysledek-zapasu",
+            "group": "-",
+            "option": "2"
+        },
+        "1. poločas 1": {
+            "name": "vysledek-prvniho-polocasu",
+            "group": "-",
+            "option": "1"
+        },
+        "1. poločas X": {
+            "name": "vysledek-prvniho-polocasu",
+            "group": "-",
+            "option": "0"
+        },
+        "1. poločas 2": {
+            "name": "vysledek-prvniho-polocasu",
+            "group": "-",
+            "option": "2"
+        },
+        "2. poločas 1": {
+            "name": "vysledek-druheho-polocasu",
+            "group": "-",
+            "option": "1"
+        },
+        "2. poločas X": {
+            "name": "vysledek-druheho-polocasu",
+            "group": "-",
+            "option": "0"
+        },
+        "2. poločas 2": {
+            "name": "vysledek-druheho-polocasu",
+            "group": "-",
+            "option": "2"
+        },
+        "Vítěz bez remízy 1": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "1"
+        },
+        "Vítěz bez remízy 2": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "2"
+        },
+        "1. poločas - vítěz bez remízy 1": {
+            "name": "vitez-prvniho-polocasu-bez-remizy",
+            "group": "-",
+            "option": "1"
+        },
+        "1. poločas - vítěz bez remízy 2": {
+            "name": "vitez-prvniho-polocasu-bez-remizy",
+            "group": "-",
+            "option": "2"
+        },
+        "2. poločas - vítěz bez remízy 1": {
+            "name": "vitez-druheho-polocasu-bez-remizy",
+            "group": "-",
+            "option": "1"
+        },
+        "2. poločas - vítěz bez remízy 2": {
+            "name": "vitez-druheho-polocasu-bez-remizy",
+            "group": "-",
+            "option": "2"
+        },
+        "branka v zápasu 1 1": {
+            "name": "prvni-gol",
+            "group": "-",
+            "option": "1"
+        },
+        "branka v zápasu 1 nikdo": {
+            "name": "prvni-gol",
+            "group": "-",
+            "option": "0"
+        },
+        "branka v zápasu 1 2": {
+            "name": "prvni-gol",
+            "group": "-",
+            "option": "2"
+        },
+        "Oba týmy vstřelí branku v zápasu ano": {
+            "name": "oba-tymy-skoruji",
+            "group": "-",
+            "option": "ano"
+        },
+        "Oba týmy vstřelí branku v zápasu ne": {
+            "name": "oba-tymy-skoruji",
+            "group": "-",
+            "option": "ne"
+        },
+        "1. poločas - oba týmy vstřelí branku ano": {
+            "name": "oba-tymy-skoruji-v-prvnim-polocasu",
+            "group": "-",
+            "option": "ano"
+        },
+        "1. poločas - oba týmy vstřelí branku ne": {
+            "name": "oba-tymy-skoruji-v-prvnim-polocasu",
+            "group": "-",
+            "option": "ne"
+        },
+        "2. poločas - oba týmy vstřelí branku ano": {
+            "name": "oba-tymy-skoruji-ve-druhem-polocasu",
+            "group": "-",
+            "option": "ano"
+        },
+        "2. poločas - oba týmy vstřelí branku ne": {
+            "name": "oba-tymy-skoruji-ve-druhem-polocasu",
+            "group": "-",
+            "option": "ne"
+        },
+        "1 vyhraje oba poločasy ano": {
+            "name": "1-vyhraje-oba-polocasy",
+            "group": "-",
+            "option": "ano"
+        },
+        "1 vyhraje oba poločasy ne": {
+            "name": "1-vyhraje-oba-polocasy",
+            "group": "-",
+            "option": "ne"
+        },
+        "2 vyhraje oba poločasy ano": {
+            "name": "2-vyhraje-oba-polocasy",
+            "group": "-",
+            "option": "ano"
+        },
+        "2 vyhraje oba poločasy ne": {
+            "name": "2-vyhraje-oba-polocasy",
+            "group": "-",
+            "option": "ne"
+        },
+        " ": {
+            "name": "vice-mene-pocet-rohovych-kopu",
+            "group": "7,5",
+            "option": "mene-nez-7,5"
+        },
+        "Počet branek v zápasu 0.5 více než": {
+            "name": "vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "vice-nez-0,5"
+        },
+        "Počet branek v zápasu 0.5 méně než": {
+            "name": "vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "mene-nez-0,5"
+        },
+        "1. poločas - počet branek 0.5 více než": {
+            "name": "prvni-polocas-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "vice-nez-0,5"
+        },
+        "1. poločas - počet branek 0.5 méně než": {
+            "name": "prvni-polocas-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "mene-nez-0,5"
+        },
+        "2. poločas - počet branek 0.5 více než": {
+            "name": "druhy-polocas-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "vice-nez-0,5"
+        },
+        "2. poločas - počet branek 0.5 méně než": {
+            "name": "druhy-polocas-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "mene-nez-0,5"
+        },
+        "1 počet branek v zápasu 0.5 Více než": {
+            "name": "1-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "vice-nez-0,5"
+        },
+        "1 počet branek v zápasu 0.5 Méně než": {
+            "name": "1-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "mene-nez-0,5"
+        },
+        "2 počet branek v zápasu 0.5 Více než": {
+            "name": "2-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "vice-nez-0,5"
+        },
+        "2 počet branek v zápasu 0.5 Méně než": {
+            "name": "2-vice-mene-pocet-golu",
+            "group": "0,5",
+            "option": "mene-nez-0,5"
+        }
+    },
+    "tenis": {
+        "Vítěz zápasu 1": {
+            "name": "vitez",
+            "group": "-",
+            "option": "1"
+        },
+        "Vítěz zápasu 2": {
+            "name": "vitez",
+            "group": "-",
+            "option": "2"
+        },
+        "set 1 1": {
+            "name": "vitez-prvniho-setu",
+            "group": "-",
+            "option": "1"
+        },
+        "set 1 2": {
+            "name": "vitez-prvniho-setu",
+            "group": "-",
+            "option": "2"
+        },
+        "set 2 1": {
+            "name": "vitez-druheho-setu",
+            "group": "-",
+            "option": "1"
+        },
+        "set 2 2": {
+            "name": "vitez-druheho-setu",
+            "group": "-",
+            "option": "2"
+        },
+        "Přesný počet setů sr:exact_sets:bestof:3 3": {
+            "name": "oba-vyhraji-set",
+            "group": "-",
+            "option": "Ano"
+        },
+        "Přesný počet setů sr:exact_sets:bestof:3 2": {
+            "name": "oba-vyhraji-set",
+            "group": "-",
+            "option": "Ne"
+        },
+        "1 vyhraje alespoň jeden set Ano": {
+            "name": "1-vyhraje-set",
+            "group": "-",
+            "option": "Ano"
+        },
+        "1 vyhraje alespoň jeden set Ne": {
+            "name": "1-vyhraje-set",
+            "group": "-",
+            "option": "Ne"
+        },
+        "2 vyhraje alespoň jeden set Ano": {
+            "name": "2-vyhraje-set",
+            "group": "-",
+            "option": "Ano"
+        },
+        "2 vyhraje alespoň jeden set Ne": {
+            "name": "2-vyhraje-set",
+            "group": "-",
+            "option": "Ne"
+        },
+        "Počet gamů v zápasu 22.5 Více než": {
+            "name": "vice-mene-pocet-gamu",
+            "group": "22,5",
+            "option": "vice-nez-22,5"
+        },
+        "Počet gamů v zápasu 22.5 Méně než": {
+            "name": "vice-mene-pocet-gamu",
+            "group": "22,5",
+            "option": "mene-nez-22,5"
+        }
+    },
+    "ledni-hokej": {
+        "Vítěz do rozhodnutí 1": {
+            "name": "vitez",
+            "group": "-",
+            "option": "1"
+        },
+        "Vítěz do rozhodnutí 2": {
+            "name": "vitez",
+            "group": "-",
+            "option": "2"
+        },
+        "Výsledek zápasu 1": {
+            "name": "vysledek-v-zakladni-hraci-dobe",
+            "group": "-",
+            "option": "1"
+        },
+        "Výsledek zápasu X": {
+            "name": "vysledek-v-zakladni-hraci-dobe",
+            "group": "-",
+            "option": "0"
+        },
+        "Výsledek zápasu 2": {
+            "name": "vysledek-v-zakladni-hraci-dobe",
+            "group": "-",
+            "option": "2"
+        },
+        "třetina 1 1": {
+            "name": "vysledek-v-prvni-tretine",
+            "group": "-",
+            "option": "1"
+        },
+        "třetina 1 X": {
+            "name": "vysledek-v-prvni-tretine",
+            "group": "-",
+            "option": "0"
+        },
+        "třetina 1 2": {
+            "name": "vysledek-v-prvni-tretine",
+            "group": "-",
+            "option": "2"
+        },
+        "třetina 2 1": {
+            "name": "vysledek-ve-druhe-tretine",
+            "group": "-",
+            "option": "1"
+        },
+        "třetina 2 X": {
+            "name": "vysledek-ve-druhe-tretine",
+            "group": "-",
+            "option": "0"
+        },
+        "třetina 2 2": {
+            "name": "vysledek-ve-druhe-tretine",
+            "group": "-",
+            "option": "2"
+        },
+        "třetina 3 1": {
+            "name": "vysledek-ve-treti-tretine",
+            "group": "-",
+            "option": "1"
+        },
+        "třetina 3 X": {
+            "name": "vysledek-ve-treti-tretine",
+            "group": "-",
+            "option": "0"
+        },
+        "třetina 3 2": {
+            "name": "vysledek-ve-treti-tretine",
+            "group": "-",
+            "option": "2"
+        },
+        "Počet branek v zápasu 1.5 Více než": {
+            "name": "vice-mene-pocet-golu",
+            "group": "1,5",
+            "option": "vice-nez-1,5"
+        },
+        "Počet branek v zápasu 1.5 Méně než": {
+            "name": "vice-mene-pocet-golu",
+            "group": "1,5",
+            "option": "mene-nez-1,5"
+        }
+    },
+    "basketbal": {
+        "Vítěz zápasu do rozhodnutí 1": {
+            "name": "vitez",
+            "group": "-",
+            "option": "1"
+        },
+        "Vítěz zápasu do rozhodnutí 2": {
+            "name": "vitez",
+            "group": "-",
+            "option": "2"
+        },
+        "Výsledek zápasu 1": {
+            "name": "vysledek-v-zakladni-hraci-dobe",
+            "group": "-",
+            "option": "1"
+        },
+        "Výsledek zápasu X": {
+            "name": "vysledek-v-zakladni-hraci-dobe",
+            "group": "-",
+            "option": "0"
+        },
+        "Výsledek zápasu 2": {
+            "name": "vysledek-v-zakladni-hraci-dobe",
+            "group": "-",
+            "option": "2"
+        },
+        "Počet bodů (včetně prodloužení) 168.5 Více než": {
+            "name": "vice-mene-pocet-bodu",
+            "group": "168,5",
+            "option": "vice-nez-168,5"
+        },
+        "Počet bodů (včetně prodloužení) 168.5 Méně než": {
+            "name": "vice-mene-pocet-bodu",
+            "group": "168,5",
+            "option": "mene-nez-168,5"
+        }
+    },
+    "other": {
+        "Vítěz bez remízy 1": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "1"
+        },
+        "Vítěz zápasu 1": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "1"
+        },
+        "Vítěz do rozhodnutí 1": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "1"
+        },
+        "Vítěz zápasu do rozhodnutí 1": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "1"
+        },
+        "Vítěz bez remízy 2": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "2"
+        },
+        "Vítěz zápasu 2": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "2"
+        },
+        "Vítěz do rozhodnutí 2": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "2"
+        },
+        "Vítěz zápasu do rozhodnutí 2": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "2"
+        },
+        "Výsledek zápasu 1": {
+            "name": "vysledek-zapasu-s-remizou",
+            "group": "-",
+            "option": "1"
+        },
+        "Výsledek zápasu X": {
+            "name": "vysledek-zapasu-s-remizou",
+            "group": "-",
+            "option": "0"
+        },
+        "Výsledek zápasu 2": {
+            "name": "vysledek-zapasu-s-remizou",
+            "group": "-",
+            "option": "2"
+        }
+    }
+}

@@ -1,0 +1,244 @@
+{
+    "fotbal": {
+        "vysledek-zapasu": {
+            "-": {
+                "1": -1.0,
+                "0": -1.0,
+                "2": -1.0
+            }
+        },
+        "vysledek-prvniho-polocasu": {
+            "-": {
+                "1": -1.0,
+                "0": -1.0,
+                "2": -1.0
+            }
+        },
+        "vysledek-druheho-polocasu": {
+            "-": {
+                "1": -1.0,
+                "0": -1.0,
+                "2": -1.0
+            }
+        },
+        "vitez-bez-remizy": {
+            "-": {
+                "1": -1.0,
+                "2": -1.0
+            }
+        },
+        "vitez-prvniho-polocasu-bez-remizy": {
+            "-": {
+                "1": -1.0,
+                "2": -1.0
+            }
+        },
+        "vitez-druheho-polocasu-bez-remizy": {
+            "-": {
+                "1": -1.0,
+                "2": -1.0
+            }
+        },
+        "prvni-gol": {
+            "-": {
+                "1": -1.0,
+                "0": -1.0,
+                "2": -1.0
+            }
+        },
+        "oba-tymy-skoruji": {
+            "-": {
+                "ano": -1.0,
+                "ne": -1.0
+            }
+        },
+        "oba-tymy-skoruji-v-prvnim-polocasu": {
+            "-": {
+                "ano": -1.0,
+                "ne": -1.0
+            }
+        },
+        "oba-tymy-skoruji-ve-druhem-polocasu": {
+            "-": {
+                "ano": -1.0,
+                "ne": -1.0
+            }
+        },
+        "1-vyhraje-oba-polocasy": {
+            "-": {
+                "ano": -1.0,
+                "ne": -1.0
+            }
+        },
+        "2-vyhraje-oba-polocasy": {
+            "-": {
+                "ano": -1.0,
+                "ne": -1.0
+            }
+        },
+        "narizena-penalta": {
+            "-": {
+                "ano": -1.0,
+                "ne": -1.0
+            }
+        },
+        "vice-mene-pocet-golu": {
+            "0,5": {
+                "vice-nez-0,5": -1.0,
+                "mene-nez-0,5": -1.0
+            }
+        },
+        "prvni-polocas-vice-mene-pocet-golu": {
+            "0,5": {
+                "vice-nez-0,5": -1.0,
+                "mene-nez-0,5": -1.0
+            }
+        },
+        "druhy-polocas-vice-mene-pocet-golu": {
+            "0,5": {
+                "vice-nez-0,5": -1.0,
+                "mene-nez-0,5": -1.0
+            }
+        },
+        "1-vice-mene-pocet-golu": {
+            "0,5": {
+                "vice-nez-0,5": -1.0,
+                "mene-nez-0,5": -1.0
+            }
+        },
+        "2-vice-mene-pocet-golu": {
+            "0,5": {
+                "vice-nez-0,5": -1.0,
+                "mene-nez-0,5": -1.0
+            }
+        },
+        "vice-mene-pocet-rohovych-kopu": {
+            "7,5": {
+                "vice-nez-7,5": -1.0,
+                "mene-nez-7,5": -1.0
+            }
+        }
+    },
+    "tenis": {
+        "vitez": {
+            "-": {
+                "1": -1.0,
+                "2": -1.0
+            }
+        },
+        "vitez-prvniho-setu": {
+            "-": {
+                "1": -1.0,
+                "2": -1.0
+            }
+        },
+        "vitez-druheho-setu": {
+            "-": {
+                "1": -1.0,
+                "2": -1.0
+            }
+        },
+        "oba-vyhraji-set": {
+            "-": {
+                "Ano": -1.0,
+                "Ne": -1.0
+            }
+        },
+        "1-vyhraje-set": {
+            "-": {
+                "Ano": -1.0,
+                "Ne": -1.0
+            }
+        },
+        "2-vyhraje-set": {
+            "-": {
+                "Ano": -1.0,
+                "Ne": -1.0
+            }
+        },
+        "vice-mene-pocet-gamu": {
+            "22,5": {
+                "vice-nez-22,5": -1.0,
+                "mene-nez-22,5": -1.0
+            }
+        }
+    },
+    "ledni-hokej": {
+        "vitez": {
+            "-": {
+                "1": -1.0,
+                "2": -1.0
+            }
+        },
+        "vysledek-v-zakladni-hraci-dobe": {
+            "-": {
+                "1": -1.0,
+                "0": -1.0,
+                "2": -1.0
+            }
+        },
+        "vysledek-v-prvni-tretine": {
+            "-": {
+                "1": -1.0,
+                "0": -1.0,
+                "2": -1.0
+            }
+        },
+        "vysledek-ve-druhe-tretine": {
+            "-": {
+                "1": -1.0,
+                "0": -1.0,
+                "2": -1.0
+            }
+        },
+        "vysledek-ve-treti-tretine": {
+            "-": {
+                "1": -1.0,
+                "0": -1.0,
+                "2": -1.0
+            }
+        },
+        "vice-mene-pocet-golu": {
+            "1,5": {
+                "vice-nez-1,5": -1.0,
+                "mene-nez-1,5": -1.0
+            }
+        }
+    },
+    "basketbal": {
+        "vitez": {
+            "-": {
+                "1": -1.0,
+                "2": -1.0
+            }
+        },
+        "vysledek-v-zakladni-hraci-dobe": {
+            "-": {
+                "1": -1.0,
+                "0": -1.0,
+                "2": -1.0
+            }
+        },
+        "vice-mene-pocet-bodu": {
+            "168,5": {
+                "vice-nez-168,5": -1.0,
+                "mene-nez-168,5": -1.0
+            }
+        }
+    },
+    "other": {
+        "vitez-bez-remizy": {
+            "-": {
+                "1": -1.0,
+                "2": -1.0
+            }
+        },
+        "vysledek-zapasu-s-remizou": {
+            "-": {
+                "1": -1.0,
+                "0": -1.0,
+                "2": -1.0
+            }
+        }
+    }
+}
