@@ -32,6 +32,7 @@
         "plazovy-volejbal": ["plazovy-volejbal"],
         "sachy": ["sachy"],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "betx": {
@@ -58,7 +59,7 @@
         "basketbal": ["Basketball"],
         "volejbal": ["Volleyball"],
         "australsky-fotbal": ["Aussie Rules", "Aussie rules"],
-        "snooker": [],
+        "snooker": ["Snooker"],
         "padel": [],
         "netball": [],
         "badminton": ["Badminton"],
@@ -67,6 +68,7 @@
         "plazovy-volejbal": [],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": ["BetX chance", "Motor sport"]
     },
     "forbet": {
@@ -102,6 +104,7 @@
         "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "fortuna": {
@@ -137,6 +140,7 @@
         "plazovy-volejbal": ["plazovy-volejbal"],
         "sachy": ["sachy"],
         "kabadi": [],
+        "lakros": ["lakros"],
         "special": ["duel"]
     },
     "kingsbet": {
@@ -163,7 +167,7 @@
         "basketbal": ["Basketbal"],
         "volejbal": ["Volejbal"],
         "australsky-fotbal": [],
-        "snooker": [],
+        "snooker": ["Snooker"],
         "padel": ["Padel"],
         "netball": [],
         "badminton": ["Badminton"],
@@ -172,6 +176,7 @@
         "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "merkur": {
@@ -207,6 +212,7 @@
         "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": ["Společenské sázky"]
     },
     "sazka": {
@@ -242,6 +248,7 @@
         "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "synottip": {
@@ -277,6 +284,7 @@
         "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": [],
         "kabadi": ["Kabaddi"],
+        "lakros": [],
         "special": ["WTA Tour Finals", "ATP Tour Finals"]
     },
     "tipsport": {
@@ -312,6 +320,7 @@
         "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": ["Šachy"],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "livescore": {
@@ -347,6 +356,7 @@
         "plazovy-volejbal": [],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "other": {
@@ -382,6 +392,7 @@
         "plazovy-volejbal": [""],
         "sachy": [""],
         "kabadi": [""],
+        "lakros": [""],
         "special": [""]
     }
 }

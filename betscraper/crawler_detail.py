@@ -33,6 +33,4 @@ process.crawl(spider_sazka_detail.SpiderSazkaDetailSpider, arg_sport_name = spor
 process.crawl(spider_synottip_detail.SpiderSynottipDetailSpider, arg_sport_name = sport_name, arg_events_limit = events_limit) #, arg_event_url = 'https://sport.synottip.cz/zapasy/12cx13cxx27/2416017cxx27/241943424?categoryId=12cx13cxx27')
 process.crawl(spider_tipsport_detail.SpiderTipsportDetailSpider, arg_sport_name = sport_name, arg_events_limit = events_limit) #, arg_event_url = 'https://www.tipsport.cz/kurzy/zapas/fotbal-teplice-slavia-praha/6215185')
 
-# process.crawl(spider_livescore.SpiderLivescoreSpider)
-
 process.start()

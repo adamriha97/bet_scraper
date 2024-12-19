@@ -16,15 +16,17 @@ class SpiderSazkaDetailSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 64, # default 8
         }
     
-    def __init__(self, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, arg_yieldBetNames = False, *args, **kwargs):
+    def __init__(self, arg_data = None, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, arg_yieldBetNames = False, *args, **kwargs):
         super(SpiderSazkaDetailSpider, self).__init__(*args, **kwargs)
         self.arg_sport_name = arg_sport_name
         self.arg_events_limit = int(arg_events_limit)
         self.arg_event_url = arg_event_url
         self.arg_yieldBetNames = bool(arg_yieldBetNames)
-
-        with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
-            self.data = json.load(file)
+        if arg_data is not None:
+            self.data = arg_data
+        else:
+            with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
+                self.data = json.load(file)
 
         script_dir = os.path.dirname(os.path.realpath(__file__))
         translator_path = os.path.join(script_dir, f"../files/detail_dicts/{self.name.split('_')[1]}_translator.json")

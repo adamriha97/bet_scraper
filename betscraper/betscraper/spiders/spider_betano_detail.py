@@ -25,15 +25,17 @@ class SpiderBetanoDetailSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 512, # default 8
         }
     
-    def __init__(self, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, arg_yieldBetNames = False, *args, **kwargs):
+    def __init__(self, arg_data = None, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, arg_yieldBetNames = False, *args, **kwargs):
         super(SpiderBetanoDetailSpider, self).__init__(*args, **kwargs)
         self.arg_sport_name = arg_sport_name
         self.arg_events_limit = int(arg_events_limit)
         self.arg_event_url = arg_event_url
         self.arg_yieldBetNames = bool(arg_yieldBetNames)
-
-        with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
-            self.data = json.load(file)
+        if arg_data is not None:
+            self.data = arg_data
+        else:
+            with open(f"data/data_{self.name.split('_')[1]}.json", 'r') as file:
+                self.data = json.load(file)
         
         script_dir = os.path.dirname(os.path.realpath(__file__))
         translator_path = os.path.join(script_dir, f"../files/detail_dicts/{self.name.split('_')[1]}_translator.json")
@@ -57,76 +59,83 @@ class SpiderBetanoDetailSpider(scrapy.Spider):
             yield scrapy.Request(url = url, callback = self.parse, cb_kwargs=dict(sport_name = sport_name, event_url = event_url))
 
     def parse(self, response, sport_name, event_url):
-        response_json = json.loads(response.text)
         try:
-            if response_json["errorCode"] == 302:
-                pass
-            yield { # s timto neco udelaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat mozna
-                'test': response_json["errorCode"],
-                'full_translator': self.full_translator['other'],
-                'full_template': self.full_template['other'],
-                'sport_name': sport_name,
-                'event_url': event_url,
-            }
-        except:
-            call_number = response.url.split('/?bt=')[1].split('&')[0]
-            if response_json['data']['markets'][-1]['name'] in ('Vše', 'Všechny příležitosti') or call_number != '99':
-                try:
-                    translator = copy.deepcopy(self.full_translator[sport_name])
-                    template = copy.deepcopy(self.full_template[sport_name])
-                except:
-                    translator = copy.deepcopy(self.full_translator['other'])
-                    template = copy.deepcopy(self.full_template['other'])
-                participant_1 = response_json['data']['event']['participants'][0]['name']
-                participant_2 = response_json['data']['event']['participants'][1]['name']
-                try:
-                    markets = response_json['data']['event']['sixPackLayout']['columns'] + response_json['data']['event']['markets']
-                except:
-                    markets = response_json['data']['event']['markets']
-                for market in markets:
-                    market_name = market['name']
-                    for selection in market['selections']:
-                        selection_name = selection['name']
-                        bet_name = ' '.join([market_name, selection_name]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0')
+            response_json = json.loads(response.text)
+            try:
+                if response_json["errorCode"] == 302:
+                    pass
+                yield { # s timto neco udelaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat mozna
+                    # 'test': response_json["errorCode"],
+                    # 'full_translator': self.full_translator['other'],
+                    # 'full_template': self.full_template['other'],
+                    # 'sport_name': sport_name,
+                    'event_url': event_url,
+                    'error': True
+                }
+            except:
+                call_number = response.url.split('/?bt=')[1].split('&')[0]
+                if response_json['data']['markets'][-1]['name'] in ('Vše', 'Všechny příležitosti') or call_number != '99':
+                    try:
+                        translator = copy.deepcopy(self.full_translator[sport_name])
+                        template = copy.deepcopy(self.full_template[sport_name])
+                    except:
+                        translator = copy.deepcopy(self.full_translator['other'])
+                        template = copy.deepcopy(self.full_template['other'])
+                    participant_1 = response_json['data']['event']['participants'][0]['name']
+                    participant_2 = response_json['data']['event']['participants'][1]['name']
+                    try:
+                        markets = response_json['data']['event']['sixPackLayout']['columns'] + response_json['data']['event']['markets']
+                    except:
+                        markets = response_json['data']['event']['markets']
+                    for market in markets:
+                        market_name = market['name']
+                        for selection in market['selections']:
+                            selection_name = selection['name']
+                            bet_name = ' '.join([market_name, selection_name]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0')
+                            try:
+                                translator_result = translator[bet_name]
+                                if template[translator_result['name']][translator_result['group']][translator_result['option']] < selection['price']:
+                                    template[translator_result['name']][translator_result['group']][translator_result['option']] = selection['price']
+                            except:
+                                pass
+                            if self.arg_yieldBetNames:
+                                yield { #############################################################################################################
+                                    'bet_name': bet_name,
+                                    'value': selection['price']
+                                }
                         try:
-                            translator_result = translator[bet_name]
-                            if template[translator_result['name']][translator_result['group']][translator_result['option']] < selection['price']:
-                                template[translator_result['name']][translator_result['group']][translator_result['option']] = selection['price']
+                            table_name = market['tableLayout']['title']
+                            for row in market['tableLayout']['rows']:
+                                row_name = row['title']
+                                for group_selection in row['groupSelections']:
+                                    for selection in group_selection['selections']:
+                                        selection_name = selection['name']
+                                        bet_name = ' '.join([table_name, row_name, selection_name]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0')
+                                        try:
+                                            translator_result = translator[bet_name]
+                                            if template[translator_result['name']][translator_result['group']][translator_result['option']] < selection['price']:
+                                                template[translator_result['name']][translator_result['group']][translator_result['option']] = selection['price']
+                                        except:
+                                            pass
+                                        if self.arg_yieldBetNames:
+                                            yield { #############################################################################################################
+                                                'bet_name': bet_name,
+                                                'value': selection['price']
+                                            }
                         except:
                             pass
-                        if self.arg_yieldBetNames:
-                            yield { #############################################################################################################
-                                'bet_name': bet_name,
-                                'value': selection['price']
-                            }
-                    try:
-                        table_name = market['tableLayout']['title']
-                        for row in market['tableLayout']['rows']:
-                            row_name = row['title']
-                            for group_selection in row['groupSelections']:
-                                for selection in group_selection['selections']:
-                                    selection_name = selection['name']
-                                    bet_name = ' '.join([table_name, row_name, selection_name]).replace(participant_1, '1').replace(participant_2, '2').replace('Remíza', '0')
-                                    try:
-                                        translator_result = translator[bet_name]
-                                        if template[translator_result['name']][translator_result['group']][translator_result['option']] < selection['price']:
-                                            template[translator_result['name']][translator_result['group']][translator_result['option']] = selection['price']
-                                    except:
-                                        pass
-                                    if self.arg_yieldBetNames:
-                                        yield { #############################################################################################################
-                                            'bet_name': bet_name,
-                                            'value': selection['price']
-                                        }
-                    except:
-                        pass
-                yield {
-                    'event_url': event_url,
-                    'bet_dict': template,
-                }
-            else:
-                for index, market_group in enumerate(response_json['data']['markets']):
-                    if market_group['name'] in ('Vše', 'Všechny příležitosti'):
-                        url = f"https://www.betano.cz/api/zapas-sance/{'/'.join(event_url.split('/')[4:])}?bt={str(index)}&req=la,t,s,stnf,c,mb,mbl"
-                        yield scrapy.Request(url = url, callback = self.parse, cb_kwargs=dict(sport_name = sport_name, event_url = event_url))
-                        break
+                    yield {
+                        'event_url': event_url,
+                        'bet_dict': template,
+                    }
+                else:
+                    for index, market_group in enumerate(response_json['data']['markets']):
+                        if market_group['name'] in ('Vše', 'Všechny příležitosti'):
+                            url = f"https://www.betano.cz/api/zapas-sance/{'/'.join(event_url.split('/')[4:])}?bt={str(index)}&req=la,t,s,stnf,c,mb,mbl"
+                            yield scrapy.Request(url = url, callback = self.parse, cb_kwargs=dict(sport_name = sport_name, event_url = event_url))
+                            break
+        except:
+            yield { # toto pak muzu asi smazaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat
+                'event_url': event_url,
+                'error': True
+            }

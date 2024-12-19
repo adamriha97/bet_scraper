@@ -88,6 +88,7 @@
             "sachy"
         ],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "betx": {
@@ -160,7 +161,9 @@
             "Aussie Rules",
             "Aussie rules"
         ],
-        "snooker": [],
+        "snooker": [
+            "Snooker"
+        ],
         "padel": [],
         "netball": [],
         "badminton": [
@@ -173,6 +176,7 @@
         "plazovy-volejbal": [],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": [
             "BetX chance",
             "Motor sport"
@@ -261,6 +265,7 @@
         ],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "fortuna": {
@@ -357,6 +362,9 @@
             "sachy"
         ],
         "kabadi": [],
+        "lakros": [
+            "lakros"
+        ],
         "special": [
             "duel"
         ]
@@ -428,7 +436,9 @@
             "Volejbal"
         ],
         "australsky-fotbal": [],
-        "snooker": [],
+        "snooker": [
+            "Snooker"
+        ],
         "padel": [
             "Padel"
         ],
@@ -447,6 +457,7 @@
         ],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "merkur": {
@@ -528,6 +539,7 @@
         ],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": [
             "Společenské sázky"
         ]
@@ -630,6 +642,7 @@
         ],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "synottip": {
@@ -723,6 +736,7 @@
         "kabadi": [
             "Kabaddi"
         ],
+        "lakros": [],
         "special": [
             "WTA Tour Finals",
             "ATP Tour Finals"
@@ -819,6 +833,7 @@
             "Šachy"
         ],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "livescore": {
@@ -903,6 +918,7 @@
         "plazovy-volejbal": [],
         "sachy": [],
         "kabadi": [],
+        "lakros": [],
         "special": []
     },
     "other": {
@@ -1000,6 +1016,9 @@
             ""
         ],
         "kabadi": [
+            ""
+        ],
+        "lakros": [
             ""
         ],
         "special": [

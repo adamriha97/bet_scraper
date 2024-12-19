@@ -408,6 +408,11 @@
             "group": "-",
             "option": "1"
         },
+        "Vítěz zápasu 1": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "1"
+        },
         "Výsledek zápasu bez remízy 2": {
             "name": "vitez-bez-remizy",
             "group": "-",
@@ -424,6 +429,11 @@
             "option": "2"
         },
         "Vítěz (vč. prodl.) 2": {
+            "name": "vitez-bez-remizy",
+            "group": "-",
+            "option": "2"
+        },
+        "Vítěz zápasu 2": {
             "name": "vitez-bez-remizy",
             "group": "-",
             "option": "2"
