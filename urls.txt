@@ -15,6 +15,7 @@
 ! KB: u KB zlobi casy - problem je primo na strankach/API - seznam vs. detail zapasu (napr. tenis) je jiny cas a v API detail je jeste jiny
 ! zkontrolovat, zda se u vsech spideru spravne identifikuji zenske ligy (hlavne WTA - tenis) jako "zeny" u genderu
 ! ME: nasel jsem u Merkuru téměř duplikované řádky, u kterých se lišila asi jen event_url
+! TS: spider nekdy nic nestahne, protoze to vyhodi nejaky error a call vrati neco nestandartniho, v detail spideru to resim nekolikanasobnym opakovanim
 
 
 ? k genderu mohu pridat smisene dvojice, pokud se da identifikovat.. napr. u tenisu

@@ -121,5 +121,5 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
                 yield { # toto pak muzu asi smazaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaat
                     'event_url': event_url,
                     'error': True,
-                    'response': response_get.text
+                    # 'response': response_get.text
                 }
