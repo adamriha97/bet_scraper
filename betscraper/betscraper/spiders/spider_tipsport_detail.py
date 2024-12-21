@@ -3,6 +3,7 @@ import json
 import os
 import copy
 from curl_cffi import requests
+import time
 
 
 class SpiderTipsportDetailSpider(scrapy.Spider):
@@ -69,6 +70,7 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
             isError = True
             error_counter = 0
             while isError and error_counter < 5:
+                time.sleep(error_counter)
                 response_get = requests.request("GET", url, headers=headers, impersonate='chrome')
                 try:
                     response_json = json.loads(response_get.text)

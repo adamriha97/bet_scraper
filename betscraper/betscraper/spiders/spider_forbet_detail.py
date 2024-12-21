@@ -11,11 +11,13 @@ class SpiderForbetDetailSpider(scrapy.Spider):
 
     custom_settings = {
         'FEEDS': {'data/data_forbet_detail.json': {'format': 'json', 'overwrite': True}},
-        'CONCURRENT_REQUESTS': 32, # default 16
-        'CONCURRENT_REQUESTS_PER_DOMAIN': 32, # default 8
+        'CONCURRENT_REQUESTS': 24, # default 16
+        'CONCURRENT_REQUESTS_PER_DOMAIN': 24, # default 8
         'DOWNLOADER_MIDDLEWARES': {
             'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
         },
+        'DOWNLOAD_DELAY': 1,
+        'RANDOMIZE_DOWNLOAD_DELAY': True,
         }
     
     def __init__(self, arg_data = None, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, arg_yieldBetNames = False, *args, **kwargs):
