@@ -15,9 +15,13 @@ class SpiderForbetDetailSpider(scrapy.Spider):
         'CONCURRENT_REQUESTS_PER_DOMAIN': 24, # default 8
         'DOWNLOADER_MIDDLEWARES': {
             'betscraper.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
+            # 'betscraper.middlewares.DelayForbetDetailMiddleware': 500,
+            # 'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+            # 'betscraper.middlewares.TooManyRequestsRetryMiddleware': 543,
         },
         'DOWNLOAD_DELAY': 1,
-        'RANDOMIZE_DOWNLOAD_DELAY': True,
+        # 'RANDOMIZE_DOWNLOAD_DELAY': True,
+        'RETRY_HTTP_CODES': [429],
         }
     
     def __init__(self, arg_data = None, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, arg_yieldBetNames = False, *args, **kwargs):
@@ -47,7 +51,7 @@ class SpiderForbetDetailSpider(scrapy.Spider):
             "lang": "cs"
         })
         headers = {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         }
         yield scrapy.Request(url=url, headers=headers, body=body, method="POST", callback = self.parse)
 

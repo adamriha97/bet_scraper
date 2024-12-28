@@ -183,3 +183,53 @@ class ScrapeOpsFakeBrowserHeaderAgentMiddleware:
     def process_request(self, request, spider):
         random_browser_header = self._get_random_browser_header()
         request.headers = Headers(random_browser_header)
+
+import time
+
+class DelayForbetDetailMiddleware:
+    def __init__(self):
+        self.request_count = 0
+        self.last_batch_time = time.time()
+        self.arg_request_count = 24
+        self.arg_wait_time = 30
+
+    def process_request(self, request, spider):
+        if self.request_count >= self.arg_request_count:
+            elapsed_time = time.time() - self.last_batch_time
+            if elapsed_time < self.arg_wait_time:
+                time.sleep(self.arg_wait_time - elapsed_time)
+            self.request_count = 0
+            self.last_batch_time = time.time()
+
+    def process_response(self, request, response, spider):
+        self.request_count += 1
+        return response
+
+from scrapy.downloadermiddlewares.retry import RetryMiddleware
+from scrapy.utils.response import response_status_message
+
+import time
+
+class TooManyRequestsRetryMiddleware(RetryMiddleware):
+
+    def __init__(self, crawler):
+        super(TooManyRequestsRetryMiddleware, self).__init__(crawler.settings)
+        self.crawler = crawler
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(crawler)
+
+    def process_response(self, request, response, spider):
+        if request.meta.get('dont_retry', False):
+            return response
+        elif response.status == 429:
+            self.crawler.engine.pause()
+            time.sleep(20) # If the rate limit is renewed in a minute, put 60 seconds, and so on.
+            self.crawler.engine.unpause()
+            reason = response_status_message(response.status)
+            return self._retry(request, reason, spider) or response
+        elif response.status in self.retry_http_codes:
+            reason = response_status_message(response.status)
+            return self._retry(request, reason, spider) or response
+        return response 
