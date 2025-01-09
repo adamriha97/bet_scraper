@@ -380,6 +380,7 @@ def create_sure_bets_df(all_bets_df):
         'option_names',
         'event_url_dict',
         'bet_values_dict',
+        'bet_amounts_100_dict',
         'sure_bet_result',
     ])
 
@@ -400,8 +401,12 @@ def create_sure_bets_df(all_bets_df):
                             name_2: row['event_url_dict'][name_2],
                         }
                         new_row['bet_values_dict'] = {
-                            name_1: values_1[0],
-                            name_2: values_2[1],
+                            f"{name_1}_{row['option_names'][0]}": values_1[0],
+                            f"{name_2}_{row['option_names'][1]}": values_2[1],
+                        }
+                        new_row['bet_amounts_100_dict'] = {
+                            f"{name_1}_{row['option_names'][0]}": 100 / values_1[0],
+                            f"{name_2}_{row['option_names'][1]}": 100 / values_2[1],
                         }
                         new_row['sure_bet_result'] = sure_bet_result
                         new_row_df = pd.DataFrame([new_row])
@@ -419,9 +424,14 @@ def create_sure_bets_df(all_bets_df):
                                 name_3: row['event_url_dict'][name_3],
                             }
                             new_row['bet_values_dict'] = {
-                                name_1: values_1[0],
-                                name_2: values_2[1],
-                                name_3: values_3[2],
+                                f"{name_1}_{row['option_names'][0]}": values_1[0],
+                                f"{name_2}_{row['option_names'][1]}": values_2[1],
+                                f"{name_3}_{row['option_names'][2]}": values_3[2],
+                            }
+                            new_row['bet_amounts_100_dict'] = {
+                                f"{name_1}_{row['option_names'][0]}": 100 / values_1[0],
+                                f"{name_2}_{row['option_names'][1]}": 100 / values_2[1],
+                                f"{name_3}_{row['option_names'][2]}": 100 / values_3[2],
                             }
                             new_row['sure_bet_result'] = sure_bet_result
                             new_row_df = pd.DataFrame([new_row])
@@ -458,7 +468,7 @@ def create_value_bets_df(all_bets_df):
                     new_row['option_name'] = row['option_names'][option_index]
                     new_row['bet_value'] = bet_value
                     new_row['bet_value_fair'] = bet_value_fair
-                    new_row['value_bet_result'] = bet_value - bet_value_fair
+                    new_row['value_bet_result'] = (bet_value - bet_value_fair) / (bet_value_fair - 1)
                     new_row_df = pd.DataFrame([new_row])
                     dfs_to_concat = [df for df in [value_bets_df, new_row_df] if not df.empty and not df.isna().all().all()]
                     value_bets_df = pd.concat(dfs_to_concat, ignore_index=True)

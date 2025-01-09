@@ -320,7 +320,7 @@
         "plazovy-volejbal": ["Plážový volejbal"],
         "sachy": ["Šachy"],
         "kabadi": [],
-        "lakros": [],
+        "lakros": ["Lakros"],
         "special": []
     },
     "livescore": {

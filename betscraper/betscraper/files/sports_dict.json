@@ -833,7 +833,9 @@
             "Šachy"
         ],
         "kabadi": [],
-        "lakros": [],
+        "lakros": [
+            "Lakros"
+        ],
         "special": []
     },
     "livescore": {
