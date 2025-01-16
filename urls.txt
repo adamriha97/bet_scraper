@@ -17,6 +17,7 @@
 ! ME: nasel jsem u Merkuru téměř duplikované řádky, u kterých se lišila asi jen event_url
 ! TS: spider nekdy nic nestahne, protoze to vyhodi nejaky error a call vrati neco nestandartniho, v detail spideru to resim nekolikanasobnym opakovanim
 ! u detail spideru potrebuji sjednotit, aby vsechny hodnoty betu byly na dve desetinna mista
+! TS: u playwright je stary chromium browser (https://developers.cloudflare.com/waf/reference/cloudflare-challenges/#browser-support)
 
 
 ? k genderu mohu pridat smisene dvojice, pokud se da identifikovat.. napr. u tenisu
@@ -28,14 +29,18 @@
 
 
 Web pages:
-https://www.trefik.cz/default.aspx
-https://www.kurzovesazeni.com/
+https://www.trefik.cz/default.aspx (https://www.trefik.cz/demo.aspx)
+https://www.kurzovesazeni.com/ (https://www.kurzovesazeni.com/spinave-praktiky-sazkovych-kancelari/)
 https://www.oddsportal.com/
 https://www.rebelbetting.com/
 https://www.reddit.com/r/arbitragebetting/
 https://www.betmonitor.com/
 https://sportbreak.cz/
 https://sportbeet.cz/
+
+Discord:
+https://www.launchpass.com/discord/ 
+https://whop.com/blog/make-money-on-discord/ (https://whop.com/blog/discord-subscriptions-guide/)
 
 Sports APIs:
 https://www.thesportsdb.com/

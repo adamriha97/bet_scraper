@@ -18,6 +18,7 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
             "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
             "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
         },
+        'PLAYWRIGHT_BROWSER_TYPE': 'firefox', # chromium firefox webkit
         'PLAYWRIGHT_LAUNCH_OPTIONS': {
             "headless": True, # True False
             "timeout": 600 * 1000,  # 60 seconds
@@ -49,7 +50,7 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
             self.full_template = json.load(file)
     
     def start_requests(self):
-        url = 'https://www.tipsport.cz/kurzy.xml'
+        url = 'https://www.tipsport.cz/sitemap.xml' # https://www.tipsport.cz/kurzy.xml
         yield scrapy.Request(url, meta=dict(playwright = True), callback = self.parse)
 
     def parse(self, response):
@@ -71,7 +72,7 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
             error_counter = 0
             while isError and error_counter < 5:
                 time.sleep(error_counter)
-                response_get = requests.request("GET", url, headers=headers, impersonate='chrome')
+                response_get = requests.request("GET", url, headers=headers, impersonate='safari') # chrome
                 try:
                     response_json = json.loads(response_get.text)
                     isError = False
