@@ -69,7 +69,8 @@ class SpiderKingsbetDetailSpider(scrapy.Spider):
                         bet_name = ' '.join([market_name, odd_name]).replace(participant_1, '1').replace(participant_2, '2')
                         try:
                             translator_result = translator[bet_name]
-                            if template[translator_result['name']][translator_result['group']][translator_result['option']] < odds_dict[str(odd_id)]['price']:
+                            # oddStatus == 7 -> zamknutá sázka
+                            if odds_dict[str(odd_id)]['oddStatus'] != 7 and template[translator_result['name']][translator_result['group']][translator_result['option']] < odds_dict[str(odd_id)]['price']:
                                 template[translator_result['name']][translator_result['group']][translator_result['option']] = odds_dict[str(odd_id)]['price']
                         except:
                             pass
