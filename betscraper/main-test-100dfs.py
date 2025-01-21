@@ -536,81 +536,140 @@ def create_value_bets_df(all_bets_df):
 
 # MAIN
 if __name__ == '__main__':
-    # nastavit bookmakery, ktere chci pouzivat
+    # # nastavit bookmakery, ktere chci pouzivat
+    # bookmaker_names = ['betano', 'betx', 'forbet', 'fortuna', 'kingsbet', 'merkur', 'sazka', 'synottip', 'tipsport']
+
+    # # crawler
+    # # crawler_func(bookmaker_names)
+    # subprocess.run([f"{sys.executable}", "betscraper/crawler.py"])
+
+    # # nahrat puvodni data o eventech do dataframu
+    # dataframes_dict = create_dataframes_dict(bookmaker_names)
+
+    # # upravit seznam bookmakeru po tom, jaka data se podari stahnout
+    # bookmaker_names = [bn for bn, df in dataframes_dict.items() if not df.empty]
+
+    # # vyfiltrovat pouze omezeny pocet dnu nasledujicihc po dnu stazeni dat
+    # number_of_days = 1
+    # dataframes_dict = filter_only_close_days(number_of_days, dataframes_dict)
+
+    # # vycistit slova navic v listech obsahujicich jmena jednotlivych tymu
+    # printIndexDrops = False
+    # dataframes_dict = clean_participant_names(dataframes_dict, printIndexDrops)
+
+    # # vytvorit spojenou tabulku pro vsechny puvodni eventy
+    # dropBets = True
+    # events = create_events_table(dataframes_dict, dropBets)
+
+    # # oddelit eventy s errorem
+    # # events_with_error = events[events['bookmaker_list'].apply(lambda x: 'error' in x)]
+    # events = events[~events['bookmaker_list'].apply(lambda x: 'error' in x)]
+
+    # # oddelit eventy, ktere se na nic nenapoji
+    # # events_singlies = events[events['bookmaker_list'].apply(lambda x: len(x) == 1)]
+    # events = events[~events['bookmaker_list'].apply(lambda x: len(x) == 1)]
+
+    # # nechat pouze eventy se startem za urcity pocet minut
+    # number_of_minutes = 5
+    # now_plus_minutes = datetime.now() + timedelta(minutes = number_of_minutes)
+    # events = events[events['event_startTime'] >= now_plus_minutes]
+
+    # # # nechat pouze eventy, ktere se odehraji do urciteho poctu hodin
+    # # number_of_hours = 12
+    # # now_plus_hours = datetime.now() + timedelta(hours = number_of_hours)
+    # # events = events[events['event_startTime'] <= now_plus_hours]ˇ
+
+    # # ulozit tabulku events
+    # events.to_csv('betscraper/data/events.csv', index=False)
+    # events.to_pickle('betscraper/data/events.pkl')
+
+    ### USEK PRO TESTOVANI
+    events = pd.read_pickle('betscraper/data/events.pkl')
     bookmaker_names = ['betano', 'betx', 'forbet', 'fortuna', 'kingsbet', 'merkur', 'sazka', 'synottip', 'tipsport']
-
-    # crawler
-    # crawler_func(bookmaker_names)
-    subprocess.run([f"{sys.executable}", "betscraper/crawler.py"])
-
-    # nahrat puvodni data o eventech do dataframu
     dataframes_dict = create_dataframes_dict(bookmaker_names)
-
-    # upravit seznam bookmakeru po tom, jaka data se podari stahnout
     bookmaker_names = [bn for bn, df in dataframes_dict.items() if not df.empty]
+    ### USEK PRO TESTOVANI
 
-    # vyfiltrovat pouze omezeny pocet dnu nasledujicihc po dnu stazeni dat
-    number_of_days = 1
-    dataframes_dict = filter_only_close_days(number_of_days, dataframes_dict)
+    # rozdeleni dataframu s eventy na dataframy o danem poctu radku
+    events_sorted = events.sort_values(by='event_startTime').reset_index(drop=True)
+    chunk_size = 100
+    events_100_list = [events_sorted.iloc[i:i + chunk_size] for i in range(0, len(events_sorted), chunk_size)]
 
-    # vycistit slova navic v listech obsahujicich jmena jednotlivych tymu
-    printIndexDrops = False
-    dataframes_dict = clean_participant_names(dataframes_dict, printIndexDrops)
+    original_bookamker_names = bookmaker_names
+    for events_100_list_position, events in enumerate(events_100_list):
+        for stage in ('events_stage', 'sb_confirmation_stage'):
+            ### FIRST STAGE - SMALLER EVENTS DATAFRAMES
+            print(f"FIRST STAGE - SMALLER EVENTS DATAFRAMES - table {events_100_list_position + 1}/{len(events_100_list)}")
 
-    # vytvorit spojenou tabulku pro vsechny puvodni eventy
-    dropBets = True
-    events = create_events_table(dataframes_dict, dropBets)
+            # vytvorit lists_for_detail_spiders_dict
+            lists_for_detail_spiders_dict = create_lists_for_detail_spiders_dict(original_bookamker_names, events)
+            bookmaker_names = list(lists_for_detail_spiders_dict.keys())
 
-    # oddelit eventy s errorem
-    # events_with_error = events[events['bookmaker_list'].apply(lambda x: 'error' in x)]
-    events = events[~events['bookmaker_list'].apply(lambda x: 'error' in x)]
+            # crawler detail
+            if 'forbet' in bookmaker_names:
+                subprocess.run([f"{sys.executable}", "betscraper/crawler_detail_subp.py", 'forbet'])
+            if 'tipsport' in bookmaker_names:
+                subprocess.run([f"{sys.executable}", "betscraper/crawler_detail_subp.py", 'tipsport'])
+            if [item for item in bookmaker_names if item not in ['forbet', 'tipsport']]:
+                subprocess.run([f"{sys.executable}", "betscraper/crawler_detail_subp.py", 'rest'])
 
-    # oddelit eventy, ktere se na nic nenapoji
-    # events_singlies = events[events['bookmaker_list'].apply(lambda x: len(x) == 1)]
-    events = events[~events['bookmaker_list'].apply(lambda x: len(x) == 1)]
+            # nahrat detail data do spolecneho detail_dict
+            detail_dict = create_detail_dict(bookmaker_names)
 
-    # nechat pouze eventy se startem za urcity pocet minut
-    number_of_minutes = 5
-    now_plus_minutes = datetime.now() + timedelta(minutes = number_of_minutes)
-    events = events[events['event_startTime'] >= now_plus_minutes]
+            # vytvorit dataframe vsech sazek, ktere jsem byl schopen vytahnout pomoci detail spideru
+            all_bets_df = create_all_bets_df(events, detail_dict)
+            # all_bets_df.to_csv('betscraper/data/all_bets_df.csv', index=False)
+            # all_bets_df.to_pickle('betscraper/data/all_bets_df.pkl')
 
-    # # nechat pouze eventy, ktere se odehraji do urciteho poctu hodin
-    # number_of_hours = 12
-    # now_plus_hours = datetime.now() + timedelta(hours = number_of_hours)
-    # events = events[events['event_startTime'] <= now_plus_hours]ˇ
+            # vytvorit tabulku pro sure bets
+            sure_bets_df = create_sure_bets_df(all_bets_df)
+            # sure_bets_df.to_csv('betscraper/data/sure_bets_df.csv', index=False)
+            # sure_bets_df.to_pickle('betscraper/data/sure_bets_df.pkl')
 
-    # ulozit tabulku events
-    events.to_csv('betscraper/data/events.csv', index=False)
-    events.to_pickle('betscraper/data/events.pkl')
+            # vytvorit tabulku pro value bets
+            value_bets_df = create_value_bets_df(all_bets_df)
+            value_bets_df.to_csv('betscraper/data/value_bets_df.csv', index=False)
+            value_bets_df.to_pickle('betscraper/data/value_bets_df.pkl')
 
-    # vytvorit lists_for_detail_spiders_dict
-    lists_for_detail_spiders_dict = create_lists_for_detail_spiders_dict(bookmaker_names, events)
+            ### SECOND STAGE - SURE BETS VERIFICATION
+            print(f"SECOND STAGE - SURE BETS VERIFICATION - table {events_100_list_position + 1}/{len(events_100_list)}")
 
-    # crawler detail
-    if 'forbet' in bookmaker_names:
-        subprocess.run([f"{sys.executable}", "betscraper/crawler_detail_subp.py", 'forbet'])
-    if 'tipsport' in bookmaker_names:
-        subprocess.run([f"{sys.executable}", "betscraper/crawler_detail_subp.py", 'tipsport'])
-    if [item for item in bookmaker_names if item not in ['forbet', 'tipsport']]:
-        subprocess.run([f"{sys.executable}", "betscraper/crawler_detail_subp.py", 'rest'])
+            # vytvorit filtrovany events dataframe z eventu z posledniho ulozeneho a nove vytvoreneho sure bets dataframu
+            try:
+                sure_bets_df_old = pd.read_pickle('betscraper/data/sure_bets_df.pkl')
+                sb_combined_df = pd.concat([sure_bets_df_old, sure_bets_df])
+            except:
+                sb_combined_df = sure_bets_df
+            sb_future_df = sb_combined_df[sb_combined_df['event_startTime'] > datetime.now()]
+            events_id_list = sb_future_df['events_id'].unique().tolist()
+            events_filtered = events_sorted[events_sorted['events_id'].isin(events_id_list)]
 
-    # nahrat detail data do spolecneho detail_dict
-    detail_dict = create_detail_dict(bookmaker_names)
+            if events_filtered.empty:
+                print('NO SURE BETS EVENTS TO SEARCH AND VERIFY')
+            else:
+                print('SEARCHING AND VERIFYING SURE BETS EVENTS')
 
-    # vytvorit dataframe vsech sazek, ktere jsem byl schopen vytahnout pomoci detail spideru
-    # events = pd.read_pickle('betscraper/data/events.pkl')
-    all_bets_df = create_all_bets_df(events, detail_dict)
+                # vytvorit lists_for_detail_spiders_dict
+                lists_for_detail_spiders_dict = create_lists_for_detail_spiders_dict(original_bookamker_names, events_filtered)
+                bookmaker_names = list(lists_for_detail_spiders_dict.keys())
 
-    # vytvorit tabulku pro sure bets
-    sure_bets_df = create_sure_bets_df(all_bets_df)
+                # crawler detail
+                if 'forbet' in bookmaker_names:
+                    subprocess.run([f"{sys.executable}", "betscraper/crawler_detail_subp.py", 'forbet'])
+                if 'tipsport' in bookmaker_names:
+                    subprocess.run([f"{sys.executable}", "betscraper/crawler_detail_subp.py", 'tipsport'])
+                if [item for item in bookmaker_names if item not in ['forbet', 'tipsport']]:
+                    subprocess.run([f"{sys.executable}", "betscraper/crawler_detail_subp.py", 'rest'])
 
-    # vytvorit tabulku pro value bets
-    value_bets_df = create_value_bets_df(all_bets_df)
+                # nahrat detail data do spolecneho detail_dict
+                detail_dict = create_detail_dict(bookmaker_names)
 
-    # ulozit tabulky all_bets_df, sure_bets_df, value_bets_df
-    all_bets_df.to_csv('betscraper/data/all_bets_df.csv', index=False)
-    all_bets_df.to_pickle('betscraper/data/all_bets_df.pkl')
-    sure_bets_df.to_csv('betscraper/data/sure_bets_df.csv', index=False)
-    sure_bets_df.to_pickle('betscraper/data/sure_bets_df.pkl')
-    value_bets_df.to_csv('betscraper/data/value_bets_df.csv', index=False)
-    value_bets_df.to_pickle('betscraper/data/value_bets_df.pkl')
+                # vytvorit dataframe vsech sazek, ktere jsem byl schopen vytahnout pomoci detail spideru
+                all_bets_df = create_all_bets_df(events_filtered, detail_dict)
+                # all_bets_df.to_csv('betscraper/data/all_bets_df.csv', index=False)
+                # all_bets_df.to_pickle('betscraper/data/all_bets_df.pkl')
+
+                # vytvorit tabulku pro sure bets
+                sure_bets_df = create_sure_bets_df(all_bets_df)
+                sure_bets_df.to_csv('betscraper/data/sure_bets_df.csv', index=False)
+                sure_bets_df.to_pickle('betscraper/data/sure_bets_df.pkl')

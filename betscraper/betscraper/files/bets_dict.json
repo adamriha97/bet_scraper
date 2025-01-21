@@ -2182,25 +2182,25 @@
                     "Oba hráči vyhrají set"
                 ],
                 "betx": [
-                    "Počet setů"
+                    "Počet setů_(NEMUSÍ BÝT PŘESNÉ PRO ZÁPASY NA 3 VÍTĚZNÉ SETY)"
                 ],
                 "forbet": [
                     "Přesný počet setů sr:exact_sets:bestof:3"
                 ],
                 "fortuna": [
-                    "Počet setů v zápasu"
+                    "Počet setů v zápasu_(NEMUSÍ BÝT PŘESNÉ PRO ZÁPASY NA 3 VÍTĚZNÉ SETY)"
                 ],
                 "kingsbet": [
-                    "Přesný počet setů v zápasu"
+                    "Přesný počet setů v zápasu_(NEMUSÍ BÝT PŘESNÉ PRO ZÁPASY NA 3 VÍTĚZNÉ SETY)"
                 ],
                 "merkur": [
                     ""
                 ],
                 "sazka": [
-                    "Přesný počet setů"
+                    "Přesný počet setů_(NEMUSÍ BÝT PŘESNÉ PRO ZÁPASY NA 3 VÍTĚZNÉ SETY)"
                 ],
                 "synottip": [
-                    "Počet setů"
+                    "Počet setů_(NEMUSÍ BÝT PŘESNÉ PRO ZÁPASY NA 3 VÍTĚZNÉ SETY)"
                 ],
                 "tipsport": [
                     "Počet setů v zápasu (na dva vítězné)"

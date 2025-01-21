@@ -18,6 +18,9 @@
 ! TS: spider nekdy nic nestahne, protoze to vyhodi nejaky error a call vrati neco nestandartniho, v detail spideru to resim nekolikanasobnym opakovanim
 ! u detail spideru potrebuji sjednotit, aby vsechny hodnoty betu byly na dve desetinna mista
 ! TS: u playwright je stary chromium browser (https://developers.cloudflare.com/waf/reference/cloudflare-challenges/#browser-support)
+! chtelo by to udelat nejake logy:
+    - jestli a kdy se nejaka data prestala stahovat
+    - jestli nekde neberu spravne nebo uplne udaje podle dicts -> nazvy sportu, sazky, ...
 
 
 ? k genderu mohu pridat smisene dvojice, pokud se da identifikovat.. napr. u tenisu
@@ -37,6 +40,8 @@ https://www.reddit.com/r/arbitragebetting/
 https://www.betmonitor.com/
 https://sportbreak.cz/
 https://sportbeet.cz/
+https://betliga.cz/
+https://tennisbrothers.cz/
 
 Discord:
 https://www.launchpass.com/discord/ 
