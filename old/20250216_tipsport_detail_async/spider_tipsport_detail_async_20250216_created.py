@@ -7,12 +7,12 @@ import asyncio
 
 
 class SpiderTipsportDetailSpider(scrapy.Spider):
-    name = "spider_tipsport_detail"
+    name = "spider_tipsport_detail_async"
     allowed_domains = ["www.tipsport.cz"]
     # start_urls = ["https://www.tipsport.cz"]
 
     custom_settings = {
-        'FEEDS': {'data/data_tipsport_detail.json': {'format': 'json', 'overwrite': True}},
+        'FEEDS': {'data/data_tipsport_detail_async.json': {'format': 'json', 'overwrite': True}},
         'USER_AGENT': "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
         'DOWNLOAD_HANDLERS': {
             "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
