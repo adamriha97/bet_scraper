@@ -44,15 +44,15 @@ test_pages = [
     ],
 ]
 
-pagetest = SlashCommandGroup("pagetest", "Commands for testing ext.pages.")
+my_pagetest = SlashCommandGroup("my_pagetest", "Commands for testing ext.pages.")
 
-@pagetest.command(name="test")
+@my_pagetest.command(name="test")
 async def pagetest_default(ctx: discord.ApplicationContext):
     """Demonstrates using the paginator with the default options."""
     paginator = pages.Paginator(pages=test_pages)
     await paginator.respond(ctx.interaction, ephemeral=False)
 
-bot.add_application_command(pagetest)
+bot.add_application_command(my_pagetest)
 
 
 bot.run(os.getenv('MCDUCK_DISCORD_TOKEN'))
