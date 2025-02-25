@@ -61,6 +61,7 @@ https://medium.com/better-practices/reverse-engineering-an-api-403fae885303
 # proxies
 https://www.youtube.com/watch?v=qHahcxoGfpc
 https://github.com/rejoiceinhope/scrapy-proxy-pool
+https://oxylabs.io/products/free-proxies, https://hide.me/en/pricing, https://www.webshare.io/features/free-proxy
 # value beting
 https://www.kurzovesazeni.com/jednoduchy-navod-vsadit-vyhodou-value-bet/
 https://www.oddsportal.com/value-bets/
