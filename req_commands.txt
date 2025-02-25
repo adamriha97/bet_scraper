@@ -25,3 +25,11 @@ pip install --upgrade google-api-python-client
 
 pip install ipykernel
 conda install -p /mnt/c/Users/adamr/VSCodeProjects/BetScraper/bet_scraper/.conda ipykernel --update-deps --force-reinstall
+
+# TOR (https://www.youtube.com/watch?v=3TG9qoDONtA)
+sudo apt update
+sudo apt install tor
+pip install stem
+tor --hash-password my_password
+sudo vim /etc/tor/torrc (příkazy: i -> upravit potřebné -> ESC -> :wq -> ENTER)
+sudo systemctl start tor (sudo systemctl restart tor)

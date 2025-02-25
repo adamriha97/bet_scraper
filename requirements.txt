@@ -8,3 +8,5 @@ curl_cffi==0.7.1
 pytz==2024.2
 pandas==2.2.3
 py-cord==2.6.1
+stem==1.8.2
+PySocks==1.7.1
