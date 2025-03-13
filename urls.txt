@@ -46,6 +46,10 @@ https://tennisbrothers.cz/
 Discord:
 https://www.launchpass.com/discord/ 
 https://whop.com/blog/make-money-on-discord/ (https://whop.com/blog/discord-subscriptions-guide/)
+https://discord.com/developers/applications
+https://guide.pycord.dev/extensions/pages/paginator-basics
+https://docs.pycord.dev/en/stable/ext/pages/index.html#discord.ext.pages.Paginator
+https://www.youtube.com/watch?v=IEEhzQoKtQU
 
 Sports APIs:
 https://www.thesportsdb.com/
