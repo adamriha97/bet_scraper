@@ -31,5 +31,5 @@ sudo apt update
 sudo apt install tor
 pip install stem
 tor --hash-password my_password
-sudo vim /etc/tor/torrc (příkazy: i -> upravit potřebné -> ESC -> :wq -> ENTER)
+sudo vim /etc/tor/torrc (příkazy: i -> upravit potřebné -> ESC -> :wq -> ENTER) - odkomentovat ControlPort, HashedControlPassword (a předsat), CookieAuthentication
 sudo systemctl start tor (sudo systemctl restart tor)

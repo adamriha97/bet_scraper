@@ -76,7 +76,7 @@ with open(f"betscraper/data/data_forbet.json", 'r') as file:
     data = json.load(file)
 
 i = 0
-for item in data[:1]:
+for item in data[:40]:
     event_url = item['event_url']
     # print(f"Event: {event_url}")
     body = json.dumps({
@@ -90,15 +90,18 @@ for item in data[:1]:
         headers = headers,
         data = body,
         impersonate = 'chrome', # chrome safari edge101
-        proxies = proxies,
+        # proxies = proxies,
         # proxies = {"http": proxy_http_url, "https": proxy_https_url},
         # proxies = {"https": "http://localhost:3128"},
         # proxy = 'http://90.182.147.170:4145',
     )
     i += 1
     print(f"Call {i}: {response.status_code}")
-    response_json = json.loads(response.text)
-    print(str(response_json)[:100])
+    try:
+      response_json = json.loads(response.text)
+      print(str(response_json)[:100])
+    except:
+       print(f'No response due to: {response.status_code}')
 
 
 end_time = time.time()

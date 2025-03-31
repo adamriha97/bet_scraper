@@ -23,7 +23,7 @@ class SpiderTipsportSpider(scrapy.Spider):
         },
         'PLAYWRIGHT_BROWSER_TYPE': 'firefox', # chromium firefox webkit
         'PLAYWRIGHT_LAUNCH_OPTIONS': {
-            "headless": False, # True False
+            "headless": True, # True False
             "timeout": 600 * 1000,  # 60 seconds
         },
         'PLAYWRIGHT_DEFAULT_NAVIGATION_TIMEOUT': 600 * 1000,  # 60 seconds
@@ -41,29 +41,17 @@ class SpiderTipsportSpider(scrapy.Spider):
         }
     
     def start_requests(self):
-        url = 'https://www.tipsport.cz/kurzy.xml' # https://www.tipsport.cz/kurzy.xml https://www.tipsport.cz/sitemap.xml
-        yield scrapy.Request(url, meta=dict(playwright = True, playwright_include_page = True), callback = self.parse)
+        url = 'https://www.tipsport.cz/sitemap.xml' # https://www.tipsport.cz/kurzy.xml https://www.tipsport.cz/sitemap.xml
+        yield scrapy.Request(url, meta=dict(playwright = True), callback = self.parse)
 
-    async def parse(self, response):
+    def parse(self, response):
         url = "https://www.tipsport.cz/rest/offer/v2/offer?limit=9999"
 
-        # all_headers = response.headers
-        # print('all_headers')
-        # print(all_headers)
-
-        # request_cookies = response.request.all_headers() # .headers # .all_headers() #.cookies
-        # print('REQUEST KUUUKIIIZ:')
+        # request_cookies = response.request.cookies
         # print(request_cookies)
-
-        page = response.meta["playwright_page"]
-        print('RESPONSE METAAA:')
-        print(page)
-        # response_cookies = await page.context.cookies(response.url)
-        # print('RESPONSE KUUUKIIIZ:')
-        # print(response_cookies)
-
-        # print('kuuukiiiz:', str(response.headers.getlist('Set-Cookie')))
-        # print('kuuukiiiz:', str(response.headers))
+        # page = response.meta["playwright_page"]
+        # response_cookies = page.context.cookies(response.url)
+        print('kuuukiiiz:', str(response.headers.getlist('Set-Cookie')))
 
         headers = {
             'Cookie': f"JSESSIONID={str(response.headers.getlist('Set-Cookie')).split('JSESSIONID=')[1].split(';')[0]}",
