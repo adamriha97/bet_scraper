@@ -10,3 +10,4 @@ pandas==2.2.3
 py-cord==2.6.1
 stem==1.8.2
 PySocks==1.7.1
+camoufox[geoip]==0.4.11

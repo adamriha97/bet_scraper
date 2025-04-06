@@ -33,3 +33,7 @@ pip install stem
 tor --hash-password my_password
 sudo vim /etc/tor/torrc (příkazy: i -> upravit potřebné -> ESC -> :wq -> ENTER) - odkomentovat ControlPort, HashedControlPassword (a předsat), CookieAuthentication
 sudo systemctl start tor (sudo systemctl restart tor)
+
+# CAMOUFOX
+sudo apt install -y libgtk-3-0 libx11-xcb1 libasound2
+camoufox fetch (python -m camoufox fetch)
