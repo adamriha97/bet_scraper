@@ -18,11 +18,25 @@ def get_cookies_from_url(url):
         context = browser.new_context()
         page = context.new_page()
         page.goto(url)
-        time.sleep(5)
+        # time.sleep(5)
+        # page.wait_for_load_state()
+        # cookies = context.cookies()
+        # browser.close()
+        # return cookies
         page.wait_for_load_state()
         cookies = context.cookies()
-        browser.close()
+        for index in range(100):
+            try:
+                time.sleep(0.1)
+                cookies = context.cookies()
+                for cookie in cookies:
+                    if cookie['name'] == 'JSESSIONID':
+                        return cookies
+                print(index)
+            except:
+                pass
         return cookies
+        
 
 url = 'https://www.tipsport.cz/'
 # cookies = get_cookies_from_url(url)
