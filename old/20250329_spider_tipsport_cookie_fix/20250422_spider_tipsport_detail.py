@@ -5,19 +5,28 @@ import copy
 from curl_cffi import requests
 import asyncio
 
-from camoufox.sync_api import Camoufox
-from browserforge.fingerprints import Screen
-import time
-
 
 class SpiderTipsportDetailSpider(scrapy.Spider):
     name = "spider_tipsport_detail"
-    allowed_domains = ["www.tipsport.cz", "example.com"]
-    start_urls = ["https://example.com/"] # https://www.tipsport.cz
+    allowed_domains = ["www.tipsport.cz"]
+    # start_urls = ["https://www.tipsport.cz"]
 
     custom_settings = {
         'FEEDS': {'data/data_tipsport_detail.json': {'format': 'json', 'overwrite': True}},
         'USER_AGENT': "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
+        'DOWNLOAD_HANDLERS': {
+            "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+            "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+        },
+        'PLAYWRIGHT_BROWSER_TYPE': 'firefox', # chromium firefox webkit
+        'PLAYWRIGHT_LAUNCH_OPTIONS': {
+            "headless": True, # True False
+            "timeout": 600 * 1000,  # 60 seconds
+        },
+        'PLAYWRIGHT_DEFAULT_NAVIGATION_TIMEOUT': 600 * 1000,  # 60 seconds
+        'DOWNLOADER_MIDDLEWARES': {
+            "scrapy.downloadermiddlewares.cookies.CookiesMiddleware": 543,
+        },
         }
     
     def __init__(self, arg_data = None, arg_sport_name = None, arg_events_limit = 9999, arg_event_url = None, arg_yieldBetNames = False, *args, **kwargs):
@@ -39,42 +48,14 @@ class SpiderTipsportDetailSpider(scrapy.Spider):
         template_path = os.path.join(script_dir, '../files/detail_dicts/template.json')
         with open(template_path, 'r') as file:
             self.full_template = json.load(file)
-        
-        constrains = Screen(max_width=1920, max_height=1080)
-        url = 'https://www.tipsport.cz/informace'
-        jsessionid = ''
-        for _ in range(5):
-            with Camoufox(
-                os="windows",
-                screen=constrains,
-                humanize=True,
-                headless=True,
-                geoip=True,
-                locale="cs-CZ"
-            ) as browser:
-                context = browser.new_context()
-                page = context.new_page()
-                page.goto(url)
-                page.wait_for_load_state(state='load')
-                for index in range(100):
-                    try:
-                        time.sleep(0.1)
-                        cookies = context.cookies()
-                        for cookie in cookies:
-                            if cookie['name'] == 'JSESSIONID':
-                                jsessionid = cookie['value']
-                                break
-                        if jsessionid != '':
-                            break
-                    except:
-                        pass
-            if jsessionid != '':
-                break
-        self.jsessionid = jsessionid
     
+    def start_requests(self):
+        url = 'https://www.tipsport.cz/sitemap.xml' # https://www.tipsport.cz/kurzy.xml
+        yield scrapy.Request(url, meta=dict(playwright = True), callback = self.parse)
+
     async def parse(self, response):
         headers = {
-            'Cookie': f"JSESSIONID={self.jsessionid}",
+            'Cookie': f"JSESSIONID={str(response.headers.getlist('Set-Cookie')).split('JSESSIONID=')[1].split(';')[0]}",
             'Content-Type': 'application/json'
         }
         if self.arg_sport_name == None and self.arg_event_url == None:

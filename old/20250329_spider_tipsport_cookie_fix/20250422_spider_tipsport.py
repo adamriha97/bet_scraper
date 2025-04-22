@@ -7,18 +7,29 @@ import time
 
 from betscraper.items import BasicSportEventItem
 
-from camoufox.sync_api import Camoufox
-from browserforge.fingerprints import Screen
-
 
 class SpiderTipsportSpider(scrapy.Spider):
     name = "spider_tipsport"
-    allowed_domains = ["www.tipsport.cz", "example.com"]
-    start_urls = ["https://example.com/"] # https://www.tipsport.cz/ https://www.tipsport.cz/kurzy.xml
+    allowed_domains = ["www.tipsport.cz"]
+    # start_urls = ["https://www.tipsport.cz/kurzy.xml"] # https://www.tipsport.cz/
 
     custom_settings = {
         'FEEDS': {'data/data_tipsport.json': {'format': 'json', 'overwrite': True}},
         'USER_AGENT': "Mozilla/5.0 (X11; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
+        # 'USER_AGENT': "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0",
+        'DOWNLOAD_HANDLERS': {
+            "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+            "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+        },
+        'PLAYWRIGHT_BROWSER_TYPE': 'firefox', # chromium firefox webkit
+        'PLAYWRIGHT_LAUNCH_OPTIONS': {
+            "headless": False, # True False
+            "timeout": 600 * 1000,  # 60 seconds
+        },
+        'PLAYWRIGHT_DEFAULT_NAVIGATION_TIMEOUT': 600 * 1000,  # 60 seconds
+        'DOWNLOADER_MIDDLEWARES': {
+            "scrapy.downloadermiddlewares.cookies.CookiesMiddleware": 543,
+        },
         'ITEM_PIPELINES': {
             "betscraper.pipelines.DropDuplicatesPipeline": 350,
             "betscraper.pipelines.UnifySportNamesPipeline": 400,
@@ -29,46 +40,36 @@ class SpiderTipsportSpider(scrapy.Spider):
         },
         }
     
-    def __init__(self, *args, **kwargs):
-        super(SpiderTipsportSpider, self).__init__(*args, **kwargs)
-        constrains = Screen(max_width=1920, max_height=1080)
-        url = 'https://www.tipsport.cz/informace'
-        jsessionid = ''
-        for _ in range(5):
-            with Camoufox(
-                os="windows",
-                screen=constrains,
-                humanize=True,
-                headless=True,
-                geoip=True,
-                locale="cs-CZ"
-            ) as browser:
-                context = browser.new_context()
-                page = context.new_page()
-                page.goto(url)
-                page.wait_for_load_state(state='load')
-                for index in range(100):
-                    try:
-                        time.sleep(0.1)
-                        cookies = context.cookies()
-                        for cookie in cookies:
-                            if cookie['name'] == 'JSESSIONID':
-                                jsessionid = cookie['value']
-                                break
-                        if jsessionid != '':
-                            break
-                    except:
-                        pass
-            if jsessionid != '':
-                break
-        self.jsessionid = jsessionid
+    def start_requests(self):
+        url = 'https://www.tipsport.cz/kurzy.xml' # https://www.tipsport.cz/kurzy.xml https://www.tipsport.cz/sitemap.xml
+        yield scrapy.Request(url, meta=dict(playwright = True, playwright_include_page = True), callback = self.parse)
 
-    def parse(self, response):
+    async def parse(self, response):
         url = "https://www.tipsport.cz/rest/offer/v2/offer?limit=9999"
+
+        # all_headers = response.headers
+        # print('all_headers')
+        # print(all_headers)
+
+        # request_cookies = response.request.all_headers() # .headers # .all_headers() #.cookies
+        # print('REQUEST KUUUKIIIZ:')
+        # print(request_cookies)
+
+        page = response.meta["playwright_page"]
+        print('RESPONSE METAAA:')
+        print(page)
+        # response_cookies = await page.context.cookies(response.url)
+        # print('RESPONSE KUUUKIIIZ:')
+        # print(response_cookies)
+
+        # print('kuuukiiiz:', str(response.headers.getlist('Set-Cookie')))
+        # print('kuuukiiiz:', str(response.headers))
+
         headers = {
-            'Cookie': f"JSESSIONID={self.jsessionid}",
+            'Cookie': f"JSESSIONID={str(response.headers.getlist('Set-Cookie')).split('JSESSIONID=')[1].split(';')[0]}",
             'Content-Type': 'application/json'
         }
+
         isError = True
         error_counter = 0
         while isError and error_counter < 10:
